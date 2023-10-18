@@ -4,7 +4,7 @@ import {
   HiOutlineMenuAlt3 as Menu,
   HiX as Close,
   HiSun as Sun,
-  HiOutlineSun as Moon,
+  HiOutlineMoon as Moon,
 } from "react-icons/hi";
 
 export default function Header() {
