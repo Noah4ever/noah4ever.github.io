@@ -8,6 +8,10 @@ export default function Header() {
     document.querySelector(".header-links")?.classList.toggle("open");
     setMenuOpen(!menuOpen);
   }
+  function handleLinkClick() {
+    document.querySelector(".header-links")?.classList.remove("open");
+    setMenuOpen(false);
+  }
 
   return (
     <header className="header-container">
@@ -25,10 +29,10 @@ export default function Header() {
           <Menu className="header-link-menu" onClick={handleMenuClick} />
         )}
         <ul className="header-links">
-          <li>timeline</li>
-          <li>about</li>
-          <li>skills</li>
-          <li>contact</li>
+          <li onClick={handleLinkClick}>timeline</li>
+          <li onClick={handleLinkClick}>about</li>
+          <li onClick={handleLinkClick}>skills</li>
+          <li onClick={handleLinkClick}>contact</li>
         </ul>
       </div>
     </header>
