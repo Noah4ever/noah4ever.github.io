@@ -1,8 +1,9 @@
-import Header from "../components/Header"
+import Header from "../components/Header";
+import "@styles/app.scss";
 
 export default function App() {
   return (
-    <div>
+    <div className="app-container">
       <Header />
     </div>
   );
