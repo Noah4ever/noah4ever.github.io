@@ -10,6 +10,7 @@ $max-width-phone: 700px;
         font-weight: 600;
         margin-block: 0;
         color: var(--text-color);
+        cursor: pointer;
       }
       .header-logo-name.lastname {
         font-size: 2.5rem;
@@ -85,6 +86,11 @@ $max-width-phone: 700px;
         cursor: pointer;
         &:hover {
           text-decoration: underline;
+        }
+        .header-links-theme-change {
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
       }
     }
