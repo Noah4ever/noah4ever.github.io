@@ -1,27 +1,85 @@
-# React + TypeScript + Vite
+# Personal Website Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a personal website built using React, TypeScript, and Vite. The website is designed to be responsive, providing an optimal viewing experience across various devices and screen sizes.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Modern Technology Stack:** Utilizes React, TypeScript, Vite with SWC ensuring a robust and efficient development process.
+- **Responsive Design:** The website layout adjusts seamlessly to different devices, providing an excellent user experience on desktops, tablets, and smartphones.
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Prerequisites
 
-- Configure the top-level `parserOptions` property like this:
+Before you begin, ensure you have the following installed on your system:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/) (or [Yarn](https://yarnpkg.com/))
+
+### Installation
+
+1. Clone the repository to your local machine:
+
+   ```bash
+   git clone https://github.com/Noah4ever/noah4ever.github.io.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd noah4ever.github.io
+   ```
+
+3. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+### Development
+
+To start the development server, run the following command:
+
+```bash
+npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+This will start the development server, and you can view your website at `http://localhost:5173`.
+
+## Deployment
+
+Once you have merged into the `main` branch, GitHub Pages will automatically build and deploy your app to [thiering.org](https://thiering.org).
+
+## Customization
+
+1. **Edit Content:** Modify the content of the website by updating pages in the `src/pages` and the components `src/components` directory.
+
+2. **Styling:** Customize the styles by modifying the SCSS files in the `src/styles` directory.
+
+3. **Assets** Add assets to the `src/assets` directory.
+
+To import any components or scss files you can use the aliases:
+
+```ts
+alias: {
+   "@": "/src",
+   "@components": "/src/components",
+   "@pages": "/src/pages",
+   "@styles": "/src/styles",
+   "@utils": "/src/utils",
+   "@types": "/src/types",
+   "@assets": "/src/assets",
+},
+```
+
+## Contributing
+
+Contributions are welcome! If you find any issues or have suggestions for improvement, please open an issue or create a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+**Happy coding!** 🚀
