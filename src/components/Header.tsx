@@ -8,14 +8,15 @@ import {
 } from "react-icons/hi";
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [lightMode, setLightMode] = useState(true);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [lightMode, setLightMode] = useState<boolean>(true);
+
   function handleMenuClick() {
     document.querySelector(".header-links")?.classList.toggle("open");
     setMenuOpen(!menuOpen);
   }
   function handleLightMode() {
-    document.querySelector("body")?.classList.toggle("dark");
+    document.body.classList.toggle("dark");
     setLightMode(!lightMode);
   }
 
