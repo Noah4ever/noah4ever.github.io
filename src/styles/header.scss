@@ -72,12 +72,12 @@ $max-width-phone: 700px;
           width: 100%;
           text-align: center;
           color: var(--text-color);
-          animation: 350ms ease-out 0s 1 slideInFromLeftWithOpacitiy;
+          animation: 250ms ease-out 0s 1 slideInFromLeftWithOpacitiy;
         }
 
         @keyframes slideInFromLeftWithOpacitiy {
           0% {
-            transform: translateX(-8ch);
+            transform: translateX(-6ch);
             opacity: 0;
           }
           100% {
