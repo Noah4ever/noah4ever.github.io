@@ -1,0 +1,63 @@
+$max-width-phone: 500px;
+.welcome-container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  margin: 0.5rem 1rem;
+  p {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: -1rem;
+    .welcome-name {
+      font-weight: bold;
+      animation: 5s ease-in-out 0s infinite rainbowTextColor;
+    }
+    @keyframes rainbowTextColor {
+      0% {
+        color: #d94a26;
+      }
+      10% {
+        color: #e67e22;
+      }
+      20% {
+        color: #f1c40f;
+      }
+      30% {
+        color: #2ecc71;
+      }
+      40% {
+        color: #1abc9c;
+      }
+      50% {
+        color: #3498db;
+      }
+      60% {
+        color: #9b59b6;
+      }
+      70% {
+        color: #34495e;
+      }
+      80% {
+        color: #f39c12;
+      }
+      90% {
+        color: #e74c3c;
+      }
+      100% {
+        color: #d94a26;
+      }
+    }
+  }
+  @media screen and (max-width: $max-width-phone) {
+    grid-template-columns: 1fr;
+    grid-gap: 0.25rem;
+    grid-template-rows: 0.25fr 1fr;
+    p {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 0;
+      margin-top: 3rem;
+    }
+  }
+}

@@ -3,7 +3,7 @@ import "@styles/blob-image.scss";
 export default function BlobImage() {
   return (
     <div className="image-container">
-      <svg viewBox="0 0 170 170" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 10 170 170" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="image-blob-gradient">
             <stop offset="0%" />
