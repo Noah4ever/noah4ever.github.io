@@ -13,7 +13,8 @@ body {
   --shadow-color: #999;
   --highlight: #cdcdcd;
   --highlight-color: #000;
-  --primary: #d94a26;
+  --primary: #ff0066;
+  --primary-hover: #b40c4f;
 
   margin: 0;
   background-color: var(--background-color);
@@ -27,5 +28,6 @@ body.dark {
   --shadow-color: #111;
   --highlight: #666;
   --highlight-color: #eee;
-  --primary: #c22f0a;
+  --primary: #ff0066;
+  --primary-hover: #b40c4f;
 }
