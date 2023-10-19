@@ -26,7 +26,7 @@ export default function BlobImage() {
           width="150"
           height="150"
           href={NoahPNG}
-          clip-path="url(#image-blob-clip)"
+          clipPath="url(#image-blob-clip)"
         />
       </svg>
     </div>
