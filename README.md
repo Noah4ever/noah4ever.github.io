@@ -2,21 +2,21 @@
 
 This project is a personal website built using React, TypeScript, and Vite. The website is designed to be responsive, providing an optimal viewing experience across various devices and screen sizes.
 
-## Features
+## ✨ Features
 
 - **Modern Technology Stack:** Utilizes React, TypeScript, Vite with SWC ensuring a robust and efficient development process.
 - **Responsive Design:** The website layout adjusts seamlessly to different devices, providing an excellent user experience on desktops, tablets, and smartphones.
 
-## Getting Started
+## 🚀 Getting Started
 
-### Prerequisites
+### 🎯 Prerequisites
 
 Before you begin, ensure you have the following installed on your system:
 
 - [Node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/) (or [Yarn](https://yarnpkg.com/))
 
-### Installation
+### 💾 Installation
 
 1. Clone the repository to your local machine:
 
@@ -36,7 +36,7 @@ Before you begin, ensure you have the following installed on your system:
    npm install
    ```
 
-### Development
+### 🚧 Development
 
 To start the development server, run the following command:
 
@@ -46,11 +46,11 @@ npm run dev
 
 This will start the development server, and you can view your website at `http://localhost:5173`.
 
-## Deployment
+## 📨 Deployment
 
 Once you have merged into the `main` branch, GitHub Pages will automatically build and deploy your app to [thiering.org](https://thiering.org).
 
-## Customization
+## 🎨 Customization
 
 1. **Edit Content:** Modify the content of the website by updating pages in the `src/pages` and the components `src/components` directory.
 
@@ -72,14 +72,14 @@ alias: {
 },
 ```
 
-## Contributing
+## 📋 Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvement, please open an issue or create a pull request.
 
-## License
+## ✒️ License
 
 This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-**Happy coding!** 🚀
+**Happy coding!** 👨🏻‍💻🚀
