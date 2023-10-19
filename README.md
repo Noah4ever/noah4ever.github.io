@@ -1,4 +1,4 @@
-# Personal Website Project
+# [thiering.org](thiering.org)
 
 This project is a personal website built using React, TypeScript, and Vite. The website is designed to be responsive, providing an optimal viewing experience across various devices and screen sizes.
 
