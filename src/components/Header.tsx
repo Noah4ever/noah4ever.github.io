@@ -35,8 +35,7 @@ export default function Header() {
     <header className="header-container">
       <div className="header-logo-container">
         <div className="header-logo-name-container">
-          <h1 className="header-logo-name lastname">thiering</h1>
-          <h2 className="header-logo-name firstname">noah</h2>
+          <h1 className="header-logo-name lastname">Thiering</h1>
         </div>
       </div>
 
