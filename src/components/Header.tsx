@@ -1,5 +1,6 @@
+import { LocalStorageController } from "@/utils/PersistanceController";
 import "@styles//header.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   HiOutlineMenuAlt3 as Menu,
   HiX as Close,
@@ -8,8 +9,17 @@ import {
 } from "react-icons/hi";
 
 export default function Header() {
+  const persistance = new LocalStorageController();
+
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [lightMode, setLightMode] = useState<boolean>(true);
+
+  useEffect(() => {
+    if (persistance.load("color-scheme") === "dark") {
+      document.body.classList.add("dark");
+      setLightMode(false);
+    }
+  }, []);
 
   function handleMenuClick() {
     document.querySelector(".header-links")?.classList.toggle("open");
@@ -18,6 +28,7 @@ export default function Header() {
   function handleLightMode() {
     document.body.classList.toggle("dark");
     setLightMode(!lightMode);
+    persistance.save("color-scheme", lightMode ? "dark" : "light");
   }
 
   return (
