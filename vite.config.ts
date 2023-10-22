@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 
@@ -13,6 +14,14 @@ export default defineConfig({
       "@utils": "/src/utils",
       "@types": "/src/types",
       "@assets": "/src/assets",
+    },
+  },
+  test: {
+    environment: "jsdom",
+    reporters: ["html"],
+    coverage: {
+      provider: "v8",
+      reporter: ["html"],
     },
   },
 });
