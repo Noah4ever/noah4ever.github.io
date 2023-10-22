@@ -1,7 +1,7 @@
 import Welcome from "@/components/Welcome";
 import Header from "../components/Header";
 import "@styles/app.scss";
-import Contact from "@/components/contact";
+import Contact from "@/components/Contact";
 
 export default function App() {
   return (
