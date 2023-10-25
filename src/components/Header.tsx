@@ -21,25 +21,38 @@ export default function Header() {
     }
   }, []);
 
+  /**
+   * Handles clicks on the menu button.
+   */
   function handleMenuClick() {
+    // Get the menu links element.
+    const menuLinks = document.querySelector(".header-links");
+    if (!menuLinks) return;
+
+    // If the menu is open, close it with animation
     if (menuOpen) {
-      document.querySelector(".header-links")?.classList.add("closing");
-      document.querySelectorAll(".header-links>li").forEach((li) => {
-        li.classList.add("closing");
-      });
+      // Add the 'closing' class to the menu links element and all of its `li` children.
+      menuLinks.classList.add("closing");
+      menuLinks
+        .querySelectorAll("li")
+        .forEach((li) => li.classList.add("closing"));
+
+      // Set a timeout to remove the 'closing' class from the menu links element and all of its `li` children, and to close the menu.
       setTimeout(() => {
-        document.querySelector(".header-links")?.classList.remove("closing");
-        document.querySelectorAll(".header-links>li").forEach((li) => {
-          li.classList.remove("closing");
-        });
-        document.querySelector(".header-links")?.classList.remove("open");
+        menuLinks.classList.remove("closing");
+        menuLinks
+          .querySelectorAll("li")
+          .forEach((li) => li.classList.remove("closing"));
+        menuLinks.classList.remove("open");
         setMenuOpen(!menuOpen);
       }, 250);
     } else {
-      document.querySelector(".header-links")?.classList.add("open");
+      // Open the menu.
+      menuLinks.classList.add("open");
       setMenuOpen(!menuOpen);
     }
   }
+
   function handleLightMode() {
     document.body.classList.toggle("dark");
     setLightMode(!lightMode);
