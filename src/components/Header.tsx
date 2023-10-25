@@ -22,8 +22,23 @@ export default function Header() {
   }, []);
 
   function handleMenuClick() {
-    document.querySelector(".header-links")?.classList.toggle("open");
-    setMenuOpen(!menuOpen);
+    if (menuOpen) {
+      document.querySelector(".header-links")?.classList.add("closing");
+      document.querySelectorAll(".header-links>li").forEach((li) => {
+        li.classList.add("closing");
+      });
+      setTimeout(() => {
+        document.querySelector(".header-links")?.classList.remove("closing");
+        document.querySelectorAll(".header-links>li").forEach((li) => {
+          li.classList.remove("closing");
+        });
+        document.querySelector(".header-links")?.classList.remove("open");
+        setMenuOpen(!menuOpen);
+      }, 250);
+    } else {
+      document.querySelector(".header-links")?.classList.add("open");
+      setMenuOpen(!menuOpen);
+    }
   }
   function handleLightMode() {
     document.body.classList.toggle("dark");
