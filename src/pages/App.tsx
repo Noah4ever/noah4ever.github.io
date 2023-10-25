@@ -8,6 +8,9 @@ export default function App() {
   return (
     <div className="app-container">
       {/* Jump to main content */}
+      <a href="#main" className="skip-link">
+        Skip to main content
+      </a>
       <Header />
       <Welcome />
       <Contact />

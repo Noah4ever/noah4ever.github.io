@@ -37,6 +37,7 @@ export default function Header() {
         .querySelectorAll("li")
         .forEach((li) => li.classList.add("closing"));
 
+      setMenuOpen(!menuOpen);
       // Set a timeout to remove the 'closing' class from the menu links element and all of its `li` children, and to close the menu.
       setTimeout(() => {
         menuLinks.classList.remove("closing");
@@ -44,7 +45,6 @@ export default function Header() {
           .querySelectorAll("li")
           .forEach((li) => li.classList.remove("closing"));
         menuLinks.classList.remove("open");
-        setMenuOpen(!menuOpen);
       }, 250);
     } else {
       // Open the menu.
@@ -68,20 +68,34 @@ export default function Header() {
       </div>
 
       <div className="header-links-container">
-        {menuOpen ? (
-          <Close className="header-link-menu" onClick={handleMenuClick} />
-        ) : (
-          <Menu className="header-link-menu" onClick={handleMenuClick} />
-        )}
+        <button
+          className="header-link-menu-button"
+          id="main"
+          onClick={handleMenuClick}
+        >
+          {menuOpen ? (
+            <Close className="header-link-menu" />
+          ) : (
+            <Menu className="header-link-menu" />
+          )}
+        </button>
         <ul className="header-links">
-          <li onClick={handleMenuClick}>timeline</li>
-          <li onClick={handleMenuClick}>about</li>
-          <li onClick={handleMenuClick}>skills</li>
-          <li onClick={handleMenuClick}>contact</li>
+          <li onClick={handleMenuClick}>
+            <a href="#timeline">timeline</a>
+          </li>
+          <li onClick={handleMenuClick}>
+            <a href="#about">about</a>
+          </li>
+          <li onClick={handleMenuClick}>
+            <a href="#skills">skills</a>
+          </li>
+          <li onClick={handleMenuClick}>
+            <a href="#contact">contact</a>
+          </li>
           <li onClick={handleLightMode}>
-            <div className="header-links-theme-change">
+            <a href="#" className="header-links-theme-change">
               {lightMode ? <Moon /> : <Sun />}
-            </div>
+            </a>
           </li>
         </ul>
       </div>

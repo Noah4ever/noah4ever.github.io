@@ -6,6 +6,22 @@
   color-scheme: light dark;
 }
 
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 250ms ease-out;
+  &:focus {
+    top: 0;
+    opacity: 1;
+  }
+}
+
 body {
   --background-color: #fefefe;
   --background-color-navigation: #f0e2e8d7;
