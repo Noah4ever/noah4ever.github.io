@@ -46,12 +46,14 @@ $max-width-phone: 700px;
     @media screen and (max-width: $max-width-phone) {
       .header-link-menu-button {
         z-index: 3;
-      }
-      .header-link-menu {
-        display: block;
-        font-size: 3rem;
-        font-weight: 600;
-        cursor: pointer;
+        .header-link-menu {
+          display: block;
+          font-size: 3rem;
+          font-weight: 600;
+          fill: var(--text-color);
+          color: var(--text-color);
+          cursor: pointer;
+        }
       }
       .header-links {
         display: none;
@@ -133,7 +135,7 @@ $max-width-phone: 700px;
         list-style-type: none;
         cursor: pointer;
         a {
-          color: var(--text-color-muted);
+          color: var(--text-color);
           text-decoration: none;
           transition: color 75ms ease-out;
           &:hover {
