@@ -1,5 +1,5 @@
-import BlobImage from "@components/BlobImage";
 import "@styles/welcome.scss";
+import BlobImage from "@components/BlobImage";
 
 export default function Welcome() {
   return (

@@ -1,5 +1,5 @@
-import { LocalStorageController } from "@/utils/PersistanceController";
 import "@styles//header.scss";
+import { LocalStorageController } from "@/utils/PersistanceController";
 import { useEffect, useState } from "react";
 import {
   HiOutlineMenuAlt3 as Menu,

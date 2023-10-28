@@ -1,8 +1,8 @@
+import "@styles/contact.scss";
 import {
   HiOutlineMail as Email,
   HiClipboardCopy as Copied,
 } from "react-icons/hi";
-import "@styles/contact.scss";
 
 export default function Contact() {
   const email = "noah.thiering@web.de";
