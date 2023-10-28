@@ -39,7 +39,7 @@ export default function Footer() {
       </div>
       <div className="footer-bottom">
         <p className="footer-copyright">
-          &copy; 2023 Noah Thiering. All rights reserved.
+          &copy; {new Date().getFullYear()} Noah Thiering. All rights reserved.
         </p>
       </div>
     </footer>
