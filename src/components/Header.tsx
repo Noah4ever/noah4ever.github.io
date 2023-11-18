@@ -80,20 +80,32 @@ export default function Header() {
           )}
         </button>
         <ul className="header-links">
-          <li onClick={handleMenuClick}>
-            <a href="#timeline">timeline</a>
+          <li>
+            <a href="#timeline" onClick={handleMenuClick}>
+              timeline
+            </a>
           </li>
-          <li onClick={handleMenuClick}>
-            <a href="#about">about</a>
+          <li>
+            <a href="#about" onClick={handleMenuClick}>
+              about
+            </a>
           </li>
-          <li onClick={handleMenuClick}>
-            <a href="#skills">skills</a>
+          <li>
+            <a href="#skills" onClick={handleMenuClick}>
+              skills
+            </a>
           </li>
-          <li onClick={handleMenuClick}>
-            <a href="#contact">contact</a>
+          <li>
+            <a href="#contact" onClick={handleMenuClick}>
+              contact
+            </a>
           </li>
-          <li onClick={handleLightMode}>
-            <a href="#" className="header-links-theme-change">
+          <li>
+            <a
+              href="#"
+              onClick={handleLightMode}
+              className="header-links-theme-change"
+            >
               {lightMode ? <Moon /> : <Sun />}
             </a>
           </li>
