@@ -1,32 +1,25 @@
 import "@styles/contact.scss";
-import {
-  HiOutlineMail as Email,
-  HiClipboardCopy as Copied,
-} from "react-icons/hi";
+import React from "react";
+import { HiMail as Email, HiCheckCircle as Check } from "react-icons/hi";
 
 export default function Contact() {
+  const [copied, setCopied] = React.useState(false);
   const email = "noah.thiering@web.de";
 
   const copyToClipboard = () => {
+    setCopied(true);
     navigator.clipboard.writeText(email);
-    const copiedButton = document.querySelector(
-      ".contact-button-copied"
-    ) as HTMLElement;
-    copiedButton.style.display = "flex";
-
-    setTimeout(function () {
-      copiedButton.style.display = "none";
-    }, 1500);
+    setTimeout(() => setCopied(false), 1500);
   };
 
   return (
     <div className="contact-container">
       <button className="contact-button" onClick={copyToClipboard}>
-        Copy Email <Email />
+        Copy Email{" "}
+        <span className="contact-button-icon">
+          {copied ? <Check /> : <Email />}
+        </span>
       </button>
-      <div className="contact-button-copied">
-        <Copied />
-      </div>
     </div>
   );
 }

@@ -1,51 +1,40 @@
+$color: #ebebeb;
+$hover: var(--primary-hover);
+
 .contact-container {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
   .contact-button {
     background-color: var(--primary);
-    color: #fff;
+    color: $color;
     border: none;
     border-radius: 4px;
     padding: 10px 20px;
     font-size: 16px;
-    cursor: pointer;
+    font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1ch;
     transition: background-color 0.3s ease;
     z-index: 1;
-
+    cursor: pointer;
     &:hover {
-      background-color: var(--primary-hover);
+      background-color: $hover;
     }
 
     &:active {
-      background-color: var(--primary-hover);
+      background-color: $hover;
     }
-  }
-  .contact-button-copied {
-    display: none;
-    background-color: var(--primary-hover);
-    justify-content: center;
-    align-items: center;
-    width: 1.5rem;
-    border-radius: 4px;
-    animation: slideIn 100ms ease-out;
-    z-index: 9;
-    svg {
-      fill: white;
-      width: 1.5rem;
-      aspect-ratio: 1;
-    }
-  }
-  @keyframes slideIn {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
+    .contact-button-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        width: 20px;
+        aspect-ratio: 1;
+      }
     }
   }
 }
