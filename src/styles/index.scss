@@ -4,6 +4,7 @@
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
+  scroll-behavior: smooth;
 }
 
 .skip-link {
@@ -30,8 +31,11 @@ body {
   --shadow-color: #999;
   --highlight: #cdcdcd;
   --highlight-color: #000;
-  --primary: #ff0066;
-  --primary-hover: #b40c4f;
+  --primary: #219b8d;
+  --primary-hover: #096358;
+
+  --blob-image-color-left: #ff0066;
+  --blob-image-color-right: #7c0c39;
 
   margin: 0;
   background-color: var(--background-color);
@@ -48,6 +52,6 @@ body.dark {
   --shadow-color: #111;
   --highlight: #666;
   --highlight-color: #eee;
-  --primary: #ff0066;
-  --primary-hover: #b40c4f;
+  --primary: #219b8d;
+  --primary-hover: #096358;
 }

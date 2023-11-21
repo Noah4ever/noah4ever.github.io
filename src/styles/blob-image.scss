@@ -9,10 +9,10 @@
   svg {
     #image-blob-gradient {
       stop:nth-child(1) {
-        stop-color: #ff0066;
+        stop-color: var(--blob-image-color-left);
       }
       stop:nth-child(2) {
-        stop-color: #7c0c39;
+        stop-color: var(--blob-image-color-right);
       }
     }
     path {
