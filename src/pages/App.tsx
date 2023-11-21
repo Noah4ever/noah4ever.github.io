@@ -1,7 +1,7 @@
 import "@styles/app.scss";
 import Header from "../components/Header";
 import Welcome from "@/components/Welcome";
-import Contact from "@/components/Contact";
+import Content from "@/components/Content";
 import Footer from "@/components/Footer";
 
 export default function App() {
@@ -12,7 +12,7 @@ export default function App() {
       </a>
       <Header />
       <Welcome />
-      <Contact />
+      <Content />
       <Footer />
     </div>
   );
