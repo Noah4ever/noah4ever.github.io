@@ -4,8 +4,10 @@ import { useEffect, useRef, useState } from "react";
 
 export default function WordShowcase({
   words,
+  random,
 }: {
   readonly words: readonly string[];
+  readonly random?: boolean;
 }) {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -17,20 +19,30 @@ export default function WordShowcase({
   const animationOut: string = "animate__flipOutX";
 
   useEffect(() => {
-    const change = setInterval(() => {
+    function change() {
       textRef.current?.classList.remove(animationIn);
       textRef.current?.classList.add(animationOut);
+
       setTimeout(() => {
-        setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+        let newIndex;
+        do {
+          // the new index should be different from the current index
+          newIndex = random
+            ? Math.floor(Math.random() * words.length)
+            : (currentWordIndex + 1) % words.length;
+        } while (newIndex === currentWordIndex);
+        setCurrentWordIndex(newIndex);
         textRef.current?.classList.remove(animationOut);
         textRef.current?.classList.add(animationIn);
       }, flipDuration);
-    }, wordDuration);
+    }
+
+    const intervalId = setInterval(change, wordDuration);
 
     return () => {
-      clearInterval(change);
+      clearInterval(intervalId);
     };
-  }, [words]);
+  }, [words, random, currentWordIndex]);
 
   return (
     <div
