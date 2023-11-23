@@ -1,13 +1,16 @@
 import "@styles/welcome.scss";
 import BlobImage from "@components/BlobImage";
+import WordShowcase from "./WordShowcase";
 
 export default function Welcome() {
   return (
     <div className="welcome-container">
-      <p>
-        Hey, I'm <span className="welcome-name">Noah</span>! A software
-        developer.
-      </p>
+      <div className="welcome-container-title">
+        Hey, I'm <span className="welcome-name">Noah</span>! A{" "}
+        <WordShowcase
+          words={["web developer.", "software developer.", "ui designer."]}
+        />
+      </div>
       <BlobImage />
     </div>
   );

@@ -5,10 +5,11 @@ $max-width-phone: 500px;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
   margin: 0.5rem 1rem;
-  p {
-    text-align: center;
+  .welcome-container-title {
+    text-align: left;
     font-size: 2rem;
-    margin-top: -1rem;
+    margin-top: 1rem;
+    padding-left: 2rem;
     .welcome-name {
       font-weight: bold;
       animation: 5s ease-in-out 0s infinite rainbowTextColor;
