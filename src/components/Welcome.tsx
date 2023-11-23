@@ -8,7 +8,13 @@ export default function Welcome() {
       <div className="welcome-container-title">
         Hey, I'm <span className="welcome-name">Noah</span>! A{" "}
         <WordShowcase
-          words={["web developer.", "software developer.", "ui designer."]}
+          words={[
+            "web developer.",
+            "react native developer.",
+            "software developer.",
+            "react developer.",
+            "mobile developer.",
+          ]}
         />
       </div>
       <BlobImage />
