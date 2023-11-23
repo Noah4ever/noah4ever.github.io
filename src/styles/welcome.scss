@@ -54,7 +54,7 @@ $max-width-phone: 500px;
     grid-template-columns: 1fr;
     grid-gap: 0.25rem;
     grid-template-rows: 0.25fr 1fr;
-    p {
+    .welcome-container-title {
       text-align: center;
       font-size: 1.5rem;
       margin-bottom: 0;
