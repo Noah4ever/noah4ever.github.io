@@ -8,12 +8,13 @@ export default function WordShowcase({
   readonly words: readonly string[];
 }) {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const textRef = useRef<HTMLSpanElement>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const textRef = useRef<any>(null);
 
-  const flipDuration = 500;
-  const wordDuration = 2500;
-  const animationIn = "animate__flipInX";
-  const animationOut = "animate__flipOutX";
+  const flipDuration: number = 500;
+  const wordDuration: number = 2500;
+  const animationIn: string = "animate__flipInX";
+  const animationOut: string = "animate__flipOutX";
 
   useEffect(() => {
     const change = setInterval(() => {
