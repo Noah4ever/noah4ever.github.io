@@ -11,9 +11,12 @@ export default function Welcome() {
           words={[
             "web developer.",
             "react native developer.",
+            "frontend stack developer.",
             "software developer.",
             "react developer.",
+            "full stack developer.",
             "mobile developer.",
+            "backend stack developer.",
           ]}
         />
       </div>
