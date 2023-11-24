@@ -138,13 +138,12 @@ export default function Header() {
             </a>
           </li>
           <li>
-            <a
-              href="#"
+            <span
               onClick={handleLightMode}
               className="header-links-theme-change"
             >
               {lightMode ? <Moon /> : <Sun />}
-            </a>
+            </span>
           </li>
         </ul>
       </div>
