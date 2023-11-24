@@ -4,7 +4,7 @@ $max-width-phone: 700px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 50px;
+  height: 60px;
   position: fixed;
   top: 0;
   transition: top 150ms ease-in-out;
@@ -12,7 +12,7 @@ $max-width-phone: 700px;
   z-index: 1000;
   backdrop-filter: blur(10px);
   &.header-up {
-    top: -50px;
+    top: -60px;
   }
   .header-logo-container {
     margin-left: 1rem;
