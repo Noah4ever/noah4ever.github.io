@@ -19,7 +19,7 @@ export default function Header() {
   const [lastScrollTop, setLastScrollTop] = useState<number>(0);
 
   useEffect(() => {
-    const handleScroll = () => {
+    function handleScroll() {
       const currentScrollTop =
         window.scrollY || document.documentElement.scrollTop;
 
@@ -30,7 +30,7 @@ export default function Header() {
       }
 
       setLastScrollTop(currentScrollTop);
-    };
+    }
 
     window.addEventListener("scroll", handleScroll);
 
