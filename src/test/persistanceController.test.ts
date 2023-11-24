@@ -19,6 +19,12 @@ describe("LocalStorageController", () => {
     const controller = new LocalStorageController();
     expect(controller.load("nonExistentKey")).toBeNull();
   });
+
+  test("delete data", () => {
+    const controller = new LocalStorageController();
+    controller.delete("testKey");
+    expect(controller.load("testKey")).toBeNull();
+  });
 });
 
 describe("CookiesController", () => {
@@ -35,5 +41,11 @@ describe("CookiesController", () => {
   test("load non-existent data", () => {
     const controller = new CookiesController();
     expect(controller.load("nonExistentKey")).toBeNull();
+  });
+
+  test("delete data", () => {
+    const controller = new CookiesController();
+    controller.delete("testKey");
+    expect(controller.load("testKey")).toBeNull();
   });
 });
