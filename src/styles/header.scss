@@ -4,7 +4,18 @@ $max-width-phone: 700px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  transition: top 0.2s ease-in-out;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  &.header-up {
+    top: -50px;
+  }
   .header-logo-container {
+    margin-left: 1rem;
     .header-logo-name-container {
       .header-logo-name {
         font-weight: 600;
@@ -46,6 +57,7 @@ $max-width-phone: 700px;
     @media screen and (max-width: $max-width-phone) {
       .header-link-menu-button {
         z-index: 3;
+        margin-right: 0.5rem;
         .header-link-menu {
           display: block;
           font-size: 3rem;
@@ -57,6 +69,7 @@ $max-width-phone: 700px;
       }
       .header-links {
         display: none;
+        margin-right: 0rem !important;
         transition: background-color 170ms ease-out;
         li {
           display: none;
@@ -127,6 +140,7 @@ $max-width-phone: 700px;
       justify-content: space-between;
       align-items: center;
       padding-left: 0;
+      margin-right: 1.5rem;
       li {
         margin-left: 1.5rem;
         font-size: 1.5rem;

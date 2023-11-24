@@ -1,6 +1,6 @@
 import "@styles//header.scss";
 import { LocalStorageController } from "@/utils/PersistanceController";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   HiOutlineMenuAlt3 as Menu,
   HiX as Close,
@@ -11,15 +11,52 @@ import {
 export default function Header() {
   const persistance = new LocalStorageController();
 
+  const headerRef = useRef<HTMLElement>(null);
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [lightMode, setLightMode] = useState<boolean>(true);
 
+  const [isScrollingUp, setIsScrollingUp] = useState<boolean>(false);
+  const [lastScrollTop, setLastScrollTop] = useState<number>(0);
+
   useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollTop =
+        window.scrollY || document.documentElement.scrollTop;
+
+      if (currentScrollTop > lastScrollTop) {
+        setIsScrollingUp(true);
+      } else {
+        setIsScrollingUp(false);
+      }
+
+      setLastScrollTop(currentScrollTop);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
     if (persistance.load("color-scheme") === "dark") {
       document.body.classList.add("dark");
       setLightMode(false);
     }
-  }, []);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollTop]);
+
+  useEffect(() => {
+    const applyHeaderClass = () => {
+      if (headerRef.current) {
+        const { classList } = headerRef.current;
+        isScrollingUp
+          ? classList.add("header-up")
+          : classList.remove("header-up");
+      }
+    };
+
+    const intervalId = setInterval(applyHeaderClass, 250);
+
+    return () => clearInterval(intervalId);
+  }, [isScrollingUp]);
 
   /**
    * Handles clicks on the menu button.
@@ -60,7 +97,7 @@ export default function Header() {
   }
 
   return (
-    <header className="header-container">
+    <header className="header-container" ref={headerRef}>
       <div className="header-logo-container">
         <div className="header-logo-name-container">
           <h1 className="header-logo-name lastname">Thiering</h1>
