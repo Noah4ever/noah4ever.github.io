@@ -34,9 +34,9 @@ export default function Header() {
 
     window.addEventListener("scroll", handleScroll);
 
-    if (persistance.load("color-scheme") === "dark") {
-      document.body.classList.add("dark");
-      setLightMode(false);
+    if (persistance.load("color-scheme") === "light") {
+      document.body.classList.add("light");
+      setLightMode(true);
     }
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -91,9 +91,9 @@ export default function Header() {
   }
 
   function handleLightMode() {
-    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
     setLightMode(!lightMode);
-    persistance.save("color-scheme", lightMode ? "dark" : "light");
+    persistance.save("color-scheme", lightMode ? "light" : "dark");
   }
 
   return (
@@ -109,6 +109,7 @@ export default function Header() {
           className="header-link-menu-button"
           id="main"
           onClick={handleMenuClick}
+          aria-label="On mobile open menu with links to other sections"
         >
           {menuOpen ? (
             <Close className="header-link-menu" />

@@ -3,7 +3,7 @@
   font-family: "Roboto", sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color-scheme: light dark;
+  color-scheme: dark light;
   scroll-behavior: smooth;
 }
 
@@ -23,7 +23,7 @@
   }
 }
 
-body {
+body.light {
   --background-color: #fefefe;
   --background-color-navigation: #f0e2e8d7;
   --text-color: #272727;
@@ -31,6 +31,18 @@ body {
   --shadow-color: #999;
   --highlight: #cdcdcd;
   --highlight-color: #000;
+  --primary: #219b8d;
+  --primary-hover: #096358;
+}
+
+body {
+  --background-color: #1d1d1d;
+  --background-color-navigation: #252123d7;
+  --text-color: #dddddd;
+  --text-color-muted: #999;
+  --shadow-color: #111;
+  --highlight: #666;
+  --highlight-color: #eee;
   --primary: #219b8d;
   --primary-hover: #096358;
 
@@ -42,16 +54,4 @@ body {
   color: var(--text-color);
 
   transition: background-color 170ms ease-out;
-}
-
-body.dark {
-  --background-color: #1d1d1d;
-  --background-color-navigation: #252123d7;
-  --text-color: #dddddd;
-  --text-color-muted: #999;
-  --shadow-color: #111;
-  --highlight: #666;
-  --highlight-color: #eee;
-  --primary: #219b8d;
-  --primary-hover: #096358;
 }
