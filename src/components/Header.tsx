@@ -37,6 +37,8 @@ export default function Header() {
     if (persistance.load("color-scheme") === "light") {
       document.body.classList.add("light");
       setLightMode(true);
+    } else {
+      setLightMode(false);
     }
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -93,7 +95,7 @@ export default function Header() {
   function handleLightMode() {
     document.body.classList.toggle("light");
     setLightMode(!lightMode);
-    persistance.save("color-scheme", lightMode ? "light" : "dark");
+    persistance.save("color-scheme", !lightMode ? "light" : "dark");
   }
 
   return (
