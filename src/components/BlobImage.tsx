@@ -1,5 +1,5 @@
 import "@styles/blob-image.scss";
-import NoahPNG from "@assets/noah.png";
+import NoahPicture from "@assets/noah.webp";
 
 export default function BlobImage() {
   // SVG path to animate to
@@ -35,7 +35,7 @@ export default function BlobImage() {
           y="20"
           width="150"
           height="150"
-          href={NoahPNG}
+          href={NoahPicture}
           clipPath="url(#image-blob-clip)"
         />
       </svg>
