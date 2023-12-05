@@ -7,6 +7,7 @@ import {
   HiSun as Sun,
   HiOutlineMoon as Moon,
 } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const persistance = new LocalStorageController();
@@ -17,6 +18,19 @@ export default function Header() {
 
   const [isScrollingUp, setIsScrollingUp] = useState<boolean>(false);
   const [lastScrollTop, setLastScrollTop] = useState<number>(0);
+
+  const [showLinks, setShowLinks] = useState<boolean>(false);
+
+  useEffect(() => {
+    console.log(location);
+    if (location.hash === "#/" || location.hash === "") {
+      console.log("show links");
+      setShowLinks(true);
+    } else {
+      console.log("hide links");
+      setShowLinks(false);
+    }
+  }, []);
 
   useEffect(() => {
     function handleScroll() {
@@ -100,7 +114,9 @@ export default function Header() {
     <header className="header-container" ref={headerRef}>
       <div className="header-logo-container">
         <div className="header-logo-name-container">
-          <h1 className="header-logo-name lastname">Thiering</h1>
+          <Link className="header-logo-name lastname" to={"/"}>
+            Thiering
+          </Link>
         </div>
       </div>
 
@@ -118,26 +134,33 @@ export default function Header() {
           )}
         </button>
         <ul className="header-links">
-          <li>
-            <a href="#timeline" onClick={handleMenuClick}>
-              timeline
-            </a>
-          </li>
-          <li>
-            <a href="#about" onClick={handleMenuClick}>
-              about
-            </a>
-          </li>
-          <li>
-            <a href="#skills" onClick={handleMenuClick}>
-              skills
-            </a>
-          </li>
-          <li>
-            <a href="#contact" onClick={handleMenuClick}>
-              contact
-            </a>
-          </li>
+          {showLinks ? (
+            <>
+              <li>
+                <a href="#timeline" onClick={handleMenuClick}>
+                  timeline
+                </a>
+              </li>
+              <li>
+                <a href="#about" onClick={handleMenuClick}>
+                  about
+                </a>
+              </li>
+              <li>
+                <a href="#skills" onClick={handleMenuClick}>
+                  skills
+                </a>
+              </li>
+              <li>
+                <a href="#contact" onClick={handleMenuClick}>
+                  contact
+                </a>
+              </li>
+            </>
+          ) : (
+            <></>
+          )}
+
           <li>
             <span
               onClick={handleLightMode}

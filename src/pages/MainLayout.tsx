@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import { LocalStorageController } from "@/utils/PersistanceController";
 import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
@@ -25,10 +26,16 @@ function MainLayout() {
     }
   }, []);
   return (
-    <main>
-      {/* Render the child routes */}
-      <Outlet />
-    </main>
+    <>
+      <a href="#main" className="skip-link">
+        Skip to main content
+      </a>
+      <Header />
+      <main>
+        {/* Render the child routes */}
+        <Outlet />
+      </main>
+    </>
   );
 }
 

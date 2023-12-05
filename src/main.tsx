@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./pages/App.tsx";
 import "@styles/index.scss";
 import { RouterProvider, createHashRouter } from "react-router-dom";
-import Privacy from "./pages/Privacy.tsx";
+
 import MainLayout from "./pages/MainLayout.tsx";
+import App from "./pages/App.tsx";
+import Privacy from "./pages/Privacy.tsx";
 import ToS from "./pages/ToS.tsx";
+import Imprint from "./pages/Imprint.tsx";
 
 const router = createHashRouter([
   {
@@ -23,6 +25,10 @@ const router = createHashRouter([
       {
         path: "/tos",
         element: <ToS />,
+      },
+      {
+        path: "/imprint",
+        element: <Imprint />,
       },
     ],
   },
