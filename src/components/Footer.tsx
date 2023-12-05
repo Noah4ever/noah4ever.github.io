@@ -1,5 +1,6 @@
 import "@styles/footer.scss";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -7,10 +8,10 @@ export default function Footer() {
       <div className="footer-content">
         <ul className="footer-list">
           <li className="footer-list-item">
-            <a href="/privacy">Privacy Policy</a>
+            <Link to="/privacy">Privacy Policy</Link>
           </li>
           <li className="footer-list-item">
-            <a href="/tos">Terms of Service</a>
+            <Link to="/tos">Terms of Service</Link>
           </li>
           <li className="footer-list-item">
             <a href="#contact">Contact Me</a>
