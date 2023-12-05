@@ -4,6 +4,11 @@ import { LocalStorageController } from "@/utils/PersistanceController";
 
 export default function Privacy() {
   const persistance = new LocalStorageController();
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="privacy-container">
       <a href="/">Back</a>

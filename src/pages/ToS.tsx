@@ -2,6 +2,9 @@ import React from "react";
 import "@styles/tos.scss";
 
 export default function ToS() {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="tos-container">
       <a href="/">Back</a>
