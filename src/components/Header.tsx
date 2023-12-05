@@ -22,12 +22,9 @@ export default function Header() {
   const [showLinks, setShowLinks] = useState<boolean>(false);
 
   useEffect(() => {
-    console.log(location);
     if (location.hash === "#/" || location.hash === "") {
-      console.log("show links");
       setShowLinks(true);
     } else {
-      console.log("hide links");
       setShowLinks(false);
     }
   }, []);
