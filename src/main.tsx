@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./pages/App.tsx";
 import "@styles/index.scss";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 import Privacy from "./pages/Privacy.tsx";
 import MainLayout from "./pages/MainLayout.tsx";
 import ToS from "./pages/ToS.tsx";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <MainLayout />,
