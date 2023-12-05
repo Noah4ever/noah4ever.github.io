@@ -14,7 +14,7 @@ export default function Footer() {
             <Link to="/tos">Terms of Service</Link>
           </li>
           <li className="footer-list-item">
-            <a href="#contact">Contact Me</a>
+            <Link to="#contact">Contact Me</Link>
           </li>
         </ul>
         <ul className="footer-social-list">
