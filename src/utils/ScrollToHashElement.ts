@@ -5,11 +5,7 @@ export default function ScrollToHashElement() {
   const { hash } = useLocation();
 
   const hashElement = useMemo(() => {
-    if (hash) {
-      return document.getElementById(hash.slice(1));
-    } else {
-      return null;
-    }
+    return hash ? document.getElementById(hash.slice(1)) : null;
   }, [hash]);
 
   useEffect(() => {
