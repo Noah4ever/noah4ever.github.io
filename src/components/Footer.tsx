@@ -23,6 +23,7 @@ export default function Footer() {
               href="https://github.com/Noah4ever"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub Profile"
             >
               <FaGithub className="footer-social-media-icon" />
             </a>
@@ -32,6 +33,7 @@ export default function Footer() {
               href="https://www.linkedin.com/in/noah-thiering/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
             >
               <FaLinkedin className="footer-social-media-icon" />
             </a>
