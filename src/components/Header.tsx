@@ -7,7 +7,7 @@ import {
   HiSun as Sun,
   HiOutlineMoon as Moon,
 } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Header() {
   const persistance = new LocalStorageController();
@@ -21,13 +21,15 @@ export default function Header() {
 
   const [showLinks, setShowLinks] = useState<boolean>(false);
 
+  const location = useLocation();
+
   useEffect(() => {
-    if (location.hash === "#/" || location.hash === "") {
+    if (location.pathname === "/") {
       setShowLinks(true);
     } else {
       setShowLinks(false);
     }
-  }, []);
+  }, [location]);
 
   useEffect(() => {
     function handleScroll() {
@@ -134,24 +136,24 @@ export default function Header() {
           {showLinks ? (
             <>
               <li>
-                <a href="#timeline" onClick={handleMenuClick}>
+                <Link to="#timeline" onClick={handleMenuClick}>
                   timeline
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#about" onClick={handleMenuClick}>
+                <Link to="#about" onClick={handleMenuClick}>
                   about
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#skills" onClick={handleMenuClick}>
+                <Link to="#skills" onClick={handleMenuClick}>
                   skills
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#contact" onClick={handleMenuClick}>
+                <Link to="#contact" onClick={handleMenuClick}>
                   contact
-                </a>
+                </Link>
               </li>
             </>
           ) : (
