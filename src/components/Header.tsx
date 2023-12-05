@@ -13,7 +13,7 @@ export default function Header() {
 
   const headerRef = useRef<HTMLElement>(null);
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  const [lightMode, setLightMode] = useState<boolean>(true);
+  const [lightmode, setLightMode] = useState<boolean>(false);
 
   const [isScrollingUp, setIsScrollingUp] = useState<boolean>(false);
   const [lastScrollTop, setLastScrollTop] = useState<number>(0);
@@ -34,12 +34,6 @@ export default function Header() {
 
     window.addEventListener("scroll", handleScroll);
 
-    if (persistance.load("color-scheme") === "light") {
-      document.body.classList.add("light");
-      setLightMode(true);
-    } else {
-      setLightMode(false);
-    }
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -94,8 +88,12 @@ export default function Header() {
 
   function handleLightMode() {
     document.body.classList.toggle("light");
-    setLightMode(!lightMode);
-    persistance.save("color-scheme", !lightMode ? "light" : "dark");
+    const colorScheme = persistance.load("color-scheme");
+    persistance.save(
+      "color-scheme",
+      colorScheme === "light" ? "dark" : "light"
+    );
+    setLightMode(!lightmode);
   }
 
   return (
@@ -145,7 +143,7 @@ export default function Header() {
               onClick={handleLightMode}
               className="header-links-theme-change"
             >
-              {lightMode ? <Moon /> : <Sun />}
+              {persistance.load("color-scheme") == "light" ? <Moon /> : <Sun />}
             </span>
           </li>
         </ul>

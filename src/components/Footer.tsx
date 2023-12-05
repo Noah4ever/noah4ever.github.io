@@ -7,13 +7,13 @@ export default function Footer() {
       <div className="footer-content">
         <ul className="footer-list">
           <li className="footer-list-item">
-            <a href="#">Privacy Policy</a>
+            <a href="/privacy">Privacy Policy</a>
           </li>
           <li className="footer-list-item">
-            <a href="#">Terms of Service</a>
+            <a href="/tos">Terms of Service</a>
           </li>
           <li className="footer-list-item">
-            <a href="#">Contact Me</a>
+            <a href="#contact">Contact Me</a>
           </li>
         </ul>
         <ul className="footer-social-list">
