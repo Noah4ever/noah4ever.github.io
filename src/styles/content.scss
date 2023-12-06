@@ -19,13 +19,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    cursor: pointer;
-    &:hover::before {
-      content: "🔗";
-      position: absolute;
-      font-size: 1.5rem;
-      left: -2rem;
-    }
   }
   p {
     margin-top: 0rem;

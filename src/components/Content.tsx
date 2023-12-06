@@ -1,23 +1,7 @@
 import "@styles/content.scss";
 import Contact from "@components/Contact";
-import { useEffect } from "react";
 
 export default function Content() {
-  function copyURL(id: string) {
-    const url = window.location.origin + "/#" + id;
-    navigator.clipboard.writeText(url);
-  }
-
-  useEffect(() => {
-    const ids = ["timeline", "about", "skills", "contact"];
-    ids.forEach((id) => {
-      const element = document.getElementById(id);
-      if (element) {
-        element.addEventListener("click", () => copyURL(id));
-      }
-    });
-  }, []);
-
   return (
     <div className="content-container">
       <div className="content content-timeline-container">
