@@ -151,12 +151,29 @@ $max-width-phone: 700px;
         a {
           color: var(--text-color);
           text-decoration: none;
-          transition: color 75ms ease-out;
+          display: inline-block;
+          position: relative;
           &:hover {
             color: var(--text-color);
-            text-decoration: underline;
+            &::after {
+              width: 100%;
+              left: 0;
+            }
+          }
+          &::after {
+            background: none repeat scroll 0 0 transparent;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 3px;
+            left: 50%;
+            position: absolute;
+            background-color: var(--text-color);
+            transition: width 0.2s ease 0s, left 0.2s ease 0s;
+            width: 0;
           }
         }
+
         .header-links-theme-change {
           display: flex;
           align-items: center;
