@@ -1,4 +1,17 @@
 .imprint-container {
   padding-top: 3rem;
   margin: 1rem;
+  .imprint-list {
+    p {
+      margin: 0;
+    }
+    li {
+      font-size: 1.25rem;
+      h3,
+      h4 {
+        margin-top: 0.5em;
+        margin-bottom: 0;
+      }
+    }
+  }
 }
