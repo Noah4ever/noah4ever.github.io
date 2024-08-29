@@ -13,9 +13,9 @@ export default function Footer() {
           <li className="footer-list-item">
             <Link to="/tos">Terms of Service</Link>
           </li>
-          <li className="footer-list-item">
+          {/* <li className="footer-list-item">
             <Link to="/imprint">Imprint</Link>
-          </li>
+          </li> */}
           <li className="footer-list-item">
             <Link to="#contact">Contact Me</Link>
           </li>
