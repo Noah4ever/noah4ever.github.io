@@ -1,7 +1,7 @@
 .timeline-container {
   display: flex;
   flex-direction: row;
-  overflow-x: scroll;
+  overflow-x: auto;
   .timeline-line {
     position: relative;
     border-top: 4px solid var(--primary);
