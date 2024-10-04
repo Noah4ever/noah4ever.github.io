@@ -22,13 +22,13 @@ $max-width-phone: 700px;
         margin-block: 0;
         color: var(--text-color);
         text-decoration: none;
+        font-family: "Courier New", Courier, monospace;
+        span {
+          color: var(--text-color-muted);
+        }
       }
       .header-logo-name.lastname {
         font-size: 2.5rem;
-      }
-      .header-logo-name.firstname {
-        font-size: 1.75rem;
-        line-height: 0.25rem;
       }
       @media screen and (max-width: $max-width-phone) {
         .header-logo-name.lastname {

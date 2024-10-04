@@ -1,12 +1,13 @@
 import "@styles/content.scss";
 import Contact from "@components/Contact";
+import Timeline from "./Timeline";
 
 export default function Content() {
   return (
     <div className="content-container">
       <div className="content content-timeline-container">
         <h2 id="timeline">🚧 timeline 👷</h2>
-        <p>🦺 Under construction!</p>
+        <Timeline />
       </div>
       <div className="content content-biography-container">
         <h2 id="about">🔎 about</h2>

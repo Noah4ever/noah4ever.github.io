@@ -114,7 +114,9 @@ export default function Header() {
       <div className="header-logo-container">
         <div className="header-logo-name-container">
           <Link className="header-logo-name lastname" to={"/"}>
-            Thiering
+            <span>{"{"}</span>
+            T
+            <span>{"}"}</span>
           </Link>
         </div>
       </div>
