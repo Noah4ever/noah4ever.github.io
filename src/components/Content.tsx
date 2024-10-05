@@ -1,12 +1,13 @@
 import "@styles/content.scss";
 import Contact from "@components/Contact";
 import Timeline from "./Timeline";
+import Skills from "./Skills";
 
 export default function Content() {
   return (
     <div className="content-container">
       <div className="content content-timeline-container">
-        <h2 id="timeline">🚧 timeline 👷</h2>
+        <h2 id="timeline">🎞️ timeline</h2>
         <Timeline />
       </div>
       <div className="content content-biography-container">
@@ -19,8 +20,8 @@ export default function Content() {
         </p>
       </div>
       <div className="content content-skills-container">
-        <h2 id="skills">🚧 skills 👷</h2>
-        <p>🦺 Under construction!</p>
+        <h2 id="skills">🎯 skills</h2>
+        <Skills />
       </div>
       <div className="content content-contact-container">
         <h2 id="contact">📧 contact</h2>

@@ -1,0 +1,26 @@
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  margin-top: 20px;
+  gap: 0.5rem;
+  .skill {
+    background-color: var(--highlight);
+    text-decoration: none;
+    color: var(--text-color);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem;
+    justify-content: center;
+    transition: background-color 0.1s;
+    img {
+      width: 30px;
+      margin-right: 5px;
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: var(--highlight-hover);
+    }
+  }
+}
