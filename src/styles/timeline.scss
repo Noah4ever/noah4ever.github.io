@@ -19,6 +19,7 @@
     .timeline-line-content {
       margin-left: 1rem;
       color: var(--text-color);
+      word-wrap: break-word;
     }
     &::before {
       content: "";
