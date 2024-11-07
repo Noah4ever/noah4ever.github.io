@@ -1,0 +1,19 @@
+:root {
+  --color-background: #f2f2f2;
+  --color-navigation-background: #cdcecfc2;
+  --color-text: #0f0f0f;
+  --color-text-invert: #f2f2f2;
+  --color-text-muted: #4e4e4e;
+  --color-accent: rgba(19, 81, 221, 1);
+  --color-accent-hover: rgb(19, 55, 140);
+}
+
+[data-theme="dark"] {
+  --color-background: #03121f;
+  --color-navigation-background: #303f4cae;
+  --color-text: #f2f2f2;
+  --color-text-invert: #0f0f0f;
+  --color-text-muted: #a7a4a4;
+  --color-accent: rgba(19, 81, 221, 1);
+  --color-accent-hover: rgb(19, 55, 140);
+}

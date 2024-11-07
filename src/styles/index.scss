@@ -1,0 +1,17 @@
+@import url("./variables.scss");
+@import url("https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Roboto:ital,wght@0,400&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  scroll-behavior: smooth;
+  transition: background-color 0.1s ease;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}

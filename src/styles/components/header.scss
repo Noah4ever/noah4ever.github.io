@@ -1,0 +1,25 @@
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.25rem 1rem;
+  z-index: 12;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: top 150ms ease-in-out;
+  &.header-hide {
+    top: -72px;
+  }
+  .header-logo {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 3.5rem;
+    .header-logo-around {
+      color: var(--color-accent);
+    }
+  }
+}
