@@ -70,12 +70,6 @@ export default function Navigationbar() {
             <div className="navigation-link-name">Projects</div>
           </a>
         </li>
-        <li className="navigation-item">
-          <a href="#contact" className="navigation-link" aria-label="Jump to contact section">
-            <Contact />
-            <div className="navigation-link-name">Contact</div>
-          </a>
-        </li>
       </ul>
     </nav>
   );

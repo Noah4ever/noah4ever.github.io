@@ -1,5 +1,6 @@
 {
-  "name": "newthiering-org",
+  "name": "thiering-org",
+  "homepage": "https://thiering.org",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +8,8 @@
     "dev": "vite --host",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "immer": "^10.1.1",

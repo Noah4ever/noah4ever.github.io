@@ -1,6 +1,14 @@
 .theme-switch-container {
   .theme-switch {
+    cursor: pointer;
+    user-select: none;
     transition: transform 0.2s ease;
+    &:hover {
+      transform: scale(1.1);
+      svg {
+        color: var(--color-accent);
+      }
+    }
     &:active {
       transform: scale(0.9);
     }
