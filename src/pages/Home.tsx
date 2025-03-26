@@ -1,7 +1,6 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-// import Navigationbar from "@/components/NavigationBar";
-import "@styles/pages/new_home.scss";
+import "@styles/pages/home.scss";
 import { useEffect, useState } from "react";
 import { IoLogoGithub as Github } from "react-icons/io5";
 import { IoLogoLinkedin as LinkedIn } from "react-icons/io5";
@@ -250,7 +249,11 @@ export default function Home() {
               </a>
             </li>
             <li>
-              <a href="#about">
+              <a
+                href="#about"
+                onClick={(e) => {
+                  e.currentTarget.blur();
+                }}>
                 <Arrow />
                 About me
               </a>
