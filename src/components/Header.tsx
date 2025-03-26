@@ -31,11 +31,11 @@ export default function Header() {
 
   return (
     <header className="header-container" ref={headerRef}>
-      <div className="header-logo">
+      <a className="header-logo" href="#home">
         <span className="header-logo-around">{"{"}</span>
         <span className="header-logo-center">T</span>
         <span className="header-logo-around">{"}"}</span>
-      </div>
+      </a>
       <ThemeSwitch />
     </header>
   );

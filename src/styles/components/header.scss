@@ -18,6 +18,8 @@
   .header-logo {
     font-family: "Courier New", Courier, monospace;
     font-size: 3.5rem;
+    text-decoration: none;
+    color: var(--color-text);
     .header-logo-around {
       color: var(--color-accent);
     }

@@ -25,6 +25,7 @@ export default function Home() {
     };
 
     window.addEventListener("scroll", handleScroll);
+
     // Cleanup the event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -36,18 +37,7 @@ export default function Home() {
   const transitionDuration = 400; // in ms
 
   const handleSkillClick = (skillName: string, e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
-    const existingClickedClassOut = document.querySelectorAll(".skill-clicked-out");
-    if (existingClickedClassOut) {
-      existingClickedClassOut.forEach((element) => {
-        element.classList.remove("skill-clicked-out");
-      });
-    }
-    const existingClickedClassIn = document.querySelectorAll(".skill-clicked-in");
-    if (existingClickedClassIn) {
-      existingClickedClassIn.forEach((element) => {
-        element.classList.remove("skill-clicked-in");
-      });
-    }
+    removeClickedClasses();
     // If not active, animate it to the center with a flip.
     if (activeSkill !== skillName) {
       const rect = e.currentTarget.getBoundingClientRect();
@@ -81,26 +71,43 @@ export default function Home() {
       });
     } else {
       // Closing: animate the card back to its grid position.
-      const liElement = document.getElementById(`skill-${skillName}`);
-      if (liElement) {
-        const rect = liElement.getBoundingClientRect();
-        const descriptionElement = document.getElementById(`skill-description-${skillName}`);
-        if (descriptionElement) {
-          descriptionElement.classList.add("skill-clicked-out");
-        }
-        setActiveStyle({
-          position: "fixed",
-          top: rect.top,
-          left: rect.left,
-          width: rect.width,
-          height: rect.height,
-          zIndex: 1000,
-        });
-        setTimeout(() => {
-          setActiveSkill(null);
-          setActiveStyle({});
-        }, transitionDuration);
+      closeActiveSkill();
+    }
+  };
+
+  function removeClickedClasses() {
+    const classes = ["skill-clicked-out", "skill-clicked-in"];
+    classes.forEach((className) => {
+      const elements = document.querySelectorAll(`.${className}`);
+      elements.forEach((element) => {
+        element.classList.remove(className);
+      });
+    });
+  }
+
+  // Close active skill with an animation back to its grid position.
+  const closeActiveSkill = () => {
+    removeClickedClasses();
+    if (!activeSkill) return;
+    const liElement = document.getElementById(`skill-${activeSkill}`);
+    if (liElement) {
+      const rect = liElement.getBoundingClientRect();
+      const descriptionElement = document.getElementById(`skill-description-${activeSkill}`);
+      if (descriptionElement) {
+        descriptionElement.classList.add("skill-clicked-out");
       }
+      setActiveStyle({
+        position: "fixed",
+        top: rect.top,
+        left: rect.left,
+        width: rect.width,
+        height: rect.height,
+        zIndex: 1000,
+      });
+      setTimeout(() => {
+        setActiveSkill(null);
+        setActiveStyle({});
+      }, transitionDuration);
     }
   };
 
@@ -156,10 +163,10 @@ export default function Home() {
   ];
 
   return (
-    <div className="home-container">
+    <div className="home-container" id="home">
       <Header />
       {/* <Navigationbar /> */}
-      <section id="home">
+      <section id="home-content">
         <div className="home-top-container">
           <div className="home-picture-container">
             <div className="home-picture-blob">
@@ -271,7 +278,6 @@ export default function Home() {
 
       <section id="about">
         <h2>About me</h2>
-        <p></p>
         <div className="about-container blur-container">
           <h3>Personal</h3>
           <p>
@@ -309,6 +315,10 @@ export default function Home() {
           </ul>
         </div>
       </section>
+
+      {/* Overlay that darkens the background when a skill is active */}
+      {activeSkill && <div className="popup-overlay" onClick={closeActiveSkill}></div>}
+
       <Footer />
     </div>
   );
