@@ -117,24 +117,23 @@
           height: 100px;
           list-style: none;
           a {
-            border: 2px solid transparent;
-            border-radius: 10px;
-            padding: 0.5rem 0.5rem;
             display: flex;
-            transition: all 100ms ease;
             flex-direction: column;
             align-items: center;
             gap: 0.5rem;
-            text-decoration: none;
+            color: var(--color-text);
             background-color: var(--color-background-blur);
             backdrop-filter: blur(100px);
+            padding: 0.5rem 0.5rem;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            transition: all 100ms ease;
+            text-decoration: none;
             white-space: nowrap;
-            color: var(--color-text);
-            &:focus {
-              outline: none;
-              border-color: transparent;
-            }
 
+            .clicked-link {
+              background-color: red !important;
+            }
             &:hover {
               border: 2px solid var(--color-accent);
               color: var(--color-accent);
@@ -400,6 +399,15 @@
       margin-block: 1rem;
       padding-inline: 10%;
       line-height: 3.5ch;
+      a {
+        color: var(--color-text);
+        text-decoration-color: var(--color-text);
+        transition: all 100ms ease;
+        &:hover {
+          color: var(--color-accent);
+          text-decoration-color: var(--color-accent);
+        }
+      }
     }
   }
 }

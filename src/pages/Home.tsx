@@ -146,7 +146,7 @@ export default function Home() {
       name: "C++",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
       description:
-        "During my initial IT assistant training between 2019 and 2021, C++ was the first programming language I learned. I used it to create console applications back then and later applied it at work in combination with Qt Widgets. Nowadays, I don't use C++ as often, as my focus has shifted towards web technologies.",
+        "During my initial IT assistant training between 2019 and 2021, C++ was the first programming language I learned. I used it to create console applications back then and later applied it at work in combination with Qt Widgets. Nowadays, I don't use C++ as often, as my focus has shifted towards web technologies. However, I still use it for some ESP32 microcontroller projects.",
     },
     {
       name: "Git",
@@ -256,11 +256,7 @@ export default function Home() {
               </a>
             </li>
             <li>
-              <a
-                href="#about"
-                onClick={(e) => {
-                  e.currentTarget.blur();
-                }}>
+              <a href="#about">
                 <Arrow />
                 About me
               </a>
@@ -281,8 +277,9 @@ export default function Home() {
         <div className="about-container blur-container">
           <h3>Personal</h3>
           <p>
-            I have been developing my skills since 2021, after completing my initial training. I specialize in web
-            development using TypeScript and React ⚛️. I'm passionate about finding innovative solutions for any
+            I have been developing my skills since 2021, after completing my initial training. Currently I'm studying
+            computer science at the <a href="https://www.uni-bremen.de/en/">University of Bremen</a>. I specialize in
+            web development using TypeScript and React ⚛️. I'm passionate about finding innovative solutions for any
             project! 💻🔧
           </p>
         </div>
