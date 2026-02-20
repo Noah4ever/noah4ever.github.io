@@ -1,4 +1,5 @@
 import "@styles/pages/giftboard.scss";
+import { useThemeStore } from "@/stores/ThemeStore";
 import {
     IoGiftOutline as GiftIcon,
     IoLinkOutline as LinkIcon,
@@ -10,6 +11,18 @@ import {
 } from "react-icons/io5";
 
 export default function Giftboard() {
+    const theme = useThemeStore((state) => state.theme);
+    const showDarkmodeScreenshots = theme === "dark";
+
+    const themedProjectImage = (stem: string) => {
+        const suffix = showDarkmodeScreenshots ? "-darkmode" : "";
+        return `/Projects/${stem}${suffix}.png`;
+    };
+
+    const themePreviewImage = theme === "dark"
+        ? "/Projects/giftboard-theme-lightmode.png"
+        : "/Projects/giftboard-theme-darkmode.png";
+
     return (
         <>
             <section className="giftboard-hero" aria-labelledby="giftboard-title">
@@ -74,27 +87,27 @@ export default function Giftboard() {
 
                     <figure className="giftboard-gallery-item">
                         <img
-                            src="/Projects/giftboard-view-from-outside.png"
-                            alt="Giftboard shared outside view"
+                            src={themedProjectImage("giftboard-hero")}
+                            alt="Giftboard hero view in the alternate theme"
                             loading="lazy"
                         />
-                        <figcaption>Shared view with reservations</figcaption>
+                        <figcaption>Hero view</figcaption>
                     </figure>
                     <figure className="giftboard-gallery-item">
                         <img
-                            src="/Projects/giftboard-wishes-overview.png"
-                            alt="Giftboard wishes overview"
+                            src={themedProjectImage("giftboard-wishes-overview")}
+                            alt="Giftboard wishes overview in the alternate theme"
                             loading="lazy"
                         />
-                        <figcaption>Wishes overview</figcaption>
+                        <figcaption>Wishes overview as List owner</figcaption>
                     </figure>
                     <figure className="giftboard-gallery-item">
                         <img
-                            src="/Projects/giftboard-darkmode.png"
-                            alt="Giftboard dark mode"
+                            src={themePreviewImage}
+                            alt="Giftboard theme preview in the alternate theme"
                             loading="lazy"
                         />
-                        <figcaption>Darkmode</figcaption>
+                        <figcaption>Theme preview</figcaption>
                     </figure>
                 </div>
             </section>
@@ -193,19 +206,19 @@ export default function Giftboard() {
                 </h2>
                 <figure className="giftboard-bottom-image-figure">
                     <img
-                        src="/Projects/giftboard-create-wish.png"
-                        alt="Giftboard create wish view"
+                        src={themedProjectImage("giftboard-create-wish")}
+                        alt="Giftboard create wish view in the alternate theme"
                         loading="lazy"
                     />
-                    <figcaption>Creating a wishlist</figcaption>
+                    <figcaption>Adding a wish</figcaption>
                 </figure>
             </section>
 
             <section className="giftboard-bottom-image" aria-labelledby="giftboard-bottom-image-heading">
                 <figure className="giftboard-bottom-image-figure">
                     <img
-                        src="/Projects/giftboard-board-overview.png"
-                        alt="Giftboard board overview"
+                        src={themedProjectImage("giftboard-board-overview")}
+                        alt="Giftboard board overview in the alternate theme"
                         loading="lazy"
                     />
                     <figcaption>Board overview</figcaption>

@@ -144,9 +144,6 @@
         border: 1px solid transparent;
         transition: border-color 200ms ease;
 
-        &:hover {
-            border-color: var(--color-accent-muted);
-        }
 
         strong {
             display: block;
@@ -203,9 +200,6 @@
     border: 1px solid transparent;
     transition: border-color 200ms ease;
 
-    &:hover {
-        border-color: var(--color-accent-muted);
-    }
 
     .giftboard-tech-card-icon {
         margin-bottom: 0.5rem;
