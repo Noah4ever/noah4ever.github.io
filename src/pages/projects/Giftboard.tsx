@@ -23,6 +23,20 @@ export default function Giftboard() {
         ? "/Projects/giftboard-theme-lightmode.png"
         : "/Projects/giftboard-theme-darkmode.png";
 
+    const highlightJson = (json: string) => {
+        const escaped = json
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;");
+
+        return escaped
+            .replace(/("(?:\\.|[^"\\])*")(?=\s*:)/g, '<span class="json-key">$1</span>')
+            .replace(/:\s*("(?:\\.|[^"\\])*")/g, ': <span class="json-string">$1</span>')
+            .replace(/(:\s*)(-?\d+(?:\.\d+)?)/g, '$1<span class="json-number">$2</span>')
+            .replace(/\b(true|false)\b/g, '<span class="json-boolean">$1</span>')
+            .replace(/\bnull\b/g, '<span class="json-null">null</span>');
+    };
+
     return (
         <>
             <section className="giftboard-hero" aria-labelledby="giftboard-title">
@@ -223,6 +237,160 @@ export default function Giftboard() {
                     />
                     <figcaption>Board overview</figcaption>
                 </figure>
+            </section>
+
+            <section
+                className="project-section giftboard-json-showcase"
+                aria-labelledby="giftboard-json-heading"
+            >
+                <h2 id="giftboard-json-heading">Wishlist JSON showcase</h2>
+                <p>
+                    This is how one complete wishlist is stored. I split it into
+                    the main parts so it is easier to understand.
+                </p>
+
+                <article className="giftboard-json-part" aria-labelledby="giftboard-json-list-meta">
+                    <h3 id="giftboard-json-list-meta">1) List metadata</h3>
+                    <p>
+                        Basic info about the wishlist itself: title, share code,
+                        owner and creation time.
+                    </p>
+                    <pre>
+                        <code dangerouslySetInnerHTML={{
+                            __html: highlightJson(`{
+    "id": "b2a8ce80-89e4-4f0a-97f0-26c7ebf6ab4f",
+    "title": "Birthday 2026",
+    "code": "noah-bday-2026",
+    "owner": "Noah",
+    "description": "Gift ideas for my birthday",
+    "createdAt": "2026-01-06T14:37:33.938Z"
+}`)
+                        }} />
+                    </pre>
+                </article>
+
+                <article className="giftboard-json-part" aria-labelledby="giftboard-json-wishes">
+                    <h3 id="giftboard-json-wishes">2) Wishes</h3>
+                    <p>
+                        Each wish has title, priority, link/image data and quantity.
+                        Amazon links can include fetched image and price.
+                    </p>
+                    <pre>
+                        <code dangerouslySetInnerHTML={{
+                            __html: highlightJson(`"wishes": [
+    {
+        "id": "98fbc148-4df3-43f7-a8be-0a5337b10cbf",
+        "title": "The Lord of the Rings Box Set",
+        "priority": "high",
+        "description": "Hardcover edition",
+        "link": "https://www.amazon.de/dp/0261103563",
+        "image": "https://m.media-amazon.com/images/I/71+4WXa9RfL._SY385_.jpg",
+        "price": 33.34,
+        "priceRange": "",
+        "quantity": 1,
+        "createdAt": "2026-01-06T14:51:08.312Z"
+    },
+    {
+        "id": "7f82dc66-f60d-428d-b68a-d84f5871723a",
+        "title": "Mechanical keyboard wrist rest",
+        "priority": "medium",
+        "description": "Walnut wood",
+        "link": "",
+        "image": "",
+        "price": null,
+        "priceRange": "20-35",
+        "quantity": 1,
+        "createdAt": "2026-01-06T15:12:23.003Z"
+    }
+]`)
+                        }} />
+                    </pre>
+                </article>
+
+                <article className="giftboard-json-part" aria-labelledby="giftboard-json-reserve-state">
+                    <h3 id="giftboard-json-reserve-state">3) Reservations and state</h3>
+                    <p>
+                        Reservation fields keep track of who already committed to a
+                        gift, while the owner still cannot see that in the UI.
+                    </p>
+                    <pre>
+                        <code dangerouslySetInnerHTML={{
+                            __html: highlightJson(`{
+    "reservations": [
+        {
+            "userName": "Ashley",
+            "at": "2026-01-06T15:50:42.171Z"
+        }
+    ],
+    "reservedCount": 1,
+    "ticked": true,
+    "tickedBy": "Ashley",
+    "tickedAt": "2026-01-06T15:50:42.171Z"
+}`)
+                        }} />
+                    </pre>
+                </article>
+
+                <article className="giftboard-json-part" aria-labelledby="giftboard-json-full">
+                    <h3 id="giftboard-json-full">4) Full example</h3>
+                    <pre>
+                        <code dangerouslySetInnerHTML={{
+                            __html: highlightJson(`{
+    "lists": [
+        {
+            "id": "b2a8ce80-89e4-4f0a-97f0-26c7ebf6ab4f",
+            "title": "Birthday 2026",
+            "code": "noah-bday-2026",
+            "owner": "Noah",
+            "description": "Gift ideas for my birthday",
+            "createdAt": "2026-01-06T14:37:33.938Z",
+            "wishes": [
+                {
+                    "id": "98fbc148-4df3-43f7-a8be-0a5337b10cbf",
+                    "title": "The Lord of the Rings Box Set",
+                    "priority": "high",
+                    "description": "Hardcover edition",
+                    "link": "https://www.amazon.de/dp/0261103563",
+                    "image": "https://m.media-amazon.com/images/I/71+4WXa9RfL._SY385_.jpg",
+                    "price": 33.34,
+                    "priceRange": "",
+                    "quantity": 1,
+                    "reservations": [
+                        {
+                            "userName": "Ashley",
+                            "at": "2026-01-06T15:50:42.171Z"
+                        }
+                    ],
+                    "reservedCount": 1,
+                    "ticked": true,
+                    "tickedBy": "Ashley",
+                    "tickedAt": "2026-01-06T15:50:42.171Z",
+                    "createdAt": "2026-01-06T14:51:08.312Z"
+                },
+                {
+                    "id": "7f82dc66-f60d-428d-b68a-d84f5871723a",
+                    "title": "Mechanical keyboard wrist rest",
+                    "priority": "medium",
+                    "description": "Walnut wood",
+                    "link": "",
+                    "image": "",
+                    "price": null,
+                    "priceRange": "20-35",
+                    "quantity": 1,
+                    "reservations": [],
+                    "reservedCount": 0,
+                    "ticked": false,
+                    "tickedBy": null,
+                    "tickedAt": null,
+                    "createdAt": "2026-01-06T15:12:23.003Z"
+                }
+            ]
+        }
+    ]
+}`)
+                        }} />
+                    </pre>
+                </article>
             </section>
         </>
     );
