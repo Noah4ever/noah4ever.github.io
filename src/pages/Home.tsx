@@ -7,6 +7,7 @@ import { IoLogoLinkedin as LinkedIn } from "react-icons/io5";
 import { IoMailOutline as EMail } from "react-icons/io5";
 import { IoArrowDownOutline as Arrow } from "react-icons/io5";
 import { IoArrowDownCircleOutline as ScrollDownArrow } from "react-icons/io5";
+import { IoArrowForwardOutline as ProjectCardArrow } from "react-icons/io5";
 
 export default function Home() {
   window.onmouseup = (event) => event.preventDefault();
@@ -214,7 +215,7 @@ export default function Home() {
                   transform="translate(100 100) rotate(200, 0 ,0)"
                 />
 
-                <image
+                {/* <image
                   transform=""
                   clipPath="url(#blob-clip)"
                   href="/Noah.png"
@@ -222,6 +223,15 @@ export default function Home() {
                   y={50}
                   width="150"
                   height="150"
+                /> */}
+                <image
+                  clipPath="url(#blob-clip)"
+                  href="/Noah-900.webp"
+                  x={15}
+                  y={50}
+                  width="150"
+                  height="150"
+                  preserveAspectRatio="xMidYMid meet"
                 />
               </svg>
             </div>
@@ -298,7 +308,7 @@ export default function Home() {
                     style={activeSkill === skill.name ? activeStyle : {}}>
                     <div className="card-face">
                       <div className="card-thumbnail">
-                        <img src={skill.icon} alt={`${skill.name} icon`} />
+                        <img src={skill.icon} alt={`${skill.name} icon`} loading="lazy" decoding="async" />
                         <span>{skill.name}</span>
                       </div>
                       <div className="card-description" id={`skill-description-${skill.name}`}>
@@ -311,6 +321,29 @@ export default function Home() {
             ))}
           </ul>
         </div>
+
+        <section className="about-container projects-container" aria-labelledby="projects-heading">
+          <h3 id="projects-heading">Projects</h3>
+          <ul className="projects-list" role="list">
+            <li>
+              <a className="project-card-link" href="/projects/giftboard" aria-label="Open Giftboard project page">
+                <span className="project-card-indicator" aria-hidden="true">
+                  <ProjectCardArrow />
+                </span>
+                <article className="project-card" aria-labelledby="project-giftboard-title">
+                  <h4 id="project-giftboard-title">Giftboard</h4>
+                  <p>
+                    Wishlist app for birthdays and occasions. Share a list, let others reserve gifts, and avoid
+                    duplicate presents while keeping surprises intact.
+                  </p>
+                </article>
+                <div className="project-card-media">
+                  <img src="/Projects/giftboard-hero.png" alt="Giftboard board overview" loading="lazy" />
+                </div>
+              </a>
+            </li>
+          </ul>
+        </section>
       </section>
 
       {/* Overlay that darkens the background when a skill is active */}
