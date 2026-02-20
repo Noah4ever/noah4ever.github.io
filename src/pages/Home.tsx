@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import ProjectCardLink from "@/components/ProjectCardLink";
 import "@styles/pages/home.scss";
 import { useEffect, useState } from "react";
 import { IoLogoGithub as Github } from "react-icons/io5";
@@ -7,7 +8,6 @@ import { IoLogoLinkedin as LinkedIn } from "react-icons/io5";
 import { IoMailOutline as EMail } from "react-icons/io5";
 import { IoArrowDownOutline as Arrow } from "react-icons/io5";
 import { IoArrowDownCircleOutline as ScrollDownArrow } from "react-icons/io5";
-import { IoArrowForwardOutline as ProjectCardArrow } from "react-icons/io5";
 
 export default function Home() {
   window.onmouseup = (event) => event.preventDefault();
@@ -326,21 +326,25 @@ export default function Home() {
           <h3 id="projects-heading">Projects</h3>
           <ul className="projects-list" role="list">
             <li>
-              <a className="project-card-link" href="/projects/giftboard" aria-label="Open Giftboard project page">
-                <span className="project-card-indicator" aria-hidden="true">
-                  <ProjectCardArrow />
-                </span>
-                <article className="project-card" aria-labelledby="project-giftboard-title">
-                  <h4 id="project-giftboard-title">Giftboard</h4>
-                  <p>
-                    Wishlist app for birthdays and occasions. Share a list, let others reserve gifts, and avoid
-                    duplicate presents while keeping surprises intact.
-                  </p>
-                </article>
-                <div className="project-card-media">
-                  <img src="/Projects/giftboard-hero.png" alt="Giftboard board overview" loading="lazy" />
-                </div>
-              </a>
+              <ProjectCardLink
+                title="Giftboard"
+                description="Wishlist app for birthdays and occasions. Share a list, let others reserve gifts, and avoid duplicate presents while keeping surprises intact."
+                imageSrc="/Projects/giftboard-hero.png"
+                href="/projects/giftboard"
+                ariaLabel="Open Giftboard project page"
+                imageAlt="Giftboard board overview"
+              />
+            </li>
+
+            <li>
+              <ProjectCardLink
+                title="Custom Party App"
+                description="Custom party app we built for my father-in-law's 49th birthday party. It features a 'find your partner' game, a quiz about him, a shared photo gallery and more. Built with React Native and TypeScript."
+                imageSrc="/Projects/party-landingpage.png"
+                href="/projects/custom-party-app"
+                ariaLabel="Open Custom Party App project page"
+                imageAlt="Custom Party App landing page"
+              />
             </li>
           </ul>
         </section>
