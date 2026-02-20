@@ -28,6 +28,18 @@
         max-width: 520px;
         margin: 0 auto;
         line-height: 1.6;
+
+        .giftboard-inline-link {
+            color: var(--color-accent);
+            text-decoration-color: var(--color-accent);
+            text-underline-offset: 2px;
+
+            &:hover,
+            &:focus-visible {
+                color: var(--color-accent-hover);
+                text-decoration-color: var(--color-accent-hover);
+            }
+        }
     }
 }
 

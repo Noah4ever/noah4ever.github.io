@@ -18,7 +18,7 @@ export default function Giftboard() {
                 </div>
                 <h1 id="giftboard-title">Giftboard</h1>
                 <p className="giftboard-tagline">
-                    A gift wishlist I built so my girlfriend doesn't have to
+                    A gift wishlist I built so <a href="https://ashley.thiering.org" className="giftboard-inline-link">my girlfriend</a> doesn't have to
                     coordinate everyone's presents anymore.
                 </p>
             </section>
