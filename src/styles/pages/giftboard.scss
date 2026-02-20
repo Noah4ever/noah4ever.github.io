@@ -306,6 +306,72 @@
     }
 }
 
+/* ─── Scrape explainer code blocks ─── */
+.giftboard-scrape-explainer {
+    pre {
+        margin: 0 0 1rem;
+        padding: 0.85rem;
+        border-radius: 10px;
+        border: 1px solid var(--color-background-skill);
+        background-color: var(--color-background-skill);
+        overflow-x: auto;
+        scrollbar-color: var(--color-text-deep-muted) transparent;
+
+        &::-webkit-scrollbar {
+            height: 10px;
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-corner {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--color-text-deep-muted);
+            border-radius: 999px;
+            border: 2px solid transparent;
+            background-clip: content-box;
+        }
+    }
+
+    code {
+        font-family: "Roboto Mono", monospace;
+        font-size: 0.82rem;
+        line-height: 1.55;
+        color: var(--color-text);
+        white-space: pre;
+
+        .ts-keyword,
+        .json-key {
+            color: var(--color-accent);
+        }
+
+        .ts-string,
+        .json-string {
+            color: var(--color-picture-blob-2);
+        }
+
+        .ts-number,
+        .json-number {
+            color: var(--color-picture-blob-1);
+        }
+
+        .ts-type,
+        .json-boolean {
+            color: var(--color-accent-hover);
+        }
+
+        .ts-comment,
+        .json-null {
+            color: var(--color-text-muted);
+        }
+    }
+}
+
 [data-theme="light"] .giftboard-json-showcase {
     .giftboard-json-part code {
         .json-string {
@@ -326,6 +392,31 @@
     }
 }
 
+[data-theme="light"] .giftboard-scrape-explainer {
+    code {
+
+        .ts-string,
+        .json-string {
+            color: #0b7f5f;
+        }
+
+        .ts-number,
+        .json-number {
+            color: #1f4ea8;
+        }
+
+        .ts-type,
+        .json-boolean {
+            color: #174182;
+        }
+
+        .ts-comment,
+        .json-null {
+            color: #5d636a;
+        }
+    }
+}
+
 [data-theme="dark"] .giftboard-json-showcase {
     .giftboard-json-part code {
         .json-key {
@@ -336,6 +427,31 @@
             color: #1ce8ae;
         }
 
+        .json-number {
+            color: #0059ff;
+        }
+    }
+}
+
+[data-theme="dark"] .giftboard-scrape-explainer {
+    code {
+
+        .ts-keyword,
+        .json-key {
+            color: #3a80f9;
+        }
+
+        .ts-string,
+        .json-string {
+            color: #1ce8ae;
+        }
+
+        .ts-type,
+        .json-boolean {
+            color: #d6601c;
+        }
+
+        .ts-number,
         .json-number {
             color: #0059ff;
         }

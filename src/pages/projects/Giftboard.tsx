@@ -37,6 +37,20 @@ export default function Giftboard() {
             .replace(/\bnull\b/g, '<span class="json-null">null</span>');
     };
 
+    const highlightTypeScript = (code: string) => {
+        const escaped = code
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;");
+
+        return escaped
+            .replace(/(\/\/.*$)/gm, '<span class="ts-comment">$1</span>')
+            .replace(/("(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|`(?:\\.|[^`\\])*`)/g, '<span class="ts-string">$1</span>')
+            .replace(/\b(async|await|const|let|return|if|try|catch|null|type)\b/g, '<span class="ts-keyword">$1</span>')
+            .replace(/\b(app|fetch|Request|Response|URL|AbortSignal)\b/g, '<span class="ts-type">$1</span>')
+            .replace(/\b(\d+(?:\.\d+)?)\b/g, '<span class="ts-number">$1</span>');
+    };
+
     return (
         <>
             <section className="giftboard-hero" aria-labelledby="giftboard-title">
@@ -240,13 +254,127 @@ export default function Giftboard() {
             </section>
 
             <section
+                className="project-section giftboard-scrape-explainer"
+                aria-labelledby="giftboard-scrape-heading"
+            >
+                <h2 id="giftboard-scrape-heading">How price and image scraping works</h2>
+                <p>
+                    When I paste a product link, the frontend sends it to a
+                    backend endpoint. That keeps scraping logic and
+                    anti-bot request headers on the server instead of exposing
+                    them in the browser.
+                </p>
+                <pre>
+                    <code dangerouslySetInnerHTML={{
+                        __html: highlightTypeScript(String.raw`type PriceRequestBody = { url?: string };
+
+app.post("/price", async (
+    req: Request<unknown, unknown, PriceRequestBody>,
+    res: Response,
+) => {
+    const { url } = req.body;
+    if (typeof url !== "string" || !url.trim()) {
+        return res.status(400).json({ message: "url is required" });
+    }
+
+    const safeUrl = await assertSafePublicHttpUrl(url);
+    const resp = await fetch(safeUrl.toString(), {
+        headers: humanRequestHeaders(safeUrl.toString()),
+        redirect: "follow",
+        signal: AbortSignal.timeout(8000),
+    });
+
+    const html = await resp.text();
+    const source = chooseMetaSource(new URL(resp.url).hostname, await loadMetaSources());
+    const price = extractPriceFromHtml(html, source);
+    const image = extractImageFromSource(html, source);
+
+    return res.json({ price: price ?? null, image: image ?? null });
+});`)
+                    }} />
+                </pre>
+                <p>
+                    I route this through <strong>POST</strong> so the payload is
+                    explicit in the request body and easier to validate. The
+                    server first sanitizes and verifies the URL, then blocks local
+                    or private-network targets to reduce SSRF risk.
+                </p>
+                <p>
+                    After fetching the provided page, it chooses host-specific extraction
+                    rules, reads structured metadata/selectors, and returns only
+                    the normalized fields the app needs: <strong>price</strong> and
+                    <strong> image</strong>. Timeouts and null fallbacks keep the
+                    wishlist flow responsive even when scraping fails.
+                </p>
+                <p>
+                    The selector rules come from a <strong>meta-sources.json</strong>
+                    file. For each supported shop, I map domains to the exact DOM
+                    selectors for price and image fields. This part is manual on
+                    purpose because every storefront has different markup. This is an
+                    example for Amazon domains:
+                </p>
+                <pre>
+                    <code dangerouslySetInnerHTML={{
+                        __html: highlightJson(String.raw`[
+    {
+        "name": "amazon",
+        "domains": [
+            "amazon.com",
+            "amazon.de",
+            "amazon.co.uk",
+            "amazon.fr",
+            "amazon.es",
+            "amzn.eu"
+        ],
+        "selectors": {
+            "whole": { "type": "classText", "value": "a-price-whole" },
+            "fraction": { "type": "classText", "value": "a-price-fraction" },
+            "symbol": { "type": "classText", "value": "a-price-symbol" },
+            "image": { "type": "attr", "selector": "#landingImage", "attr": "src" },
+            "dynamicImage": {
+                "type": "attr",
+                "selector": "#landingImage",
+                "attr": "data-a-dynamic-image",
+                "parse": "jsonKey"
+            },
+            "altImage": {
+                "type": "attr",
+                "selector": "#landingImage",
+                "attr": "data-old-hires"
+            }
+        },
+        "fallbackRegexes": [
+            "\\\"price\\\"\\s*:\\s*\\\"([0-9.,]+)\\\"",
+            "price\":\"([0-9.,]+)\"",
+            "\\$(\\d+[\\d.,]*)"
+        ]
+    }
+]`)
+                    }} />
+                </pre>
+                <p>
+                    I have to maintain these selectors manually, but that tradeoff
+                    gives me predictable extraction per domain and makes breakages
+                    easier to fix when a site changes its HTML.
+                </p>
+            </section>
+
+            <section
                 className="project-section giftboard-json-showcase"
                 aria-labelledby="giftboard-json-heading"
             >
                 <h2 id="giftboard-json-heading">Wishlist JSON showcase</h2>
                 <p>
-                    This is how one complete wishlist is stored. I split it into
-                    the main parts so it is easier to understand.
+                    This JSON is the actual persisted data model behind Giftboard.
+                    Whenever someone performs an action (for example adding a wish,
+                    editing details, or reserving an item), the REST API updates
+                    this structure and writes the latest state back to storage.
+                    I chose JSON here because this started as a small family
+                    project and I did not want to set up a full database for it.
+                    If usage grows later, I can migrate the same structure into a
+                    proper database.
+                    I split one full example into parts below so it is easier to
+                    understand what each field is used for.
                 </p>
 
                 <article className="giftboard-json-part" aria-labelledby="giftboard-json-list-meta">
