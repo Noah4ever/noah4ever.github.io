@@ -143,7 +143,7 @@ export default function Giftboard() {
             <ImageBorder
               src={themedProjectImage("giftboard-hero")}
               alt="Giftboard hero view in the alternate theme"
-              frame="chrome"
+              frame="safari"
             />
             <figcaption>Hero view</figcaption>
           </figure>
@@ -276,7 +276,7 @@ export default function Giftboard() {
           <ImageBorder
             src={themedProjectImage("giftboard-board-overview")}
             alt="Giftboard board overview in the alternate theme"
-            frame="safari"
+            frame="chrome"
           />
           <figcaption>Board overview</figcaption>
         </figure>
