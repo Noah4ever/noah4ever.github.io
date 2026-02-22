@@ -146,7 +146,7 @@
             background-color: var(--color-background-blur);
             backdrop-filter: blur(100px);
             padding: 0.5rem 0.5rem;
-            border: 2px solid transparent;
+            border: 2px solid var(--color-background-skill);
             border-radius: 10px;
             transition: all 100ms ease;
             text-decoration: none;
@@ -378,7 +378,7 @@
               position: relative;
               transform-style: preserve-3d; // Enable 3D for children
 
-              border: 2px solid transparent;
+              border: 2px solid var(--color-background-skill);
 
               &:hover {
                 border: 2px solid var(--color-accent);
