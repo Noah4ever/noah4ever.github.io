@@ -1,0 +1,194 @@
+{
+    "header": {
+        "logoAria": "Go to homepage",
+        "themeSwitchAria": "Toggle color theme",
+        "languageSwitchAria": "Switch language"
+    },
+    "footer": {
+        "copyright": "© {{year}} Noah Thiering. All rights reserved."
+    },
+    "projectLayout": {
+        "backAria": "Back to homepage",
+        "backLabel": "Back to portfolio"
+    },
+    "imageBorder": {
+        "closeWindow": "Close window",
+        "minimizeWindow": "Minimize window",
+        "expandWindow": "Expand window",
+        "close": "Close",
+        "minimize": "Minimize",
+        "expand": "Expand",
+        "switchToChromeFrame": "Switch to Chrome frame",
+        "switchToChrome": "Switch to Chrome",
+        "switchToSafariFrame": "Switch to Safari frame",
+        "switchToSafari": "Switch to Safari"
+    },
+    "home": {
+        "hero": {
+            "meLabel": "that's me",
+            "greeting": "Hey, I'm",
+            "name": "Noah Thiering",
+            "rolePrefix": "a",
+            "role": "Software Developer"
+        },
+        "links": {
+            "github": "GitHub",
+            "linkedin": "LinkedIn",
+            "email": "E-Mail",
+            "about": "About me"
+        },
+        "scroll": {
+            "label": "Scroll down"
+        },
+        "about": {
+            "title": "About me",
+            "personalTitle": "Personal",
+            "personalText": "I have been developing my skills since 2021, after completing my initial training. Currently I'm studying computer science at the <0>University of Bremen</0>. I specialize in web development using TypeScript and React ⚛️. I'm passionate about finding innovative solutions for any project! 💻🔧",
+            "skillsTitle": "Skills",
+            "skillsSubtitle": "Click on a skill to learn more",
+            "projectsTitle": "Projects"
+        },
+        "skills": {
+            "items": {
+                "typescript": {
+                    "name": "TypeScript",
+                    "description": "Back in 2021, during my apprenticeship, a friend introduced me to TypeScript. Before that, I was working with JavaScript and PHP, skills I picked up during my IT assistant training from 2019 to 2021. Once I started using TypeScript, I was hooked and have incorporated it into both personal and professional projects ever since."
+                },
+                "react": {
+                    "name": "React",
+                    "description": "I was introduced to ReactJS in 2021. Prior to this, I had experimented with EJS, a templating engine that allows embedding JavaScript code within HTML templates. While EJS served its purpose, discovering React's component-based architecture was a game-changer for me. I quickly fell in love with building dynamic and responsive user interfaces using React. Although I also explored Angular for a work project, I found that React's flexibility and simplicity resonated more with my development style. Despite Angular's robust features, my heart lies with React."
+                },
+                "scss": {
+                    "name": "SCSS",
+                    "description": "Although I had heard about SCSS earlier, it wasn't until 2022 that I decided to give it a try. Once I did, I fell in love with its features. Since then, SCSS has been my go-to for styling in every project. Prior to that, I was using standard CSS, a skill I developed during my IT assistant training."
+                },
+                "nodejs": {
+                    "name": "Node.js",
+                    "description": "In 2022, I ventured into Node.js to write my first REST API. This experience opened up new possibilities, and I've since used Node.js for various small side projects. I also experimented with Bun, which I found quite enjoyable."
+                },
+                "python": {
+                    "name": "Python",
+                    "description": "My first attempt at learning Python was in 2018, but due to school commitments, I couldn't stick with it. A few years later, in 2022, I revisited Python and delved deeper. This renewed interest led me to develop a Blender plugin called \"Node Runner\", which facilitates importing and exporting shader nodes using text."
+                },
+                "cpp": {
+                    "name": "C++",
+                    "description": "During my initial IT assistant training between 2019 and 2021, C++ was the first programming language I learned. I used it to create console applications back then and later applied it at work in combination with Qt Widgets. Nowadays, I don't use C++ as often, as my focus has shifted towards web technologies. However, I still use it for some ESP32 microcontroller projects."
+                },
+                "git": {
+                    "name": "Git",
+                    "description": "I've been using Git for a long time; it's my go-to version control system for any kind of project. Its reliability and efficiency make it an indispensable tool in my development workflow."
+                },
+                "blender": {
+                    "name": "Blender",
+                    "description": "I started actively using Blender in 2022 and quickly became enamored with the creative process of 3D modeling. This passion led me to develop the \"Node Runner\" plugin for shader nodes, enhancing my workflow within Blender."
+                }
+            },
+            "iconAlt": "{{skill}} icon"
+        },
+        "projects": {
+            "giftboard": {
+                "title": "Giftboard",
+                "description": "Wishlist app for birthdays and occasions. Share a list, let others reserve gifts, and avoid duplicate presents while keeping surprises intact.",
+                "aria": "Open Giftboard project page",
+                "imageAlt": "Giftboard board overview"
+            },
+            "customParty": {
+                "title": "Custom Party App",
+                "description": "Custom party app we built for my father-in-law's 49th birthday party. It features a 'find your partner' game, a quiz about him, a shared photo gallery and more. Built with React Native and TypeScript.",
+                "aria": "Open Custom Party App project page",
+                "imageAlt": "Custom Party App landing page"
+            }
+        }
+    },
+    "giftboard": {
+        "hero": {
+            "title": "Giftboard",
+            "tagline": "A gift wishlist I built so <0>my girlfriend</0> doesn't have to coordinate everyone's presents anymore."
+        },
+        "sections": {
+            "whyTitle": "Why I built this",
+            "whyP1": "Every year around my birthday, my girlfriend had to coordinate all the gifts. Friends and family would ask her what I wanted, and she'd end up juggling a mental list of who's getting what - making sure nobody buys the same thing, while keeping everything a surprise from me.",
+            "whyP2": "It was stressful for her and not a great system. So I built Giftboard: I add what I'd like, share the link, and everyone can coordinate on their own. Reservations are hidden from me so the surprise stays intact and she can enjoy the birthday too.",
+            "whatTitle": "What it does",
+            "whatP1": "You create a wishlist, add items with a link or your own image, and share it. If you paste an Amazon link the app automatically pulls the product image and price. Everyone except the wishlist owner can see which gifts are already reserved so no duplicates are purchased.",
+            "whatP2": "You can also set priority levels on wishes so people know what matters most to you.",
+            "galleryTitle": "Screenshots",
+            "howTitle": "How it works",
+            "techTitle": "Tech",
+            "extraScreenshotTitle": "Additional screenshot",
+            "scrapeTitle": "How price and image scraping works",
+            "scrapeP1": "When I paste a product link, the frontend sends it to a backend endpoint. That keeps scraping logic and anti-bot request headers on the server instead of exposing them in the browser.",
+            "scrapeP2": "I route this through POST so the payload is explicit in the request body and easier to validate. The server first sanitizes and verifies the URL, then blocks local or private-network targets to reduce SSRF risk.",
+            "scrapeP3": "After fetching the provided page, it chooses host-specific extraction rules, reads structured metadata/selectors, and returns only the normalized fields the app needs: price and image. Timeouts and null fallbacks keep the wishlist flow responsive even when scraping fails.",
+            "scrapeP4": "The selector rules come from a meta-sources.json file. For each supported shop, I map domains to the exact DOM selectors for price and image fields. This part is manual on purpose because every storefront has different markup. This is an example for Amazon domains:",
+            "scrapeP5": "I have to maintain these selectors manually, but that tradeoff gives me predictable extraction per domain and makes breakages easier to fix when a site changes its HTML.",
+            "jsonTitle": "Wishlist JSON showcase",
+            "jsonIntro": "This JSON is the actual persisted data model behind Giftboard. Whenever someone performs an action (for example adding a wish, editing details, or reserving an item), the REST API updates this structure and writes the latest state back to storage. I chose JSON here because this started as a small family project and I did not want to set up a full database for it. If usage grows later, I can migrate the same structure into a proper database. I split one full example into parts below so it is easier to understand what each field is used for."
+        },
+        "gallery": {
+            "heroAlt": "Giftboard hero view in the alternate theme",
+            "heroCaption": "Hero view",
+            "wishesAlt": "Giftboard wishes overview in the alternate theme",
+            "wishesCaption": "Wishes overview as list owner",
+            "themeAlt": "Giftboard theme preview in the alternate theme",
+            "themeCaption": "Theme preview",
+            "createWishAlt": "Giftboard create wish view in the alternate theme",
+            "createWishCaption": "Adding a wish",
+            "boardAlt": "Giftboard board overview in the alternate theme",
+            "boardCaption": "Board overview"
+        },
+        "how": {
+            "amazonTitle": "Amazon auto-fetch",
+            "amazonText": "Paste a product link and the backend scrapes the image and price automatically.",
+            "customTitle": "Custom images",
+            "customText": "Not everything is on Amazon. You can upload your own picture for any wish.",
+            "hiddenTitle": "Hidden reservations",
+            "hiddenText": "Others mark what they'll buy and the owner never sees it.",
+            "prioritiesTitle": "Priorities",
+            "prioritiesText": "Flag how much you want each item so people can decide what to get."
+        },
+        "tech": {
+            "frontendTitle": "Frontend",
+            "frontendText": "React + TypeScript, styled with SCSS. Responsive and works on any screen size.",
+            "backendTitle": "Backend",
+            "backendText": "A small REST API that scrapes Amazon product data and stores everything in a JSON file. I might switch to a database if it grows but this was simpler for now."
+        },
+        "json": {
+            "part1Title": "1) List metadata",
+            "part1Text": "Basic info about the wishlist itself: title, share code, owner and creation time.",
+            "part2Title": "2) Wishes",
+            "part2Text": "Each wish has title, priority, link/image data and quantity. Amazon links can include fetched image and price.",
+            "part3Title": "3) Reservations and state",
+            "part3Text": "Reservation fields keep track of who already committed to a gift, while the owner still cannot see that in the UI.",
+            "part4Title": "4) Full example"
+        }
+    },
+    "customParty": {
+        "hero": {
+            "title": "Custom Party App",
+            "tagline": "A custom party app we built for my father-in-law's 49th birthday."
+        },
+        "sections": {
+            "whatTitle": "What it is",
+            "whatText": "This app was designed for one event: guests open a single link and get access to interactive activities. The goal was to make the party feel personal and playful, and to get everyone involved. Also because everybody got a \"random\" partner, it encouraged people to talk to others they did not know well.",
+            "featuresTitle": "Main features",
+            "techTitle": "Tech",
+            "screenshotTitle": "Custom Party App screenshot"
+        },
+        "features": {
+            "partnerTitle": "Find your partner game",
+            "partnerText": "Guests solve clues and match with their assigned partner for the next activity.",
+            "quizTitle": "Birthday quiz",
+            "quizText": "A quiz focused on fun facts and stories about him.",
+            "galleryTitle": "Shared photo gallery",
+            "galleryText": "Everyone can upload and browse party photos in one place."
+        },
+        "tech": {
+            "text": "Built with React Native + TypeScript to make the experience smooth on phones and fast to ship for a one-time event."
+        },
+        "image": {
+            "alt": "Custom Party App landing page",
+            "caption": "Landing page"
+        }
+    }
+}

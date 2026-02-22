@@ -7,6 +7,7 @@ type ProjectCardLinkProps = {
     href: string;
     ariaLabel?: string;
     imageAlt?: string;
+    tags?: string[];
 };
 
 export default function ProjectCardLink({
@@ -16,8 +17,10 @@ export default function ProjectCardLink({
     href,
     ariaLabel,
     imageAlt,
+    tags,
 }: ProjectCardLinkProps) {
     const cardId = `project-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-title`;
+    const getTagClassName = (tag: string) => `project-tag--${tag.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 
     return (
         <a className="project-card-link" href={href} aria-label={ariaLabel}>
@@ -25,8 +28,19 @@ export default function ProjectCardLink({
                 <ProjectCardArrow />
             </span>
             <article className="project-card" aria-labelledby={cardId}>
-                <h4 id={cardId}>{title}</h4>
-                <p>{description}</p>
+                <div className="text-container">
+                    <h4 id={cardId}>{title}</h4>
+                    <p>{description}</p>
+                </div>
+                {tags && (
+                    <ul className="project-card-tags">
+                        {tags.map((tag) => (
+                            <li key={tag} className={getTagClassName(tag)}>
+                                {tag}
+                            </li>
+                        ))}
+                    </ul>
+                )}
             </article>
             <div className="project-card-media">
                 <img src={imageSrc} alt={imageAlt ?? `${title} preview`} loading="lazy" />

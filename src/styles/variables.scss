@@ -19,6 +19,22 @@
   --color-background-browser-1: rgba(94, 98, 99, 0.192);
   --color-background-browser-2: rgba(184, 186, 197, 0.496);
   --color-background-browser-dark: rgba(68, 71, 72, 0.242);
+
+  --tag-react-text: #1f8adb;
+  --tag-react-border: #2d9bb4;
+  --tag-react-bg: rgba(88, 196, 220, 0.14);
+  --tag-typescript-text: #0f57c2;
+  --tag-typescript-border: #3178c6;
+  --tag-typescript-bg: rgba(49, 120, 198, 0.14);
+  --tag-nodejs-text: #226b21;
+  --tag-nodejs-border: #4e9a3f;
+  --tag-nodejs-bg: rgba(78, 154, 63, 0.14);
+  --tag-express-text: #2a2a2a;
+  --tag-express-border: #6e6e6e;
+  --tag-express-bg: rgba(110, 110, 110, 0.13);
+  --tag-react-native-text: #1f8adb;
+  --tag-react-native-border: #3eabc4;
+  --tag-react-native-bg: rgba(92, 188, 214, 0.14);
 }
 
 [data-theme="dark"] {
@@ -42,4 +58,20 @@
   --color-background-browser-1: rgba(94, 98, 99, 0.192);
   --color-background-browser-2: rgba(94, 95, 101, 0.354);
   --color-background-browser-dark: rgba(137, 141, 141, 0.242);
+
+  --tag-react-text: #8fdfff;
+  --tag-react-border: #58c4dc;
+  --tag-react-bg: rgba(88, 196, 220, 0.2);
+  --tag-typescript-text: #8bb7ff;
+  --tag-typescript-border: #5f95e6;
+  --tag-typescript-bg: rgba(95, 149, 230, 0.2);
+  --tag-nodejs-text: #9ddf8f;
+  --tag-nodejs-border: #66b35b;
+  --tag-nodejs-bg: rgba(102, 179, 91, 0.2);
+  --tag-express-text: #e7e7e7;
+  --tag-express-border: #9b9b9b;
+  --tag-express-bg: rgba(155, 155, 155, 0.2);
+  --tag-react-native-text: #9adff6;
+  --tag-react-native-border: #69bdd4;
+  --tag-react-native-bg: rgba(105, 189, 212, 0.2);
 }

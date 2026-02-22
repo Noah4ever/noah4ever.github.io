@@ -1,6 +1,9 @@
 import "@styles/components/footer.scss";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer>
       <div className="footer-title">
@@ -10,7 +13,7 @@ export default function Footer() {
           <span className="footer-logo-around">{"}"}</span>
         </a>
       </div>
-      <div className="footer-copyright">&copy; {new Date().getFullYear()} Noah Thiering. All rights reserved.</div>
+      <div className="footer-copyright">{t("footer.copyright", { year: new Date().getFullYear() })}</div>
     </footer>
   );
 }

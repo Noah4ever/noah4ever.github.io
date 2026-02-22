@@ -1,11 +1,19 @@
 import { useThemeStore } from "@/stores/ThemeStore";
 import "@styles/components/theme_switch.scss";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 import { IoSunnyOutline as Sun, IoMoonOutline as Moon } from "react-icons/io5";
 
 export default function ThemeSwitch() {
   const theme = useThemeStore((state) => state.theme);
+  const { t } = useTranslation();
+
+  const toggleTheme = () => {
+    useThemeStore.setState((state) => ({
+      theme: state.theme === "light" ? "dark" : "light",
+    }));
+  };
 
   useEffect(() => {
     document.body.dataset.theme = theme;
@@ -13,16 +21,13 @@ export default function ThemeSwitch() {
 
   return (
     <div className="theme-switch-container">
-      <div
+      <button
+        type="button"
         className="theme-switch"
-        onClick={() => {
-          useThemeStore.setState((state) => ({
-            theme: state.theme === "light" ? "dark" : "light",
-          }));
-          document.body.dataset.theme = theme === "light" ? "dark" : "light";
-        }}>
+        aria-label={t("header.themeSwitchAria")}
+        onClick={toggleTheme}>
         {theme === "light" ? <Sun size={40} /> : <Moon size={40} />}
-      </div>
+      </button>
     </div>
   );
 }

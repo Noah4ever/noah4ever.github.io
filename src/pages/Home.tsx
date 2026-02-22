@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import ProjectCardLink from "@/components/ProjectCardLink";
 import "@styles/pages/home.scss";
 import { useEffect, useState } from "react";
+import { Trans, useTranslation } from "react-i18next";
 import { IoLogoGithub as Github } from "react-icons/io5";
 import { IoLogoLinkedin as LinkedIn } from "react-icons/io5";
 import { IoMailOutline as EMail } from "react-icons/io5";
@@ -10,7 +11,7 @@ import { IoArrowDownOutline as Arrow } from "react-icons/io5";
 import { IoArrowDownCircleOutline as ScrollDownArrow } from "react-icons/io5";
 
 export default function Home() {
-  window.onmouseup = (event) => event.preventDefault();
+  const { t } = useTranslation();
 
   const [opacity, setOpacity] = useState<number>(1);
 
@@ -114,52 +115,36 @@ export default function Home() {
 
   const skills = [
     {
-      name: "TypeScript",
+      key: "typescript",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-      description:
-        "Back in 2021, during my apprenticeship, a friend introduced me to TypeScript. Before that, I was working with JavaScript and PHP, skills I picked up during my IT assistant training from 2019 to 2021. Once I started using TypeScript, I was hooked and have incorporated it into both personal and professional projects ever since.",
     },
     {
-      name: "React",
+      key: "react",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      description:
-        "I was introduced to ReactJS in 2021. Prior to this, I had experimented with EJS, a templating engine that allows embedding JavaScript code within HTML templates . While EJS served its purpose, discovering React's component-based architecture was a game-changer for me. I quickly fell in love with building dynamic and responsive user interfaces using React. Although I also explored Angular for a work project, I found that React's flexibility and simplicity resonated more with my development style. Despite Angular's robust features, my heart lies with React.​",
     },
     {
-      name: "SCSS",
+      key: "scss",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg",
-      description:
-        "Although I had heard about SCSS earlier, it wasn't until 2022 that I decided to give it a try. Once I did, I fell in love with its features. Since then, SCSS has been my go-to for styling in every project. Prior to that, I was using standard CSS, a skill I developed during my IT assistant training.",
     },
     {
-      name: "Node.js",
+      key: "nodejs",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-      description:
-        "In 2022, I ventured into Node.js to write my first REST API. This experience opened up new possibilities, and I've since used Node.js for various small side projects. I also experimented with Bun, which I found quite enjoyable.",
     },
     {
-      name: "Python",
+      key: "python",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-      description:
-        'My first attempt at learning Python was in 2018, but due to school commitments, I couldn\'t stick with it. A few years later, in 2022, I revisited Python and delved deeper. This renewed interest led me to develop a Blender plugin called "Node Runner", which facilitates importing and exporting shader nodes using text. ',
     },
     {
-      name: "C++",
+      key: "cpp",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
-      description:
-        "During my initial IT assistant training between 2019 and 2021, C++ was the first programming language I learned. I used it to create console applications back then and later applied it at work in combination with Qt Widgets. Nowadays, I don't use C++ as often, as my focus has shifted towards web technologies. However, I still use it for some ESP32 microcontroller projects.",
     },
     {
-      name: "Git",
+      key: "git",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-      description:
-        "I've been using Git for a long time; it's my go-to version control system for any kind of project. Its reliability and efficiency make it an indispensable tool in my development workflow.",
     },
     {
-      name: "Blender",
+      key: "blender",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg",
-      description:
-        'I started actively using Blender in 2022 and quickly became enamored with the creative process of 3D modeling. This passion led me to develop the "Node Runner" plugin for shader nodes, enhancing my workflow within Blender. ',
     },
   ];
 
@@ -172,7 +157,7 @@ export default function Home() {
           <div className="home-picture-container">
             <div className="home-picture-blob">
               <div className="home-picture-text">
-                that's me
+                {t("home.hero.meLabel")}
                 <div className="home-picture-text-arrow">
                   <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -215,15 +200,6 @@ export default function Home() {
                   transform="translate(100 100) rotate(200, 0 ,0)"
                 />
 
-                {/* <image
-                  transform=""
-                  clipPath="url(#blob-clip)"
-                  href="/Noah.png"
-                  x={15}
-                  y={50}
-                  width="150"
-                  height="150"
-                /> */}
                 <image
                   clipPath="url(#blob-clip)"
                   href="/Noah-900.webp"
@@ -237,10 +213,10 @@ export default function Home() {
             </div>
           </div>
           <div className="home-welcome">
-            <div className="home-welcome-1">Hey, I'm</div>
-            <div className="home-welcome-name">Noah Thiering</div>
+            <div className="home-welcome-1">{t("home.hero.greeting")}</div>
+            <div className="home-welcome-name">{t("home.hero.name")}</div>
             <div className="home-welcome-sub">
-              a <u>Software Developer</u>
+              {t("home.hero.rolePrefix")} <u>{t("home.hero.role")}</u>
             </div>
           </div>
         </div>
@@ -250,25 +226,25 @@ export default function Home() {
             <li>
               <a href="https://github.com/Noah4ever">
                 <Github />
-                GitHub
+                {t("home.links.github")}
               </a>
             </li>
             <li>
               <a href="https://de.linkedin.com/in/noah-thiering">
                 <LinkedIn />
-                LinkedIn
+                {t("home.links.linkedin")}
               </a>
             </li>
             <li>
               <a href="mailto:noah@thiering.org">
                 <EMail />
-                E-Mail
+                {t("home.links.email")}
               </a>
             </li>
             <li>
               <a href="#about">
                 <Arrow />
-                About me
+                {t("home.links.about")}
               </a>
             </li>
           </ul>
@@ -277,42 +253,47 @@ export default function Home() {
         <div id="scroll-down-container" style={{ opacity, transition: "opacity 0.3s ease" }}>
           <a href="#about">
             <ScrollDownArrow />
-            Scroll down
+            {t("home.scroll.label")}
           </a>
         </div>
       </section>
 
       <section id="about">
-        <h2>About me</h2>
+        <h2>{t("home.about.title")}</h2>
         <div className="about-container blur-container">
-          <h3>Personal</h3>
+          <h3>{t("home.about.personalTitle")}</h3>
           <p>
-            I have been developing my skills since 2021, after completing my initial training. Currently I'm studying
-            computer science at the <a href="https://www.uni-bremen.de/en/">University of Bremen</a>. I specialize in
-            web development using TypeScript and React ⚛️. I'm passionate about finding innovative solutions for any
-            project! 💻🔧
+            <Trans
+              i18nKey="home.about.personalText"
+              components={[<a href="https://www.uni-bremen.de/en/" key="university-link" />]}
+            />
           </p>
         </div>
         <div className="about-container skills-container">
-          <h3>Skills</h3>
+          <h3>{t("home.about.skillsTitle")}</h3>
           <div className="skill-subtitle-container">
-            <div className="skill-subtitle-text">Click on a skill to learn more</div>
+            <div className="skill-subtitle-text">{t("home.about.skillsSubtitle")}</div>
           </div>
           <ul>
             {skills.map((skill) => (
-              <li key={skill.name} id={`skill-${skill.name}`} onClick={(e) => handleSkillClick(skill.name, e)}>
+              <li key={skill.key} id={`skill-${skill.key}`} onClick={(e) => handleSkillClick(skill.key, e)}>
                 {/* Wrap the card in a container with perspective */}
                 <div className="card-container">
                   <div
-                    className={`skill-inner-container ${activeSkill === skill.name ? "active" : ""}`}
-                    style={activeSkill === skill.name ? activeStyle : {}}>
+                    className={`skill-inner-container ${activeSkill === skill.key ? "active" : ""}`}
+                    style={activeSkill === skill.key ? activeStyle : {}}>
                     <div className="card-face">
                       <div className="card-thumbnail">
-                        <img src={skill.icon} alt={`${skill.name} icon`} loading="lazy" decoding="async" />
-                        <span>{skill.name}</span>
+                        <img
+                          src={skill.icon}
+                          alt={t("home.skills.iconAlt", { skill: t(`home.skills.items.${skill.key}.name`) })}
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        <span>{t(`home.skills.items.${skill.key}.name`)}</span>
                       </div>
-                      <div className="card-description" id={`skill-description-${skill.name}`}>
-                        {skill.description}
+                      <div className="card-description" id={`skill-description-${skill.key}`}>
+                        {t(`home.skills.items.${skill.key}.description`)}
                       </div>
                     </div>
                   </div>
@@ -323,27 +304,29 @@ export default function Home() {
         </div>
 
         <section className="about-container projects-container" aria-labelledby="projects-heading">
-          <h3 id="projects-heading">Projects</h3>
+          <h3 id="projects-heading">{t("home.about.projectsTitle")}</h3>
           <ul className="projects-list" role="list">
             <li>
               <ProjectCardLink
-                title="Giftboard"
-                description="Wishlist app for birthdays and occasions. Share a list, let others reserve gifts, and avoid duplicate presents while keeping surprises intact."
+                title={t("home.projects.giftboard.title")}
+                description={t("home.projects.giftboard.description")}
                 imageSrc="/Projects/giftboard-hero.png"
                 href="/projects/giftboard"
-                ariaLabel="Open Giftboard project page"
-                imageAlt="Giftboard board overview"
+                ariaLabel={t("home.projects.giftboard.aria")}
+                imageAlt={t("home.projects.giftboard.imageAlt")}
+                tags={["React", "TypeScript", "nodejs"]}
               />
             </li>
 
             <li>
               <ProjectCardLink
-                title="Custom Party App"
-                description="Custom party app we built for my father-in-law's 49th birthday party. It features a 'find your partner' game, a quiz about him, a shared photo gallery and more. Built with React Native and TypeScript."
+                title={t("home.projects.customParty.title")}
+                description={t("home.projects.customParty.description")}
                 imageSrc="/Projects/party-landingpage.png"
                 href="/projects/custom-party-app"
-                ariaLabel="Open Custom Party App project page"
-                imageAlt="Custom Party App landing page"
+                ariaLabel={t("home.projects.customParty.aria")}
+                imageAlt={t("home.projects.customParty.imageAlt")}
+                tags={["React Native", "TypeScript", "nodejs"]}
               />
             </li>
           </ul>

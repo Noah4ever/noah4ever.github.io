@@ -209,37 +209,67 @@
   }
 }
 
-// Minimize: smooth circular orbit using double-rotation trick
-// rotate(A) translateX(R) rotate(-A) traces a perfect circle
+// Minimize: macOS-like path
+// slight lift -> curved dive toward bottom -> off-screen -> respawn at top -> settle in place
 @keyframes minimize-orbit {
   0% {
-    transform: rotate(0deg) translateX(0px) rotate(0deg);
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
     scale: 1;
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.3, 0, 0.2, 1);
+  }
+
+  10% {
+    transform: translate3d(2vw, -6vh, 0) scale(0.96) rotate(-3deg);
+    opacity: 1;
     animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
-  12% {
-    transform: rotate(0deg) translateX(10vw) rotate(0deg);
-    scale: 0.6;
-    animation-timing-function: linear;
+
+  24% {
+    transform: translate3d(11vw, -1vh, 0) scale(0.82) rotate(8deg);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.25, 0.9, 0.35, 1);
   }
-  82% {
-    transform: rotate(360deg) translateX(10vw) rotate(-360deg);
-    scale: 0.6;
-    animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  46% {
+    transform: translate3d(24vw, 112vh, 0) scale(0.38) rotate(34deg);
+    opacity: 0.95;
+    animation-timing-function: cubic-bezier(0.55, 0.08, 0.8, 0.3);
   }
-  91% {
-    transform: rotate(360deg) translateX(0px) rotate(-360deg);
-    scale: 1.06;
-    animation-timing-function: ease-in-out;
+
+  48% {
+    transform: translate3d(26vw, 125vh, 0) scale(0.3) rotate(38deg);
+    opacity: 0;
+    animation-timing-function: step-end;
   }
-  96% {
-    transform: rotate(360deg) translateX(0px) rotate(-360deg);
-    scale: 0.97;
+
+  49% {
+    transform: translate3d(-14vw, -118vh, 0) scale(0.34) rotate(-26deg);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  58% {
+    transform: translate3d(-8vw, -64vh, 0) scale(0.52) rotate(-12deg);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  76% {
+    transform: translate3d(-2vw, -12vh, 0) scale(1.04) rotate(2deg);
+    opacity: 1;
     animation-timing-function: ease-out;
   }
+
+  90% {
+    transform: translate3d(0.8vw, 3vh, 0) scale(0.97) rotate(-1deg);
+    opacity: 1;
+    animation-timing-function: ease-in-out;
+  }
+
   100% {
-    transform: rotate(360deg) translateX(0px) rotate(-360deg);
-    scale: 1;
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+    opacity: 1;
   }
 }
 
@@ -250,41 +280,49 @@
     opacity: 1;
     animation-timing-function: ease-in-out;
   }
+
   10% {
     transform: scale(1) rotate(-4deg);
     opacity: 1;
     animation-timing-function: ease-in-out;
   }
+
   20% {
     transform: scale(0.98) rotate(4deg);
     opacity: 1;
     animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
   }
+
   35% {
     transform: scale(0.1) rotate(-2deg);
     opacity: 0.2;
     animation-timing-function: ease-in;
   }
+
   45% {
     transform: scale(0) rotate(6deg);
     opacity: 0;
     animation-timing-function: linear;
   }
+
   55% {
     transform: scale(0) rotate(6deg);
     opacity: 0;
     animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
   }
+
   78% {
     transform: scale(1.08) rotate(-1.5deg);
     opacity: 1;
     animation-timing-function: ease-in-out;
   }
+
   90% {
     transform: scale(0.97) rotate(0.5deg);
     opacity: 1;
     animation-timing-function: ease-out;
   }
+
   100% {
     transform: scale(1) rotate(0deg);
     opacity: 1;
@@ -297,28 +335,34 @@
     transform: scale(1) rotate(0deg);
     animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
   }
+
   30% {
     transform: scale(1.15) rotate(-0.8deg);
     animation-timing-function: ease-in-out;
   }
+
   50% {
     transform: scale(1.2) rotate(0.5deg);
     animation-timing-function: cubic-bezier(0.34, 1.2, 0.64, 1);
   }
+
   70% {
     transform: scale(0.97) rotate(-0.3deg);
     animation-timing-function: ease-in-out;
   }
+
   85% {
     transform: scale(1.03) rotate(0deg);
     animation-timing-function: ease-out;
   }
+
   100% {
     transform: scale(1) rotate(0deg);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .image-frame.is-minimizing,
   .image-frame.is-closing,
   .image-frame.is-expanding {

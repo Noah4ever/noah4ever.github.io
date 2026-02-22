@@ -1,6 +1,7 @@
 import "@styles/components/image_border.scss";
 import { useEffect, useState } from "react";
 import { FaChrome, FaSafari } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 type ImageFrame = "safari" | "chrome" | "mobile";
 
@@ -41,6 +42,8 @@ function SafariFrame({
   onMinimize,
   onExpand,
 }: BrowserFrameProps) {
+  const { t } = useTranslation();
+
   return (
     <>
       <div className="toolbar">
@@ -49,22 +52,22 @@ function SafariFrame({
             type="button"
             className="dot close"
             onClick={onClose}
-            aria-label="Close window"
-            title="Close"
+            aria-label={t("imageBorder.closeWindow")}
+            title={t("imageBorder.close")}
           />
           <button
             type="button"
             className="dot minimize"
             onClick={onMinimize}
-            aria-label="Minimize window"
-            title="Minimize"
+            aria-label={t("imageBorder.minimizeWindow")}
+            title={t("imageBorder.minimize")}
           />
           <button
             type="button"
             className="dot expand"
             onClick={onExpand}
-            aria-label="Expand window"
-            title="Expand"
+            aria-label={t("imageBorder.expandWindow")}
+            title={t("imageBorder.expand")}
           />
         </div>
         <div className="address-bar" />
@@ -72,8 +75,8 @@ function SafariFrame({
           type="button"
           className="mode-toggle"
           onClick={onToggleBrowser}
-          aria-label="Switch to Chrome frame"
-          title="Switch to Chrome"
+          aria-label={t("imageBorder.switchToChromeFrame")}
+          title={t("imageBorder.switchToChrome")}
         >
           <FaChrome aria-hidden="true" />
         </button>
@@ -91,6 +94,8 @@ function ChromeFrame({
   onMinimize,
   onExpand,
 }: BrowserFrameProps) {
+  const { t } = useTranslation();
+
   return (
     <>
       <div className="toolbar">
@@ -100,22 +105,22 @@ function ChromeFrame({
               type="button"
               className="dot close"
               onClick={onClose}
-              aria-label="Close window"
-              title="Close"
+              aria-label={t("imageBorder.closeWindow")}
+              title={t("imageBorder.close")}
             />
             <button
               type="button"
               className="dot minimize"
               onClick={onMinimize}
-              aria-label="Minimize window"
-              title="Minimize"
+              aria-label={t("imageBorder.minimizeWindow")}
+              title={t("imageBorder.minimize")}
             />
             <button
               type="button"
               className="dot expand"
               onClick={onExpand}
-              aria-label="Expand window"
-              title="Expand"
+              aria-label={t("imageBorder.expandWindow")}
+              title={t("imageBorder.expand")}
             />
           </div>
           <span className="tab active" />
@@ -131,8 +136,8 @@ function ChromeFrame({
             type="button"
             className="mode-toggle"
             onClick={onToggleBrowser}
-            aria-label="Switch to Safari frame"
-            title="Switch to Safari"
+            aria-label={t("imageBorder.switchToSafariFrame")}
+            title={t("imageBorder.switchToSafari")}
           >
             <FaSafari aria-hidden="true" />
           </button>

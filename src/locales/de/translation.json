@@ -1,0 +1,194 @@
+{
+    "header": {
+        "logoAria": "Zur Startseite",
+        "themeSwitchAria": "Farbschema umschalten",
+        "languageSwitchAria": "Sprache wechseln"
+    },
+    "footer": {
+        "copyright": "© {{year}} Noah Thiering. Alle Rechte vorbehalten."
+    },
+    "projectLayout": {
+        "backAria": "Zurück zur Startseite",
+        "backLabel": "Zurück zum Portfolio"
+    },
+    "imageBorder": {
+        "closeWindow": "Fenster schließen",
+        "minimizeWindow": "Fenster minimieren",
+        "expandWindow": "Fenster vergrößern",
+        "close": "Schließen",
+        "minimize": "Minimieren",
+        "expand": "Vergrößern",
+        "switchToChromeFrame": "Zu Chrome-Rahmen wechseln",
+        "switchToChrome": "Zu Chrome wechseln",
+        "switchToSafariFrame": "Zu Safari-Rahmen wechseln",
+        "switchToSafari": "Zu Safari wechseln"
+    },
+    "home": {
+        "hero": {
+            "meLabel": "das bin ich",
+            "greeting": "Hey, ich bin",
+            "name": "Noah Thiering",
+            "rolePrefix": "ein",
+            "role": "Softwareentwickler"
+        },
+        "links": {
+            "github": "GitHub",
+            "linkedin": "LinkedIn",
+            "email": "E-Mail",
+            "about": "Über mich"
+        },
+        "scroll": {
+            "label": "Nach unten scrollen"
+        },
+        "about": {
+            "title": "Über mich",
+            "personalTitle": "Persönlich",
+            "personalText": "Seit 2021 baue ich meine Fähigkeiten weiter aus, nachdem ich meine erste Ausbildung abgeschlossen habe. Aktuell studiere ich Informatik an der <0>Universität Bremen</0>. Ich spezialisiere mich auf Webentwicklung mit TypeScript und React ⚛️. Ich entwickle leidenschaftlich gern innovative Lösungen für jedes Projekt! 💻🔧",
+            "skillsTitle": "Fähigkeiten",
+            "skillsSubtitle": "Klicke auf eine Fähigkeit, um mehr zu erfahren",
+            "projectsTitle": "Projekte"
+        },
+        "skills": {
+            "items": {
+                "typescript": {
+                    "name": "TypeScript",
+                    "description": "2021, während meiner Ausbildung, hat mir ein Freund TypeScript gezeigt. Davor habe ich mit JavaScript und PHP gearbeitet - Kenntnisse, die ich in meiner IT-Assistenten-Ausbildung von 2019 bis 2021 aufgebaut habe. Sobald ich mit TypeScript angefangen hatte, war ich begeistert und nutze es seitdem in privaten wie auch beruflichen Projekten."
+                },
+                "react": {
+                    "name": "React",
+                    "description": "Mit ReactJS kam ich 2021 in Berührung. Davor hatte ich mit EJS experimentiert, einer Template-Engine zum Einbetten von JavaScript in HTML-Vorlagen. EJS war hilfreich, aber die komponentenbasierte Architektur von React war für mich ein echter Wendepunkt. Ich habe mich schnell in den Aufbau dynamischer, responsiver Oberflächen verliebt. Für ein Arbeitsprojekt habe ich auch Angular ausprobiert, aber Reacts Flexibilität und Einfachheit passen besser zu meinem Stil. Trotz der starken Features von Angular schlägt mein Herz für React."
+                },
+                "scss": {
+                    "name": "SCSS",
+                    "description": "Von SCSS hatte ich schon früher gehört, aber erst 2022 habe ich es wirklich ausprobiert. Danach war ich sofort überzeugt von den Möglichkeiten. Seitdem ist SCSS mein Standard für Styling in allen Projekten. Davor habe ich klassisches CSS genutzt, das ich in meiner IT-Assistenten-Ausbildung gelernt habe."
+                },
+                "nodejs": {
+                    "name": "Node.js",
+                    "description": "2022 habe ich mit Node.js meine erste REST-API gebaut. Diese Erfahrung hat mir viele neue Möglichkeiten eröffnet, und seitdem nutze ich Node.js für verschiedene kleine Nebenprojekte. Außerdem habe ich mit Bun experimentiert, was mir ebenfalls viel Spaß gemacht hat."
+                },
+                "python": {
+                    "name": "Python",
+                    "description": "Mein erster Versuch, Python zu lernen, war 2018, aber wegen der Schule blieb ich nicht dran. Ein paar Jahre später, 2022, habe ich Python erneut aufgegriffen und mich intensiver damit beschäftigt. Daraus entstand auch mein Blender-Plugin \"Node Runner\", das den Import und Export von Shader-Nodes per Text erleichtert."
+                },
+                "cpp": {
+                    "name": "C++",
+                    "description": "In meiner ersten IT-Assistenten-Ausbildung zwischen 2019 und 2021 war C++ die erste Programmiersprache, die ich gelernt habe. Damals habe ich damit Konsolenanwendungen entwickelt und später im Job in Kombination mit Qt Widgets eingesetzt. Heute nutze ich C++ seltener, da mein Fokus stärker auf Webtechnologien liegt. Für einige ESP32-Mikrocontroller-Projekte setze ich es aber weiterhin ein."
+                },
+                "git": {
+                    "name": "Git",
+                    "description": "Ich nutze Git seit vielen Jahren; es ist mein bevorzugtes Versionskontrollsystem für jede Art von Projekt. Zuverlässigkeit und Effizienz machen es zu einem unverzichtbaren Werkzeug in meinem Entwicklungsalltag."
+                },
+                "blender": {
+                    "name": "Blender",
+                    "description": "Seit 2022 nutze ich Blender aktiv und war schnell von dem kreativen Prozess der 3D-Modellierung begeistert. Diese Leidenschaft führte auch zur Entwicklung des \"Node Runner\"-Plugins für Shader-Nodes, das meinen Workflow in Blender verbessert."
+                }
+            },
+            "iconAlt": "{{skill}}-Icon"
+        },
+        "projects": {
+            "giftboard": {
+                "title": "Giftboard",
+                "description": "Wunschlisten-App für Geburtstage und Anlässe. Teile eine Liste, lass andere Geschenke reservieren und vermeide doppelte Geschenke, ohne die Überraschung zu ruinieren.",
+                "aria": "Giftboard-Projektseite öffnen",
+                "imageAlt": "Giftboard-Board-Übersicht"
+            },
+            "customParty": {
+                "title": "Custom Party App",
+                "description": "Eine individuelle Party-App, die wir für den 49. Geburtstag meines Schwiegervaters gebaut haben. Sie enthält ein \"Finde deinen Partner\"-Spiel, ein Quiz über ihn, eine gemeinsame Fotogalerie und mehr. Entwickelt mit React Native und TypeScript.",
+                "aria": "Custom Party App Projektseite öffnen",
+                "imageAlt": "Custom Party App Startseite"
+            }
+        }
+    },
+    "giftboard": {
+        "hero": {
+            "title": "Giftboard",
+            "tagline": "Eine Geschenk-Wunschliste, die ich gebaut habe, damit <0>meine Freundin</0> nicht mehr alle Geschenke koordinieren muss."
+        },
+        "sections": {
+            "whyTitle": "Warum ich das gebaut habe",
+            "whyP1": "Rund um meinen Geburtstag musste meine Freundin jedes Jahr alle Geschenke koordinieren. Freunde und Familie fragten sie, was ich mir wünsche, und sie jonglierte am Ende mit einer mentalen Liste, wer was besorgt - damit niemand doppelt kauft und alles trotzdem eine Überraschung bleibt.",
+            "whyP2": "Das war für sie stressig und kein gutes System. Deshalb habe ich Giftboard gebaut: Ich trage meine Wünsche ein, teile den Link, und alle können sich selbst koordinieren. Reservierungen bleiben für mich unsichtbar, sodass die Überraschung erhalten bleibt und sie den Geburtstag auch genießen kann.",
+            "whatTitle": "Was es macht",
+            "whatP1": "Du erstellst eine Wunschliste, fügst Einträge mit Link oder eigenem Bild hinzu und teilst sie. Wenn du einen Amazon-Link einfügst, zieht die App automatisch Produktbild und Preis. Alle außer der Listeninhaberin bzw. dem Listeninhaber sehen, welche Geschenke bereits reserviert sind, damit nichts doppelt gekauft wird.",
+            "whatP2": "Außerdem kannst du Prioritäten für Wünsche setzen, damit andere sehen, was dir besonders wichtig ist.",
+            "galleryTitle": "Screenshots",
+            "howTitle": "So funktioniert es",
+            "techTitle": "Technik",
+            "extraScreenshotTitle": "Zusätzlicher Screenshot",
+            "scrapeTitle": "So funktionieren Preis- und Bild-Scraping",
+            "scrapeP1": "Wenn ich einen Produktlink einfüge, sendet das Frontend ihn an einen Backend-Endpunkt. So bleiben Scraping-Logik und Anti-Bot-Header auf dem Server, statt im Browser offengelegt zu werden.",
+            "scrapeP2": "Ich nutze dafür POST, damit die Nutzdaten eindeutig im Request-Body liegen und leichter validiert werden können. Der Server bereinigt und prüft zuerst die URL und blockiert anschließend lokale oder private Netzwerkziele, um SSRF-Risiken zu reduzieren.",
+            "scrapeP3": "Nach dem Abruf der Seite werden host-spezifische Extraktionsregeln gewählt, strukturierte Metadaten/Selektoren ausgewertet und nur die normalisierten Felder zurückgegeben, die die App braucht: Preis und Bild. Timeouts und Null-Fallbacks halten den Wunschlisten-Flow reaktionsschnell, selbst wenn Scraping fehlschlägt.",
+            "scrapeP4": "Die Selektorregeln kommen aus einer Datei namens meta-sources.json. Für jeden unterstützten Shop mappe ich Domains auf die exakten DOM-Selektoren für Preis- und Bildfelder. Dieser Teil ist bewusst manuell, weil jeder Shop ein anderes Markup hat. Hier ist ein Beispiel für Amazon-Domains:",
+            "scrapeP5": "Diese Selektoren muss ich manuell pflegen, aber genau dieser Trade-off sorgt für vorhersehbare Extraktion pro Domain und macht Fehler leichter behebbar, wenn sich das HTML einer Seite ändert.",
+            "jsonTitle": "Wishlist-JSON-Showcase",
+            "jsonIntro": "Dieses JSON ist das tatsächlich persistierte Datenmodell hinter Giftboard. Immer wenn jemand eine Aktion ausführt (zum Beispiel Wunsch hinzufügen, Details bearbeiten oder ein Geschenk reservieren), aktualisiert die REST-API diese Struktur und schreibt den neuesten Zustand zurück in den Speicher. Ich habe hier JSON gewählt, weil das als kleines Familienprojekt gestartet ist und ich dafür keine vollständige Datenbank aufsetzen wollte. Wenn die Nutzung später wächst, kann ich dieselbe Struktur in eine richtige Datenbank migrieren. Ich teile ein vollständiges Beispiel unten in Abschnitte auf, damit leichter verständlich ist, wofür jedes Feld verwendet wird."
+        },
+        "gallery": {
+            "heroAlt": "Giftboard-Hero-Ansicht im alternativen Theme",
+            "heroCaption": "Hero-Ansicht",
+            "wishesAlt": "Giftboard-Wunschübersicht im alternativen Theme",
+            "wishesCaption": "Wunschübersicht als Listeninhaber",
+            "themeAlt": "Giftboard-Theme-Vorschau im alternativen Theme",
+            "themeCaption": "Theme-Vorschau",
+            "createWishAlt": "Giftboard-Wunsch-erstellen-Ansicht im alternativen Theme",
+            "createWishCaption": "Wunsch hinzufügen",
+            "boardAlt": "Giftboard-Board-Übersicht im alternativen Theme",
+            "boardCaption": "Board-Übersicht"
+        },
+        "how": {
+            "amazonTitle": "Amazon Auto-Fetch",
+            "amazonText": "Füge einen Produktlink ein und das Backend extrahiert Bild und Preis automatisch.",
+            "customTitle": "Eigene Bilder",
+            "customText": "Nicht alles gibt es auf Amazon. Für jeden Wunsch kannst du auch ein eigenes Bild hochladen.",
+            "hiddenTitle": "Versteckte Reservierungen",
+            "hiddenText": "Andere markieren, was sie kaufen, und die listenbesitzende Person sieht es nie.",
+            "prioritiesTitle": "Prioritäten",
+            "prioritiesText": "Markiere, wie wichtig dir ein Artikel ist, damit andere besser entscheiden können, was sie schenken."
+        },
+        "tech": {
+            "frontendTitle": "Frontend",
+            "frontendText": "React + TypeScript, gestylt mit SCSS. Responsiv und auf jeder Bildschirmgröße nutzbar.",
+            "backendTitle": "Backend",
+            "backendText": "Eine kleine REST-API, die Amazon-Produktdaten extrahiert und alles in einer JSON-Datei speichert. Wenn das Projekt wächst, wechsle ich eventuell zu einer Datenbank - für den Anfang war das so aber am einfachsten."
+        },
+        "json": {
+            "part1Title": "1) Listen-Metadaten",
+            "part1Text": "Grundinformationen zur Wunschliste selbst: Titel, Share-Code, Eigentümer und Erstellungszeitpunkt.",
+            "part2Title": "2) Wünsche",
+            "part2Text": "Jeder Wunsch hat Titel, Priorität, Link/Bild-Daten und Menge. Bei Amazon-Links können Bild und Preis automatisch übernommen werden.",
+            "part3Title": "3) Reservierungen und Status",
+            "part3Text": "Reservierungsfelder halten fest, wer bereits ein Geschenk zugesagt hat, während die Eigentümerin bzw. der Eigentümer das weiterhin nicht in der UI sieht.",
+            "part4Title": "4) Vollständiges Beispiel"
+        }
+    },
+    "customParty": {
+        "hero": {
+            "title": "Custom Party App",
+            "tagline": "Eine individuelle Party-App, die wir für den 49. Geburtstag meines Schwiegervaters gebaut haben."
+        },
+        "sections": {
+            "whatTitle": "Was es ist",
+            "whatText": "Diese App wurde für genau ein Event entwickelt: Gäste öffnen einen einzigen Link und erhalten Zugriff auf interaktive Aktivitäten. Das Ziel war, die Feier persönlicher und spielerischer zu machen und alle einzubeziehen. Außerdem bekam jede Person einen \"zufälligen\" Partner, was Gespräche mit Menschen förderte, die man noch nicht gut kannte.",
+            "featuresTitle": "Hauptfunktionen",
+            "techTitle": "Technik",
+            "screenshotTitle": "Custom Party App Screenshot"
+        },
+        "features": {
+            "partnerTitle": "Finde deinen Partner-Spiel",
+            "partnerText": "Gäste lösen Hinweise und finden ihren zugewiesenen Partner für die nächste Aktivität.",
+            "quizTitle": "Geburtstagsquiz",
+            "quizText": "Ein Quiz mit lustigen Fakten und Geschichten über ihn.",
+            "galleryTitle": "Gemeinsame Fotogalerie",
+            "galleryText": "Alle können Partyfotos an einem Ort hochladen und anschauen."
+        },
+        "tech": {
+            "text": "Entwickelt mit React Native + TypeScript, damit das Erlebnis auf Smartphones flüssig ist und schnell für ein einmaliges Event bereitgestellt werden konnte."
+        },
+        "image": {
+            "alt": "Custom Party App Startseite",
+            "caption": "Landingpage"
+        }
+    }
+}

@@ -10,9 +10,11 @@ import {
   IoBrowsersOutline as FrontendIcon,
   IoServerOutline as BackendIcon,
 } from "react-icons/io5";
+import { Trans, useTranslation } from "react-i18next";
 
 export default function Giftboard() {
   const theme = useThemeStore((state) => state.theme);
+  const { t } = useTranslation();
   const showDarkmodeScreenshots = theme === "dark";
 
   const themedProjectImage = (stem: string) => {
@@ -77,16 +79,18 @@ export default function Giftboard() {
         <div className="giftboard-hero-icon" aria-hidden="true">
           <GiftIcon />
         </div>
-        <h1 id="giftboard-title">Giftboard</h1>
+        <h1 id="giftboard-title">{t("giftboard.hero.title")}</h1>
         <p className="giftboard-tagline">
-          A gift wishlist I built so{" "}
-          <a
-            href="https://ashley.thiering.org"
-            className="giftboard-inline-link"
-          >
-            my girlfriend
-          </a>{" "}
-          doesn't have to coordinate everyone's presents anymore.
+          <Trans
+            i18nKey="giftboard.hero.tagline"
+            components={[
+              <a
+                href="https://ashley.thiering.org"
+                className="giftboard-inline-link"
+                key="girlfriend-link"
+              />,
+            ]}
+          />
         </p>
       </section>
 
@@ -94,21 +98,10 @@ export default function Giftboard() {
         className="project-section giftboard-story"
         aria-labelledby="giftboard-why-heading"
       >
-        <h2 id="giftboard-why-heading">Why I built this</h2>
+        <h2 id="giftboard-why-heading">{t("giftboard.sections.whyTitle")}</h2>
         <blockquote>
-          <p>
-            Every year around my birthday, my girlfriend had to coordinate all
-            the gifts. Friends and family would ask her what I wanted, and she'd
-            end up juggling a mental list of who's getting what - making sure
-            nobody buys the same thing, while keeping everything a surprise from
-            me.
-          </p>
-          <p>
-            It was stressful for her and not a great system. So I built
-            Giftboard: I add what I'd like, share the link, and everyone can
-            coordinate on their own. Reservations are hidden from me so the
-            surprise stays intact and she can enjoy the birthday too.
-          </p>
+          <p>{t("giftboard.sections.whyP1")}</p>
+          <p>{t("giftboard.sections.whyP2")}</p>
         </blockquote>
       </section>
 
@@ -116,18 +109,9 @@ export default function Giftboard() {
         className="project-section"
         aria-labelledby="giftboard-what-heading"
       >
-        <h2 id="giftboard-what-heading">What it does</h2>
-        <p>
-          You create a wishlist, add items with a link or your own image, and
-          share it. If you paste an Amazon link the app automatically pulls the
-          product image and price. Everyone <em>except</em> the wishlist owner
-          can see which gifts are already reserved so no duplicates are
-          purchased.
-        </p>
-        <p>
-          You can also set priority levels on wishes so people know what matters
-          most to you.
-        </p>
+        <h2 id="giftboard-what-heading">{t("giftboard.sections.whatTitle")}</h2>
+        <p>{t("giftboard.sections.whatP1")}</p>
+        <p>{t("giftboard.sections.whatP2")}</p>
       </section>
 
       {/* Screenshots */}
@@ -136,32 +120,32 @@ export default function Giftboard() {
         aria-labelledby="giftboard-gallery-heading"
       >
         <h2 id="giftboard-gallery-heading" className="sr-only">
-          Screenshots
+          {t("giftboard.sections.galleryTitle")}
         </h2>
         <div className="giftboard-gallery-grid">
           <figure className="giftboard-gallery-item">
             <ImageBorder
               src={themedProjectImage("giftboard-hero")}
-              alt="Giftboard hero view in the alternate theme"
+              alt={t("giftboard.gallery.heroAlt")}
               frame="safari"
             />
-            <figcaption>Hero view</figcaption>
+            <figcaption>{t("giftboard.gallery.heroCaption")}</figcaption>
           </figure>
           <figure className="giftboard-gallery-item">
             <ImageBorder
               src={themedProjectImage("giftboard-wishes-overview")}
-              alt="Giftboard wishes overview in the alternate theme"
+              alt={t("giftboard.gallery.wishesAlt")}
               frame="safari"
             />
-            <figcaption>Wishes overview as List owner</figcaption>
+            <figcaption>{t("giftboard.gallery.wishesCaption")}</figcaption>
           </figure>
           <figure className="giftboard-gallery-item">
             <ImageBorder
               src={themePreviewImage}
-              alt="Giftboard theme preview in the alternate theme"
+              alt={t("giftboard.gallery.themeAlt")}
               frame="safari"
             />
-            <figcaption>Theme preview</figcaption>
+            <figcaption>{t("giftboard.gallery.themeCaption")}</figcaption>
           </figure>
         </div>
       </section>
@@ -171,18 +155,15 @@ export default function Giftboard() {
         className="project-section"
         aria-labelledby="giftboard-how-heading"
       >
-        <h2 id="giftboard-how-heading">How it works</h2>
+        <h2 id="giftboard-how-heading">{t("giftboard.sections.howTitle")}</h2>
         <ul className="giftboard-how-list" role="list">
           <li>
             <span className="giftboard-how-icon" aria-hidden="true">
               <LinkIcon />
             </span>
             <div>
-              <strong>Amazon auto-fetch</strong>
-              <p>
-                Paste a product link and the backend scrapes the image and price
-                automatically.
-              </p>
+              <strong>{t("giftboard.how.amazonTitle")}</strong>
+              <p>{t("giftboard.how.amazonText")}</p>
             </div>
           </li>
           <li>
@@ -190,11 +171,8 @@ export default function Giftboard() {
               <UploadIcon />
             </span>
             <div>
-              <strong>Custom images</strong>
-              <p>
-                Not everything is on Amazon. You can upload your own picture for
-                any wish.
-              </p>
+              <strong>{t("giftboard.how.customTitle")}</strong>
+              <p>{t("giftboard.how.customText")}</p>
             </div>
           </li>
           <li>
@@ -202,8 +180,8 @@ export default function Giftboard() {
               <ReserveIcon />
             </span>
             <div>
-              <strong>Hidden reservations</strong>
-              <p>Others mark what they'll buy and the owner never sees it.</p>
+              <strong>{t("giftboard.how.hiddenTitle")}</strong>
+              <p>{t("giftboard.how.hiddenText")}</p>
             </div>
           </li>
           <li>
@@ -211,11 +189,8 @@ export default function Giftboard() {
               <PriorityIcon />
             </span>
             <div>
-              <strong>Priorities</strong>
-              <p>
-                Flag how much you want each item so people can decide what to
-                get.
-              </p>
+              <strong>{t("giftboard.how.prioritiesTitle")}</strong>
+              <p>{t("giftboard.how.prioritiesText")}</p>
             </div>
           </li>
         </ul>
@@ -226,28 +201,21 @@ export default function Giftboard() {
         className="project-section"
         aria-labelledby="giftboard-tech-heading"
       >
-        <h2 id="giftboard-tech-heading">Tech</h2>
+        <h2 id="giftboard-tech-heading">{t("giftboard.sections.techTitle")}</h2>
         <div className="giftboard-tech-grid">
           <article className="giftboard-tech-card">
             <div className="giftboard-tech-card-icon" aria-hidden="true">
               <FrontendIcon />
             </div>
-            <h3>Frontend</h3>
-            <p>
-              React + TypeScript, styled with SCSS. Responsive and works on any
-              screen size.
-            </p>
+            <h3>{t("giftboard.tech.frontendTitle")}</h3>
+            <p>{t("giftboard.tech.frontendText")}</p>
           </article>
           <article className="giftboard-tech-card">
             <div className="giftboard-tech-card-icon" aria-hidden="true">
               <BackendIcon />
             </div>
-            <h3>Backend</h3>
-            <p>
-              A small REST API that scrapes Amazon product data and stores
-              everything in a JSON file. I might switch to a database if it
-              grows but this was simpler for now.
-            </p>
+            <h3>{t("giftboard.tech.backendTitle")}</h3>
+            <p>{t("giftboard.tech.backendText")}</p>
           </article>
         </div>
       </section>
@@ -256,15 +224,15 @@ export default function Giftboard() {
         aria-labelledby="giftboard-bottom-image-heading"
       >
         <h2 id="giftboard-bottom-image-heading" className="sr-only">
-          Additional screenshot
+          {t("giftboard.sections.extraScreenshotTitle")}
         </h2>
         <figure className="giftboard-bottom-image-figure">
           <ImageBorder
             src={themedProjectImage("giftboard-create-wish")}
-            alt="Giftboard create wish view in the alternate theme"
+            alt={t("giftboard.gallery.createWishAlt")}
             frame="safari"
           />
-          <figcaption>Adding a wish</figcaption>
+          <figcaption>{t("giftboard.gallery.createWishCaption")}</figcaption>
         </figure>
       </section>
 
@@ -275,10 +243,10 @@ export default function Giftboard() {
         <figure className="giftboard-bottom-image-figure">
           <ImageBorder
             src={themedProjectImage("giftboard-board-overview")}
-            alt="Giftboard board overview in the alternate theme"
+            alt={t("giftboard.gallery.boardAlt")}
             frame="chrome"
           />
-          <figcaption>Board overview</figcaption>
+          <figcaption>{t("giftboard.gallery.boardCaption")}</figcaption>
         </figure>
       </section>
 
@@ -286,14 +254,8 @@ export default function Giftboard() {
         className="project-section giftboard-scrape-explainer"
         aria-labelledby="giftboard-scrape-heading"
       >
-        <h2 id="giftboard-scrape-heading">
-          How price and image scraping works
-        </h2>
-        <p>
-          When I paste a product link, the frontend sends it to a backend
-          endpoint. That keeps scraping logic and anti-bot request headers on
-          the server instead of exposing them in the browser.
-        </p>
+        <h2 id="giftboard-scrape-heading">{t("giftboard.sections.scrapeTitle")}</h2>
+        <p>{t("giftboard.sections.scrapeP1")}</p>
         <pre>
           <code
             dangerouslySetInnerHTML={{
@@ -326,26 +288,9 @@ app.post("/price", async (
             }}
           />
         </pre>
-        <p>
-          I route this through <strong>POST</strong> so the payload is explicit
-          in the request body and easier to validate. The server first sanitizes
-          and verifies the URL, then blocks local or private-network targets to
-          reduce SSRF risk.
-        </p>
-        <p>
-          After fetching the provided page, it chooses host-specific extraction
-          rules, reads structured metadata/selectors, and returns only the
-          normalized fields the app needs: <strong>price</strong> and
-          <strong> image</strong>. Timeouts and null fallbacks keep the wishlist
-          flow responsive even when scraping fails.
-        </p>
-        <p>
-          The selector rules come from a <strong>meta-sources.json</strong>
-          file. For each supported shop, I map domains to the exact DOM
-          selectors for price and image fields. This part is manual on purpose
-          because every storefront has different markup. This is an example for
-          Amazon domains:
-        </p>
+        <p>{t("giftboard.sections.scrapeP2")}</p>
+        <p>{t("giftboard.sections.scrapeP3")}</p>
+        <p>{t("giftboard.sections.scrapeP4")}</p>
         <pre>
           <code
             dangerouslySetInnerHTML={{
@@ -387,39 +332,22 @@ app.post("/price", async (
             }}
           />
         </pre>
-        <p>
-          I have to maintain these selectors manually, but that tradeoff gives
-          me predictable extraction per domain and makes breakages easier to fix
-          when a site changes its HTML.
-        </p>
+        <p>{t("giftboard.sections.scrapeP5")}</p>
       </section>
 
       <section
         className="project-section giftboard-json-showcase"
         aria-labelledby="giftboard-json-heading"
       >
-        <h2 id="giftboard-json-heading">Wishlist JSON showcase</h2>
-        <p>
-          This JSON is the actual persisted data model behind Giftboard.
-          Whenever someone performs an action (for example adding a wish,
-          editing details, or reserving an item), the REST API updates this
-          structure and writes the latest state back to storage. I chose JSON
-          here because this started as a small family project and I did not want
-          to set up a full database for it. If usage grows later, I can migrate
-          the same structure into a proper database. I split one full example
-          into parts below so it is easier to understand what each field is used
-          for.
-        </p>
+        <h2 id="giftboard-json-heading">{t("giftboard.sections.jsonTitle")}</h2>
+        <p>{t("giftboard.sections.jsonIntro")}</p>
 
         <article
           className="giftboard-json-part"
           aria-labelledby="giftboard-json-list-meta"
         >
-          <h3 id="giftboard-json-list-meta">1) List metadata</h3>
-          <p>
-            Basic info about the wishlist itself: title, share code, owner and
-            creation time.
-          </p>
+          <h3 id="giftboard-json-list-meta">{t("giftboard.json.part1Title")}</h3>
+          <p>{t("giftboard.json.part1Text")}</p>
           <pre>
             <code
               dangerouslySetInnerHTML={{
@@ -440,11 +368,8 @@ app.post("/price", async (
           className="giftboard-json-part"
           aria-labelledby="giftboard-json-wishes"
         >
-          <h3 id="giftboard-json-wishes">2) Wishes</h3>
-          <p>
-            Each wish has title, priority, link/image data and quantity. Amazon
-            links can include fetched image and price.
-          </p>
+          <h3 id="giftboard-json-wishes">{t("giftboard.json.part2Title")}</h3>
+          <p>{t("giftboard.json.part2Text")}</p>
           <pre>
             <code
               dangerouslySetInnerHTML={{
@@ -483,11 +408,8 @@ app.post("/price", async (
           className="giftboard-json-part"
           aria-labelledby="giftboard-json-reserve-state"
         >
-          <h3 id="giftboard-json-reserve-state">3) Reservations and state</h3>
-          <p>
-            Reservation fields keep track of who already committed to a gift,
-            while the owner still cannot see that in the UI.
-          </p>
+          <h3 id="giftboard-json-reserve-state">{t("giftboard.json.part3Title")}</h3>
+          <p>{t("giftboard.json.part3Text")}</p>
           <pre>
             <code
               dangerouslySetInnerHTML={{
@@ -512,7 +434,7 @@ app.post("/price", async (
           className="giftboard-json-part"
           aria-labelledby="giftboard-json-full"
         >
-          <h3 id="giftboard-json-full">4) Full example</h3>
+          <h3 id="giftboard-json-full">{t("giftboard.json.part4Title")}</h3>
           <pre>
             <code
               dangerouslySetInnerHTML={{

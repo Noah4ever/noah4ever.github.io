@@ -423,9 +423,10 @@
                     display: flex;
                     text-align: justify;
                     padding-block: 1rem;
-                    line-height: 2rem;
+                    line-height: 2.5rem;
                     width: 80%;
                     overflow-y: auto;
+                    font-size: 1.5rem;
 
                     &.skill-clicked-out {
                       animation: fade-out 0.2s ease forwards;
@@ -507,6 +508,7 @@
           }
 
           .project-card-media {
+            order: 2;
             width: 220px;
             height: 220px;
             align-self: center;
@@ -535,24 +537,85 @@
         }
 
         .project-card {
-          text-align: left;
-          display: flex;
-          flex-direction: column;
-          gap: 0.75rem;
-          padding: 0;
+          display: contents;
 
-          h4 {
-            margin: 0;
-            font-size: 1.3rem;
+          .text-container {
+            order: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+
+            h4 {
+              margin: 0;
+              font-size: 1.3rem;
+            }
+
+            p {
+              margin: 0;
+              padding: 0;
+              text-align: left;
+              font-size: 1rem;
+              line-height: 1.8;
+              color: var(--color-text);
+            }
           }
 
-          p {
+          .project-card-tags {
+            order: 3;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 0.5rem;
             margin: 0;
             padding: 0;
-            text-align: left;
-            font-size: 1rem;
-            line-height: 1.8;
-            color: var(--color-text);
+            list-style: none;
+
+            li {
+              --project-tag-text: var(--color-text);
+              --project-tag-border: var(--color-text-muted);
+              --project-tag-bg: var(--color-background-blur);
+              background-color: var(--project-tag-bg);
+              color: var(--project-tag-text);
+              backdrop-filter: blur(100px);
+              width: fit-content;
+              padding: 0.25rem 1rem;
+              border-radius: 999px;
+              border: 1px solid var(--project-tag-border);
+              font-size: 0.8rem;
+              font-weight: 600;
+              line-height: 1.4;
+
+              &.project-tag--react {
+                --project-tag-text: var(--tag-react-text);
+                --project-tag-border: var(--tag-react-border);
+                --project-tag-bg: var(--tag-react-bg);
+              }
+
+              &.project-tag--typescript {
+                --project-tag-text: var(--tag-typescript-text);
+                --project-tag-border: var(--tag-typescript-border);
+                --project-tag-bg: var(--tag-typescript-bg);
+              }
+
+              &.project-tag--node-js,
+              &.project-tag--nodejs {
+                --project-tag-text: var(--tag-nodejs-text);
+                --project-tag-border: var(--tag-nodejs-border);
+                --project-tag-bg: var(--tag-nodejs-bg);
+              }
+
+              &.project-tag--express {
+                --project-tag-text: var(--tag-express-text);
+                --project-tag-border: var(--tag-express-border);
+                --project-tag-bg: var(--tag-express-bg);
+              }
+
+              &.project-tag--react-native {
+                --project-tag-text: var(--tag-react-native-text);
+                --project-tag-border: var(--tag-react-native-border);
+                --project-tag-bg: var(--tag-react-native-bg);
+              }
+            }
           }
         }
 
@@ -571,6 +634,12 @@
               height: 240px;
               flex-shrink: 0;
             }
+          }
+
+          .project-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
           }
         }
       }
