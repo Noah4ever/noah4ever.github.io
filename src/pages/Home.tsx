@@ -260,7 +260,7 @@ export default function Home() {
               </a>
             </li>
             <li>
-              <a href="mailto:noah.thiering@gmail.com">
+              <a href="mailto:noah@thiering.org">
                 <EMail />
                 E-Mail
               </a>
