@@ -42,7 +42,7 @@
         display: inline-flex;
         align-items: center;
         gap: 0.4rem;
-        color: var(--color-text-muted);
+        color: var(--color-text);
         text-decoration: none;
         font-size: 0.95rem;
         transition: color 150ms ease;
@@ -52,6 +52,10 @@
         &:hover,
         &:focus-visible {
             color: var(--color-accent);
+
+            svg {
+                transform: translateX(-0.25rem);
+            }
         }
 
         &:focus-visible {
@@ -63,6 +67,7 @@
             width: 18px;
             height: 18px;
             flex-shrink: 0;
+            transition: transform 150ms ease;
         }
     }
 }

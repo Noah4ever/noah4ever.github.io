@@ -34,7 +34,7 @@
 
   &.is-minimizing {
     will-change: transform, scale;
-    animation: minimize-orbit 1s both;
+    animation: minimize-orbit 780ms both;
   }
 
   &.is-closing {
@@ -209,66 +209,54 @@
   }
 }
 
-// Minimize: macOS-like path
-// slight lift -> curved dive toward bottom -> off-screen -> respawn at top -> settle in place
+
+/* Fly down/out, disappear, pop to top, spring back home */
 @keyframes minimize-orbit {
+
   0% {
-    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
-    scale: 1;
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
     opacity: 1;
-    animation-timing-function: cubic-bezier(0.3, 0, 0.2, 1);
+    animation-timing-function: cubic-bezier(0.22, 0.9, 0.25, 1);
   }
 
-  10% {
-    transform: translate3d(2vw, -6vh, 0) scale(0.96) rotate(-3deg);
+  12% {
+    transform: translate3d(2vw, -6vh, 0) rotate(-6deg) scale(1.05, 0.95);
     opacity: 1;
-    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-timing-function: cubic-bezier(0.45, 0, 1, 0.45);
   }
 
-  24% {
-    transform: translate3d(11vw, -1vh, 0) scale(0.82) rotate(8deg);
-    opacity: 1;
-    animation-timing-function: cubic-bezier(0.25, 0.9, 0.35, 1);
-  }
-
-  46% {
-    transform: translate3d(24vw, 112vh, 0) scale(0.38) rotate(34deg);
-    opacity: 0.95;
-    animation-timing-function: cubic-bezier(0.55, 0.08, 0.8, 0.3);
-  }
-
-  48% {
-    transform: translate3d(26vw, 125vh, 0) scale(0.3) rotate(38deg);
+  44% {
+    transform: translate3d(28vw, 128vh, 0) rotate(34deg) scale(0.25, 0.18);
     opacity: 0;
-    animation-timing-function: step-end;
+    animation-timing-function: linear;
   }
 
-  49% {
-    transform: translate3d(-14vw, -118vh, 0) scale(0.34) rotate(-26deg);
+  52% {
+    transform: translate3d(28vw, 128vh, 0) rotate(34deg) scale(0.25, 0.18);
     opacity: 0;
-    animation-timing-function: cubic-bezier(0.2, 0.7, 0.2, 1);
+    animation-timing-function: linear;
   }
 
-  58% {
-    transform: translate3d(-8vw, -64vh, 0) scale(0.52) rotate(-12deg);
-    opacity: 1;
-    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  52.01% {
+    transform: translate3d(-18vw, -120vh, 0) rotate(-22deg) scale(0.25, 0.18);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
-  76% {
-    transform: translate3d(-2vw, -12vh, 0) scale(1.04) rotate(2deg);
+  78% {
+    transform: translate3d(1.2vw, 1.6vh, 0) rotate(-2deg) scale(1.06, 0.96);
     opacity: 1;
     animation-timing-function: ease-out;
   }
 
-  90% {
-    transform: translate3d(0.8vw, 3vh, 0) scale(0.97) rotate(-1deg);
+  92% {
+    transform: translate3d(-0.4vw, -0.6vh, 0) rotate(0.8deg) scale(0.985, 1.02);
     opacity: 1;
     animation-timing-function: ease-in-out;
   }
 
   100% {
-    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
     opacity: 1;
   }
 }

@@ -149,7 +149,7 @@
     p {
       font-size: 0.92rem;
       line-height: 1.55;
-      color: var(--color-text-muted);
+      color: var(--color-text);
       margin: 0;
     }
   }
@@ -214,7 +214,7 @@
   p {
     font-size: 0.95rem;
     line-height: 1.6;
-    color: var(--color-text-muted);
+    color: var(--color-text);
     margin: 0;
   }
 }
@@ -237,7 +237,7 @@
       margin-bottom: 0.9rem;
       font-size: 0.98rem;
       line-height: 1.65;
-      color: var(--color-text-muted);
+      color: var(--color-text);
     }
 
     pre {
@@ -388,6 +388,7 @@
 
 [data-theme="light"] .giftboard-scrape-explainer {
   code {
+
     .ts-string,
     .json-string {
       color: #0b7f5f;
@@ -428,6 +429,7 @@
 
 [data-theme="dark"] .giftboard-scrape-explainer {
   code {
+
     .ts-keyword,
     .json-key {
       color: #3a80f9;
