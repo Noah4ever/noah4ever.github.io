@@ -159,7 +159,7 @@ export default function Home() {
     <div className="home-container" id="home">
       <Header />
       {/* <Navigationbar /> */}
-      <section id="home-content">
+      <main id="home-content" role="main">
         <div className="home-top-container">
           <div className="home-picture-container">
             <div className="home-picture-blob">
@@ -242,7 +242,7 @@ export default function Home() {
           </div>
         </div>
 
-        <section id="links">
+        <nav id="links" role="navigation" aria-label="Page links">
           <ul>
             <li>
               <a href="https://github.com/Noah4ever">
@@ -269,7 +269,7 @@ export default function Home() {
               </a>
             </li>
           </ul>
-        </section>
+        </nav>
 
         <div
           id="scroll-down-container"
@@ -280,7 +280,7 @@ export default function Home() {
             {t("home.scroll.label")}
           </a>
         </div>
-      </section>
+      </main>
 
       <section id="about">
         <h2>{t("home.about.title")}</h2>

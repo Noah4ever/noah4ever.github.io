@@ -42,7 +42,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="header-container" ref={headerRef}>
+    <header className="header-container" ref={headerRef} role="banner">
       <a className="header-logo" href="/#home" aria-label={t("header.logoAria")}>
         <span className="header-logo-around">{"{"}</span>
         <span className="header-logo-center">T</span>

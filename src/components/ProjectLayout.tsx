@@ -12,8 +12,8 @@ export default function ProjectLayout() {
         <div className="project-page">
             <Header />
 
-            <main className="project-content">
-                <nav className="project-back" aria-label={t("projectLayout.backAria")}>
+            <main className="project-content" role="main">
+                <nav className="project-back" role="navigation" aria-label={t("projectLayout.backAria")}>
                     <a href="/" className="project-back-link">
                         <BackArrow aria-hidden="true" />
                         <span>{t("projectLayout.backLabel")}</span>

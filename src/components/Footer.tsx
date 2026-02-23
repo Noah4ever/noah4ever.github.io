@@ -5,7 +5,7 @@ export default function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer>
+    <footer role="contentinfo">
       <div className="footer-title">
         <a className="footer-logo" href="#top">
           <span className="footer-logo-around">{"{"}</span>
