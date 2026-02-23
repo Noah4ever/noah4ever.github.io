@@ -19,13 +19,13 @@ export default function Giftboard() {
 
   const themedProjectImage = (stem: string) => {
     const suffix = showDarkmodeScreenshots ? "-darkmode" : "";
-    return `/Projects/${stem}${suffix}.png`;
+    return `/Projects/${stem}${suffix}.webp`;
   };
 
   const themePreviewImage =
     theme === "dark"
-      ? "/Projects/giftboard-theme-lightmode.png"
-      : "/Projects/giftboard-theme-darkmode.png";
+      ? "/Projects/giftboard-theme-lightmode.webp"
+      : "/Projects/giftboard-theme-darkmode.webp";
 
   const highlightJson = (json: string) => {
     const escaped = json

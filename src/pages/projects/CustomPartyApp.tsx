@@ -22,16 +22,16 @@ export default function CustomPartyApp() {
           <PartyIcon />
         </div>
         <h1 id="custom-party-title">{t("customParty.hero.title")}</h1>
-        <p className="custom-party-tagline">
-          {t("customParty.hero.tagline")}
-        </p>
+        <p className="custom-party-tagline">{t("customParty.hero.tagline")}</p>
       </section>
 
       <section
         className="project-section"
         aria-labelledby="custom-party-story-heading"
       >
-        <h2 id="custom-party-story-heading">{t("customParty.sections.whatTitle")}</h2>
+        <h2 id="custom-party-story-heading">
+          {t("customParty.sections.whatTitle")}
+        </h2>
         <p>{t("customParty.sections.whatText")}</p>
       </section>
 
@@ -39,7 +39,9 @@ export default function CustomPartyApp() {
         className="project-section"
         aria-labelledby="custom-party-features-heading"
       >
-        <h2 id="custom-party-features-heading">{t("customParty.sections.featuresTitle")}</h2>
+        <h2 id="custom-party-features-heading">
+          {t("customParty.sections.featuresTitle")}
+        </h2>
         <ul className="custom-party-feature-list" role="list">
           <li>
             <span aria-hidden="true">
@@ -75,7 +77,9 @@ export default function CustomPartyApp() {
         className="project-section"
         aria-labelledby="custom-party-tech-heading"
       >
-        <h2 id="custom-party-tech-heading">{t("customParty.sections.techTitle")}</h2>
+        <h2 id="custom-party-tech-heading">
+          {t("customParty.sections.techTitle")}
+        </h2>
         <div className="custom-party-tech-card">
           <div className="custom-party-tech-icon" aria-hidden="true">
             <MobileIcon />
@@ -93,7 +97,7 @@ export default function CustomPartyApp() {
         </h2>
         <figure>
           <ImageBorder
-            src="/Projects/party-landingpage.png"
+            src="/Projects/party-landingpage.webp"
             alt={t("customParty.image.alt")}
             frame="safari"
           />

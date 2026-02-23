@@ -1,5 +1,5 @@
 @import url("./variables.scss");
-@import url("https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Roboto+Slab:wght@400..700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
 html {
   scroll-behavior: smooth;
 }
@@ -13,9 +13,21 @@ body {
   transition: background-color 0.1s ease;
   background-color: var(--color-background);
   color: var(--color-text);
-  background: radial-gradient(circle at -20% 10%, var(--color-radial-gradient-1), transparent 50%),
-    radial-gradient(circle at 130% 30%, var(--color-radial-gradient-2), transparent 40%),
-    radial-gradient(circle at -10% 80%, var(--color-radial-gradient-3), transparent 40%);
+  background: radial-gradient(
+      circle at -20% 10%,
+      var(--color-radial-gradient-1),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 130% 30%,
+      var(--color-radial-gradient-2),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at -10% 80%,
+      var(--color-radial-gradient-3),
+      transparent 40%
+    );
   background-color: var(--color-background);
   transition: background-color 200ms ease-in-out;
 }

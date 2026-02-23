@@ -38,13 +38,18 @@ export default function Home() {
   const [activeStyle, setActiveStyle] = useState<React.CSSProperties>({});
   const transitionDuration = 400; // in ms
 
-  const handleSkillClick = (skillName: string, e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+  const handleSkillClick = (
+    skillName: string,
+    e: React.MouseEvent<HTMLLIElement, MouseEvent>,
+  ) => {
     removeClickedClasses();
     // If not active, animate it to the center with a flip.
     if (activeSkill !== skillName) {
       const rect = e.currentTarget.getBoundingClientRect();
 
-      const descriptionElement = document.getElementById(`skill-description-${skillName}`);
+      const descriptionElement = document.getElementById(
+        `skill-description-${skillName}`,
+      );
       if (descriptionElement) {
         descriptionElement.classList.add("skill-clicked-in");
       }
@@ -94,7 +99,9 @@ export default function Home() {
     const liElement = document.getElementById(`skill-${activeSkill}`);
     if (liElement) {
       const rect = liElement.getBoundingClientRect();
-      const descriptionElement = document.getElementById(`skill-description-${activeSkill}`);
+      const descriptionElement = document.getElementById(
+        `skill-description-${activeSkill}`,
+      );
       if (descriptionElement) {
         descriptionElement.classList.add("skill-clicked-out");
       }
@@ -159,7 +166,11 @@ export default function Home() {
               <div className="home-picture-text">
                 {t("home.hero.meLabel")}
                 <div className="home-picture-text-arrow">
-                  <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg
+                    viewBox="0 0 400 400"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path
                       d="M35 262C160.529 140.938 328.006 207.285 361 215.518"
                       stroke="var(--color-text-invert)"
@@ -179,11 +190,21 @@ export default function Home() {
                   </svg>
                 </div>
               </div>
-              <svg className="home-picture-svg-blob" viewBox="20 20 150 150" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                className="home-picture-svg-blob"
+                viewBox="20 20 150 150"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <defs>
                   <linearGradient id="blob-gradient">
-                    <stop offset="19%" stopColor="var(--color-picture-blob-2)" />
-                    <stop offset="84%" stopColor="var(--color-picture-blob-1)" />
+                    <stop
+                      offset="19%"
+                      stopColor="var(--color-picture-blob-2)"
+                    />
+                    <stop
+                      offset="84%"
+                      stopColor="var(--color-picture-blob-1)"
+                    />
                   </linearGradient>
                   <clipPath id="blob-clip">
                     <path
@@ -250,7 +271,10 @@ export default function Home() {
           </ul>
         </section>
 
-        <div id="scroll-down-container" style={{ opacity, transition: "opacity 0.3s ease" }}>
+        <div
+          id="scroll-down-container"
+          style={{ opacity, transition: "opacity 0.3s ease" }}
+        >
           <a href="#about">
             <ScrollDownArrow />
             {t("home.scroll.label")}
@@ -265,34 +289,51 @@ export default function Home() {
           <p>
             <Trans
               i18nKey="home.about.personalText"
-              components={[<a href="https://www.uni-bremen.de/en/" key="university-link" />]}
+              components={[
+                <a
+                  href="https://www.uni-bremen.de/en/"
+                  key="university-link"
+                />,
+              ]}
             />
           </p>
         </div>
         <div className="about-container skills-container">
           <h3>{t("home.about.skillsTitle")}</h3>
           <div className="skill-subtitle-container">
-            <div className="skill-subtitle-text">{t("home.about.skillsSubtitle")}</div>
+            <div className="skill-subtitle-text">
+              {t("home.about.skillsSubtitle")}
+            </div>
           </div>
           <ul>
             {skills.map((skill) => (
-              <li key={skill.key} id={`skill-${skill.key}`} onClick={(e) => handleSkillClick(skill.key, e)}>
+              <li
+                key={skill.key}
+                id={`skill-${skill.key}`}
+                onClick={(e) => handleSkillClick(skill.key, e)}
+              >
                 {/* Wrap the card in a container with perspective */}
                 <div className="card-container">
                   <div
                     className={`skill-inner-container ${activeSkill === skill.key ? "active" : ""}`}
-                    style={activeSkill === skill.key ? activeStyle : {}}>
+                    style={activeSkill === skill.key ? activeStyle : {}}
+                  >
                     <div className="card-face">
                       <div className="card-thumbnail">
                         <img
                           src={skill.icon}
-                          alt={t("home.skills.iconAlt", { skill: t(`home.skills.items.${skill.key}.name`) })}
+                          alt={t("home.skills.iconAlt", {
+                            skill: t(`home.skills.items.${skill.key}.name`),
+                          })}
                           loading="lazy"
                           decoding="async"
                         />
                         <span>{t(`home.skills.items.${skill.key}.name`)}</span>
                       </div>
-                      <div className="card-description" id={`skill-description-${skill.key}`}>
+                      <div
+                        className="card-description"
+                        id={`skill-description-${skill.key}`}
+                      >
                         {t(`home.skills.items.${skill.key}.description`)}
                       </div>
                     </div>
@@ -303,14 +344,17 @@ export default function Home() {
           </ul>
         </div>
 
-        <section className="about-container projects-container" aria-labelledby="projects-heading">
+        <section
+          className="about-container projects-container"
+          aria-labelledby="projects-heading"
+        >
           <h3 id="projects-heading">{t("home.about.projectsTitle")}</h3>
           <ul className="projects-list" role="list">
             <li>
               <ProjectCardLink
                 title={t("home.projects.giftboard.title")}
                 description={t("home.projects.giftboard.description")}
-                imageSrc="/Projects/giftboard-hero.png"
+                imageSrc="/Projects/giftboard-hero.webp"
                 href="/projects/giftboard"
                 ariaLabel={t("home.projects.giftboard.aria")}
                 imageAlt={t("home.projects.giftboard.imageAlt")}
@@ -322,7 +366,7 @@ export default function Home() {
               <ProjectCardLink
                 title={t("home.projects.customParty.title")}
                 description={t("home.projects.customParty.description")}
-                imageSrc="/Projects/party-landingpage.png"
+                imageSrc="/Projects/party-landingpage.webp"
                 href="/projects/custom-party-app"
                 ariaLabel={t("home.projects.customParty.aria")}
                 imageAlt={t("home.projects.customParty.imageAlt")}
@@ -334,7 +378,9 @@ export default function Home() {
       </section>
 
       {/* Overlay that darkens the background when a skill is active */}
-      {activeSkill && <div className="popup-overlay" onClick={closeActiveSkill}></div>}
+      {activeSkill && (
+        <div className="popup-overlay" onClick={closeActiveSkill}></div>
+      )}
 
       <Footer />
     </div>
