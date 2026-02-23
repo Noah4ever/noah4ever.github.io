@@ -66,39 +66,153 @@
   }
 }
 
-/* ─── Gallery ─── */
-.giftboard-gallery {
-  margin-bottom: 3.5rem;
+/* ─── Alternating text + image sections ─── */
+.giftboard-alternating {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  margin-bottom: 4rem;
 
-  .giftboard-gallery-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    max-width: 760px;
-    margin: 0 auto;
+  &[data-image-side="right"] {
+    .giftboard-alt-text {
+      order: 1;
+    }
+
+    .giftboard-alt-image {
+      order: 2;
+    }
+
+    .giftboard-3d-image {
+      --base-ry: -6deg;
+      transform-origin: left center;
+    }
   }
 
-  .giftboard-gallery-item {
-    margin: 0;
-
-    .image-frame {
-      width: 100%;
-      max-width: 100%;
-      margin-inline: auto;
+  &[data-image-side="left"] {
+    .giftboard-alt-text {
+      order: 2;
     }
 
-    figcaption {
-      margin-top: 0.65rem;
-      font-size: 0.9rem;
-      color: var(--color-text-muted);
-      text-align: center;
+    .giftboard-alt-image {
+      order: 1;
     }
+
+    .giftboard-3d-image {
+      --base-ry: 6deg;
+      transform-origin: right center;
+    }
+  }
+
+  .giftboard-alt-text {
+    flex: 1;
+    min-width: 0;
+
+    h2 {
+      margin-top: 0;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--color-text);
+    }
+  }
+
+  .giftboard-alt-image {
+    flex: 1;
+    min-width: 0;
+    perspective: 1200px;
+  }
+
+  .giftboard-how-list {
+    grid-template-columns: 1fr;
+  }
+
+  .giftboard-tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (max-width: 860px) {
+    flex-direction: column;
+    gap: 2rem;
+
+    &[data-image-side="right"],
+    &[data-image-side="left"] {
+      .giftboard-alt-text {
+        order: 1;
+      }
+
+      .giftboard-alt-image {
+        order: 2;
+      }
+    }
+
+    .giftboard-3d-image {
+      --base-ry: 0deg !important;
+      transform-origin: center center !important;
+    }
+
+    .giftboard-how-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .giftboard-tech-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .giftboard-how-list {
+      grid-template-columns: 1fr;
+    }
+
+    .giftboard-tech-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+/* ─── 3D perspective image ─── */
+.giftboard-3d-image {
+  --base-ry: 0deg;
+  --mouse-rx: 0deg;
+  --mouse-ry: 0deg;
+
+  margin: 0;
+  transform: rotateY(calc(var(--base-ry) + var(--mouse-ry)))
+    rotateX(var(--mouse-rx));
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.03, 0.98, 0.52, 0.99);
+  will-change: transform;
+
+  .image-frame {
+    width: 100%;
+    max-width: 100%;
+    box-shadow:
+      0 12px 40px -8px rgba(0, 0, 0, 0.18),
+      0 4px 16px -4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: box-shadow 0.4s ease;
+  }
+
+  &:hover .image-frame {
+    box-shadow:
+      0 20px 60px -10px rgba(0, 0, 0, 0.25),
+      0 8px 24px -6px rgba(0, 0, 0, 0.15);
+  }
+
+  figcaption {
+    margin-top: 0.65rem;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    text-align: center;
   }
 }
 
 /* ─── Bottom screenshot ─── */
 .giftboard-bottom-image {
   margin-bottom: 3.5rem;
+  perspective: 1200px;
 
   .giftboard-bottom-image-figure {
     margin: 0;
@@ -388,7 +502,6 @@
 
 [data-theme="light"] .giftboard-scrape-explainer {
   code {
-
     .ts-string,
     .json-string {
       color: #0b7f5f;
@@ -429,7 +542,6 @@
 
 [data-theme="dark"] .giftboard-scrape-explainer {
   code {
-
     .ts-keyword,
     .json-key {
       color: #3a80f9;

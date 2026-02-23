@@ -73,6 +73,20 @@ export default function Giftboard() {
       .replace(/\b(\d+(?:\.\d+)?)\b/g, '<span class="ts-number">$1</span>');
   };
 
+  const handleImageMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    const el = e.currentTarget;
+    const rect = el.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    el.style.setProperty("--mouse-rx", `${(-y * 10).toFixed(2)}deg`);
+    el.style.setProperty("--mouse-ry", `${(x * 10).toFixed(2)}deg`);
+  };
+
+  const handleImageMouseLeave = (e: React.MouseEvent<HTMLElement>) => {
+    e.currentTarget.style.setProperty("--mouse-rx", "0deg");
+    e.currentTarget.style.setProperty("--mouse-ry", "0deg");
+  };
+
   return (
     <>
       <section className="giftboard-hero" aria-labelledby="giftboard-title">
@@ -105,25 +119,25 @@ export default function Giftboard() {
         </blockquote>
       </section>
 
+      {/* Alternating: What it does + hero screenshot */}
       <section
-        className="project-section"
+        className="giftboard-alternating"
+        data-image-side="right"
         aria-labelledby="giftboard-what-heading"
       >
-        <h2 id="giftboard-what-heading">{t("giftboard.sections.whatTitle")}</h2>
-        <p>{t("giftboard.sections.whatP1")}</p>
-        <p>{t("giftboard.sections.whatP2")}</p>
-      </section>
-
-      {/* Screenshots */}
-      <section
-        className="giftboard-gallery"
-        aria-labelledby="giftboard-gallery-heading"
-      >
-        <h2 id="giftboard-gallery-heading" className="sr-only">
-          {t("giftboard.sections.galleryTitle")}
-        </h2>
-        <div className="giftboard-gallery-grid">
-          <figure className="giftboard-gallery-item">
+        <div className="giftboard-alt-text">
+          <h2 id="giftboard-what-heading">
+            {t("giftboard.sections.whatTitle")}
+          </h2>
+          <p>{t("giftboard.sections.whatP1")}</p>
+          <p>{t("giftboard.sections.whatP2")}</p>
+        </div>
+        <div className="giftboard-alt-image">
+          <figure
+            className="giftboard-3d-image"
+            onMouseMove={handleImageMouseMove}
+            onMouseLeave={handleImageMouseLeave}
+          >
             <ImageBorder
               src={themedProjectImage("giftboard-hero")}
               alt={t("giftboard.gallery.heroAlt")}
@@ -131,7 +145,21 @@ export default function Giftboard() {
             />
             <figcaption>{t("giftboard.gallery.heroCaption")}</figcaption>
           </figure>
-          <figure className="giftboard-gallery-item">
+        </div>
+      </section>
+
+      {/* Alternating: How it works + wishes overview */}
+      <section
+        className="giftboard-alternating"
+        data-image-side="left"
+        aria-labelledby="giftboard-how-heading"
+      >
+        <div className="giftboard-alt-image">
+          <figure
+            className="giftboard-3d-image"
+            onMouseMove={handleImageMouseMove}
+            onMouseLeave={handleImageMouseLeave}
+          >
             <ImageBorder
               src={themedProjectImage("giftboard-wishes-overview")}
               alt={t("giftboard.gallery.wishesAlt")}
@@ -139,7 +167,83 @@ export default function Giftboard() {
             />
             <figcaption>{t("giftboard.gallery.wishesCaption")}</figcaption>
           </figure>
-          <figure className="giftboard-gallery-item">
+        </div>
+        <div className="giftboard-alt-text">
+          <h2 id="giftboard-how-heading">{t("giftboard.sections.howTitle")}</h2>
+          <ul className="giftboard-how-list" role="list">
+            <li>
+              <span className="giftboard-how-icon" aria-hidden="true">
+                <LinkIcon />
+              </span>
+              <div>
+                <strong>{t("giftboard.how.amazonTitle")}</strong>
+                <p>{t("giftboard.how.amazonText")}</p>
+              </div>
+            </li>
+            <li>
+              <span className="giftboard-how-icon" aria-hidden="true">
+                <UploadIcon />
+              </span>
+              <div>
+                <strong>{t("giftboard.how.customTitle")}</strong>
+                <p>{t("giftboard.how.customText")}</p>
+              </div>
+            </li>
+            <li>
+              <span className="giftboard-how-icon" aria-hidden="true">
+                <ReserveIcon />
+              </span>
+              <div>
+                <strong>{t("giftboard.how.hiddenTitle")}</strong>
+                <p>{t("giftboard.how.hiddenText")}</p>
+              </div>
+            </li>
+            <li>
+              <span className="giftboard-how-icon" aria-hidden="true">
+                <PriorityIcon />
+              </span>
+              <div>
+                <strong>{t("giftboard.how.prioritiesTitle")}</strong>
+                <p>{t("giftboard.how.prioritiesText")}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Alternating: Tech + theme screenshot */}
+      <section
+        className="giftboard-alternating"
+        data-image-side="right"
+        aria-labelledby="giftboard-tech-heading"
+      >
+        <div className="giftboard-alt-text">
+          <h2 id="giftboard-tech-heading">
+            {t("giftboard.sections.techTitle")}
+          </h2>
+          <div className="giftboard-tech-grid">
+            <article className="giftboard-tech-card">
+              <div className="giftboard-tech-card-icon" aria-hidden="true">
+                <FrontendIcon />
+              </div>
+              <h3>{t("giftboard.tech.frontendTitle")}</h3>
+              <p>{t("giftboard.tech.frontendText")}</p>
+            </article>
+            <article className="giftboard-tech-card">
+              <div className="giftboard-tech-card-icon" aria-hidden="true">
+                <BackendIcon />
+              </div>
+              <h3>{t("giftboard.tech.backendTitle")}</h3>
+              <p>{t("giftboard.tech.backendText")}</p>
+            </article>
+          </div>
+        </div>
+        <div className="giftboard-alt-image">
+          <figure
+            className="giftboard-3d-image"
+            onMouseMove={handleImageMouseMove}
+            onMouseLeave={handleImageMouseLeave}
+          >
             <ImageBorder
               src={themePreviewImage}
               alt={t("giftboard.gallery.themeAlt")}
@@ -150,75 +254,7 @@ export default function Giftboard() {
         </div>
       </section>
 
-      {/* How it works */}
-      <section
-        className="project-section"
-        aria-labelledby="giftboard-how-heading"
-      >
-        <h2 id="giftboard-how-heading">{t("giftboard.sections.howTitle")}</h2>
-        <ul className="giftboard-how-list" role="list">
-          <li>
-            <span className="giftboard-how-icon" aria-hidden="true">
-              <LinkIcon />
-            </span>
-            <div>
-              <strong>{t("giftboard.how.amazonTitle")}</strong>
-              <p>{t("giftboard.how.amazonText")}</p>
-            </div>
-          </li>
-          <li>
-            <span className="giftboard-how-icon" aria-hidden="true">
-              <UploadIcon />
-            </span>
-            <div>
-              <strong>{t("giftboard.how.customTitle")}</strong>
-              <p>{t("giftboard.how.customText")}</p>
-            </div>
-          </li>
-          <li>
-            <span className="giftboard-how-icon" aria-hidden="true">
-              <ReserveIcon />
-            </span>
-            <div>
-              <strong>{t("giftboard.how.hiddenTitle")}</strong>
-              <p>{t("giftboard.how.hiddenText")}</p>
-            </div>
-          </li>
-          <li>
-            <span className="giftboard-how-icon" aria-hidden="true">
-              <PriorityIcon />
-            </span>
-            <div>
-              <strong>{t("giftboard.how.prioritiesTitle")}</strong>
-              <p>{t("giftboard.how.prioritiesText")}</p>
-            </div>
-          </li>
-        </ul>
-      </section>
-
-      {/* Tech */}
-      <section
-        className="project-section"
-        aria-labelledby="giftboard-tech-heading"
-      >
-        <h2 id="giftboard-tech-heading">{t("giftboard.sections.techTitle")}</h2>
-        <div className="giftboard-tech-grid">
-          <article className="giftboard-tech-card">
-            <div className="giftboard-tech-card-icon" aria-hidden="true">
-              <FrontendIcon />
-            </div>
-            <h3>{t("giftboard.tech.frontendTitle")}</h3>
-            <p>{t("giftboard.tech.frontendText")}</p>
-          </article>
-          <article className="giftboard-tech-card">
-            <div className="giftboard-tech-card-icon" aria-hidden="true">
-              <BackendIcon />
-            </div>
-            <h3>{t("giftboard.tech.backendTitle")}</h3>
-            <p>{t("giftboard.tech.backendText")}</p>
-          </article>
-        </div>
-      </section>
+      {/* Bottom images with 3D effect */}
       <section
         className="giftboard-bottom-image"
         aria-labelledby="giftboard-bottom-image-heading"
@@ -226,7 +262,11 @@ export default function Giftboard() {
         <h2 id="giftboard-bottom-image-heading" className="sr-only">
           {t("giftboard.sections.extraScreenshotTitle")}
         </h2>
-        <figure className="giftboard-bottom-image-figure">
+        <figure
+          className="giftboard-bottom-image-figure giftboard-3d-image"
+          onMouseMove={handleImageMouseMove}
+          onMouseLeave={handleImageMouseLeave}
+        >
           <ImageBorder
             src={themedProjectImage("giftboard-create-wish")}
             alt={t("giftboard.gallery.createWishAlt")}
@@ -240,7 +280,11 @@ export default function Giftboard() {
         className="giftboard-bottom-image"
         aria-labelledby="giftboard-bottom-image-heading"
       >
-        <figure className="giftboard-bottom-image-figure">
+        <figure
+          className="giftboard-bottom-image-figure giftboard-3d-image"
+          onMouseMove={handleImageMouseMove}
+          onMouseLeave={handleImageMouseLeave}
+        >
           <ImageBorder
             src={themedProjectImage("giftboard-board-overview")}
             alt={t("giftboard.gallery.boardAlt")}
@@ -254,7 +298,9 @@ export default function Giftboard() {
         className="project-section giftboard-scrape-explainer"
         aria-labelledby="giftboard-scrape-heading"
       >
-        <h2 id="giftboard-scrape-heading">{t("giftboard.sections.scrapeTitle")}</h2>
+        <h2 id="giftboard-scrape-heading">
+          {t("giftboard.sections.scrapeTitle")}
+        </h2>
         <p>{t("giftboard.sections.scrapeP1")}</p>
         <pre>
           <code
@@ -346,7 +392,9 @@ app.post("/price", async (
           className="giftboard-json-part"
           aria-labelledby="giftboard-json-list-meta"
         >
-          <h3 id="giftboard-json-list-meta">{t("giftboard.json.part1Title")}</h3>
+          <h3 id="giftboard-json-list-meta">
+            {t("giftboard.json.part1Title")}
+          </h3>
           <p>{t("giftboard.json.part1Text")}</p>
           <pre>
             <code
@@ -408,7 +456,9 @@ app.post("/price", async (
           className="giftboard-json-part"
           aria-labelledby="giftboard-json-reserve-state"
         >
-          <h3 id="giftboard-json-reserve-state">{t("giftboard.json.part3Title")}</h3>
+          <h3 id="giftboard-json-reserve-state">
+            {t("giftboard.json.part3Title")}
+          </h3>
           <p>{t("giftboard.json.part3Text")}</p>
           <pre>
             <code
