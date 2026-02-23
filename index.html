@@ -1,37 +1,48 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/thiering.ico" />
+    <link
+      rel="preload"
+      as="image"
+      href="/Noah-900.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Personal website of Noah Thiering." />
+    <meta name="author" content="Noah Thiering" />
+    <meta
+      name="keywords"
+      content="Noah Thiering, Portfolio, Personal Website"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/thiering.ico" />
-  <link rel="preload" as="image" href="/Noah-900.webp" type="image/webp" fetchpriority="high">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Personal website of Noah Thiering." />
-  <meta name="author" content="Noah Thiering" />
-  <meta name="keywords" content="Noah Thiering, Portfolio, Personal Website" />
+    <script>
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash,
+          );
+        }
+      })(window.location);
+    </script>
 
-  <script>
-    (function (l) {
-      if (l.search[1] === "/") {
-        var decoded = l.search
-          .slice(1)
-          .split("&")
-          .map(function (s) {
-            return s.replace(/~and~/g, "&");
-          })
-          .join("?");
-        window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
-      }
-    })(window.location);
-  </script>
+    <title>Noah Thiering</title>
+    <script type="module" crossorigin src="/assets/index-BXxA1S5T.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Cf234Rxs.css">
+  </head>
 
-  <title>Noah Thiering</title>
-  <script type="module" crossorigin src="/assets/index-Cj7DNHCC.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-B36sbDH3.css">
-</head>
-
-<body data-theme="light">
-  <div id="root"></div>
-</body>
-
+  <body data-theme="light">
+    <div id="root"></div>
+  </body>
 </html>
