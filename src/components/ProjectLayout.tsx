@@ -6,24 +6,33 @@ import "@styles/components/project_layout.scss";
 import { useTranslation } from "react-i18next";
 
 export default function ProjectLayout() {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
-    return (
-        <div className="project-page">
-            <Header />
+  return (
+    <div className="project-page">
+      <Header />
 
-            <main className="project-content" role="main">
-                <nav className="project-back" role="navigation" aria-label={t("projectLayout.backAria")}>
-                    <a href="/" className="project-back-link">
-                        <BackArrow aria-hidden="true" />
-                        <span>{t("projectLayout.backLabel")}</span>
-                    </a>
-                </nav>
+      <main
+        id="project-main-content"
+        className="project-content"
+        role="main"
+        tabIndex={-1}
+      >
+        <nav
+          className="project-back"
+          role="navigation"
+          aria-label={t("projectLayout.backAria")}
+        >
+          <a href="/" className="project-back-link">
+            <BackArrow aria-hidden="true" />
+            <span>{t("projectLayout.backLabel")}</span>
+          </a>
+        </nav>
 
-                <Outlet />
-            </main>
+        <Outlet />
+      </main>
 
-            <Footer />
-        </div>
-    );
+      <Footer />
+    </div>
+  );
 }

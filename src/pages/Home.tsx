@@ -159,7 +159,7 @@ export default function Home() {
     <div className="home-container" id="home">
       <Header />
       {/* <Navigationbar /> */}
-      <main id="home-content" role="main">
+      <main id="home-content" role="main" tabIndex={-1}>
         <div className="home-top-container">
           <div className="home-picture-container">
             <div className="home-picture-blob">

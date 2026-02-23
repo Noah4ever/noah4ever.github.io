@@ -3,10 +3,15 @@ import ThemeSwitch from "./ThemeSwitch";
 import LanguageSwitch from "./LanguageSwitch";
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 
 export default function Header() {
   const headerRef = useRef<HTMLElement>(null);
   const { t } = useTranslation();
+  const location = useLocation();
+  const skipTarget = location.pathname.startsWith("/projects")
+    ? "#project-main-content"
+    : "#home-content";
 
   useEffect(() => {
     let lastScrollTop = 0;
@@ -43,7 +48,14 @@ export default function Header() {
 
   return (
     <header className="header-container" ref={headerRef} role="banner">
-      <a className="header-logo" href="/#home" aria-label={t("header.logoAria")}>
+      <a className="skip-link" href={skipTarget}>
+        Skip to main content
+      </a>
+      <a
+        className="header-logo"
+        href="/#home"
+        aria-label={t("header.logoAria")}
+      >
         <span className="header-logo-around">{"{"}</span>
         <span className="header-logo-center">T</span>
         <span className="header-logo-around">{"}"}</span>
