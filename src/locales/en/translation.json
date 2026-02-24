@@ -102,6 +102,12 @@
                 "description": "Custom party app we built for my father-in-law's 49th birthday party. It features a 'find your partner' game, a quiz about him, a shared photo gallery and more. Built with React Native and TypeScript.",
                 "aria": "Open Custom Party App project page",
                 "imageAlt": "Custom Party App landing page"
+            },
+            "nolicom": {
+                "title": "ESP32 Retro Desk Notifier",
+                "description": "A  wireless desk device built with ESP32 and ESP-NOW which sends data to notify the other device with sound and light when a button is pressed.",
+                "aria": "Open ESP32 Retro Desk Notifier project page",
+                "imageAlt": "ESP32 Retro Desk Notifier assembled prototype"
             }
         }
     },

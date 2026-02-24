@@ -73,20 +73,6 @@ export default function Giftboard() {
       .replace(/\b(\d+(?:\.\d+)?)\b/g, '<span class="ts-number">$1</span>');
   };
 
-  const handleImageMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-    const el = e.currentTarget;
-    const rect = el.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    el.style.setProperty("--mouse-rx", `${(-y * 10).toFixed(2)}deg`);
-    el.style.setProperty("--mouse-ry", `${(x * 10).toFixed(2)}deg`);
-  };
-
-  const handleImageMouseLeave = (e: React.MouseEvent<HTMLElement>) => {
-    e.currentTarget.style.setProperty("--mouse-rx", "0deg");
-    e.currentTarget.style.setProperty("--mouse-ry", "0deg");
-  };
-
   return (
     <>
       <section className="giftboard-hero" aria-labelledby="giftboard-title">
@@ -133,15 +119,12 @@ export default function Giftboard() {
           <p>{t("giftboard.sections.whatP2")}</p>
         </div>
         <div className="giftboard-alt-image">
-          <figure
-            className="giftboard-3d-image"
-            onMouseMove={handleImageMouseMove}
-            onMouseLeave={handleImageMouseLeave}
-          >
+          <figure className="giftboard-3d-image">
             <ImageBorder
               src={themedProjectImage("giftboard-hero")}
               alt={t("giftboard.gallery.heroAlt")}
               frame="safari"
+              lookAtCursor
             />
             <figcaption>{t("giftboard.gallery.heroCaption")}</figcaption>
           </figure>
@@ -155,15 +138,12 @@ export default function Giftboard() {
         aria-labelledby="giftboard-how-heading"
       >
         <div className="giftboard-alt-image">
-          <figure
-            className="giftboard-3d-image"
-            onMouseMove={handleImageMouseMove}
-            onMouseLeave={handleImageMouseLeave}
-          >
+          <figure className="giftboard-3d-image">
             <ImageBorder
               src={themedProjectImage("giftboard-wishes-overview")}
               alt={t("giftboard.gallery.wishesAlt")}
               frame="safari"
+              lookAtCursor
             />
             <figcaption>{t("giftboard.gallery.wishesCaption")}</figcaption>
           </figure>
@@ -239,15 +219,12 @@ export default function Giftboard() {
           </div>
         </div>
         <div className="giftboard-alt-image">
-          <figure
-            className="giftboard-3d-image"
-            onMouseMove={handleImageMouseMove}
-            onMouseLeave={handleImageMouseLeave}
-          >
+          <figure className="giftboard-3d-image">
             <ImageBorder
               src={themePreviewImage}
               alt={t("giftboard.gallery.themeAlt")}
               frame="safari"
+              lookAtCursor
             />
             <figcaption>{t("giftboard.gallery.themeCaption")}</figcaption>
           </figure>
@@ -264,13 +241,12 @@ export default function Giftboard() {
         </h2>
         <figure
           className="giftboard-bottom-image-figure giftboard-3d-image"
-          onMouseMove={handleImageMouseMove}
-          onMouseLeave={handleImageMouseLeave}
         >
           <ImageBorder
             src={themedProjectImage("giftboard-create-wish")}
             alt={t("giftboard.gallery.createWishAlt")}
             frame="safari"
+            lookAtCursor
           />
           <figcaption>{t("giftboard.gallery.createWishCaption")}</figcaption>
         </figure>
@@ -282,13 +258,12 @@ export default function Giftboard() {
       >
         <figure
           className="giftboard-bottom-image-figure giftboard-3d-image"
-          onMouseMove={handleImageMouseMove}
-          onMouseLeave={handleImageMouseLeave}
         >
           <ImageBorder
             src={themedProjectImage("giftboard-board-overview")}
             alt={t("giftboard.gallery.boardAlt")}
             frame="chrome"
+            lookAtCursor
           />
           <figcaption>{t("giftboard.gallery.boardCaption")}</figcaption>
         </figure>
@@ -302,8 +277,9 @@ export default function Giftboard() {
           {t("giftboard.sections.scrapeTitle")}
         </h2>
         <p>{t("giftboard.sections.scrapeP1")}</p>
-        <pre>
+        <pre className="code-block">
           <code
+            className="code-highlight"
             dangerouslySetInnerHTML={{
               __html:
                 highlightTypeScript(String.raw`type PriceRequestBody = { url?: string };
@@ -337,8 +313,9 @@ app.post("/price", async (
         <p>{t("giftboard.sections.scrapeP2")}</p>
         <p>{t("giftboard.sections.scrapeP3")}</p>
         <p>{t("giftboard.sections.scrapeP4")}</p>
-        <pre>
+        <pre className="code-block">
           <code
+            className="code-highlight"
             dangerouslySetInnerHTML={{
               __html: highlightJson(String.raw`[
     {
@@ -396,8 +373,9 @@ app.post("/price", async (
             {t("giftboard.json.part1Title")}
           </h3>
           <p>{t("giftboard.json.part1Text")}</p>
-          <pre>
+          <pre className="code-block">
             <code
+              className="code-highlight"
               dangerouslySetInnerHTML={{
                 __html: highlightJson(`{
     "id": "b2a8ce80-89e4-4f0a-97f0-26c7ebf6ab4f",
@@ -418,8 +396,9 @@ app.post("/price", async (
         >
           <h3 id="giftboard-json-wishes">{t("giftboard.json.part2Title")}</h3>
           <p>{t("giftboard.json.part2Text")}</p>
-          <pre>
+          <pre className="code-block">
             <code
+              className="code-highlight"
               dangerouslySetInnerHTML={{
                 __html: highlightJson(`"wishes": [
     {
@@ -460,8 +439,9 @@ app.post("/price", async (
             {t("giftboard.json.part3Title")}
           </h3>
           <p>{t("giftboard.json.part3Text")}</p>
-          <pre>
+          <pre className="code-block">
             <code
+              className="code-highlight"
               dangerouslySetInnerHTML={{
                 __html: highlightJson(`{
     "reservations": [
@@ -485,8 +465,9 @@ app.post("/price", async (
           aria-labelledby="giftboard-json-full"
         >
           <h3 id="giftboard-json-full">{t("giftboard.json.part4Title")}</h3>
-          <pre>
+          <pre className="code-block">
             <code
+              className="code-highlight"
               dangerouslySetInnerHTML={{
                 __html: highlightJson(`{
     "lists": [

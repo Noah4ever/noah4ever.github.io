@@ -46,6 +46,23 @@
     will-change: transform;
     animation: expand-zoom 650ms both;
   }
+
+  &.default {
+    border-radius: 12px;
+
+    img {
+      border-radius: 12px;
+    }
+  }
+
+  &.cursor-look {
+    --mouse-rx: 0deg;
+    --mouse-ry: 0deg;
+    transform: rotateY(var(--mouse-ry)) rotateX(var(--mouse-rx));
+    transform-style: preserve-3d;
+    transition: transform 0.45s cubic-bezier(0.03, 0.98, 0.52, 0.99);
+    will-change: transform;
+  }
 }
 
 .image-frame:is(.safari, .chrome) {
@@ -355,6 +372,17 @@
   .image-frame.is-closing,
   .image-frame.is-expanding {
     animation: none;
+  }
+
+  .image-frame.cursor-look {
+    transition: none;
+    transform: none;
+  }
+}
+
+@media (hover: none) {
+  .image-frame.cursor-look {
+    transform: none;
   }
 }
 

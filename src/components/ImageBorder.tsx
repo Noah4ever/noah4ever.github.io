@@ -3,13 +3,14 @@ import { useEffect, useState } from "react";
 import { FaChrome, FaSafari } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
-type ImageFrame = "safari" | "chrome" | "mobile";
+type ImageFrame = "default" | "safari" | "chrome" | "mobile";
 
 type ImageBorderProps = {
   src: string;
   alt: string;
   frame?: ImageFrame;
   className?: string;
+  lookAtCursor?: boolean;
 };
 
 type FrameImageProps = {
@@ -171,8 +172,9 @@ function MobileFrame({ src, alt }: FrameImageProps) {
 export default function ImageBorder({
   src,
   alt,
-  frame = "safari",
+  frame = "default",
   className,
+  lookAtCursor = false,
 }: ImageBorderProps) {
   const [activeFrame, setActiveFrame] = useState<ImageFrame>(frame);
   const [animationState, setAnimationState] = useState<AnimationState>(null);
@@ -194,6 +196,7 @@ export default function ImageBorder({
   const classes = [
     "image-frame",
     activeFrame,
+    lookAtCursor && "cursor-look",
     animationState && `is-${animationState}`,
     className,
   ]
@@ -212,6 +215,8 @@ export default function ImageBorder({
       />
     ) : activeFrame === "mobile" ? (
       <MobileFrame src={src} alt={alt} />
+    ) : activeFrame === "default" ? (
+      <FrameImage src={src} alt={alt} />
     ) : (
       <SafariFrame
         src={src}
@@ -226,6 +231,26 @@ export default function ImageBorder({
   return (
     <div
       className={classes}
+      onMouseMove={
+        lookAtCursor
+          ? (event) => {
+            const el = event.currentTarget;
+            const rect = el.getBoundingClientRect();
+            const x = (event.clientX - rect.left) / rect.width - 0.5;
+            const y = (event.clientY - rect.top) / rect.height - 0.5;
+            el.style.setProperty("--mouse-rx", `${(-y * 10).toFixed(2)}deg`);
+            el.style.setProperty("--mouse-ry", `${(x * 10).toFixed(2)}deg`);
+          }
+          : undefined
+      }
+      onMouseLeave={
+        lookAtCursor
+          ? (event) => {
+            event.currentTarget.style.setProperty("--mouse-rx", "0deg");
+            event.currentTarget.style.setProperty("--mouse-ry", "0deg");
+          }
+          : undefined
+      }
       onAnimationEnd={(event) => {
         if (event.currentTarget === event.target && animationState) {
           setAnimationState(null);

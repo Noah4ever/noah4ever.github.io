@@ -102,6 +102,12 @@
                 "description": "Eine individuelle Party-App, die wir für den 49. Geburtstag meines Schwiegervaters gebaut haben. Sie enthält ein \"Finde deinen Partner\"-Spiel, ein Quiz über ihn, eine gemeinsame Fotogalerie und mehr. Entwickelt mit React Native und TypeScript.",
                 "aria": "Custom Party App Projektseite öffnen",
                 "imageAlt": "Custom Party App Startseite"
+            },
+            "nolicom": {
+                "title": "Retro ESP-NOW Desk Notifier",
+                "description": "Ein drahtloses Desk-Notifier-Duo mit ESP32 und ESP-NOW: Knopf drücken → auf dem anderen Gerät Ton + Licht, mit Akku-Betrieb, Retro-Gehäuse und vielen Hardware-Iterationen.",
+                "aria": "Retro ESP-NOW Desk Notifier Projektseite öffnen",
+                "imageAlt": "Retro ESP-NOW Desk Notifier als montierter Prototyp"
             }
         }
     },

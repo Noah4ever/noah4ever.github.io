@@ -384,6 +384,17 @@ export default function Home() {
           <ul className="projects-list" role="list">
             <li>
               <ProjectCardLink
+                title={t("home.projects.nolicom.title")}
+                description={t("home.projects.nolicom.description")}
+                imageSrc="/Projects/Nolicom/finished-case-colored-top.webp"
+                href="/projects/nolicom"
+                ariaLabel={t("home.projects.nolicom.aria")}
+                imageAlt={t("home.projects.nolicom.imageAlt")}
+                tags={["ESP32", "C++", "Blender", "3D Printing"]}
+              />
+            </li>
+            <li>
+              <ProjectCardLink
                 title={t("home.projects.giftboard.title")}
                 description={t("home.projects.giftboard.description")}
                 imageSrc="/Projects/giftboard-hero.webp"

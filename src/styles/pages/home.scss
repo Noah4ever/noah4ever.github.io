@@ -652,6 +652,32 @@
                 --project-tag-border: var(--tag-react-native-border);
                 --project-tag-bg: var(--tag-react-native-bg);
               }
+
+              &.project-tag--esp32 {
+                --project-tag-text: var(--tag-esp32-text);
+                --project-tag-border: var(--tag-esp32-border);
+                --project-tag-bg: var(--tag-esp32-bg);
+              }
+
+              &.project-tag--c-,
+              &.project-tag--cpp,
+              &.project-tag--c-plus-plus {
+                --project-tag-text: var(--tag-cpp-text);
+                --project-tag-border: var(--tag-cpp-border);
+                --project-tag-bg: var(--tag-cpp-bg);
+              }
+
+              &.project-tag--blender {
+                --project-tag-text: var(--tag-blender-text);
+                --project-tag-border: var(--tag-blender-border);
+                --project-tag-bg: var(--tag-blender-bg);
+              }
+
+              &.project-tag--3d-printing {
+                --project-tag-text: var(--tag-3d-printing-text);
+                --project-tag-border: var(--tag-3d-printing-border);
+                --project-tag-bg: var(--tag-3d-printing-bg);
+              }
             }
           }
         }
