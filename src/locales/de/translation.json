@@ -9,7 +9,8 @@
     },
     "projectLayout": {
         "backAria": "Zurück zur Startseite",
-        "backLabel": "Zurück zum Portfolio"
+        "backLabel": "Zurück zum Portfolio",
+        "backToTop": "Nach oben"
     },
     "imageBorder": {
         "closeWindow": "Fenster schließen",

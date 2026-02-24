@@ -78,7 +78,7 @@ export default function Nolicom() {
                         <ImageBorder
                             src={media("Retro 1980s Electronic Device Design-second-mocku.webp")}
                             alt={t("nolicom.media.conceptAlt")}
-                            frame="chrome"
+                            frame="safari"
                             lookAtCursor
                         />
                         <figcaption>{t("nolicom.media.conceptCaption")}</figcaption>
@@ -185,7 +185,7 @@ void loop() {
                 <div className="nolicom-alt-image">
                     <figure>
                         <video className="nolicom-inline-video" controls playsInline preload="metadata">
-                            <source src={media("first-esp-now-test-bugs-with-esp32-looping-weird-and-not-responding.MP4")} type="video/mp4" />
+                            <source src={media("first-esp-now-test-bugs-with-esp32-looping-weird-and-not-responding.MP4") + "#t=0.001"} type="video/mp4" />
                         </video>
                         <figcaption>{t("nolicom.media.firstTestCaption")}</figcaption>
                     </figure>
@@ -219,7 +219,7 @@ void loop() {
                 <div className="nolicom-video-row full-width">
                     <figure>
                         <video controls playsInline preload="metadata">
-                            <source src={media("prototype-test-with-lights-and-buzzer-sound.mp4")} type="video/mp4" />
+                            <source src={media("prototype-test-with-lights-and-buzzer-sound.mp4") + "#t=0.001"} type="video/mp4" />
                         </video>
                         <figcaption>{t("nolicom.media.protoTestCaption")}</figcaption>
                     </figure>
@@ -236,7 +236,7 @@ void loop() {
                     </figure>
                     <figure className="nolicom-workspace-video">
                         <video controls playsInline preload="metadata">
-                            <source src={media("workspace-video.MOV")} type="video/mp4" />
+                            <source src={media("workspace-video.MOV") + "#t=0.001"} type="video/mp4" />
                         </video>
                         <figcaption>{t("nolicom.media.workspaceVideoCaption")}</figcaption>
                     </figure>
@@ -290,7 +290,7 @@ void loop() {
                 <div className="nolicom-video-row full-width media-height-restrict">
                     <figure>
                         <video controls playsInline preload="metadata">
-                            <source src={media("pla-3d-printer-printing.MP4")} type="video/mp4" />
+                            <source src={media("pla-3d-printer-printing.MP4") + "#t=0.001"} type="video/mp4" />
                         </video>
                         <figcaption>{t("nolicom.media.plaVideoCaption")}</figcaption>
                     </figure>
@@ -301,7 +301,6 @@ void loop() {
                 <h2 id="nolicom-finishing-heading">{t("nolicom.finishing.title")}</h2>
                 <p>{t("nolicom.finishing.p1")}</p>
                 <p>{t("nolicom.finishing.p2")}</p>
-                imgP
                 <div className="nolicom-media-grid full-width media-height-restrict">
                     <figure>
                         <ImageBorder src={media("finished-case-colored-front.webp")} alt={t("nolicom.media.paintedAlt")} lookAtCursor />

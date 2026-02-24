@@ -39,7 +39,7 @@ export default function Home() {
       const isDesktop = window.innerWidth >= 900;
       const parallaxDistance = isDesktop
         ? Math.min(window.innerHeight * 0.32, 480)
-        : Math.min(window.innerHeight * 0.22, 190);
+        : Math.min(window.innerHeight * 0.12, 90);
       const parallaxProgress = Math.max(
         0,
         Math.min(1, scrollY / (window.innerHeight * (isDesktop ? 0.42 : 0.6))),
@@ -60,6 +60,18 @@ export default function Home() {
   const [activeStyle, setActiveStyle] = useState<React.CSSProperties>({});
   const transitionDuration = 400; // in ms
 
+  // Lock body scroll while a skill popup is open
+  useEffect(() => {
+    if (activeSkill) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [activeSkill]);
+
   const handleSkillClick = (
     skillName: string,
     e: React.MouseEvent<HTMLLIElement, MouseEvent>,
@@ -68,6 +80,13 @@ export default function Home() {
     // If not active, animate it to the center with a flip.
     if (activeSkill !== skillName) {
       const rect = e.currentTarget.getBoundingClientRect();
+      // #about has transform + will-change:transform, so position:fixed
+      // children are positioned relative to #about, not the viewport.
+      const aboutEl = document.getElementById("about");
+      const aboutRect = aboutEl?.getBoundingClientRect() ?? {
+        top: 0,
+        left: 0,
+      };
 
       const descriptionElement = document.getElementById(
         `skill-description-${skillName}`,
@@ -75,23 +94,24 @@ export default function Home() {
       if (descriptionElement) {
         descriptionElement.classList.add("skill-clicked-in");
       }
-      // Set the card’s fixed starting position.
+      // Set the card’s starting position (relative to #about).
       setActiveStyle({
         position: "fixed",
-        top: rect.top,
-        left: rect.left,
+        top: rect.top - aboutRect.top,
+        left: rect.left - aboutRect.left,
         width: rect.width,
         height: rect.height,
         transform: "none",
         zIndex: 1000,
       });
       setActiveSkill(skillName);
-      // Next frame: animate to center and flip.
+      // Next frame: animate to viewport center (in #about-relative coords).
       requestAnimationFrame(() => {
+        const ar = aboutEl?.getBoundingClientRect() ?? { top: 0, left: 0 };
         setActiveStyle({
           position: "fixed",
-          top: "50%",
-          left: "50%",
+          top: window.innerHeight / 2 - ar.top,
+          left: window.innerWidth / 2 - ar.left,
           width: window.innerWidth / 1.2,
           height: window.innerHeight / 2,
           transform: "translate(-50%, -50%)",
@@ -121,6 +141,11 @@ export default function Home() {
     const liElement = document.getElementById(`skill-${activeSkill}`);
     if (liElement) {
       const rect = liElement.getBoundingClientRect();
+      const aboutEl = document.getElementById("about");
+      const aboutRect = aboutEl?.getBoundingClientRect() ?? {
+        top: 0,
+        left: 0,
+      };
       const descriptionElement = document.getElementById(
         `skill-description-${activeSkill}`,
       );
@@ -129,8 +154,8 @@ export default function Home() {
       }
       setActiveStyle({
         position: "fixed",
-        top: rect.top,
-        left: rect.left,
+        top: rect.top - aboutRect.top,
+        left: rect.left - aboutRect.left,
         width: rect.width,
         height: rect.height,
         zIndex: 1000,
@@ -418,12 +443,12 @@ export default function Home() {
             </li>
           </ul>
         </section>
-      </section>
 
-      {/* Overlay that darkens the background when a skill is active */}
-      {activeSkill && (
-        <div className="popup-overlay" onClick={closeActiveSkill}></div>
-      )}
+        {/* Overlay inside #about so it shares the same stacking context */}
+        {activeSkill && (
+          <div className="popup-overlay" onClick={closeActiveSkill}></div>
+        )}
+      </section>
 
       <Footer />
     </div>

@@ -81,11 +81,6 @@
     .giftboard-alt-image {
       order: 2;
     }
-
-    .giftboard-3d-image {
-      --base-ry: -6deg;
-      transform-origin: left center;
-    }
   }
 
   &[data-image-side="left"] {
@@ -95,11 +90,6 @@
 
     .giftboard-alt-image {
       order: 1;
-    }
-
-    .giftboard-3d-image {
-      --base-ry: 6deg;
-      transform-origin: right center;
     }
   }
 
@@ -147,11 +137,6 @@
       }
     }
 
-    .giftboard-3d-image {
-      --base-ry: 0deg !important;
-      transform-origin: center center !important;
-    }
-
     .giftboard-how-list {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -174,31 +159,12 @@
 
 /* ─── 3D perspective image ─── */
 .giftboard-3d-image {
-  --base-ry: 0deg;
-  --mouse-rx: 0deg;
-  --mouse-ry: 0deg;
-
   margin: 0;
-  transform: rotateY(calc(var(--base-ry) + var(--mouse-ry)))
-    rotateX(var(--mouse-rx));
-  transform-style: preserve-3d;
-  transition: transform 0.45s cubic-bezier(0.03, 0.98, 0.52, 0.99);
-  will-change: transform;
 
   .image-frame {
     width: 100%;
     max-width: 100%;
-    box-shadow:
-      0 12px 40px -8px rgba(0, 0, 0, 0.18),
-      0 4px 16px -4px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    transition: box-shadow 0.4s ease;
-  }
-
-  &:hover .image-frame {
-    box-shadow:
-      0 20px 60px -10px rgba(0, 0, 0, 0.25),
-      0 8px 24px -6px rgba(0, 0, 0, 0.15);
   }
 
   figcaption {
@@ -502,6 +468,7 @@
 
 [data-theme="light"] .giftboard-scrape-explainer {
   code {
+
     .ts-string,
     .json-string {
       color: #0b7f5f;
@@ -542,6 +509,7 @@
 
 [data-theme="dark"] .giftboard-scrape-explainer {
   code {
+
     .ts-keyword,
     .json-key {
       color: #3a80f9;

@@ -235,11 +235,24 @@ export default function ImageBorder({
         lookAtCursor
           ? (event) => {
             const el = event.currentTarget;
+            const target = event.target as HTMLElement | null;
+
+            if (
+              (activeFrame === "safari" || activeFrame === "chrome") &&
+              target?.closest(".toolbar")
+            ) {
+              el.style.setProperty("--mouse-rx", "0deg");
+              el.style.setProperty("--mouse-ry", "0deg");
+              return;
+            }
+
             const rect = el.getBoundingClientRect();
             const x = (event.clientX - rect.left) / rect.width - 0.5;
             const y = (event.clientY - rect.top) / rect.height - 0.5;
-            el.style.setProperty("--mouse-rx", `${(-y * 10).toFixed(2)}deg`);
-            el.style.setProperty("--mouse-ry", `${(x * 10).toFixed(2)}deg`);
+            const maxTilt =
+              activeFrame === "safari" || activeFrame === "chrome" ? 9 : 13;
+            el.style.setProperty("--mouse-rx", `${(-y * maxTilt).toFixed(2)}deg`);
+            el.style.setProperty("--mouse-ry", `${(x * maxTilt).toFixed(2)}deg`);
           }
           : undefined
       }
