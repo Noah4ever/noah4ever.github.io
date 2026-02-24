@@ -14,8 +14,13 @@ export default function Home() {
   const { t } = useTranslation();
 
   const [opacity, setOpacity] = useState<number>(1);
+  const [aboutParallaxY, setAboutParallaxY] = useState<number>(0);
 
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
     const handleScroll = () => {
       // 50% of the viewport height as the threshold
       const fadeThreshold = window.innerHeight * 0.3;
@@ -24,8 +29,24 @@ export default function Home() {
       let newOpacity = 1 - scrollY / fadeThreshold;
       newOpacity = Math.max(0, Math.min(1, newOpacity));
       setOpacity(newOpacity);
+
+      if (prefersReducedMotion) {
+        setAboutParallaxY(0);
+        return;
+      }
+
+      const isDesktop = window.innerWidth >= 900;
+      const parallaxDistance = isDesktop
+        ? Math.min(window.innerHeight * 0.32, 480)
+        : Math.min(window.innerHeight * 0.22, 190);
+      const parallaxProgress = Math.max(
+        0,
+        Math.min(1, scrollY / (window.innerHeight * (isDesktop ? 0.42 : 0.6))),
+      );
+      setAboutParallaxY(-parallaxDistance * parallaxProgress);
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
 
     // Cleanup the event listener on component unmount
@@ -282,7 +303,7 @@ export default function Home() {
         </div>
       </main>
 
-      <section id="about">
+      <section id="about" style={{ transform: `translateY(${aboutParallaxY}px)` }}>
         <h2>{t("home.about.title")}</h2>
         <div className="about-container blur-container">
           <h3>{t("home.about.personalTitle")}</h3>
