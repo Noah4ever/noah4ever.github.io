@@ -31,3 +31,22 @@ body {
   background-color: var(--color-background);
   transition: background-color 200ms ease-in-out;
 }
+
+.view-github-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 1rem;
+  margin-bottom: 0.75rem;
+  text-decoration: none;
+  background-color: var(--color-background-skill);
+  border: 2px solid var(--color-background-blur);
+  color: var(--color-text);
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: border-color 120ms ease;
+  &:hover {
+    border-color: var(--color-accent);
+  }
+}

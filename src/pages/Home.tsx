@@ -290,7 +290,10 @@ export default function Home() {
             <div className="home-welcome-sub">
               {t("home.hero.rolePrefix")} <u>{t("home.hero.role")}</u>
             </div>
-            <div className="home-location-badge" aria-label={t("home.hero.location")}>
+            <div
+              className="home-location-badge"
+              aria-label={t("home.hero.location")}
+            >
               <span className="home-location-icon" aria-hidden="true">
                 <LocationIcon />
               </span>
@@ -339,7 +342,10 @@ export default function Home() {
         </div>
       </main>
 
-      <section id="about" style={{ transform: `translateY(${aboutParallaxY}px)` }}>
+      <section
+        id="about"
+        style={{ transform: `translateY(${aboutParallaxY}px)` }}
+      >
         <h2>{t("home.about.title")}</h2>
         <div className="about-container blur-container">
           <h3>{t("home.about.personalTitle")}</h3>
@@ -416,6 +422,7 @@ export default function Home() {
                 ariaLabel={t("home.projects.nolicom.aria")}
                 imageAlt={t("home.projects.nolicom.imageAlt")}
                 tags={["ESP32", "C++", "Blender", "3D Printing"]}
+                githubLink="https://github.com/Noah4ever/nolicom"
               />
             </li>
             <li>
