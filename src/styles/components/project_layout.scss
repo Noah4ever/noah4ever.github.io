@@ -165,7 +165,10 @@
         color: var(--color-accent-hover);
     }
 
-    .ts-comment,
+    .ts-comment {
+        color: #6a9955;
+    }
+
     .json-null {
         color: var(--color-text-muted);
     }
@@ -188,7 +191,10 @@
         color: #174182;
     }
 
-    .ts-comment,
+    .ts-comment {
+        color: #3e8538;
+    }
+
     .json-null {
         color: #5d636a;
     }
@@ -214,6 +220,10 @@
     .ts-number,
     .json-number {
         color: #0059ff;
+    }
+
+    .ts-comment {
+        color: #6a9955;
     }
 }
 

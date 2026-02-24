@@ -250,6 +250,17 @@
         grid-template-columns: 1fr;
     }
 
+    figure {
+        margin: 0;
+    }
+
+    figcaption {
+        margin-top: 0.6rem;
+        text-align: center;
+        color: var(--color-text-muted);
+        font-size: 0.9rem;
+    }
+
     video {
         width: 100%;
         display: block;
