@@ -52,6 +52,17 @@
     }
 }
 
+.media-height-restrict {
+    video {
+        max-height: 70vh;
+    }
+
+    img {
+        max-height: 70vh;
+        object-fit: contain;
+    }
+}
+
 .nolicom-alternating {
     display: flex;
     align-items: center;

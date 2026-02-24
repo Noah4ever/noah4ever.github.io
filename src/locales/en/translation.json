@@ -105,7 +105,7 @@
             },
             "nolicom": {
                 "title": "ESP32 Retro Desk Notifier",
-                "description": "A  wireless desk device built with ESP32 and ESP-NOW which sends data to notify the other device with sound and light when a button is pressed.",
+                "description": "A  wireless desk device built with ESP32 and ESP-NOW which sends data (on button press) to notify the other device with sound and light to get the attention of the other person.",
                 "aria": "Open ESP32 Retro Desk Notifier project page",
                 "imageAlt": "ESP32 Retro Desk Notifier assembled prototype"
             }
@@ -200,6 +200,143 @@
         "image": {
             "alt": "Custom Party App landing page",
             "caption": "Landing page"
+        }
+    },
+    "nolicom": {
+        "hero": {
+            "title": "ESP32 Retro Desk Notifier",
+            "tagline": "A wireless desk gadget I built so two people in the same office can still get each other's attention while both wearing headphones."
+        },
+        "problem": {
+            "title": "Problem",
+            "p1": "My girlfriend and I share one office room, and most days we both wear headphones. Calling each other didn't work, waving didn't work, flashing random lights didn't work - the only reliable option was standing up and walking around the desk.",
+            "p2": "That tiny interruption happened often enough to be genuinely annoying. I wanted a one-tap way to get attention without talking over music or getting up.",
+            "p3": "So I built a pair of desk devices: press the button <0 /> sound and light on the other desk."
+        },
+        "concept": {
+            "title": "Concept",
+            "p1": "The idea is pretty simple: two identical units, one per desk, both battery powered and USB-C chargeable. Both devices can send and receive.",
+            "p2": "Press the button on one device <0 /> the other plays a sound and blinks its LEDs. No Wi-Fi router needed, just direct ESP-NOW peer-to-peer.",
+            "p3": "I wanted a retro look because I just love that style (also yes, I own a Commodore 64). I wanted it to feel more like a cool desk object than a generic tech gadget."
+        },
+        "hardware": {
+            "title": "Hardware Overview",
+            "p1": "I wanted the electronics to stay practical and repairable, so I used common, well-documented parts and built everything around predictable ESP32 I/O.",
+            "p2": "The core setup is pretty straightforward:",
+            "p3": "I started with a 2-segment display, but switched to 4 segments later because it gave me way more flexibility.",
+            "p4": "The analog slider ended up being one of my favorite details. It makes the interaction feel less \"digital gadget\" and more like a tiny piece of desk hardware.",
+            "list": {
+                "esp32": "ESP32 Wroom 32",
+                "lipo": "LiPo battery",
+                "tp4056": "USB-C charging module (TP4056)",
+                "mt3608": "Step-up converter (MT3608)",
+                "buzzer": "Passive piezo buzzer",
+                "leds": "Three LEDs (green, yellow, red)",
+                "button": "Push button",
+                "switch": "Power switch",
+                "poti": "Linear potentiometer",
+                "display": "4-segment display",
+                "shift": "Shift register (74HC595)",
+                "misc": "A couple resistors and wires",
+                "case": "Custom 3D-printed enclosure"
+            }
+        },
+        "comms": {
+            "title": "Communication - ESP-NOW",
+            "protocolPrefix": "Protocol:",
+            "protocolSuffix": "(direct peer-to-peer, no router required, fast and reliable).",
+            "p1": "Both ESP32 devices stay powered and connected all the time, so they can send tiny wireless signals instantly with no noticeable delay.",
+            "flowLabel": "System flow",
+            "flow1": "Both devices boot and initialize ESP-NOW in station mode.",
+            "flow2": "Both devices stay awake and ready to communicate.",
+            "flow3": "When the button is pressed, a small ESP-NOW packet is sent.",
+            "flow4": "The receiver immediately triggers LEDs, sound, and display feedback.",
+            "flow5": "Feedback continues while button signals keep coming in."
+        },
+        "prototype": {
+            "title": "Initial Prototype & Weird ESP Bug",
+            "p1": "Before building the real device, I made a minimal prototype to learn pairing, packet flow, and latency behavior.",
+            "p2": "Then I hit a super annoying bug: random button detection, random send behavior, and occasional looping on one ESP32. With my mobile oscilloscope I could see weird signal behavior.",
+            "p3": "After ruling out wiring and software, I replaced the ESP32 module and everything worked reliably. So yeah - the first module was likely just faulty.",
+            "p4": "That phase changed how I debug hardware: if behavior is inconsistent in ways software can't explain, test the physical module early, not last."
+        },
+        "build": {
+            "title": "Full Prototype",
+            "p1": "Once ESP-NOW was stable, I integrated everything into one complete breadboard prototype. That's when it finally felt real - button, buzzer, LEDs, potentiometer, and power system all running together."
+        },
+        "workspace": {
+            "title": "The Workspace",
+            "p1": "Most of the soldering, testing, and final assembly happened right at my hobby desk."
+        },
+        "enclosure": {
+            "title": "Case Design",
+            "p1": "I modeled the case from scratch in Blender and iterated several times to get the proportions right. Priority was fitting battery + charging board first, then tuning openings for speaker, potentiometer slot, and USB-C access.",
+            "p2": "I aimed for compact retro proportions, internal mounting posts, and enough wall thickness so the case still feels solid.",
+            "p3": "<0>Not so fun fact:</0> after I switched to Arch Linux, I realized I hadn't backed up the original .blend file. All I have left now are the .goo slicer files."
+        },
+        "printing": {
+            "title": "3D Printing",
+            "p1": "PLA gave me cheap iterations, fast fit checks, and a cleaner workflow. Resin gave me the final surface quality and those nice sharp edges for the retro look.",
+            "p2": "Resin is honestly annoying to work with: constant gloves, changing gloves, smell, mask, cleanup. The result looks <0>incredible</0>, but if I'm honest, a really clean PLA print with more post-processing might be my favorite route next time."
+        },
+        "finishing": {
+            "title": "Finale",
+            "p1": "I painted the top in retro beige and the bottom in black. Looked great at first - then cracks showed up. Probably too much paint or primer mismatch.",
+            "p2": "Then the final accident happened: I accidentally kicked it down the stairs. Electronics survived, resin case did not."
+        },
+        "lessons": {
+            "title": "Lessons Learned",
+            "techTitle": "Technical",
+            "techText": "ESP-NOW is awesome for ultra-local low-power communication. One thing I underestimated: sleep-state handling needs careful design, and ADC <0 /> PWM brightness mapping is super reliable once dialed in.",
+            "mechTitle": "Mechanical / Design",
+            "mechText": "Resin looks premium but is way more annoying than PLA. Paint/primer/cure compatibility matters way more than expected. Also: analog controls like the potentiometer just feel better in daily use."
+        },
+        "future": {
+            "title": "Future Improvements",
+            "p1": "If I rebuild this (very likely), I'd add thicker internal supports and softer edges for durability, improve the primer/paint workflow, maybe use a vibration motor instead of a buzzer, and test a magnetic desk mount with a more impact-resistant case material."
+        },
+        "conclusion": {
+            "title": "Conclusion",
+            "p1": "This project solved a real desk problem with one simple interaction: <0>press the button <1 /> light + sound</0>.",
+            "p2": "It combines embedded systems, low-power wireless communication, 3D modeling, printing, analog control, and a lot of practical debugging. Even with one staircase tragedy, it worked - totally worth building."
+        },
+        "media": {
+            "conceptAlt": "Retro notifier concept render",
+            "conceptCaption": "Early concept direction",
+            "hardwareProtoAlt": "Breadboard prototype with all hardware parts",
+            "hardwareProtoCaption": "Full breadboard hardware prototype",
+            "pinoutAlt": "ESP32 pinout reference",
+            "pinoutCaption": "ESP32 reference while wiring and mapping I/O",
+            "firstTestCaption": "Early ESP-NOW test with unstable behavior",
+            "magnifierWideAlt": "Magnifier soldering wide angle",
+            "magnifierWideCaption": "Magnifier soldering",
+            "firstPrototypeAlt": "First full breadboard prototype with many wires",
+            "firstPrototypeCaption": "Breadboard integration",
+            "breadboard2Alt": "Second breadboard integration shot",
+            "breadboard2Caption": "Breadboard integration 2",
+            "espSolderAlt": "Close-up of ESP32 soldering",
+            "espSolderCaption": "Fine soldering and inspection",
+            "protoTestCaption": "Prototype test with lights and buzzer sound",
+            "workspaceAlt": "Workspace desk during the build",
+            "workspaceCaption": "Build workspace",
+            "workspaceVideoCaption": "Workspace during the build",
+            "blenderAlt": "Blender enclosure model",
+            "blenderCaption": "Enclosure modeling in Blender",
+            "wireframeAlt": "Blender wireframe of enclosure",
+            "wireframeCaption": "Wireframe + iteration phase",
+            "caseShowcaseAlt": "3D model of retro case showcase",
+            "caseShowcaseCaption": "3D model of retro case showcase",
+            "plaAlt": "First PLA print",
+            "plaCaption": "PLA fit and alignment validation",
+            "resinAlt": "Finished resin print assembled",
+            "resinCaption": "Final resin print and assembly",
+            "plaVideoCaption": "PLA print process",
+            "paintedAlt": "Painted front with retro beige finish",
+            "paintedCaption": "Painted final look",
+            "cracksAlt": "Paint cracks on enclosure",
+            "cracksCaption": "Cracking issue in finish",
+            "brokenAlt": "Broken case",
+            "brokenCaption": "Broken case"
         }
     }
 }

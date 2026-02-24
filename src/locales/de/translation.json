@@ -201,5 +201,142 @@
             "alt": "Custom Party App Startseite",
             "caption": "Landingpage"
         }
+    },
+    "nolicom": {
+        "hero": {
+            "title": "ESP32 Retro Desk Notifier",
+            "tagline": "Ein kabelloses Desk-Gadget, das ich gebaut habe, damit man sich im selben Raum trotz Kopfhörer easy gegenseitig erreichen kann."
+        },
+        "problem": {
+            "title": "Problem",
+            "p1": "Meine Freundin und ich teilen uns ein Büro, und meistens tragen wir beide Kopfhörer. Rufen hat nicht funktioniert, Winken nicht, wildes Lichtblinken auch nicht. Zuverlässig war nur aufstehen und um den mittleren Tisch laufen.",
+            "p2": "Diese Mini-Unterbrechung kam oft genug vor, um richtig zu nerven. Ich wollte eine One-Tap-Lösung, um Aufmerksamkeit zu bekommen, ohne laut zu sein oder aufzustehen.",
+            "p3": "Also habe ich ein Desk-Duo gebaut: Knopf drücken <0 /> auf dem anderen Schreibtisch gibt's Sound + Licht."
+        },
+        "concept": {
+            "title": "Konzept",
+            "p1": "Die Idee ist ziemlich simpel: zwei identische Geräte, eins pro Schreibtisch, beide mit Akku und USB-C-ladbar. Beide können senden und empfangen.",
+            "p2": "Drückst du auf Gerät A den Knopf, reagiert Gerät B sofort mit Sound und LEDs <0 /> ganz ohne WLAN-Router, nur direkt per ESP-NOW.",
+            "p3": "Ich wollte einen Retro-Look, weil ich den Style liebe (und ja, ich habe einen Commodore 64). Es sollte eher wie ein cooles Desk-Objekt wirken als wie irgendein Standard-Tech-Gadget."
+        },
+        "hardware": {
+            "title": "Hardware-Überblick",
+            "p1": "Die Elektronik sollte praktisch und reparierbar bleiben. Deshalb habe ich auf gängige, gut dokumentierte Teile gesetzt und alles um vorhersehbares ESP32-I/O herum aufgebaut.",
+            "p2": "Das Kern-Setup ist recht straightforward:",
+            "p3": "Ich habe erst mit einem 2-Segment-Display angefangen, bin später aber auf 4 Segmente gewechselt, weil's deutlich flexibler war.",
+            "p4": "Der analoge Slider ist am Ende eines meiner Lieblingsdetails geworden. Dadurch fühlt sich das Ganze weniger nach \"Digital-Gadget\" und mehr nach echter Schreibtisch-Hardware an.",
+            "list": {
+                "esp32": "ESP32 Wroom 32",
+                "lipo": "LiPo-Akku",
+                "tp4056": "USB-C-Lademodul (TP4056)",
+                "mt3608": "Step-Up-Wandler (MT3608)",
+                "buzzer": "Passiver Piezo-Buzzer",
+                "leds": "Drei LEDs (grün, gelb, rot)",
+                "button": "Push-Button",
+                "switch": "Power-Schalter",
+                "poti": "Linearpotentiometer",
+                "display": "4-Segment-Display",
+                "shift": "Schieberegister (74HC595)",
+                "misc": "Ein paar Widerstände und Kabel",
+                "case": "Individuelles 3D-gedrucktes Gehäuse"
+            }
+        },
+        "comms": {
+            "title": "Kommunikation - ESP-NOW",
+            "protocolPrefix": "Protokoll:",
+            "protocolSuffix": "(direktes Peer-to-Peer, kein Router nötig, schnell und zuverlässig).",
+            "p1": "Beide ESP32 bleiben dauerhaft verbunden und können dadurch kleine Funksignale ohne merkbare Verzögerung senden und empfangen.",
+            "flowLabel": "Systemablauf",
+            "flow1": "Beide Geräte booten und initialisieren ESP-NOW im Station-Mode.",
+            "flow2": "Beide bleiben aktiv und bereit zur Kommunikation.",
+            "flow3": "Beim Button-Press wird ein kleines ESP-NOW-Paket gesendet.",
+            "flow4": "Der Empfänger startet direkt LEDs, Sound und Display-Feedback.",
+            "flow5": "Das Feedback läuft weiter, solange Button-Signale reinkommen."
+        },
+        "prototype": {
+            "title": "Erster Prototyp & komischer ESP-Bug",
+            "p1": "Bevor ich das echte Gerät gebaut habe, habe ich einen Mini-Prototyp gemacht, um Pairing, Paketfluss und Latenz zu testen.",
+            "p2": "Dann kam ein richtig nerviger Bug: zufällige Button-Erkennung, random Send-Verhalten und gelegentliches Looping auf einem ESP32. Mit meinem mobilen Oszi sah man deutlich komisches Signalverhalten.",
+            "p3": "Nachdem Verdrahtung und Software ausgeschlossen waren, habe ich den ESP32 getauscht und plötzlich lief alles stabil. Also ja - der erste Chip war sehr wahrscheinlich einfach defekt.",
+            "p4": "Das hat meinen Debug-Ansatz verändert: Wenn Verhalten random ist und Software es nicht erklärt, das physische Modul früh testen, nicht ganz am Ende."
+        },
+        "build": {
+            "title": "Vollständiger Prototyp",
+            "p1": "Sobald ESP-NOW stabil war, habe ich alles in einen kompletten Breadboard-Prototyp integriert. Da hat es sich endlich echt angefühlt - Button, Buzzer, LEDs, Potentiometer und Stromversorgung als ein System."
+        },
+        "workspace": {
+            "title": "Workspace",
+            "p1": "Der Großteil von Löten, Testen und finalem Zusammenbau ist direkt an meinem Hobby-Schreibtisch entstanden."
+        },
+        "enclosure": {
+            "title": "Case-Design",
+            "p1": "Ich habe das Gehäuse in Blender von null modelliert und mehrfach iteriert, bis die Proportionen gepasst haben. Priorität war zuerst Akku + Ladeboard unterzubringen und dann Öffnungen für Speaker, Poti-Slot und USB-C sauber abzustimmen.",
+            "p2": "Ich wollte kompakte Retro-Proportionen, interne Mounting-Posts und genug Wandstärke, damit sich das Gehäuse solide anfühlt.",
+            "p3": "<0>Not so fun fact:</0> Nach meinem Wechsel auf Arch Linux habe ich gemerkt, dass ich die originale .blend-Datei nicht gesichert hatte. Übrig sind nur noch die .goo-Slicer-Dateien."
+        },
+        "printing": {
+            "title": "3D-Druck",
+            "p1": "PLA war perfekt für schnelle, günstige Iterationen und Fit-Checks. Resin hat dann die finale Oberflächenqualität und die cleanen Kanten für den Retro-Look gebracht.",
+            "p2": "Mit Resin zu arbeiten ist ehrlich gesagt ziemlich nervig: ständig Handschuhe an/aus, Geruch, Maske, Cleanup. Das Ergebnis sieht <0>richtig gut</0> aus, aber mit genug Post-Processing wäre hochwertiges PLA für mich beim nächsten Mal vielleicht die entspanntere Wahl."
+        },
+        "finishing": {
+            "title": "Finale",
+            "p1": "Ich habe oben Retro-Beige und unten Schwarz lackiert. Sah zuerst top aus - dann kamen Risse. Vermutlich zu viel Lack oder Primer-Mismatch.",
+            "p2": "Und dann kam der Endgegner: Ich habe das Ding aus Versehen die Treppe runtergekickt. Elektronik hat überlebt, Resin-Case nicht."
+        },
+        "lessons": {
+            "title": "Lessons Learned",
+            "techTitle": "Technik",
+            "techText": "ESP-NOW ist mega für ultra-lokale Low-Power-Kommunikation. Was ich unterschätzt habe: Sleep-State-Handling braucht sauberes Design, und ADC <0 /> PWM-Helligkeitsmapping läuft super stabil, wenn's einmal richtig eingestellt ist.",
+            "mechTitle": "Mechanik / Design",
+            "mechText": "Resin sieht premium aus, ist aber deutlich nerviger als PLA. Kompatibilität von Primer, Lack und Aushärtung ist viel wichtiger als gedacht. Und analoge Controls wie das Potentiometer fühlen sich im Alltag einfach besser an."
+        },
+        "future": {
+            "title": "Nächste Verbesserungen",
+            "p1": "Wenn ich das neu baue (sehr wahrscheinlich), würde ich dickere innere Supports und weichere Kanten für mehr Haltbarkeit einplanen, den Primer/Lack-Prozess verbessern, eventuell auf Vibrationsmotor statt Buzzer gehen und ein magnetisches Desk-Mount mit stoßfesterem Material testen."
+        },
+        "conclusion": {
+            "title": "Fazit",
+            "p1": "Das Projekt löst ein echtes Schreibtisch-Problem mit einer simplen Interaktion: <0>Knopf drücken <1 /> Licht + Sound</0>.",
+            "p2": "Es kombiniert Embedded-Systems, stromsparende Funkkommunikation, 3D-Modellierung, Druck, analoge Kontrolle und viel praktisches Debugging. Trotz Treppen-Drama: hat funktioniert - war jede Minute wert."
+        },
+        "media": {
+            "conceptAlt": "Retro-Notifier Konzept-Render",
+            "conceptCaption": "Frühe Konzept-Richtung",
+            "hardwareProtoAlt": "Breadboard-Prototyp mit kompletter Hardware",
+            "hardwareProtoCaption": "Vollständiger Breadboard-Hardwareprototyp",
+            "pinoutAlt": "ESP32 Pinout Referenz",
+            "pinoutCaption": "ESP32-Referenz für Wiring und I/O-Mapping",
+            "firstTestCaption": "Früher ESP-NOW-Test mit instabilem Verhalten",
+            "magnifierWideAlt": "Lötarbeit unter der Lupe (Weitwinkel)",
+            "magnifierWideCaption": "Lötarbeit unter der Lupe",
+            "firstPrototypeAlt": "Erster kompletter Breadboard-Prototyp mit vielen Kabeln",
+            "firstPrototypeCaption": "Breadboard-Integration",
+            "breadboard2Alt": "Zweite Breadboard-Integrationsaufnahme",
+            "breadboard2Caption": "Breadboard-Integration 2",
+            "espSolderAlt": "ESP32-Lötung im Nahbild",
+            "espSolderCaption": "Feine Lötarbeit und Kontrolle",
+            "protoTestCaption": "Prototyp-Test mit Licht und Buzzer-Sound",
+            "workspaceAlt": "Workspace-Schreibtisch während des Builds",
+            "workspaceCaption": "Build-Workspace",
+            "workspaceVideoCaption": "Workspace während des Builds",
+            "blenderAlt": "Blender-Gehäusemodell",
+            "blenderCaption": "Gehäusemodellierung in Blender",
+            "wireframeAlt": "Blender-Wireframe des Gehäuses",
+            "wireframeCaption": "Wireframe + Iterationsphase",
+            "caseShowcaseAlt": "3D-Modell des Retro-Cases",
+            "caseShowcaseCaption": "3D-Modell des Retro-Cases",
+            "plaAlt": "Erster PLA-Druck",
+            "plaCaption": "PLA-Fit- und Ausrichtungscheck",
+            "resinAlt": "Finaler Resin-Druck montiert",
+            "resinCaption": "Finaler Resin-Druck und Montage",
+            "plaVideoCaption": "PLA-Druckprozess",
+            "paintedAlt": "Lackierte Front im Retro-Beige-Look",
+            "paintedCaption": "Lackierter finaler Look",
+            "cracksAlt": "Lackrisse am Gehäuse",
+            "cracksCaption": "Rissproblem im Finish",
+            "brokenAlt": "Gebrochenes Gehäuse",
+            "brokenCaption": "Gebrochenes Gehäuse"
+        }
     }
 }
