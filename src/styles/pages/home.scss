@@ -63,6 +63,34 @@
           }
         }
 
+        .home-location-badge {
+          margin-top: 0.9rem;
+          margin-left: 7ch;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.45rem;
+          backdrop-filter: blur(100px);
+          color: var(--color-text-muted);
+          font-size: 0.92rem;
+          font-weight: 600;
+          line-height: 1;
+
+          .home-location-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-accent);
+
+            svg {
+              width: 1rem;
+              height: 1rem;
+              transform-origin: 50% 85%;
+              transition: transform 180ms ease;
+            }
+          }
+
+        }
+
         @media screen and (max-width: 1100px) {
           .home-welcome-1 {
             font-size: 2.5rem;
@@ -70,6 +98,10 @@
 
           .home-welcome-name {
             font-size: 3.25rem;
+          }
+
+          .home-location-badge {
+            font-size: 0.85rem;
           }
         }
       }
@@ -263,6 +295,10 @@
 
       .home-welcome-sub {
         margin: 0ch !important;
+      }
+
+      .home-location-badge {
+        margin-left: 0 !important;
       }
     }
 
@@ -662,6 +698,22 @@
           color: var(--color-accent);
           text-decoration-color: var(--color-accent);
         }
+      }
+    }
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .home-container #home-content .home-top-container .home-welcome .home-location-badge {
+    transition: none;
+    animation: none;
+
+    &:hover {
+      animation: none;
+
+      .home-location-icon svg {
+        animation: none;
       }
     }
   }

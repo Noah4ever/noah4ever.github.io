@@ -9,6 +9,7 @@ import { IoLogoLinkedin as LinkedIn } from "react-icons/io5";
 import { IoMailOutline as EMail } from "react-icons/io5";
 import { IoArrowDownOutline as Arrow } from "react-icons/io5";
 import { IoArrowDownCircleOutline as ScrollDownArrow } from "react-icons/io5";
+import { IoLocationOutline as LocationIcon } from "react-icons/io5";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -151,6 +152,10 @@ export default function Home() {
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
     },
     {
+      key: "angular",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
+    },
+    {
       key: "scss",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg",
     },
@@ -259,6 +264,12 @@ export default function Home() {
             <div className="home-welcome-name">{t("home.hero.name")}</div>
             <div className="home-welcome-sub">
               {t("home.hero.rolePrefix")} <u>{t("home.hero.role")}</u>
+            </div>
+            <div className="home-location-badge" aria-label={t("home.hero.location")}>
+              <span className="home-location-icon" aria-hidden="true">
+                <LocationIcon />
+              </span>
+              <span>{t("home.hero.location")}</span>
             </div>
           </div>
         </div>

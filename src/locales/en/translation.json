@@ -29,7 +29,8 @@
             "greeting": "Hey, I'm",
             "name": "Noah Thiering",
             "rolePrefix": "a",
-            "role": "Software Developer"
+            "role": "Software Developer",
+            "location": "Bremen, Germany"
         },
         "links": {
             "github": "GitHub",
@@ -43,7 +44,7 @@
         "about": {
             "title": "About me",
             "personalTitle": "Personal",
-            "personalText": "I have been developing my skills since 2021, after completing my initial training. Currently I'm studying computer science at the <0>University of Bremen</0>. I specialize in web development using TypeScript and React ⚛️. I'm passionate about finding innovative solutions for any project! 💻🔧",
+            "personalText": "I have been developing my skills since 2021, after completing my initial training. Currently I'm studying computer science at the <0>University of Bremen</0> and working part-time at Rheinmetall as a Software Developer. I specialize in web development using TypeScript, React, and Angular.",
             "skillsTitle": "Skills",
             "skillsSubtitle": "Click on a skill to learn more",
             "projectsTitle": "Projects"
@@ -57,6 +58,10 @@
                 "react": {
                     "name": "React",
                     "description": "I was introduced to ReactJS in 2021. Prior to this, I had experimented with EJS, a templating engine that allows embedding JavaScript code within HTML templates. While EJS served its purpose, discovering React's component-based architecture was a game-changer for me. I quickly fell in love with building dynamic and responsive user interfaces using React. Although I also explored Angular for a work project, I found that React's flexibility and simplicity resonated more with my development style. Despite Angular's robust features, my heart lies with React."
+                },
+                "angular": {
+                    "name": "Angular",
+                    "description": "I was first introduced to AngularJS in 2023 during my apprenticeship. For a project, I built a small app with Angular to learn the basics. While I appreciated the experience, I prefer React for most of my projects, as it offers more freedom and flexibility. Angular is a great framework with many features, but React's simplicity and component-based approach appeal to me more. Nevertheless, I'm glad to have both technologies in my toolkit."
                 },
                 "scss": {
                     "name": "SCSS",
