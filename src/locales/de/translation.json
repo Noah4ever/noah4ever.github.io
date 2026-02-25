@@ -1,343 +1,363 @@
 {
-    "header": {
-        "logoAria": "Zur Startseite",
-        "themeSwitchAria": "Farbschema umschalten",
-        "languageSwitchAria": "Sprache wechseln"
+  "header": {
+    "logoAria": "Zur Startseite",
+    "themeSwitchAria": "Farbschema umschalten",
+    "languageSwitchAria": "Sprache wechseln"
+  },
+  "footer": {
+    "copyright": "© {{year}} Noah Thiering. Alle Rechte vorbehalten."
+  },
+  "projectLayout": {
+    "backAria": "Zurück zur Startseite",
+    "backLabel": "Zurück zum Portfolio",
+    "backToTop": "Nach oben"
+  },
+  "imageBorder": {
+    "closeWindow": "Fenster schließen",
+    "minimizeWindow": "Fenster minimieren",
+    "expandWindow": "Fenster vergrößern",
+    "close": "Schließen",
+    "minimize": "Minimieren",
+    "expand": "Vergrößern",
+    "switchToChromeFrame": "Zu Chrome-Rahmen wechseln",
+    "switchToChrome": "Zu Chrome wechseln",
+    "switchToSafariFrame": "Zu Safari-Rahmen wechseln",
+    "switchToSafari": "Zu Safari wechseln"
+  },
+  "home": {
+    "hero": {
+      "meLabel": "das bin ich",
+      "greeting": "Hey, ich bin",
+      "name": "Noah Thiering",
+      "rolePrefix": "ein",
+      "role": "Softwareentwickler",
+      "location": "Bremen, Deutschland"
     },
-    "footer": {
-        "copyright": "© {{year}} Noah Thiering. Alle Rechte vorbehalten."
+    "links": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "E-Mail",
+      "about": "Über mich"
     },
-    "projectLayout": {
-        "backAria": "Zurück zur Startseite",
-        "backLabel": "Zurück zum Portfolio",
-        "backToTop": "Nach oben"
+    "scroll": {
+      "label": "Nach unten scrollen"
     },
-    "imageBorder": {
-        "closeWindow": "Fenster schließen",
-        "minimizeWindow": "Fenster minimieren",
-        "expandWindow": "Fenster vergrößern",
-        "close": "Schließen",
-        "minimize": "Minimieren",
-        "expand": "Vergrößern",
-        "switchToChromeFrame": "Zu Chrome-Rahmen wechseln",
-        "switchToChrome": "Zu Chrome wechseln",
-        "switchToSafariFrame": "Zu Safari-Rahmen wechseln",
-        "switchToSafari": "Zu Safari wechseln"
-    },
-    "home": {
-        "hero": {
-            "meLabel": "das bin ich",
-            "greeting": "Hey, ich bin",
-            "name": "Noah Thiering",
-            "rolePrefix": "ein",
-            "role": "Softwareentwickler",
-            "location": "Bremen, Deutschland"
+    "about": {
+      "title": "Über mich",
+      "experienceTitle": "Erfahrung & Bildung",
+      "today": "heute",
+      "experience": {
+        "uniBremen": {
+          "title": "Bachelor Informatik",
+          "company": "Universität Bremen"
         },
-        "links": {
-            "github": "GitHub",
-            "linkedin": "LinkedIn",
-            "email": "E-Mail",
-            "about": "Über mich"
+        "rheinmetallWork": {
+          "title": "Softwareentwickler (Teilzeit seit Mai 2025)",
+          "company": "Rheinmetall"
         },
-        "scroll": {
-            "label": "Nach unten scrollen"
+        "rheinmetallApp": {
+          "title": "Ausbildung (Fachinformatiker Anwendungsentwicklung)",
+          "company": "Rheinmetall"
         },
-        "about": {
-            "title": "Über mich",
-            "personalTitle": "Persönlich",
-            "personalText": "Seit 2021 baue ich meine Fähigkeiten weiter aus, nachdem ich meine erste Ausbildung abgeschlossen habe. Aktuell studiere ich Informatik an der <0>Universität Bremen</0>. Ich spezialisiere mich auf Webentwicklung mit TypeScript, React und Angular. Ich entwickle leidenschaftlich gern innovative Lösungen für jedes Projekt! 💻🔧",
-            "skillsTitle": "Fähigkeiten",
-            "skillsSubtitle": "Klicke auf eine Fähigkeit, um mehr zu erfahren",
-            "projectsTitle": "Projekte"
-        },
-        "skills": {
-            "items": {
-                "typescript": {
-                    "name": "TypeScript",
-                    "description": "2021, während meiner Ausbildung, hat mir ein Freund TypeScript gezeigt. Davor habe ich mit JavaScript und PHP gearbeitet - Kenntnisse, die ich in meiner IT-Assistenten-Ausbildung von 2019 bis 2021 aufgebaut habe. Sobald ich mit TypeScript angefangen hatte, war ich begeistert und nutze es seitdem in privaten wie auch beruflichen Projekten."
-                },
-                "react": {
-                    "name": "React",
-                    "description": "Mit ReactJS kam ich 2021 in Berührung. Davor hatte ich mit EJS experimentiert, einer Template-Engine zum Einbetten von JavaScript in HTML-Vorlagen. EJS war hilfreich, aber die komponentenbasierte Architektur von React war für mich ein echter Wendepunkt. Ich habe mich schnell in den Aufbau dynamischer, responsiver Oberflächen verliebt. Für ein Arbeitsprojekt habe ich auch Angular ausprobiert, aber Reacts Flexibilität und Einfachheit passen besser zu meinem Stil. Trotz der starken Features von Angular schlägt mein Herz für React."
-                },
-                "angular": {
-                    "name": "Angular",
-                    "description": "Mit AngularJS kam ich erst 2023 so richtig in Berührung in meiner Ausbildung. Für ein Projekt habe ich eine kleine App mit Angular gebaut, um die Grundlagen zu lernen. Obwohl ich die Erfahrung geschätzt habe, bevorzuge ich React für die meisten meiner Projekte, da es mir mehr Freiheit und Flexibilität bietet. Angular ist ein großartiges Framework mit vielen Funktionen, aber Reacts Einfachheit und Komponentenansatz sprechen mich mehr an. Trotzdem bin ich froh, beide Technologien in meinem Werkzeugkasten zu haben."
-                },
-                "scss": {
-                    "name": "SCSS",
-                    "description": "Von SCSS hatte ich schon früher gehört, aber erst 2022 habe ich es wirklich ausprobiert. Danach war ich sofort überzeugt von den Möglichkeiten. Seitdem ist SCSS mein Standard für Styling in allen Projekten. Davor habe ich klassisches CSS genutzt, das ich in meiner IT-Assistenten-Ausbildung gelernt habe."
-                },
-                "nodejs": {
-                    "name": "Node.js",
-                    "description": "2022 habe ich mit Node.js meine erste REST-API gebaut. Diese Erfahrung hat mir viele neue Möglichkeiten eröffnet, und seitdem nutze ich Node.js für verschiedene kleine Nebenprojekte. Außerdem habe ich mit Bun experimentiert, was mir ebenfalls viel Spaß gemacht hat."
-                },
-                "python": {
-                    "name": "Python",
-                    "description": "Mein erster Versuch, Python zu lernen, war 2018, aber wegen der Schule blieb ich nicht dran. Ein paar Jahre später, 2022, habe ich Python erneut aufgegriffen und mich intensiver damit beschäftigt. Daraus entstand auch mein Blender-Plugin \"Node Runner\", das den Import und Export von Shader-Nodes per Text erleichtert."
-                },
-                "cpp": {
-                    "name": "C++",
-                    "description": "In meiner ersten IT-Assistenten-Ausbildung zwischen 2019 und 2021 war C++ die erste Programmiersprache, die ich gelernt habe. Damals habe ich damit Konsolenanwendungen entwickelt und später im Job in Kombination mit Qt Widgets eingesetzt. Heute nutze ich C++ seltener, da mein Fokus stärker auf Webtechnologien liegt. Für einige ESP32-Mikrocontroller-Projekte setze ich es aber weiterhin ein."
-                },
-                "git": {
-                    "name": "Git",
-                    "description": "Ich nutze Git seit vielen Jahren; es ist mein bevorzugtes Versionskontrollsystem für jede Art von Projekt. Zuverlässigkeit und Effizienz machen es zu einem unverzichtbaren Werkzeug in meinem Entwicklungsalltag."
-                },
-                "blender": {
-                    "name": "Blender",
-                    "description": "Seit 2022 nutze ich Blender aktiv und war schnell von dem kreativen Prozess der 3D-Modellierung begeistert. Diese Leidenschaft führte auch zur Entwicklung des \"Node Runner\"-Plugins für Shader-Nodes, das meinen Workflow in Blender verbessert."
-                }
-            },
-            "iconAlt": "{{skill}}-Icon"
-        },
-        "projects": {
-            "giftboard": {
-                "title": "Giftboard",
-                "description": "Wunschlisten-App für Geburtstage und Anlässe. Teile eine Liste, lass andere Geschenke reservieren und vermeide doppelte Geschenke, ohne die Überraschung zu ruinieren.",
-                "aria": "Giftboard-Projektseite öffnen",
-                "imageAlt": "Giftboard-Board-Übersicht"
-            },
-            "customParty": {
-                "title": "Custom Party App",
-                "description": "Eine individuelle Party-App, die wir für den 49. Geburtstag meines Schwiegervaters gebaut haben. Sie enthält ein \"Finde deinen Partner\"-Spiel, ein Quiz über ihn, eine gemeinsame Fotogalerie und mehr. Entwickelt mit React Native und TypeScript.",
-                "aria": "Custom Party App Projektseite öffnen",
-                "imageAlt": "Custom Party App Startseite"
-            },
-            "nolicom": {
-                "title": "Retro ESP-NOW Desk Notifier",
-                "description": "Ein drahtloses Desk-Notifier-Duo mit ESP32 und ESP-NOW: Knopf drücken → auf dem anderen Gerät Ton + Licht, mit Akku-Betrieb, Retro-Gehäuse und vielen Hardware-Iterationen.",
-                "aria": "Retro ESP-NOW Desk Notifier Projektseite öffnen",
-                "imageAlt": "Retro ESP-NOW Desk Notifier als montierter Prototyp"
-            }
+        "bbsApp": {
+          "title": "Ausbildung (IT-Assistent)",
+          "company": "BBS Syke"
         }
+      },
+      "personalTitle": "Persönlich",
+      "personalText": "Seit 2021 baue ich meine Fähigkeiten weiter aus, nachdem ich meine erste Ausbildung abgeschlossen habe. Aktuell studiere ich Informatik an der <0>Universität Bremen</0>. Ich spezialisiere mich auf Webentwicklung mit TypeScript, React und Angular. Ich entwickle leidenschaftlich gern innovative Lösungen für jedes Projekt! 💻🔧",
+      "skillsTitle": "Fähigkeiten",
+      "skillsSubtitle": "Klicke auf eine Fähigkeit, um mehr zu erfahren",
+      "projectsTitle": "Projekte"
     },
-    "giftboard": {
-        "hero": {
-            "title": "Giftboard",
-            "tagline": "Eine Geschenk-Wunschliste, die ich gebaut habe, damit <0>meine Freundin</0> nicht mehr alle Geschenke koordinieren muss."
+    "skills": {
+      "items": {
+        "typescript": {
+          "name": "TypeScript",
+          "description": "2021, während meiner Ausbildung, hat mir ein Freund TypeScript gezeigt. Davor habe ich mit JavaScript und PHP gearbeitet - Kenntnisse, die ich in meiner IT-Assistenten-Ausbildung von 2019 bis 2021 aufgebaut habe. Sobald ich mit TypeScript angefangen hatte, war ich begeistert und nutze es seitdem in privaten wie auch beruflichen Projekten."
         },
-        "sections": {
-            "whyTitle": "Warum ich das gebaut habe",
-            "whyP1": "Rund um meinen Geburtstag musste meine Freundin jedes Jahr alle Geschenke koordinieren. Freunde und Familie fragten sie, was ich mir wünsche, und sie jonglierte am Ende mit einer mentalen Liste, wer was besorgt - damit niemand doppelt kauft und alles trotzdem eine Überraschung bleibt.",
-            "whyP2": "Das war für sie stressig und kein gutes System. Deshalb habe ich Giftboard gebaut: Ich trage meine Wünsche ein, teile den Link, und alle können sich selbst koordinieren. Reservierungen bleiben für mich unsichtbar, sodass die Überraschung erhalten bleibt und sie den Geburtstag auch genießen kann.",
-            "whatTitle": "Was es macht",
-            "whatP1": "Du erstellst eine Wunschliste, fügst Einträge mit Link oder eigenem Bild hinzu und teilst sie. Wenn du einen Amazon-Link einfügst, zieht die App automatisch Produktbild und Preis. Alle außer der Listeninhaberin bzw. dem Listeninhaber sehen, welche Geschenke bereits reserviert sind, damit nichts doppelt gekauft wird.",
-            "whatP2": "Außerdem kannst du Prioritäten für Wünsche setzen, damit andere sehen, was dir besonders wichtig ist.",
-            "galleryTitle": "Screenshots",
-            "howTitle": "So funktioniert es",
-            "techTitle": "Technik",
-            "extraScreenshotTitle": "Zusätzlicher Screenshot",
-            "scrapeTitle": "So funktionieren Preis- und Bild-Scraping",
-            "scrapeP1": "Wenn ich einen Produktlink einfüge, sendet das Frontend ihn an einen Backend-Endpunkt. So bleiben Scraping-Logik und Anti-Bot-Header auf dem Server, statt im Browser offengelegt zu werden.",
-            "scrapeP2": "Ich nutze dafür POST, damit die Nutzdaten eindeutig im Request-Body liegen und leichter validiert werden können. Der Server bereinigt und prüft zuerst die URL und blockiert anschließend lokale oder private Netzwerkziele, um SSRF-Risiken zu reduzieren.",
-            "scrapeP3": "Nach dem Abruf der Seite werden host-spezifische Extraktionsregeln gewählt, strukturierte Metadaten/Selektoren ausgewertet und nur die normalisierten Felder zurückgegeben, die die App braucht: Preis und Bild. Timeouts und Null-Fallbacks halten den Wunschlisten-Flow reaktionsschnell, selbst wenn Scraping fehlschlägt.",
-            "scrapeP4": "Die Selektorregeln kommen aus einer Datei namens meta-sources.json. Für jeden unterstützten Shop mappe ich Domains auf die exakten DOM-Selektoren für Preis- und Bildfelder. Dieser Teil ist bewusst manuell, weil jeder Shop ein anderes Markup hat. Hier ist ein Beispiel für Amazon-Domains:",
-            "scrapeP5": "Diese Selektoren muss ich manuell pflegen, aber genau dieser Trade-off sorgt für vorhersehbare Extraktion pro Domain und macht Fehler leichter behebbar, wenn sich das HTML einer Seite ändert.",
-            "jsonTitle": "Wishlist-JSON-Showcase",
-            "jsonIntro": "Dieses JSON ist das tatsächlich persistierte Datenmodell hinter Giftboard. Immer wenn jemand eine Aktion ausführt (zum Beispiel Wunsch hinzufügen, Details bearbeiten oder ein Geschenk reservieren), aktualisiert die REST-API diese Struktur und schreibt den neuesten Zustand zurück in den Speicher. Ich habe hier JSON gewählt, weil das als kleines Familienprojekt gestartet ist und ich dafür keine vollständige Datenbank aufsetzen wollte. Wenn die Nutzung später wächst, kann ich dieselbe Struktur in eine richtige Datenbank migrieren. Ich teile ein vollständiges Beispiel unten in Abschnitte auf, damit leichter verständlich ist, wofür jedes Feld verwendet wird."
+        "react": {
+          "name": "React",
+          "description": "Mit ReactJS kam ich 2021 in Berührung. Davor hatte ich mit EJS experimentiert, einer Template-Engine zum Einbetten von JavaScript in HTML-Vorlagen. EJS war hilfreich, aber die komponentenbasierte Architektur von React war für mich ein echter Wendepunkt. Ich habe mich schnell in den Aufbau dynamischer, responsiver Oberflächen verliebt. Für ein Arbeitsprojekt habe ich auch Angular ausprobiert, aber Reacts Flexibilität und Einfachheit passen besser zu meinem Stil. Trotz der starken Features von Angular schlägt mein Herz für React."
         },
-        "gallery": {
-            "heroAlt": "Giftboard-Hero-Ansicht im alternativen Theme",
-            "heroCaption": "Hero-Ansicht",
-            "wishesAlt": "Giftboard-Wunschübersicht im alternativen Theme",
-            "wishesCaption": "Wunschübersicht als Listeninhaber",
-            "themeAlt": "Giftboard-Theme-Vorschau im alternativen Theme",
-            "themeCaption": "Theme-Vorschau",
-            "createWishAlt": "Giftboard-Wunsch-erstellen-Ansicht im alternativen Theme",
-            "createWishCaption": "Wunsch hinzufügen",
-            "boardAlt": "Giftboard-Board-Übersicht im alternativen Theme",
-            "boardCaption": "Board-Übersicht"
+        "angular": {
+          "name": "Angular",
+          "description": "Mit AngularJS kam ich erst 2023 so richtig in Berührung in meiner Ausbildung. Für ein Projekt habe ich eine kleine App mit Angular gebaut, um die Grundlagen zu lernen. Obwohl ich die Erfahrung geschätzt habe, bevorzuge ich React für die meisten meiner Projekte, da es mir mehr Freiheit und Flexibilität bietet. Angular ist ein großartiges Framework mit vielen Funktionen, aber Reacts Einfachheit und Komponentenansatz sprechen mich mehr an. Trotzdem bin ich froh, beide Technologien in meinem Werkzeugkasten zu haben."
         },
-        "how": {
-            "amazonTitle": "Amazon Auto-Fetch",
-            "amazonText": "Füge einen Produktlink ein und das Backend extrahiert Bild und Preis automatisch.",
-            "customTitle": "Eigene Bilder",
-            "customText": "Nicht alles gibt es auf Amazon. Für jeden Wunsch kannst du auch ein eigenes Bild hochladen.",
-            "hiddenTitle": "Versteckte Reservierungen",
-            "hiddenText": "Andere markieren, was sie kaufen, und die listenbesitzende Person sieht es nie.",
-            "prioritiesTitle": "Prioritäten",
-            "prioritiesText": "Markiere, wie wichtig dir ein Artikel ist, damit andere besser entscheiden können, was sie schenken."
+        "scss": {
+          "name": "SCSS",
+          "description": "Von SCSS hatte ich schon früher gehört, aber erst 2022 habe ich es wirklich ausprobiert. Danach war ich sofort überzeugt von den Möglichkeiten. Seitdem ist SCSS mein Standard für Styling in allen Projekten. Davor habe ich klassisches CSS genutzt, das ich in meiner IT-Assistenten-Ausbildung gelernt habe."
         },
-        "tech": {
-            "frontendTitle": "Frontend",
-            "frontendText": "React + TypeScript, gestylt mit SCSS. Responsiv und auf jeder Bildschirmgröße nutzbar.",
-            "backendTitle": "Backend",
-            "backendText": "Eine kleine REST-API, die Amazon-Produktdaten extrahiert und alles in einer JSON-Datei speichert. Wenn das Projekt wächst, wechsle ich eventuell zu einer Datenbank - für den Anfang war das so aber am einfachsten."
+        "nodejs": {
+          "name": "Node.js",
+          "description": "2022 habe ich mit Node.js meine erste REST-API gebaut. Diese Erfahrung hat mir viele neue Möglichkeiten eröffnet, und seitdem nutze ich Node.js für verschiedene kleine Nebenprojekte. Außerdem habe ich mit Bun experimentiert, was mir ebenfalls viel Spaß gemacht hat."
         },
-        "json": {
-            "part1Title": "1) Listen-Metadaten",
-            "part1Text": "Grundinformationen zur Wunschliste selbst: Titel, Share-Code, Eigentümer und Erstellungszeitpunkt.",
-            "part2Title": "2) Wünsche",
-            "part2Text": "Jeder Wunsch hat Titel, Priorität, Link/Bild-Daten und Menge. Bei Amazon-Links können Bild und Preis automatisch übernommen werden.",
-            "part3Title": "3) Reservierungen und Status",
-            "part3Text": "Reservierungsfelder halten fest, wer bereits ein Geschenk zugesagt hat, während die Eigentümerin bzw. der Eigentümer das weiterhin nicht in der UI sieht.",
-            "part4Title": "4) Vollständiges Beispiel"
+        "python": {
+          "name": "Python",
+          "description": "Mein erster Versuch, Python zu lernen, war 2018, aber wegen der Schule blieb ich nicht dran. Ein paar Jahre später, 2022, habe ich Python erneut aufgegriffen und mich intensiver damit beschäftigt. Daraus entstand auch mein Blender-Plugin \"Node Runner\", das den Import und Export von Shader-Nodes per Text erleichtert."
+        },
+        "cpp": {
+          "name": "C++",
+          "description": "In meiner ersten IT-Assistenten-Ausbildung zwischen 2019 und 2021 war C++ die erste Programmiersprache, die ich gelernt habe. Damals habe ich damit Konsolenanwendungen entwickelt und später im Job in Kombination mit Qt Widgets eingesetzt. Heute nutze ich C++ seltener, da mein Fokus stärker auf Webtechnologien liegt. Für einige ESP32-Mikrocontroller-Projekte setze ich es aber weiterhin ein."
+        },
+        "git": {
+          "name": "Git",
+          "description": "Ich nutze Git seit vielen Jahren; es ist mein bevorzugtes Versionskontrollsystem für jede Art von Projekt. Zuverlässigkeit und Effizienz machen es zu einem unverzichtbaren Werkzeug in meinem Entwicklungsalltag."
+        },
+        "blender": {
+          "name": "Blender",
+          "description": "Seit 2022 nutze ich Blender aktiv und war schnell von dem kreativen Prozess der 3D-Modellierung begeistert. Diese Leidenschaft führte auch zur Entwicklung des \"Node Runner\"-Plugins für Shader-Nodes, das meinen Workflow in Blender verbessert."
         }
+      },
+      "iconAlt": "{{skill}}-Icon"
     },
-    "customParty": {
-        "hero": {
-            "title": "Custom Party App",
-            "tagline": "Eine individuelle Party-App, die wir für den 49. Geburtstag meines Schwiegervaters gebaut haben."
-        },
-        "sections": {
-            "whatTitle": "Was es ist",
-            "whatText": "Diese App wurde für genau ein Event entwickelt: Gäste öffnen einen einzigen Link und erhalten Zugriff auf interaktive Aktivitäten. Das Ziel war, die Feier persönlicher und spielerischer zu machen und alle einzubeziehen. Außerdem bekam jede Person einen \"zufälligen\" Partner, was Gespräche mit Menschen förderte, die man noch nicht gut kannte.",
-            "featuresTitle": "Hauptfunktionen",
-            "techTitle": "Technik",
-            "screenshotTitle": "Custom Party App Screenshot"
-        },
-        "features": {
-            "partnerTitle": "Finde deinen Partner-Spiel",
-            "partnerText": "Gäste lösen Hinweise und finden ihren zugewiesenen Partner für die nächste Aktivität.",
-            "quizTitle": "Geburtstagsquiz",
-            "quizText": "Ein Quiz mit lustigen Fakten und Geschichten über ihn.",
-            "galleryTitle": "Gemeinsame Fotogalerie",
-            "galleryText": "Alle können Partyfotos an einem Ort hochladen und anschauen."
-        },
-        "tech": {
-            "text": "Entwickelt mit React Native + TypeScript, damit das Erlebnis auf Smartphones flüssig ist und schnell für ein einmaliges Event bereitgestellt werden konnte."
-        },
-        "image": {
-            "alt": "Custom Party App Startseite",
-            "caption": "Landingpage"
-        }
-    },
-    "nolicom": {
-        "hero": {
-            "title": "ESP32 Retro Desk Notifier",
-            "tagline": "Ein kabelloses Desk-Gadget, das ich gebaut habe, damit man sich im selben Raum trotz Kopfhörer easy gegenseitig erreichen kann."
-        },
-        "problem": {
-            "title": "Problem",
-            "p1": "Meine Freundin und ich teilen uns ein Büro, und meistens tragen wir beide Kopfhörer. Rufen hat nicht funktioniert, Winken nicht, wildes Lichtblinken auch nicht. Zuverlässig war nur aufstehen und um den mittleren Tisch laufen.",
-            "p2": "Diese Mini-Unterbrechung kam oft genug vor, um richtig zu nerven. Ich wollte eine One-Tap-Lösung, um Aufmerksamkeit zu bekommen, ohne laut zu sein oder aufzustehen.",
-            "p3": "Also habe ich ein Desk-Duo gebaut: Knopf drücken <0 /> auf dem anderen Schreibtisch gibt's Sound + Licht."
-        },
-        "concept": {
-            "title": "Konzept",
-            "p1": "Die Idee ist ziemlich simpel: zwei identische Geräte, eins pro Schreibtisch, beide mit Akku und USB-C-ladbar. Beide können senden und empfangen.",
-            "p2": "Drückst du auf Gerät A den Knopf, reagiert Gerät B sofort mit Sound und LEDs <0 /> ganz ohne WLAN-Router, nur direkt per ESP-NOW.",
-            "p3": "Ich wollte einen Retro-Look, weil ich den Style liebe (und ja, ich habe einen Commodore 64). Es sollte eher wie ein cooles Desk-Objekt wirken als wie irgendein Standard-Tech-Gadget."
-        },
-        "hardware": {
-            "title": "Hardware-Überblick",
-            "p1": "Die Elektronik sollte praktisch und reparierbar bleiben. Deshalb habe ich auf gängige, gut dokumentierte Teile gesetzt und alles um vorhersehbares ESP32-I/O herum aufgebaut.",
-            "p2": "Das Kern-Setup ist recht straightforward:",
-            "p3": "Ich habe erst mit einem 2-Segment-Display angefangen, bin später aber auf 4 Segmente gewechselt, weil's deutlich flexibler war.",
-            "p4": "Der analoge Slider ist am Ende eines meiner Lieblingsdetails geworden. Dadurch fühlt sich das Ganze weniger nach \"Digital-Gadget\" und mehr nach echter Schreibtisch-Hardware an.",
-            "list": {
-                "esp32": "ESP32 Wroom 32",
-                "lipo": "LiPo-Akku",
-                "tp4056": "USB-C-Lademodul (TP4056)",
-                "mt3608": "Step-Up-Wandler (MT3608)",
-                "buzzer": "Passiver Piezo-Buzzer",
-                "leds": "Drei LEDs (grün, gelb, rot)",
-                "button": "Push-Button",
-                "switch": "Power-Schalter",
-                "poti": "Linearpotentiometer",
-                "display": "4-Segment-Display",
-                "shift": "Schieberegister (74HC595)",
-                "misc": "Ein paar Widerstände und Kabel",
-                "case": "Individuelles 3D-gedrucktes Gehäuse"
-            }
-        },
-        "comms": {
-            "title": "Kommunikation - ESP-NOW",
-            "protocolPrefix": "Protokoll:",
-            "protocolSuffix": "(direktes Peer-to-Peer, kein Router nötig, schnell und zuverlässig).",
-            "p1": "Beide ESP32 bleiben dauerhaft verbunden und können dadurch kleine Funksignale ohne merkbare Verzögerung senden und empfangen.",
-            "flowLabel": "Systemablauf",
-            "flow1": "Beide Geräte booten und initialisieren ESP-NOW im Station-Mode.",
-            "flow2": "Beide bleiben aktiv und bereit zur Kommunikation.",
-            "flow3": "Beim Button-Press wird ein kleines ESP-NOW-Paket gesendet.",
-            "flow4": "Der Empfänger startet direkt LEDs, Sound und Display-Feedback.",
-            "flow5": "Das Feedback läuft weiter, solange Button-Signale reinkommen."
-        },
-        "prototype": {
-            "title": "Erster Prototyp & komischer ESP-Bug",
-            "p1": "Bevor ich das echte Gerät gebaut habe, habe ich einen Mini-Prototyp gemacht, um Pairing, Paketfluss und Latenz zu testen.",
-            "p2": "Dann kam ein richtig nerviger Bug: zufällige Button-Erkennung, random Send-Verhalten und gelegentliches Looping auf einem ESP32. Mit meinem mobilen Oszi sah man deutlich komisches Signalverhalten.",
-            "p3": "Nachdem Verdrahtung und Software ausgeschlossen waren, habe ich den ESP32 getauscht und plötzlich lief alles stabil. Also ja - der erste Chip war sehr wahrscheinlich einfach defekt.",
-            "p4": "Das hat meinen Debug-Ansatz verändert: Wenn Verhalten random ist und Software es nicht erklärt, das physische Modul früh testen, nicht ganz am Ende."
-        },
-        "build": {
-            "title": "Vollständiger Prototyp",
-            "p1": "Sobald ESP-NOW stabil war, habe ich alles in einen kompletten Breadboard-Prototyp integriert. Da hat es sich endlich echt angefühlt - Button, Buzzer, LEDs, Potentiometer und Stromversorgung als ein System."
-        },
-        "workspace": {
-            "title": "Workspace",
-            "p1": "Der Großteil von Löten, Testen und finalem Zusammenbau ist direkt an meinem Hobby-Schreibtisch entstanden."
-        },
-        "enclosure": {
-            "title": "Case-Design",
-            "p1": "Ich habe das Gehäuse in Blender von null modelliert und mehrfach iteriert, bis die Proportionen gepasst haben. Priorität war zuerst Akku + Ladeboard unterzubringen und dann Öffnungen für Speaker, Poti-Slot und USB-C sauber abzustimmen.",
-            "p2": "Ich wollte kompakte Retro-Proportionen, interne Mounting-Posts und genug Wandstärke, damit sich das Gehäuse solide anfühlt.",
-            "p3": "<0>Not so fun fact:</0> Nach meinem Wechsel auf Arch Linux habe ich gemerkt, dass ich die originale .blend-Datei nicht gesichert hatte. Übrig sind nur noch die .goo-Slicer-Dateien."
-        },
-        "printing": {
-            "title": "3D-Druck",
-            "p1": "PLA war perfekt für schnelle, günstige Iterationen und Fit-Checks. Resin hat dann die finale Oberflächenqualität und die cleanen Kanten für den Retro-Look gebracht.",
-            "p2": "Mit Resin zu arbeiten ist ehrlich gesagt ziemlich nervig: ständig Handschuhe an/aus, Geruch, Maske, Cleanup. Das Ergebnis sieht <0>richtig gut</0> aus, aber mit genug Post-Processing wäre hochwertiges PLA für mich beim nächsten Mal vielleicht die entspanntere Wahl."
-        },
-        "finishing": {
-            "title": "Finale",
-            "p1": "Ich habe oben Retro-Beige und unten Schwarz lackiert. Sah zuerst top aus - dann kamen Risse. Vermutlich zu viel Lack oder Primer-Mismatch.",
-            "p2": "Und dann kam der Endgegner: Ich habe das Ding aus Versehen die Treppe runtergekickt. Elektronik hat überlebt, Resin-Case nicht."
-        },
-        "lessons": {
-            "title": "Lessons Learned",
-            "techTitle": "Technik",
-            "techText": "ESP-NOW ist mega für ultra-lokale Low-Power-Kommunikation. Was ich unterschätzt habe: Sleep-State-Handling braucht sauberes Design, und ADC <0 /> PWM-Helligkeitsmapping läuft super stabil, wenn's einmal richtig eingestellt ist.",
-            "mechTitle": "Mechanik / Design",
-            "mechText": "Resin sieht premium aus, ist aber deutlich nerviger als PLA. Kompatibilität von Primer, Lack und Aushärtung ist viel wichtiger als gedacht. Und analoge Controls wie das Potentiometer fühlen sich im Alltag einfach besser an."
-        },
-        "future": {
-            "title": "Nächste Verbesserungen",
-            "p1": "Wenn ich das neu baue (sehr wahrscheinlich), würde ich dickere innere Supports und weichere Kanten für mehr Haltbarkeit einplanen, den Primer/Lack-Prozess verbessern, eventuell auf Vibrationsmotor statt Buzzer gehen und ein magnetisches Desk-Mount mit stoßfesterem Material testen."
-        },
-        "conclusion": {
-            "title": "Fazit",
-            "p1": "Das Projekt löst ein echtes Schreibtisch-Problem mit einer simplen Interaktion: <0>Knopf drücken <1 /> Licht + Sound</0>.",
-            "p2": "Es kombiniert Embedded-Systems, stromsparende Funkkommunikation, 3D-Modellierung, Druck, analoge Kontrolle und viel praktisches Debugging. Trotz Treppen-Drama: hat funktioniert - war jede Minute wert."
-        },
-        "media": {
-            "conceptAlt": "Retro-Notifier Konzept-Render",
-            "conceptCaption": "Frühe Konzept-Richtung",
-            "hardwareProtoAlt": "Breadboard-Prototyp mit kompletter Hardware",
-            "hardwareProtoCaption": "Vollständiger Breadboard-Hardwareprototyp",
-            "pinoutAlt": "ESP32 Pinout Referenz",
-            "pinoutCaption": "ESP32-Referenz für Wiring und I/O-Mapping",
-            "firstTestCaption": "Früher ESP-NOW-Test mit instabilem Verhalten",
-            "magnifierWideAlt": "Lötarbeit unter der Lupe (Weitwinkel)",
-            "magnifierWideCaption": "Lötarbeit unter der Lupe",
-            "firstPrototypeAlt": "Erster kompletter Breadboard-Prototyp mit vielen Kabeln",
-            "firstPrototypeCaption": "Breadboard-Integration",
-            "breadboard2Alt": "Zweite Breadboard-Integrationsaufnahme",
-            "breadboard2Caption": "Breadboard-Integration 2",
-            "espSolderAlt": "ESP32-Lötung im Nahbild",
-            "espSolderCaption": "Feine Lötarbeit und Kontrolle",
-            "protoTestCaption": "Prototyp-Test mit Licht und Buzzer-Sound",
-            "workspaceAlt": "Workspace-Schreibtisch während des Builds",
-            "workspaceCaption": "Build-Workspace",
-            "workspaceVideoCaption": "Workspace während des Builds",
-            "blenderAlt": "Blender-Gehäusemodell",
-            "blenderCaption": "Gehäusemodellierung in Blender",
-            "wireframeAlt": "Blender-Wireframe des Gehäuses",
-            "wireframeCaption": "Wireframe + Iterationsphase",
-            "caseShowcaseAlt": "3D-Modell des Retro-Cases",
-            "caseShowcaseCaption": "3D-Modell des Retro-Cases",
-            "plaAlt": "Erster PLA-Druck",
-            "plaCaption": "PLA-Fit- und Ausrichtungscheck",
-            "resinAlt": "Finaler Resin-Druck montiert",
-            "resinCaption": "Finaler Resin-Druck und Montage",
-            "plaVideoCaption": "PLA-Druckprozess",
-            "paintedAlt": "Lackierte Front im Retro-Beige-Look",
-            "paintedCaption": "Lackierter finaler Look",
-            "cracksAlt": "Lackrisse am Gehäuse",
-            "cracksCaption": "Rissproblem im Finish",
-            "brokenAlt": "Gebrochenes Gehäuse",
-            "brokenCaption": "Gebrochenes Gehäuse"
-        }
+    "projects": {
+      "giftboard": {
+        "title": "Giftboard",
+        "description": "Wunschlisten-App für Geburtstage und Anlässe. Teile eine Liste, lass andere Geschenke reservieren und vermeide doppelte Geschenke, ohne die Überraschung zu ruinieren.",
+        "aria": "Giftboard-Projektseite öffnen",
+        "imageAlt": "Giftboard-Board-Übersicht"
+      },
+      "customParty": {
+        "title": "Custom Party App",
+        "description": "Eine individuelle Party-App, die wir für den 49. Geburtstag meines Schwiegervaters gebaut haben. Sie enthält ein \"Finde deinen Partner\"-Spiel, ein Quiz über ihn, eine gemeinsame Fotogalerie und mehr. Entwickelt mit React Native und TypeScript.",
+        "aria": "Custom Party App Projektseite öffnen",
+        "imageAlt": "Custom Party App Startseite"
+      },
+      "nolicom": {
+        "title": "Retro ESP-NOW Desk Notifier",
+        "description": "Ein drahtloses Desk-Notifier-Duo mit ESP32 und ESP-NOW: Knopf drücken → auf dem anderen Gerät Ton + Licht, mit Akku-Betrieb, Retro-Gehäuse und vielen Hardware-Iterationen.",
+        "aria": "Retro ESP-NOW Desk Notifier Projektseite öffnen",
+        "imageAlt": "Retro ESP-NOW Desk Notifier als montierter Prototyp"
+      }
     }
+  },
+  "giftboard": {
+    "hero": {
+      "title": "Giftboard",
+      "tagline": "Eine Geschenk-Wunschliste, die ich gebaut habe, damit <0>meine Freundin</0> nicht mehr alle Geschenke koordinieren muss."
+    },
+    "sections": {
+      "whyTitle": "Warum ich das gebaut habe",
+      "whyP1": "Rund um meinen Geburtstag musste meine Freundin jedes Jahr alle Geschenke koordinieren. Freunde und Familie fragten sie, was ich mir wünsche, und sie jonglierte am Ende mit einer mentalen Liste, wer was besorgt - damit niemand doppelt kauft und alles trotzdem eine Überraschung bleibt.",
+      "whyP2": "Das war für sie stressig und kein gutes System. Deshalb habe ich Giftboard gebaut: Ich trage meine Wünsche ein, teile den Link, und alle können sich selbst koordinieren. Reservierungen bleiben für mich unsichtbar, sodass die Überraschung erhalten bleibt und sie den Geburtstag auch genießen kann.",
+      "whatTitle": "Was es macht",
+      "whatP1": "Du erstellst eine Wunschliste, fügst Einträge mit Link oder eigenem Bild hinzu und teilst sie. Wenn du einen Amazon-Link einfügst, zieht die App automatisch Produktbild und Preis. Alle außer der Listeninhaberin bzw. dem Listeninhaber sehen, welche Geschenke bereits reserviert sind, damit nichts doppelt gekauft wird.",
+      "whatP2": "Außerdem kannst du Prioritäten für Wünsche setzen, damit andere sehen, was dir besonders wichtig ist.",
+      "galleryTitle": "Screenshots",
+      "howTitle": "So funktioniert es",
+      "techTitle": "Technik",
+      "extraScreenshotTitle": "Zusätzlicher Screenshot",
+      "scrapeTitle": "So funktionieren Preis- und Bild-Scraping",
+      "scrapeP1": "Wenn ich einen Produktlink einfüge, sendet das Frontend ihn an einen Backend-Endpunkt. So bleiben Scraping-Logik und Anti-Bot-Header auf dem Server, statt im Browser offengelegt zu werden.",
+      "scrapeP2": "Ich nutze dafür POST, damit die Nutzdaten eindeutig im Request-Body liegen und leichter validiert werden können. Der Server bereinigt und prüft zuerst die URL und blockiert anschließend lokale oder private Netzwerkziele, um SSRF-Risiken zu reduzieren.",
+      "scrapeP3": "Nach dem Abruf der Seite werden host-spezifische Extraktionsregeln gewählt, strukturierte Metadaten/Selektoren ausgewertet und nur die normalisierten Felder zurückgegeben, die die App braucht: Preis und Bild. Timeouts und Null-Fallbacks halten den Wunschlisten-Flow reaktionsschnell, selbst wenn Scraping fehlschlägt.",
+      "scrapeP4": "Die Selektorregeln kommen aus einer Datei namens meta-sources.json. Für jeden unterstützten Shop mappe ich Domains auf die exakten DOM-Selektoren für Preis- und Bildfelder. Dieser Teil ist bewusst manuell, weil jeder Shop ein anderes Markup hat. Hier ist ein Beispiel für Amazon-Domains:",
+      "scrapeP5": "Diese Selektoren muss ich manuell pflegen, aber genau dieser Trade-off sorgt für vorhersehbare Extraktion pro Domain und macht Fehler leichter behebbar, wenn sich das HTML einer Seite ändert.",
+      "jsonTitle": "Wishlist-JSON-Showcase",
+      "jsonIntro": "Dieses JSON ist das tatsächlich persistierte Datenmodell hinter Giftboard. Immer wenn jemand eine Aktion ausführt (zum Beispiel Wunsch hinzufügen, Details bearbeiten oder ein Geschenk reservieren), aktualisiert die REST-API diese Struktur und schreibt den neuesten Zustand zurück in den Speicher. Ich habe hier JSON gewählt, weil das als kleines Familienprojekt gestartet ist und ich dafür keine vollständige Datenbank aufsetzen wollte. Wenn die Nutzung später wächst, kann ich dieselbe Struktur in eine richtige Datenbank migrieren. Ich teile ein vollständiges Beispiel unten in Abschnitte auf, damit leichter verständlich ist, wofür jedes Feld verwendet wird."
+    },
+    "gallery": {
+      "heroAlt": "Giftboard-Hero-Ansicht im alternativen Theme",
+      "heroCaption": "Hero-Ansicht",
+      "wishesAlt": "Giftboard-Wunschübersicht im alternativen Theme",
+      "wishesCaption": "Wunschübersicht als Listeninhaber",
+      "themeAlt": "Giftboard-Theme-Vorschau im alternativen Theme",
+      "themeCaption": "Theme-Vorschau",
+      "createWishAlt": "Giftboard-Wunsch-erstellen-Ansicht im alternativen Theme",
+      "createWishCaption": "Wunsch hinzufügen",
+      "boardAlt": "Giftboard-Board-Übersicht im alternativen Theme",
+      "boardCaption": "Board-Übersicht"
+    },
+    "how": {
+      "amazonTitle": "Amazon Auto-Fetch",
+      "amazonText": "Füge einen Produktlink ein und das Backend extrahiert Bild und Preis automatisch.",
+      "customTitle": "Eigene Bilder",
+      "customText": "Nicht alles gibt es auf Amazon. Für jeden Wunsch kannst du auch ein eigenes Bild hochladen.",
+      "hiddenTitle": "Versteckte Reservierungen",
+      "hiddenText": "Andere markieren, was sie kaufen, und die listenbesitzende Person sieht es nie.",
+      "prioritiesTitle": "Prioritäten",
+      "prioritiesText": "Markiere, wie wichtig dir ein Artikel ist, damit andere besser entscheiden können, was sie schenken."
+    },
+    "tech": {
+      "frontendTitle": "Frontend",
+      "frontendText": "React + TypeScript, gestylt mit SCSS. Responsiv und auf jeder Bildschirmgröße nutzbar.",
+      "backendTitle": "Backend",
+      "backendText": "Eine kleine REST-API, die Amazon-Produktdaten extrahiert und alles in einer JSON-Datei speichert. Wenn das Projekt wächst, wechsle ich eventuell zu einer Datenbank - für den Anfang war das so aber am einfachsten."
+    },
+    "json": {
+      "part1Title": "1) Listen-Metadaten",
+      "part1Text": "Grundinformationen zur Wunschliste selbst: Titel, Share-Code, Eigentümer und Erstellungszeitpunkt.",
+      "part2Title": "2) Wünsche",
+      "part2Text": "Jeder Wunsch hat Titel, Priorität, Link/Bild-Daten und Menge. Bei Amazon-Links können Bild und Preis automatisch übernommen werden.",
+      "part3Title": "3) Reservierungen und Status",
+      "part3Text": "Reservierungsfelder halten fest, wer bereits ein Geschenk zugesagt hat, während die Eigentümerin bzw. der Eigentümer das weiterhin nicht in der UI sieht.",
+      "part4Title": "4) Vollständiges Beispiel"
+    }
+  },
+  "customParty": {
+    "hero": {
+      "title": "Custom Party App",
+      "tagline": "Eine individuelle Party-App, die wir für den 49. Geburtstag meines Schwiegervaters gebaut haben."
+    },
+    "sections": {
+      "whatTitle": "Was es ist",
+      "whatText": "Diese App wurde für genau ein Event entwickelt: Gäste öffnen einen einzigen Link und erhalten Zugriff auf interaktive Aktivitäten. Das Ziel war, die Feier persönlicher und spielerischer zu machen und alle einzubeziehen. Außerdem bekam jede Person einen \"zufälligen\" Partner, was Gespräche mit Menschen förderte, die man noch nicht gut kannte.",
+      "featuresTitle": "Hauptfunktionen",
+      "techTitle": "Technik",
+      "screenshotTitle": "Custom Party App Screenshot"
+    },
+    "features": {
+      "partnerTitle": "Finde deinen Partner-Spiel",
+      "partnerText": "Gäste lösen Hinweise und finden ihren zugewiesenen Partner für die nächste Aktivität.",
+      "quizTitle": "Geburtstagsquiz",
+      "quizText": "Ein Quiz mit lustigen Fakten und Geschichten über ihn.",
+      "galleryTitle": "Gemeinsame Fotogalerie",
+      "galleryText": "Alle können Partyfotos an einem Ort hochladen und anschauen."
+    },
+    "tech": {
+      "text": "Entwickelt mit React Native + TypeScript, damit das Erlebnis auf Smartphones flüssig ist und schnell für ein einmaliges Event bereitgestellt werden konnte."
+    },
+    "image": {
+      "alt": "Custom Party App Startseite",
+      "caption": "Landingpage"
+    }
+  },
+  "nolicom": {
+    "hero": {
+      "title": "ESP32 Retro Desk Notifier",
+      "tagline": "Ein kabelloses Desk-Gadget, das ich gebaut habe, damit man sich im selben Raum trotz Kopfhörer easy gegenseitig erreichen kann."
+    },
+    "problem": {
+      "title": "Problem",
+      "p1": "Meine Freundin und ich teilen uns ein Büro, und meistens tragen wir beide Kopfhörer. Rufen hat nicht funktioniert, Winken nicht, wildes Lichtblinken auch nicht. Zuverlässig war nur aufstehen und um den mittleren Tisch laufen.",
+      "p2": "Diese Mini-Unterbrechung kam oft genug vor, um richtig zu nerven. Ich wollte eine One-Tap-Lösung, um Aufmerksamkeit zu bekommen, ohne laut zu sein oder aufzustehen.",
+      "p3": "Also habe ich ein Desk-Duo gebaut: Knopf drücken <0 /> auf dem anderen Schreibtisch gibt's Sound + Licht."
+    },
+    "concept": {
+      "title": "Konzept",
+      "p1": "Die Idee ist ziemlich simpel: zwei identische Geräte, eins pro Schreibtisch, beide mit Akku und USB-C-ladbar. Beide können senden und empfangen.",
+      "p2": "Drückst du auf Gerät A den Knopf, reagiert Gerät B sofort mit Sound und LEDs <0 /> ganz ohne WLAN-Router, nur direkt per ESP-NOW.",
+      "p3": "Ich wollte einen Retro-Look, weil ich den Style liebe (und ja, ich habe einen Commodore 64). Es sollte eher wie ein cooles Desk-Objekt wirken als wie irgendein Standard-Tech-Gadget."
+    },
+    "hardware": {
+      "title": "Hardware-Überblick",
+      "p1": "Die Elektronik sollte praktisch und reparierbar bleiben. Deshalb habe ich auf gängige, gut dokumentierte Teile gesetzt und alles um vorhersehbares ESP32-I/O herum aufgebaut.",
+      "p2": "Das Kern-Setup ist recht straightforward:",
+      "p3": "Ich habe erst mit einem 2-Segment-Display angefangen, bin später aber auf 4 Segmente gewechselt, weil's deutlich flexibler war.",
+      "p4": "Der analoge Slider ist am Ende eines meiner Lieblingsdetails geworden. Dadurch fühlt sich das Ganze weniger nach \"Digital-Gadget\" und mehr nach echter Schreibtisch-Hardware an.",
+      "list": {
+        "esp32": "ESP32 Wroom 32",
+        "lipo": "LiPo-Akku",
+        "tp4056": "USB-C-Lademodul (TP4056)",
+        "mt3608": "Step-Up-Wandler (MT3608)",
+        "buzzer": "Passiver Piezo-Buzzer",
+        "leds": "Drei LEDs (grün, gelb, rot)",
+        "button": "Push-Button",
+        "switch": "Power-Schalter",
+        "poti": "Linearpotentiometer",
+        "display": "4-Segment-Display",
+        "shift": "Schieberegister (74HC595)",
+        "misc": "Ein paar Widerstände und Kabel",
+        "case": "Individuelles 3D-gedrucktes Gehäuse"
+      }
+    },
+    "comms": {
+      "title": "Kommunikation - ESP-NOW",
+      "protocolPrefix": "Protokoll:",
+      "protocolSuffix": "(direktes Peer-to-Peer, kein Router nötig, schnell und zuverlässig).",
+      "p1": "Beide ESP32 bleiben dauerhaft verbunden und können dadurch kleine Funksignale ohne merkbare Verzögerung senden und empfangen.",
+      "flowLabel": "Systemablauf",
+      "flow1": "Beide Geräte booten und initialisieren ESP-NOW im Station-Mode.",
+      "flow2": "Beide bleiben aktiv und bereit zur Kommunikation.",
+      "flow3": "Beim Button-Press wird ein kleines ESP-NOW-Paket gesendet.",
+      "flow4": "Der Empfänger startet direkt LEDs, Sound und Display-Feedback.",
+      "flow5": "Das Feedback läuft weiter, solange Button-Signale reinkommen."
+    },
+    "prototype": {
+      "title": "Erster Prototyp & komischer ESP-Bug",
+      "p1": "Bevor ich das echte Gerät gebaut habe, habe ich einen Mini-Prototyp gemacht, um Pairing, Paketfluss und Latenz zu testen.",
+      "p2": "Dann kam ein richtig nerviger Bug: zufällige Button-Erkennung, random Send-Verhalten und gelegentliches Looping auf einem ESP32. Mit meinem mobilen Oszi sah man deutlich komisches Signalverhalten.",
+      "p3": "Nachdem Verdrahtung und Software ausgeschlossen waren, habe ich den ESP32 getauscht und plötzlich lief alles stabil. Also ja - der erste Chip war sehr wahrscheinlich einfach defekt.",
+      "p4": "Das hat meinen Debug-Ansatz verändert: Wenn Verhalten random ist und Software es nicht erklärt, das physische Modul früh testen, nicht ganz am Ende."
+    },
+    "build": {
+      "title": "Vollständiger Prototyp",
+      "p1": "Sobald ESP-NOW stabil war, habe ich alles in einen kompletten Breadboard-Prototyp integriert. Da hat es sich endlich echt angefühlt - Button, Buzzer, LEDs, Potentiometer und Stromversorgung als ein System."
+    },
+    "workspace": {
+      "title": "Workspace",
+      "p1": "Der Großteil von Löten, Testen und finalem Zusammenbau ist direkt an meinem Hobby-Schreibtisch entstanden."
+    },
+    "enclosure": {
+      "title": "Case-Design",
+      "p1": "Ich habe das Gehäuse in Blender von null modelliert und mehrfach iteriert, bis die Proportionen gepasst haben. Priorität war zuerst Akku + Ladeboard unterzubringen und dann Öffnungen für Speaker, Poti-Slot und USB-C sauber abzustimmen.",
+      "p2": "Ich wollte kompakte Retro-Proportionen, interne Mounting-Posts und genug Wandstärke, damit sich das Gehäuse solide anfühlt.",
+      "p3": "<0>Not so fun fact:</0> Nach meinem Wechsel auf Arch Linux habe ich gemerkt, dass ich die originale .blend-Datei nicht gesichert hatte. Übrig sind nur noch die .goo-Slicer-Dateien."
+    },
+    "printing": {
+      "title": "3D-Druck",
+      "p1": "PLA war perfekt für schnelle, günstige Iterationen und Fit-Checks. Resin hat dann die finale Oberflächenqualität und die cleanen Kanten für den Retro-Look gebracht.",
+      "p2": "Mit Resin zu arbeiten ist ehrlich gesagt ziemlich nervig: ständig Handschuhe an/aus, Geruch, Maske, Cleanup. Das Ergebnis sieht <0>richtig gut</0> aus, aber mit genug Post-Processing wäre hochwertiges PLA für mich beim nächsten Mal vielleicht die entspanntere Wahl."
+    },
+    "finishing": {
+      "title": "Finale",
+      "p1": "Ich habe oben Retro-Beige und unten Schwarz lackiert. Sah zuerst top aus - dann kamen Risse. Vermutlich zu viel Lack oder Primer-Mismatch.",
+      "p2": "Und dann kam der Endgegner: Ich habe das Ding aus Versehen die Treppe runtergekickt. Elektronik hat überlebt, Resin-Case nicht."
+    },
+    "lessons": {
+      "title": "Lessons Learned",
+      "techTitle": "Technik",
+      "techText": "ESP-NOW ist mega für ultra-lokale Low-Power-Kommunikation. Was ich unterschätzt habe: Sleep-State-Handling braucht sauberes Design, und ADC <0 /> PWM-Helligkeitsmapping läuft super stabil, wenn's einmal richtig eingestellt ist.",
+      "mechTitle": "Mechanik / Design",
+      "mechText": "Resin sieht premium aus, ist aber deutlich nerviger als PLA. Kompatibilität von Primer, Lack und Aushärtung ist viel wichtiger als gedacht. Und analoge Controls wie das Potentiometer fühlen sich im Alltag einfach besser an."
+    },
+    "future": {
+      "title": "Nächste Verbesserungen",
+      "p1": "Wenn ich das neu baue (sehr wahrscheinlich), würde ich dickere innere Supports und weichere Kanten für mehr Haltbarkeit einplanen, den Primer/Lack-Prozess verbessern, eventuell auf Vibrationsmotor statt Buzzer gehen und ein magnetisches Desk-Mount mit stoßfesterem Material testen."
+    },
+    "conclusion": {
+      "title": "Fazit",
+      "p1": "Das Projekt löst ein echtes Schreibtisch-Problem mit einer simplen Interaktion: <0>Knopf drücken <1 /> Licht + Sound</0>.",
+      "p2": "Es kombiniert Embedded-Systems, stromsparende Funkkommunikation, 3D-Modellierung, Druck, analoge Kontrolle und viel praktisches Debugging. Trotz Treppen-Drama: hat funktioniert - war jede Minute wert."
+    },
+    "media": {
+      "conceptAlt": "Retro-Notifier Konzept-Render",
+      "conceptCaption": "Frühe Konzept-Richtung",
+      "hardwareProtoAlt": "Breadboard-Prototyp mit kompletter Hardware",
+      "hardwareProtoCaption": "Vollständiger Breadboard-Hardwareprototyp",
+      "pinoutAlt": "ESP32 Pinout Referenz",
+      "pinoutCaption": "ESP32-Referenz für Wiring und I/O-Mapping",
+      "firstTestCaption": "Früher ESP-NOW-Test mit instabilem Verhalten",
+      "magnifierWideAlt": "Lötarbeit unter der Lupe (Weitwinkel)",
+      "magnifierWideCaption": "Lötarbeit unter der Lupe",
+      "firstPrototypeAlt": "Erster kompletter Breadboard-Prototyp mit vielen Kabeln",
+      "firstPrototypeCaption": "Breadboard-Integration",
+      "breadboard2Alt": "Zweite Breadboard-Integrationsaufnahme",
+      "breadboard2Caption": "Breadboard-Integration 2",
+      "espSolderAlt": "ESP32-Lötung im Nahbild",
+      "espSolderCaption": "Feine Lötarbeit und Kontrolle",
+      "protoTestCaption": "Prototyp-Test mit Licht und Buzzer-Sound",
+      "workspaceAlt": "Workspace-Schreibtisch während des Builds",
+      "workspaceCaption": "Build-Workspace",
+      "workspaceVideoCaption": "Workspace während des Builds",
+      "blenderAlt": "Blender-Gehäusemodell",
+      "blenderCaption": "Gehäusemodellierung in Blender",
+      "wireframeAlt": "Blender-Wireframe des Gehäuses",
+      "wireframeCaption": "Wireframe + Iterationsphase",
+      "caseShowcaseAlt": "3D-Modell des Retro-Cases",
+      "caseShowcaseCaption": "3D-Modell des Retro-Cases",
+      "plaAlt": "Erster PLA-Druck",
+      "plaCaption": "PLA-Fit- und Ausrichtungscheck",
+      "resinAlt": "Finaler Resin-Druck montiert",
+      "resinCaption": "Finaler Resin-Druck und Montage",
+      "plaVideoCaption": "PLA-Druckprozess",
+      "paintedAlt": "Lackierte Front im Retro-Beige-Look",
+      "paintedCaption": "Lackierter finaler Look",
+      "cracksAlt": "Lackrisse am Gehäuse",
+      "cracksCaption": "Rissproblem im Finish",
+      "brokenAlt": "Gebrochenes Gehäuse",
+      "brokenCaption": "Gebrochenes Gehäuse"
+    }
+  }
 }

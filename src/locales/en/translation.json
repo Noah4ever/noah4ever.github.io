@@ -1,343 +1,363 @@
 {
-    "header": {
-        "logoAria": "Go to homepage",
-        "themeSwitchAria": "Toggle color theme",
-        "languageSwitchAria": "Switch language"
+  "header": {
+    "logoAria": "Go to homepage",
+    "themeSwitchAria": "Toggle color theme",
+    "languageSwitchAria": "Switch language"
+  },
+  "footer": {
+    "copyright": "© {{year}} Noah Thiering. All rights reserved."
+  },
+  "projectLayout": {
+    "backAria": "Back to homepage",
+    "backLabel": "Back to portfolio",
+    "backToTop": "Back to top"
+  },
+  "imageBorder": {
+    "closeWindow": "Close window",
+    "minimizeWindow": "Minimize window",
+    "expandWindow": "Expand window",
+    "close": "Close",
+    "minimize": "Minimize",
+    "expand": "Expand",
+    "switchToChromeFrame": "Switch to Chrome frame",
+    "switchToChrome": "Switch to Chrome",
+    "switchToSafariFrame": "Switch to Safari frame",
+    "switchToSafari": "Switch to Safari"
+  },
+  "home": {
+    "hero": {
+      "meLabel": "that's me",
+      "greeting": "Hey, I'm",
+      "name": "Noah Thiering",
+      "rolePrefix": "a",
+      "role": "Software Developer",
+      "location": "Bremen, Germany"
     },
-    "footer": {
-        "copyright": "© {{year}} Noah Thiering. All rights reserved."
+    "links": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "E-Mail",
+      "about": "About me"
     },
-    "projectLayout": {
-        "backAria": "Back to homepage",
-        "backLabel": "Back to portfolio",
-        "backToTop": "Back to top"
+    "scroll": {
+      "label": "Scroll down"
     },
-    "imageBorder": {
-        "closeWindow": "Close window",
-        "minimizeWindow": "Minimize window",
-        "expandWindow": "Expand window",
-        "close": "Close",
-        "minimize": "Minimize",
-        "expand": "Expand",
-        "switchToChromeFrame": "Switch to Chrome frame",
-        "switchToChrome": "Switch to Chrome",
-        "switchToSafariFrame": "Switch to Safari frame",
-        "switchToSafari": "Switch to Safari"
-    },
-    "home": {
-        "hero": {
-            "meLabel": "that's me",
-            "greeting": "Hey, I'm",
-            "name": "Noah Thiering",
-            "rolePrefix": "a",
-            "role": "Software Developer",
-            "location": "Bremen, Germany"
+    "about": {
+      "title": "About me",
+      "experienceTitle": "Experience & Education",
+      "today": "today",
+      "experience": {
+        "uniBremen": {
+          "title": "Bachelor Computer Science",
+          "company": "University of Bremen"
         },
-        "links": {
-            "github": "GitHub",
-            "linkedin": "LinkedIn",
-            "email": "E-Mail",
-            "about": "About me"
+        "rheinmetallWork": {
+          "title": "Software Developer (Part-time since May 2025)",
+          "company": "Rheinmetall"
         },
-        "scroll": {
-            "label": "Scroll down"
+        "rheinmetallApp": {
+          "title": "Apprenticeship (Computer Science Expert)",
+          "company": "Rheinmetall"
         },
-        "about": {
-            "title": "About me",
-            "personalTitle": "Personal",
-            "personalText": "I have been developing my skills since 2021, after completing my initial training. Currently I'm studying computer science at the <0>University of Bremen</0> and working part-time at Rheinmetall as a Software Developer. I specialize in web development using TypeScript, React, and Angular.",
-            "skillsTitle": "Skills",
-            "skillsSubtitle": "Click on a skill to learn more",
-            "projectsTitle": "Projects"
-        },
-        "skills": {
-            "items": {
-                "typescript": {
-                    "name": "TypeScript",
-                    "description": "Back in 2021, during my apprenticeship, a friend introduced me to TypeScript. Before that, I was working with JavaScript and PHP, skills I picked up during my IT assistant training from 2019 to 2021. Once I started using TypeScript, I was hooked and have incorporated it into both personal and professional projects ever since."
-                },
-                "react": {
-                    "name": "React",
-                    "description": "I was introduced to ReactJS in 2021. Prior to this, I had experimented with EJS, a templating engine that allows embedding JavaScript code within HTML templates. While EJS served its purpose, discovering React's component-based architecture was a game-changer for me. I quickly fell in love with building dynamic and responsive user interfaces using React. Although I also explored Angular for a work project, I found that React's flexibility and simplicity resonated more with my development style. Despite Angular's robust features, my heart lies with React."
-                },
-                "angular": {
-                    "name": "Angular",
-                    "description": "I was first introduced to AngularJS in 2023 during my apprenticeship. For a project, I built a small app with Angular to learn the basics. While I appreciated the experience, I prefer React for most of my projects, as it offers more freedom and flexibility. Angular is a great framework with many features, but React's simplicity and component-based approach appeal to me more. Nevertheless, I'm glad to have both technologies in my toolkit."
-                },
-                "scss": {
-                    "name": "SCSS",
-                    "description": "Although I had heard about SCSS earlier, it wasn't until 2022 that I decided to give it a try. Once I did, I fell in love with its features. Since then, SCSS has been my go-to for styling in every project. Prior to that, I was using standard CSS, a skill I developed during my IT assistant training."
-                },
-                "nodejs": {
-                    "name": "Node.js",
-                    "description": "In 2022, I ventured into Node.js to write my first REST API. This experience opened up new possibilities, and I've since used Node.js for various small side projects. I also experimented with Bun, which I found quite enjoyable."
-                },
-                "python": {
-                    "name": "Python",
-                    "description": "My first attempt at learning Python was in 2018, but due to school commitments, I couldn't stick with it. A few years later, in 2022, I revisited Python and delved deeper. This renewed interest led me to develop a Blender plugin called \"Node Runner\", which facilitates importing and exporting shader nodes using text."
-                },
-                "cpp": {
-                    "name": "C++",
-                    "description": "During my initial IT assistant training between 2019 and 2021, C++ was the first programming language I learned. I used it to create console applications back then and later applied it at work in combination with Qt Widgets. Nowadays, I don't use C++ as often, as my focus has shifted towards web technologies. However, I still use it for some ESP32 microcontroller projects."
-                },
-                "git": {
-                    "name": "Git",
-                    "description": "I've been using Git for a long time; it's my go-to version control system for any kind of project. Its reliability and efficiency make it an indispensable tool in my development workflow."
-                },
-                "blender": {
-                    "name": "Blender",
-                    "description": "I started actively using Blender in 2022 and quickly became enamored with the creative process of 3D modeling. This passion led me to develop the \"Node Runner\" plugin for shader nodes, enhancing my workflow within Blender."
-                }
-            },
-            "iconAlt": "{{skill}} icon"
-        },
-        "projects": {
-            "giftboard": {
-                "title": "Giftboard",
-                "description": "Wishlist app for birthdays and occasions. Share a list, let others reserve gifts, and avoid duplicate presents while keeping surprises intact.",
-                "aria": "Open Giftboard project page",
-                "imageAlt": "Giftboard board overview"
-            },
-            "customParty": {
-                "title": "Custom Party App",
-                "description": "Custom party app we built for my father-in-law's 49th birthday party. It features a 'find your partner' game, a quiz about him, a shared photo gallery and more. Built with React Native and TypeScript.",
-                "aria": "Open Custom Party App project page",
-                "imageAlt": "Custom Party App landing page"
-            },
-            "nolicom": {
-                "title": "ESP32 Retro Desk Notifier",
-                "description": "A  wireless desk device built with ESP32 and ESP-NOW which sends data (on button press) to notify the other device with sound and light to get the attention of the other person.",
-                "aria": "Open ESP32 Retro Desk Notifier project page",
-                "imageAlt": "ESP32 Retro Desk Notifier assembled prototype"
-            }
+        "bbsApp": {
+          "title": "Apprenticeship (IT Assistant)",
+          "company": "BBS Syke"
         }
+      },
+      "personalTitle": "Personal",
+      "personalText": "I have been developing my skills since 2021, after completing my initial training. Currently I'm studying computer science at the <0>University of Bremen</0> and working part-time at Rheinmetall as a Software Developer. I specialize in web development using TypeScript, React, and Angular.",
+      "skillsTitle": "Skills",
+      "skillsSubtitle": "Click on a skill to learn more",
+      "projectsTitle": "Projects"
     },
-    "giftboard": {
-        "hero": {
-            "title": "Giftboard",
-            "tagline": "A gift wishlist I built so <0>my girlfriend</0> doesn't have to coordinate everyone's presents anymore."
+    "skills": {
+      "items": {
+        "typescript": {
+          "name": "TypeScript",
+          "description": "Back in 2021, during my apprenticeship, a friend introduced me to TypeScript. Before that, I was working with JavaScript and PHP, skills I picked up during my IT assistant training from 2019 to 2021. Once I started using TypeScript, I was hooked and have incorporated it into both personal and professional projects ever since."
         },
-        "sections": {
-            "whyTitle": "Why I built this",
-            "whyP1": "Every year around my birthday, my girlfriend had to coordinate all the gifts. Friends and family would ask her what I wanted, and she'd end up juggling a mental list of who's getting what - making sure nobody buys the same thing, while keeping everything a surprise from me.",
-            "whyP2": "It was stressful for her and not a great system. So I built Giftboard: I add what I'd like, share the link, and everyone can coordinate on their own. Reservations are hidden from me so the surprise stays intact and she can enjoy the birthday too.",
-            "whatTitle": "What it does",
-            "whatP1": "You create a wishlist, add items with a link or your own image, and share it. If you paste an Amazon link the app automatically pulls the product image and price. Everyone except the wishlist owner can see which gifts are already reserved so no duplicates are purchased.",
-            "whatP2": "You can also set priority levels on wishes so people know what matters most to you.",
-            "galleryTitle": "Screenshots",
-            "howTitle": "How it works",
-            "techTitle": "Tech",
-            "extraScreenshotTitle": "Additional screenshot",
-            "scrapeTitle": "How price and image scraping works",
-            "scrapeP1": "When I paste a product link, the frontend sends it to a backend endpoint. That keeps scraping logic and anti-bot request headers on the server instead of exposing them in the browser.",
-            "scrapeP2": "I route this through POST so the payload is explicit in the request body and easier to validate. The server first sanitizes and verifies the URL, then blocks local or private-network targets to reduce SSRF risk.",
-            "scrapeP3": "After fetching the provided page, it chooses host-specific extraction rules, reads structured metadata/selectors, and returns only the normalized fields the app needs: price and image. Timeouts and null fallbacks keep the wishlist flow responsive even when scraping fails.",
-            "scrapeP4": "The selector rules come from a meta-sources.json file. For each supported shop, I map domains to the exact DOM selectors for price and image fields. This part is manual on purpose because every storefront has different markup. This is an example for Amazon domains:",
-            "scrapeP5": "I have to maintain these selectors manually, but that tradeoff gives me predictable extraction per domain and makes breakages easier to fix when a site changes its HTML.",
-            "jsonTitle": "Wishlist JSON showcase",
-            "jsonIntro": "This JSON is the actual persisted data model behind Giftboard. Whenever someone performs an action (for example adding a wish, editing details, or reserving an item), the REST API updates this structure and writes the latest state back to storage. I chose JSON here because this started as a small family project and I did not want to set up a full database for it. If usage grows later, I can migrate the same structure into a proper database. I split one full example into parts below so it is easier to understand what each field is used for."
+        "react": {
+          "name": "React",
+          "description": "I was introduced to ReactJS in 2021. Prior to this, I had experimented with EJS, a templating engine that allows embedding JavaScript code within HTML templates. While EJS served its purpose, discovering React's component-based architecture was a game-changer for me. I quickly fell in love with building dynamic and responsive user interfaces using React. Although I also explored Angular for a work project, I found that React's flexibility and simplicity resonated more with my development style. Despite Angular's robust features, my heart lies with React."
         },
-        "gallery": {
-            "heroAlt": "Giftboard hero view in the alternate theme",
-            "heroCaption": "Hero view",
-            "wishesAlt": "Giftboard wishes overview in the alternate theme",
-            "wishesCaption": "Wishes overview as list owner",
-            "themeAlt": "Giftboard theme preview in the alternate theme",
-            "themeCaption": "Theme preview",
-            "createWishAlt": "Giftboard create wish view in the alternate theme",
-            "createWishCaption": "Adding a wish",
-            "boardAlt": "Giftboard board overview in the alternate theme",
-            "boardCaption": "Board overview"
+        "angular": {
+          "name": "Angular",
+          "description": "I was first introduced to AngularJS in 2023 during my apprenticeship. For a project, I built a small app with Angular to learn the basics. While I appreciated the experience, I prefer React for most of my projects, as it offers more freedom and flexibility. Angular is a great framework with many features, but React's simplicity and component-based approach appeal to me more. Nevertheless, I'm glad to have both technologies in my toolkit."
         },
-        "how": {
-            "amazonTitle": "Amazon auto-fetch",
-            "amazonText": "Paste a product link and the backend scrapes the image and price automatically.",
-            "customTitle": "Custom images",
-            "customText": "Not everything is on Amazon. You can upload your own picture for any wish.",
-            "hiddenTitle": "Hidden reservations",
-            "hiddenText": "Others mark what they'll buy and the owner never sees it.",
-            "prioritiesTitle": "Priorities",
-            "prioritiesText": "Flag how much you want each item so people can decide what to get."
+        "scss": {
+          "name": "SCSS",
+          "description": "Although I had heard about SCSS earlier, it wasn't until 2022 that I decided to give it a try. Once I did, I fell in love with its features. Since then, SCSS has been my go-to for styling in every project. Prior to that, I was using standard CSS, a skill I developed during my IT assistant training."
         },
-        "tech": {
-            "frontendTitle": "Frontend",
-            "frontendText": "React + TypeScript, styled with SCSS. Responsive and works on any screen size.",
-            "backendTitle": "Backend",
-            "backendText": "A small REST API that scrapes Amazon product data and stores everything in a JSON file. I might switch to a database if it grows but this was simpler for now."
+        "nodejs": {
+          "name": "Node.js",
+          "description": "In 2022, I ventured into Node.js to write my first REST API. This experience opened up new possibilities, and I've since used Node.js for various small side projects. I also experimented with Bun, which I found quite enjoyable."
         },
-        "json": {
-            "part1Title": "1) List metadata",
-            "part1Text": "Basic info about the wishlist itself: title, share code, owner and creation time.",
-            "part2Title": "2) Wishes",
-            "part2Text": "Each wish has title, priority, link/image data and quantity. Amazon links can include fetched image and price.",
-            "part3Title": "3) Reservations and state",
-            "part3Text": "Reservation fields keep track of who already committed to a gift, while the owner still cannot see that in the UI.",
-            "part4Title": "4) Full example"
+        "python": {
+          "name": "Python",
+          "description": "My first attempt at learning Python was in 2018, but due to school commitments, I couldn't stick with it. A few years later, in 2022, I revisited Python and delved deeper. This renewed interest led me to develop a Blender plugin called \"Node Runner\", which facilitates importing and exporting shader nodes using text."
+        },
+        "cpp": {
+          "name": "C++",
+          "description": "During my initial IT assistant training between 2019 and 2021, C++ was the first programming language I learned. I used it to create console applications back then and later applied it at work in combination with Qt Widgets. Nowadays, I don't use C++ as often, as my focus has shifted towards web technologies. However, I still use it for some ESP32 microcontroller projects."
+        },
+        "git": {
+          "name": "Git",
+          "description": "I've been using Git for a long time; it's my go-to version control system for any kind of project. Its reliability and efficiency make it an indispensable tool in my development workflow."
+        },
+        "blender": {
+          "name": "Blender",
+          "description": "I started actively using Blender in 2022 and quickly became enamored with the creative process of 3D modeling. This passion led me to develop the \"Node Runner\" plugin for shader nodes, enhancing my workflow within Blender."
         }
+      },
+      "iconAlt": "{{skill}} icon"
     },
-    "customParty": {
-        "hero": {
-            "title": "Custom Party App",
-            "tagline": "A custom party app we built for my father-in-law's 49th birthday."
-        },
-        "sections": {
-            "whatTitle": "What it is",
-            "whatText": "This app was designed for one event: guests open a single link and get access to interactive activities. The goal was to make the party feel personal and playful, and to get everyone involved. Also because everybody got a \"random\" partner, it encouraged people to talk to others they did not know well.",
-            "featuresTitle": "Main features",
-            "techTitle": "Tech",
-            "screenshotTitle": "Custom Party App screenshot"
-        },
-        "features": {
-            "partnerTitle": "Find your partner game",
-            "partnerText": "Guests solve clues and match with their assigned partner for the next activity.",
-            "quizTitle": "Birthday quiz",
-            "quizText": "A quiz focused on fun facts and stories about him.",
-            "galleryTitle": "Shared photo gallery",
-            "galleryText": "Everyone can upload and browse party photos in one place."
-        },
-        "tech": {
-            "text": "Built with React Native + TypeScript to make the experience smooth on phones and fast to ship for a one-time event."
-        },
-        "image": {
-            "alt": "Custom Party App landing page",
-            "caption": "Landing page"
-        }
-    },
-    "nolicom": {
-        "hero": {
-            "title": "ESP32 Retro Desk Notifier",
-            "tagline": "A wireless desk gadget I built so two people in the same office can still get each other's attention while both wearing headphones."
-        },
-        "problem": {
-            "title": "Problem",
-            "p1": "My girlfriend and I share one office room, and most days we both wear headphones. Calling each other didn't work, waving didn't work, flashing random lights didn't work - the only reliable option was standing up and walking around the desk.",
-            "p2": "That tiny interruption happened often enough to be genuinely annoying. I wanted a one-tap way to get attention without talking over music or getting up.",
-            "p3": "So I built a pair of desk devices: press the button <0 /> sound and light on the other desk."
-        },
-        "concept": {
-            "title": "Concept",
-            "p1": "The idea is pretty simple: two identical units, one per desk, both battery powered and USB-C chargeable. Both devices can send and receive.",
-            "p2": "Press the button on one device <0 /> the other plays a sound and blinks its LEDs. No Wi-Fi router needed, just direct ESP-NOW peer-to-peer.",
-            "p3": "I wanted a retro look because I just love that style (also yes, I own a Commodore 64). I wanted it to feel more like a cool desk object than a generic tech gadget."
-        },
-        "hardware": {
-            "title": "Hardware Overview",
-            "p1": "I wanted the electronics to stay practical and repairable, so I used common, well-documented parts and built everything around predictable ESP32 I/O.",
-            "p2": "The core setup is pretty straightforward:",
-            "p3": "I started with a 2-segment display, but switched to 4 segments later because it gave me way more flexibility.",
-            "p4": "The analog slider ended up being one of my favorite details. It makes the interaction feel less \"digital gadget\" and more like a tiny piece of desk hardware.",
-            "list": {
-                "esp32": "ESP32 Wroom 32",
-                "lipo": "LiPo battery",
-                "tp4056": "USB-C charging module (TP4056)",
-                "mt3608": "Step-up converter (MT3608)",
-                "buzzer": "Passive piezo buzzer",
-                "leds": "Three LEDs (green, yellow, red)",
-                "button": "Push button",
-                "switch": "Power switch",
-                "poti": "Linear potentiometer",
-                "display": "4-segment display",
-                "shift": "Shift register (74HC595)",
-                "misc": "A couple resistors and wires",
-                "case": "Custom 3D-printed enclosure"
-            }
-        },
-        "comms": {
-            "title": "Communication - ESP-NOW",
-            "protocolPrefix": "Protocol:",
-            "protocolSuffix": "(direct peer-to-peer, no router required, fast and reliable).",
-            "p1": "Both ESP32 devices stay powered and connected all the time, so they can send tiny wireless signals instantly with no noticeable delay.",
-            "flowLabel": "System flow",
-            "flow1": "Both devices boot and initialize ESP-NOW in station mode.",
-            "flow2": "Both devices stay awake and ready to communicate.",
-            "flow3": "When the button is pressed, a small ESP-NOW packet is sent.",
-            "flow4": "The receiver immediately triggers LEDs, sound, and display feedback.",
-            "flow5": "Feedback continues while button signals keep coming in."
-        },
-        "prototype": {
-            "title": "Initial Prototype & Weird ESP Bug",
-            "p1": "Before building the real device, I made a minimal prototype to learn pairing, packet flow, and latency behavior.",
-            "p2": "Then I hit a super annoying bug: random button detection, random send behavior, and occasional looping on one ESP32. With my mobile oscilloscope I could see weird signal behavior.",
-            "p3": "After ruling out wiring and software, I replaced the ESP32 module and everything worked reliably. So yeah - the first module was likely just faulty.",
-            "p4": "That phase changed how I debug hardware: if behavior is inconsistent in ways software can't explain, test the physical module early, not last."
-        },
-        "build": {
-            "title": "Full Prototype",
-            "p1": "Once ESP-NOW was stable, I integrated everything into one complete breadboard prototype. That's when it finally felt real - button, buzzer, LEDs, potentiometer, and power system all running together."
-        },
-        "workspace": {
-            "title": "The Workspace",
-            "p1": "Most of the soldering, testing, and final assembly happened right at my hobby desk."
-        },
-        "enclosure": {
-            "title": "Case Design",
-            "p1": "I modeled the case from scratch in Blender and iterated several times to get the proportions right. Priority was fitting battery + charging board first, then tuning openings for speaker, potentiometer slot, and USB-C access.",
-            "p2": "I aimed for compact retro proportions, internal mounting posts, and enough wall thickness so the case still feels solid.",
-            "p3": "<0>Not so fun fact:</0> after I switched to Arch Linux, I realized I hadn't backed up the original .blend file. All I have left now are the .goo slicer files."
-        },
-        "printing": {
-            "title": "3D Printing",
-            "p1": "PLA gave me cheap iterations, fast fit checks, and a cleaner workflow. Resin gave me the final surface quality and those nice sharp edges for the retro look.",
-            "p2": "Resin is honestly annoying to work with: constant gloves, changing gloves, smell, mask, cleanup. The result looks <0>incredible</0>, but if I'm honest, a really clean PLA print with more post-processing might be my favorite route next time."
-        },
-        "finishing": {
-            "title": "Finale",
-            "p1": "I painted the top in retro beige and the bottom in black. Looked great at first - then cracks showed up. Probably too much paint or primer mismatch.",
-            "p2": "Then the final accident happened: I accidentally kicked it down the stairs. Electronics survived, resin case did not."
-        },
-        "lessons": {
-            "title": "Lessons Learned",
-            "techTitle": "Technical",
-            "techText": "ESP-NOW is awesome for ultra-local low-power communication. One thing I underestimated: sleep-state handling needs careful design, and ADC <0 /> PWM brightness mapping is super reliable once dialed in.",
-            "mechTitle": "Mechanical / Design",
-            "mechText": "Resin looks premium but is way more annoying than PLA. Paint/primer/cure compatibility matters way more than expected. Also: analog controls like the potentiometer just feel better in daily use."
-        },
-        "future": {
-            "title": "Future Improvements",
-            "p1": "If I rebuild this (very likely), I'd add thicker internal supports and softer edges for durability, improve the primer/paint workflow, maybe use a vibration motor instead of a buzzer, and test a magnetic desk mount with a more impact-resistant case material."
-        },
-        "conclusion": {
-            "title": "Conclusion",
-            "p1": "This project solved a real desk problem with one simple interaction: <0>press the button <1 /> light + sound</0>.",
-            "p2": "It combines embedded systems, low-power wireless communication, 3D modeling, printing, analog control, and a lot of practical debugging. Even with one staircase tragedy, it worked - totally worth building."
-        },
-        "media": {
-            "conceptAlt": "Retro notifier concept render",
-            "conceptCaption": "Early concept direction",
-            "hardwareProtoAlt": "Breadboard prototype with all hardware parts",
-            "hardwareProtoCaption": "Full breadboard hardware prototype",
-            "pinoutAlt": "ESP32 pinout reference",
-            "pinoutCaption": "ESP32 reference while wiring and mapping I/O",
-            "firstTestCaption": "Early ESP-NOW test with unstable behavior",
-            "magnifierWideAlt": "Magnifier soldering wide angle",
-            "magnifierWideCaption": "Magnifier soldering",
-            "firstPrototypeAlt": "First full breadboard prototype with many wires",
-            "firstPrototypeCaption": "Breadboard integration",
-            "breadboard2Alt": "Second breadboard integration shot",
-            "breadboard2Caption": "Breadboard integration 2",
-            "espSolderAlt": "Close-up of ESP32 soldering",
-            "espSolderCaption": "Fine soldering and inspection",
-            "protoTestCaption": "Prototype test with lights and buzzer sound",
-            "workspaceAlt": "Workspace desk during the build",
-            "workspaceCaption": "Build workspace",
-            "workspaceVideoCaption": "Workspace during the build",
-            "blenderAlt": "Blender enclosure model",
-            "blenderCaption": "Enclosure modeling in Blender",
-            "wireframeAlt": "Blender wireframe of enclosure",
-            "wireframeCaption": "Wireframe + iteration phase",
-            "caseShowcaseAlt": "3D model of retro case showcase",
-            "caseShowcaseCaption": "3D model of retro case showcase",
-            "plaAlt": "First PLA print",
-            "plaCaption": "PLA fit and alignment validation",
-            "resinAlt": "Finished resin print assembled",
-            "resinCaption": "Final resin print and assembly",
-            "plaVideoCaption": "PLA print process",
-            "paintedAlt": "Painted front with retro beige finish",
-            "paintedCaption": "Painted final look",
-            "cracksAlt": "Paint cracks on enclosure",
-            "cracksCaption": "Cracking issue in finish",
-            "brokenAlt": "Broken case",
-            "brokenCaption": "Broken case"
-        }
+    "projects": {
+      "giftboard": {
+        "title": "Giftboard",
+        "description": "Wishlist app for birthdays and occasions. Share a list, let others reserve gifts, and avoid duplicate presents while keeping surprises intact.",
+        "aria": "Open Giftboard project page",
+        "imageAlt": "Giftboard board overview"
+      },
+      "customParty": {
+        "title": "Custom Party App",
+        "description": "Custom party app we built for my father-in-law's 49th birthday party. It features a 'find your partner' game, a quiz about him, a shared photo gallery and more. Built with React Native and TypeScript.",
+        "aria": "Open Custom Party App project page",
+        "imageAlt": "Custom Party App landing page"
+      },
+      "nolicom": {
+        "title": "ESP32 Retro Desk Notifier",
+        "description": "A  wireless desk device built with ESP32 and ESP-NOW which sends data (on button press) to notify the other device with sound and light to get the attention of the other person.",
+        "aria": "Open ESP32 Retro Desk Notifier project page",
+        "imageAlt": "ESP32 Retro Desk Notifier assembled prototype"
+      }
     }
+  },
+  "giftboard": {
+    "hero": {
+      "title": "Giftboard",
+      "tagline": "A gift wishlist I built so <0>my girlfriend</0> doesn't have to coordinate everyone's presents anymore."
+    },
+    "sections": {
+      "whyTitle": "Why I built this",
+      "whyP1": "Every year around my birthday, my girlfriend had to coordinate all the gifts. Friends and family would ask her what I wanted, and she'd end up juggling a mental list of who's getting what - making sure nobody buys the same thing, while keeping everything a surprise from me.",
+      "whyP2": "It was stressful for her and not a great system. So I built Giftboard: I add what I'd like, share the link, and everyone can coordinate on their own. Reservations are hidden from me so the surprise stays intact and she can enjoy the birthday too.",
+      "whatTitle": "What it does",
+      "whatP1": "You create a wishlist, add items with a link or your own image, and share it. If you paste an Amazon link the app automatically pulls the product image and price. Everyone except the wishlist owner can see which gifts are already reserved so no duplicates are purchased.",
+      "whatP2": "You can also set priority levels on wishes so people know what matters most to you.",
+      "galleryTitle": "Screenshots",
+      "howTitle": "How it works",
+      "techTitle": "Tech",
+      "extraScreenshotTitle": "Additional screenshot",
+      "scrapeTitle": "How price and image scraping works",
+      "scrapeP1": "When I paste a product link, the frontend sends it to a backend endpoint. That keeps scraping logic and anti-bot request headers on the server instead of exposing them in the browser.",
+      "scrapeP2": "I route this through POST so the payload is explicit in the request body and easier to validate. The server first sanitizes and verifies the URL, then blocks local or private-network targets to reduce SSRF risk.",
+      "scrapeP3": "After fetching the provided page, it chooses host-specific extraction rules, reads structured metadata/selectors, and returns only the normalized fields the app needs: price and image. Timeouts and null fallbacks keep the wishlist flow responsive even when scraping fails.",
+      "scrapeP4": "The selector rules come from a meta-sources.json file. For each supported shop, I map domains to the exact DOM selectors for price and image fields. This part is manual on purpose because every storefront has different markup. This is an example for Amazon domains:",
+      "scrapeP5": "I have to maintain these selectors manually, but that tradeoff gives me predictable extraction per domain and makes breakages easier to fix when a site changes its HTML.",
+      "jsonTitle": "Wishlist JSON showcase",
+      "jsonIntro": "This JSON is the actual persisted data model behind Giftboard. Whenever someone performs an action (for example adding a wish, editing details, or reserving an item), the REST API updates this structure and writes the latest state back to storage. I chose JSON here because this started as a small family project and I did not want to set up a full database for it. If usage grows later, I can migrate the same structure into a proper database. I split one full example into parts below so it is easier to understand what each field is used for."
+    },
+    "gallery": {
+      "heroAlt": "Giftboard hero view in the alternate theme",
+      "heroCaption": "Hero view",
+      "wishesAlt": "Giftboard wishes overview in the alternate theme",
+      "wishesCaption": "Wishes overview as list owner",
+      "themeAlt": "Giftboard theme preview in the alternate theme",
+      "themeCaption": "Theme preview",
+      "createWishAlt": "Giftboard create wish view in the alternate theme",
+      "createWishCaption": "Adding a wish",
+      "boardAlt": "Giftboard board overview in the alternate theme",
+      "boardCaption": "Board overview"
+    },
+    "how": {
+      "amazonTitle": "Amazon auto-fetch",
+      "amazonText": "Paste a product link and the backend scrapes the image and price automatically.",
+      "customTitle": "Custom images",
+      "customText": "Not everything is on Amazon. You can upload your own picture for any wish.",
+      "hiddenTitle": "Hidden reservations",
+      "hiddenText": "Others mark what they'll buy and the owner never sees it.",
+      "prioritiesTitle": "Priorities",
+      "prioritiesText": "Flag how much you want each item so people can decide what to get."
+    },
+    "tech": {
+      "frontendTitle": "Frontend",
+      "frontendText": "React + TypeScript, styled with SCSS. Responsive and works on any screen size.",
+      "backendTitle": "Backend",
+      "backendText": "A small REST API that scrapes Amazon product data and stores everything in a JSON file. I might switch to a database if it grows but this was simpler for now."
+    },
+    "json": {
+      "part1Title": "1) List metadata",
+      "part1Text": "Basic info about the wishlist itself: title, share code, owner and creation time.",
+      "part2Title": "2) Wishes",
+      "part2Text": "Each wish has title, priority, link/image data and quantity. Amazon links can include fetched image and price.",
+      "part3Title": "3) Reservations and state",
+      "part3Text": "Reservation fields keep track of who already committed to a gift, while the owner still cannot see that in the UI.",
+      "part4Title": "4) Full example"
+    }
+  },
+  "customParty": {
+    "hero": {
+      "title": "Custom Party App",
+      "tagline": "A custom party app we built for my father-in-law's 49th birthday."
+    },
+    "sections": {
+      "whatTitle": "What it is",
+      "whatText": "This app was designed for one event: guests open a single link and get access to interactive activities. The goal was to make the party feel personal and playful, and to get everyone involved. Also because everybody got a \"random\" partner, it encouraged people to talk to others they did not know well.",
+      "featuresTitle": "Main features",
+      "techTitle": "Tech",
+      "screenshotTitle": "Custom Party App screenshot"
+    },
+    "features": {
+      "partnerTitle": "Find your partner game",
+      "partnerText": "Guests solve clues and match with their assigned partner for the next activity.",
+      "quizTitle": "Birthday quiz",
+      "quizText": "A quiz focused on fun facts and stories about him.",
+      "galleryTitle": "Shared photo gallery",
+      "galleryText": "Everyone can upload and browse party photos in one place."
+    },
+    "tech": {
+      "text": "Built with React Native + TypeScript to make the experience smooth on phones and fast to ship for a one-time event."
+    },
+    "image": {
+      "alt": "Custom Party App landing page",
+      "caption": "Landing page"
+    }
+  },
+  "nolicom": {
+    "hero": {
+      "title": "ESP32 Retro Desk Notifier",
+      "tagline": "A wireless desk gadget I built so two people in the same office can still get each other's attention while both wearing headphones."
+    },
+    "problem": {
+      "title": "Problem",
+      "p1": "My girlfriend and I share one office room, and most days we both wear headphones. Calling each other didn't work, waving didn't work, flashing random lights didn't work - the only reliable option was standing up and walking around the desk.",
+      "p2": "That tiny interruption happened often enough to be genuinely annoying. I wanted a one-tap way to get attention without talking over music or getting up.",
+      "p3": "So I built a pair of desk devices: press the button <0 /> sound and light on the other desk."
+    },
+    "concept": {
+      "title": "Concept",
+      "p1": "The idea is pretty simple: two identical units, one per desk, both battery powered and USB-C chargeable. Both devices can send and receive.",
+      "p2": "Press the button on one device <0 /> the other plays a sound and blinks its LEDs. No Wi-Fi router needed, just direct ESP-NOW peer-to-peer.",
+      "p3": "I wanted a retro look because I just love that style (also yes, I own a Commodore 64). I wanted it to feel more like a cool desk object than a generic tech gadget."
+    },
+    "hardware": {
+      "title": "Hardware Overview",
+      "p1": "I wanted the electronics to stay practical and repairable, so I used common, well-documented parts and built everything around predictable ESP32 I/O.",
+      "p2": "The core setup is pretty straightforward:",
+      "p3": "I started with a 2-segment display, but switched to 4 segments later because it gave me way more flexibility.",
+      "p4": "The analog slider ended up being one of my favorite details. It makes the interaction feel less \"digital gadget\" and more like a tiny piece of desk hardware.",
+      "list": {
+        "esp32": "ESP32 Wroom 32",
+        "lipo": "LiPo battery",
+        "tp4056": "USB-C charging module (TP4056)",
+        "mt3608": "Step-up converter (MT3608)",
+        "buzzer": "Passive piezo buzzer",
+        "leds": "Three LEDs (green, yellow, red)",
+        "button": "Push button",
+        "switch": "Power switch",
+        "poti": "Linear potentiometer",
+        "display": "4-segment display",
+        "shift": "Shift register (74HC595)",
+        "misc": "A couple resistors and wires",
+        "case": "Custom 3D-printed enclosure"
+      }
+    },
+    "comms": {
+      "title": "Communication - ESP-NOW",
+      "protocolPrefix": "Protocol:",
+      "protocolSuffix": "(direct peer-to-peer, no router required, fast and reliable).",
+      "p1": "Both ESP32 devices stay powered and connected all the time, so they can send tiny wireless signals instantly with no noticeable delay.",
+      "flowLabel": "System flow",
+      "flow1": "Both devices boot and initialize ESP-NOW in station mode.",
+      "flow2": "Both devices stay awake and ready to communicate.",
+      "flow3": "When the button is pressed, a small ESP-NOW packet is sent.",
+      "flow4": "The receiver immediately triggers LEDs, sound, and display feedback.",
+      "flow5": "Feedback continues while button signals keep coming in."
+    },
+    "prototype": {
+      "title": "Initial Prototype & Weird ESP Bug",
+      "p1": "Before building the real device, I made a minimal prototype to learn pairing, packet flow, and latency behavior.",
+      "p2": "Then I hit a super annoying bug: random button detection, random send behavior, and occasional looping on one ESP32. With my mobile oscilloscope I could see weird signal behavior.",
+      "p3": "After ruling out wiring and software, I replaced the ESP32 module and everything worked reliably. So yeah - the first module was likely just faulty.",
+      "p4": "That phase changed how I debug hardware: if behavior is inconsistent in ways software can't explain, test the physical module early, not last."
+    },
+    "build": {
+      "title": "Full Prototype",
+      "p1": "Once ESP-NOW was stable, I integrated everything into one complete breadboard prototype. That's when it finally felt real - button, buzzer, LEDs, potentiometer, and power system all running together."
+    },
+    "workspace": {
+      "title": "The Workspace",
+      "p1": "Most of the soldering, testing, and final assembly happened right at my hobby desk."
+    },
+    "enclosure": {
+      "title": "Case Design",
+      "p1": "I modeled the case from scratch in Blender and iterated several times to get the proportions right. Priority was fitting battery + charging board first, then tuning openings for speaker, potentiometer slot, and USB-C access.",
+      "p2": "I aimed for compact retro proportions, internal mounting posts, and enough wall thickness so the case still feels solid.",
+      "p3": "<0>Not so fun fact:</0> after I switched to Arch Linux, I realized I hadn't backed up the original .blend file. All I have left now are the .goo slicer files."
+    },
+    "printing": {
+      "title": "3D Printing",
+      "p1": "PLA gave me cheap iterations, fast fit checks, and a cleaner workflow. Resin gave me the final surface quality and those nice sharp edges for the retro look.",
+      "p2": "Resin is honestly annoying to work with: constant gloves, changing gloves, smell, mask, cleanup. The result looks <0>incredible</0>, but if I'm honest, a really clean PLA print with more post-processing might be my favorite route next time."
+    },
+    "finishing": {
+      "title": "Finale",
+      "p1": "I painted the top in retro beige and the bottom in black. Looked great at first - then cracks showed up. Probably too much paint or primer mismatch.",
+      "p2": "Then the final accident happened: I accidentally kicked it down the stairs. Electronics survived, resin case did not."
+    },
+    "lessons": {
+      "title": "Lessons Learned",
+      "techTitle": "Technical",
+      "techText": "ESP-NOW is awesome for ultra-local low-power communication. One thing I underestimated: sleep-state handling needs careful design, and ADC <0 /> PWM brightness mapping is super reliable once dialed in.",
+      "mechTitle": "Mechanical / Design",
+      "mechText": "Resin looks premium but is way more annoying than PLA. Paint/primer/cure compatibility matters way more than expected. Also: analog controls like the potentiometer just feel better in daily use."
+    },
+    "future": {
+      "title": "Future Improvements",
+      "p1": "If I rebuild this (very likely), I'd add thicker internal supports and softer edges for durability, improve the primer/paint workflow, maybe use a vibration motor instead of a buzzer, and test a magnetic desk mount with a more impact-resistant case material."
+    },
+    "conclusion": {
+      "title": "Conclusion",
+      "p1": "This project solved a real desk problem with one simple interaction: <0>press the button <1 /> light + sound</0>.",
+      "p2": "It combines embedded systems, low-power wireless communication, 3D modeling, printing, analog control, and a lot of practical debugging. Even with one staircase tragedy, it worked - totally worth building."
+    },
+    "media": {
+      "conceptAlt": "Retro notifier concept render",
+      "conceptCaption": "Early concept direction",
+      "hardwareProtoAlt": "Breadboard prototype with all hardware parts",
+      "hardwareProtoCaption": "Full breadboard hardware prototype",
+      "pinoutAlt": "ESP32 pinout reference",
+      "pinoutCaption": "ESP32 reference while wiring and mapping I/O",
+      "firstTestCaption": "Early ESP-NOW test with unstable behavior",
+      "magnifierWideAlt": "Magnifier soldering wide angle",
+      "magnifierWideCaption": "Magnifier soldering",
+      "firstPrototypeAlt": "First full breadboard prototype with many wires",
+      "firstPrototypeCaption": "Breadboard integration",
+      "breadboard2Alt": "Second breadboard integration shot",
+      "breadboard2Caption": "Breadboard integration 2",
+      "espSolderAlt": "Close-up of ESP32 soldering",
+      "espSolderCaption": "Fine soldering and inspection",
+      "protoTestCaption": "Prototype test with lights and buzzer sound",
+      "workspaceAlt": "Workspace desk during the build",
+      "workspaceCaption": "Build workspace",
+      "workspaceVideoCaption": "Workspace during the build",
+      "blenderAlt": "Blender enclosure model",
+      "blenderCaption": "Enclosure modeling in Blender",
+      "wireframeAlt": "Blender wireframe of enclosure",
+      "wireframeCaption": "Wireframe + iteration phase",
+      "caseShowcaseAlt": "3D model of retro case showcase",
+      "caseShowcaseCaption": "3D model of retro case showcase",
+      "plaAlt": "First PLA print",
+      "plaCaption": "PLA fit and alignment validation",
+      "resinAlt": "Finished resin print assembled",
+      "resinCaption": "Final resin print and assembly",
+      "plaVideoCaption": "PLA print process",
+      "paintedAlt": "Painted front with retro beige finish",
+      "paintedCaption": "Painted final look",
+      "cracksAlt": "Paint cracks on enclosure",
+      "cracksCaption": "Cracking issue in finish",
+      "brokenAlt": "Broken case",
+      "brokenCaption": "Broken case"
+    }
+  }
 }

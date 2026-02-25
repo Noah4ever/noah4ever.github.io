@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ProjectCardLink from "@/components/ProjectCardLink";
+import Experience from "@/components/Experience";
 import "@styles/pages/home.scss";
 import { useEffect, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
@@ -38,7 +39,7 @@ export default function Home() {
 
       const isDesktop = window.innerWidth >= 900;
       const parallaxDistance = isDesktop
-        ? Math.min(window.innerHeight * 0.32, 480)
+        ? Math.min(window.innerHeight * 0.32, 220)
         : Math.min(window.innerHeight * 0.12, 90);
       const parallaxProgress = Math.max(
         0,
@@ -347,6 +348,7 @@ export default function Home() {
         style={{ transform: `translateY(${aboutParallaxY}px)` }}
       >
         <h2>{t("home.about.title")}</h2>
+        <Experience />
         <div className="about-container blur-container">
           <h3>{t("home.about.personalTitle")}</h3>
           <p>
