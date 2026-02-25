@@ -59,7 +59,7 @@ export default function Home() {
 
   const [activeSkill, setActiveSkill] = useState<string | null>(null);
   const [activeStyle, setActiveStyle] = useState<React.CSSProperties>({});
-  const transitionDuration = 400; // in ms
+  const transitionDuration = 1200; // in ms
 
   // Lock body scroll while a skill popup is open
   useEffect(() => {
@@ -357,7 +357,13 @@ export default function Home() {
               components={[
                 <a
                   href="https://www.uni-bremen.de/en/"
+                  aria-label="University of Bremen website"
                   key="university-link"
+                />,
+                <a
+                  href="https://www.rheinmetall.com/"
+                  aria-label="Rheinmetall website"
+                  key="rheinmetall-link"
                 />,
                 <em key="accent" />,
               ]}

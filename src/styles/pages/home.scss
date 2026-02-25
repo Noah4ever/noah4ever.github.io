@@ -51,6 +51,11 @@
         backdrop-filter: blur(100px);
       }
 
+      a {
+        color: var(--color-accent);
+        font-weight: bold;
+      }
+
       @import "home/skills";
       @import "home/projects";
     }

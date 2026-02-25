@@ -65,7 +65,7 @@
         }
       },
       "personalTitle": "Personal",
-      "personalText": "I have been developing my skills since 2021, after completing my initial training. Currently I'm studying computer science at the <0>University of Bremen</0> and working part-time at <1>Rheinmetall</1> as a Software Developer. I specialize in web development using <1>TypeScript</1>, <1>React</1>, and <1>Angular</1>.",
+      "personalText": "I have been developing my skills since 2021, after completing my initial training. Currently I'm studying computer science at the <0>University of Bremen</0> and working part-time at <1>Rheinmetall</1> as a Software Developer. I specialize in web development using <2>TypeScript</2>, <2>React</2>, and <2>Angular</2>.",
       "skillsTitle": "Skills",
       "skillsSubtitle": "Click on a skill to learn more",
       "projectsTitle": "Projects"

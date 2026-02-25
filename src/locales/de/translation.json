@@ -65,7 +65,7 @@
         }
       },
       "personalTitle": "Persönlich",
-      "personalText": "Seit 2021 baue ich meine Fähigkeiten weiter aus, nachdem ich meine erste Ausbildung abgeschlossen habe. Aktuell studiere ich Informatik an der <0>Universität Bremen</0> und arbeite in Teilzeit bei <1>Rheinmetall</1> als Software Developer. Ich spezialisiere mich auf Webentwicklung mit <1>TypeScript</1>, <1>React</1> und <1>Angular</1>.",
+      "personalText": "Seit 2021 baue ich meine Fähigkeiten weiter aus, nachdem ich meine erste Ausbildung abgeschlossen habe. Aktuell studiere ich Informatik an der <0>Universität Bremen</0> und arbeite in Teilzeit bei <1>Rheinmetall</1> als Software Developer. Ich spezialisiere mich auf Webentwicklung mit <2>TypeScript</2>, <2>React</2> und <2>Angular</2>.",
       "skillsTitle": "Fähigkeiten",
       "skillsSubtitle": "Klicke auf eine Fähigkeit, um mehr zu erfahren",
       "projectsTitle": "Projekte"
