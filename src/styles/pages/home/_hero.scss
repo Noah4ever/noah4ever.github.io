@@ -1,0 +1,141 @@
+// ─── Hero: picture blob + welcome text ───
+
+.home-top-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .home-picture-container {
+    width: 500px;
+
+    .home-picture-blob {
+      position: relative;
+
+      .home-picture-text {
+        font-family: "Fuzzy Bubbles", sans-serif;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        rotate: 20deg;
+        color: var(--color-text-invert);
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .home-picture-text-arrow {
+        rotate: 120deg;
+        width: 60px;
+      }
+    }
+  }
+
+  .home-welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .home-welcome-1 {
+      font-family: "Fuzzy Bubbles", sans-serif;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 3.5rem;
+    }
+
+    .home-welcome-name {
+      margin-left: 1ch;
+      font-size: 4.5rem;
+    }
+
+    .home-welcome-sub {
+      margin-left: 4ch;
+      font-size: 1.9rem;
+
+      u {
+        text-decoration-color: var(--color-accent);
+      }
+    }
+
+    .home-location-badge {
+      margin-top: 0.9rem;
+      margin-left: 7ch;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      backdrop-filter: blur(100px);
+      color: var(--color-text-muted);
+      font-size: 0.92rem;
+      font-weight: 600;
+      line-height: 1;
+
+      .home-location-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-accent);
+
+        svg {
+          width: 1rem;
+          height: 1rem;
+          transform-origin: 50% 85%;
+          transition: transform 180ms ease;
+        }
+      }
+    }
+
+    @media screen and (max-width: 1100px) {
+      .home-welcome-1 {
+        font-size: 2.5rem;
+      }
+
+      .home-welcome-name {
+        font-size: 3.25rem;
+      }
+
+      .home-location-badge {
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .home-picture-container {
+      width: 400px;
+    }
+
+    .home-welcome-1 {
+      font-size: 2rem;
+    }
+
+    .home-welcome-name {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .home-picture-container {
+      width: 300px;
+    }
+
+    .home-welcome-1 {
+      font-size: 1.5rem;
+    }
+
+    .home-welcome-name {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .home-picture-container {
+      width: 250px;
+    }
+
+    .home-welcome {
+      .home-welcome-name {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}

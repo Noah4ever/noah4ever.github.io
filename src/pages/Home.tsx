@@ -436,6 +436,8 @@ export default function Home() {
                 ariaLabel={t("home.projects.giftboard.aria")}
                 imageAlt={t("home.projects.giftboard.imageAlt")}
                 tags={["React", "TypeScript", "nodejs"]}
+                githubLink="https://github.com/Noah4ever/giftboard"
+                liveLink="https://projects.thiering.org/giftboard"
               />
             </li>
 

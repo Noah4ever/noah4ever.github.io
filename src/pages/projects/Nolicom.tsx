@@ -54,12 +54,14 @@ export default function Nolicom() {
           <SignalIcon />
         </div>
         <h1 id="nolicom-title">{t("nolicom.hero.title")}</h1>
-        <a
-          href="https://github.com/Noah4ever/nolicom"
-          className="view-github-badge"
-        >
-          View on GitHub <GithubIcon />
-        </a>
+        <div className="project-hero-badges">
+          <a
+            href="https://github.com/Noah4ever/nolicom"
+            className="view-github-badge"
+          >
+            View on GitHub <GithubIcon />
+          </a>
+        </div>
         <p className="nolicom-tagline">{t("nolicom.hero.tagline")}</p>
       </section>
 

@@ -1,0 +1,64 @@
+// ─── Small-screen responsive overrides ───
+
+@media screen and (max-width: 310px) {
+  .home-welcome-sub {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .home-welcome-name {
+    font-size: 2rem !important;
+  }
+
+  .home-welcome-sub {
+    font-size: 1.3rem !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #home-content {
+    margin-top: 5rem;
+
+    .home-top-container {
+      flex-direction: column !important;
+    }
+  }
+
+  .home-welcome {
+    align-items: center;
+
+    .home-welcome-name {
+      margin-left: 0ch !important;
+    }
+
+    .home-welcome-sub {
+      margin: 0ch !important;
+    }
+
+    .home-location-badge {
+      margin-left: 0 !important;
+    }
+  }
+
+  #links {
+    ul {
+      gap: 1rem !important;
+      row-gap: 1.5rem !important;
+
+      li {
+        width: 70px !important;
+        height: 70px !important;
+
+        a {
+          font-size: 0.8rem;
+
+          svg {
+            width: 35px !important;
+            height: 40px !important;
+          }
+        }
+      }
+    }
+  }
+}

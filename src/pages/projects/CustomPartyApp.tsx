@@ -22,6 +22,12 @@ export default function CustomPartyApp() {
           <PartyIcon />
         </div>
         <h1 id="custom-party-title">{t("customParty.hero.title")}</h1>
+        <div className="project-hero-badges">
+          {/* Add live/github badges here when needed:
+              <a href="..." className="view-live-badge">Live</a>
+              <a href="..." className="view-github-badge">View on GitHub</a>
+          */}
+        </div>
         <p className="custom-party-tagline">{t("customParty.hero.tagline")}</p>
       </section>
 

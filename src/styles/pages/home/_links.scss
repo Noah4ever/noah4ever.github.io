@@ -1,0 +1,58 @@
+// ─── Social / nav links ───
+
+#links {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 3rem;
+    padding: 0;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 110px;
+      height: 100px;
+      list-style: none;
+
+      a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--color-text);
+        background-color: var(--color-background-blur);
+        backdrop-filter: blur(100px);
+        padding: 0.5rem 0.5rem;
+        border: 2px solid var(--color-background-skill);
+        border-radius: 10px;
+        transition: all 100ms ease;
+        text-decoration: none;
+        white-space: nowrap;
+
+        .clicked-link {
+          background-color: red !important;
+        }
+
+        &:hover {
+          border: 2px solid var(--color-accent);
+        }
+
+        svg {
+          transition: all 100ms ease;
+          width: 60px;
+          height: 60px;
+          fill: var(--color-text);
+          color: var(--color-text);
+        }
+      }
+    }
+  }
+}

@@ -9,6 +9,8 @@ import {
   IoStarOutline as PriorityIcon,
   IoBrowsersOutline as FrontendIcon,
   IoServerOutline as BackendIcon,
+  IoLogoGithub as GithubIcon,
+  IoOpenOutline as LiveIcon,
 } from "react-icons/io5";
 import { Trans, useTranslation } from "react-i18next";
 
@@ -80,6 +82,20 @@ export default function Giftboard() {
           <GiftIcon />
         </div>
         <h1 id="giftboard-title">{t("giftboard.hero.title")}</h1>
+        <div className="project-hero-badges">
+          <a
+            href="https://projects.thiering.org/giftboard"
+            className="view-live-badge"
+          >
+            <LiveIcon /> Live
+          </a>
+          <a
+            href="https://github.com/Noah4ever/giftboard"
+            className="view-github-badge"
+          >
+            View on GitHub <GithubIcon />
+          </a>
+        </div>
         <p className="giftboard-tagline">
           <Trans
             i18nKey="giftboard.hero.tagline"
@@ -239,9 +255,7 @@ export default function Giftboard() {
         <h2 id="giftboard-bottom-image-heading" className="sr-only">
           {t("giftboard.sections.extraScreenshotTitle")}
         </h2>
-        <figure
-          className="giftboard-bottom-image-figure giftboard-3d-image"
-        >
+        <figure className="giftboard-bottom-image-figure giftboard-3d-image">
           <ImageBorder
             src={themedProjectImage("giftboard-create-wish")}
             alt={t("giftboard.gallery.createWishAlt")}
@@ -256,9 +270,7 @@ export default function Giftboard() {
         className="giftboard-bottom-image"
         aria-labelledby="giftboard-bottom-image-heading"
       >
-        <figure
-          className="giftboard-bottom-image-figure giftboard-3d-image"
-        >
+        <figure className="giftboard-bottom-image-figure giftboard-3d-image">
           <ImageBorder
             src={themedProjectImage("giftboard-board-overview")}
             alt={t("giftboard.gallery.boardAlt")}

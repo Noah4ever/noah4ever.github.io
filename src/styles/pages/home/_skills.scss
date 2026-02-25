@@ -1,0 +1,129 @@
+// ─── Skills grid + popup cards ───
+
+&.skills-container {
+  h3 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+  }
+
+  .skill-subtitle-container {
+    display: flex;
+    justify-content: center;
+
+    .skill-subtitle-text {
+      margin-bottom: 2rem;
+      color: var(--color-text-muted-subtitle);
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 2rem;
+    padding: 0;
+
+    li {
+      width: 110px;
+      height: 110px;
+      user-select: none;
+      position: relative;
+
+      .skill-inner-container {
+        cursor: pointer;
+        box-sizing: border-box;
+        padding: 1rem;
+        border-radius: 8px;
+        background-color: var(--color-background-skill);
+        backdrop-filter: blur(100px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        width: 110px;
+        height: 110px;
+        z-index: 990;
+        transition:
+          transform 400ms ease,
+          top 400ms ease,
+          left 400ms ease,
+          width 400ms ease,
+          height 400ms ease,
+          border 200ms ease-in-out;
+        position: relative;
+        transform-style: preserve-3d;
+
+        border: 2px solid var(--color-background-skill);
+
+        &:hover {
+          border: 2px solid var(--color-accent);
+        }
+
+        img {
+          width: 60px;
+          height: 60px;
+        }
+
+        .card-face {
+          box-sizing: border-box;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          backface-visibility: hidden;
+
+          .card-thumbnail {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.25rem;
+          }
+
+          .card-description {
+            display: none;
+          }
+        }
+
+        &.active {
+          .card-face {
+            justify-content: start;
+            align-items: center;
+            padding: 0.7rem;
+
+            .card-description {
+              display: flex;
+              text-align: justify;
+              padding-block: 1rem;
+              line-height: 2.2rem;
+              width: 80%;
+              overflow-y: auto;
+              font-size: 1.15rem;
+
+              @media screen and (max-width: 700px) {
+                text-align: left;
+                font-size: 1rem;
+                line-height: 1.8rem;
+                width: 90%;
+              }
+
+              &.skill-clicked-out {
+                animation: fade-out 0.2s ease forwards;
+              }
+
+              &.skill-clicked-in {
+                animation: fade-in 0.8s ease forwards;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
