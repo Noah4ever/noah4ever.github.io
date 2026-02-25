@@ -1,6 +1,7 @@
 import "@styles/pages/giftboard.scss";
 import { useThemeStore } from "@/stores/ThemeStore";
 import ImageBorder from "@/components/ImageBorder";
+import ImageStack from "@/components/ImageStack";
 import {
   IoGiftOutline as GiftIcon,
   IoLinkOutline as LinkIcon,
@@ -108,6 +109,34 @@ export default function Giftboard() {
             ]}
           />
         </p>
+      </section>
+
+      <section
+        className="project-tldr"
+        aria-labelledby="giftboard-tldr-heading"
+      >
+        <h2 id="giftboard-tldr-heading">TL;DR</h2>
+        <p className="project-tldr-text">{t("giftboard.tldr")}</p>
+        <ImageStack
+          images={[
+            {
+              src: themedProjectImage("giftboard-hero"),
+              alt: "Giftboard hero view",
+            },
+            {
+              src: themedProjectImage("giftboard-board-overview"),
+              alt: "Board overview",
+            },
+            {
+              src: themedProjectImage("giftboard-wishes-overview"),
+              alt: "Wishes overview",
+            },
+            {
+              src: themedProjectImage("giftboard-create-wish"),
+              alt: "Create wish form",
+            },
+          ]}
+        />
       </section>
 
       <section

@@ -72,6 +72,12 @@
           text-decoration-color: var(--color-accent);
         }
       }
+
+      em {
+        font-style: normal;
+        color: var(--color-accent);
+        font-weight: 600;
+      }
     }
   }
 }

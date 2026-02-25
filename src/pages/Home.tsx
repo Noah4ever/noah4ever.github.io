@@ -359,6 +359,7 @@ export default function Home() {
                   href="https://www.uni-bremen.de/en/"
                   key="university-link"
                 />,
+                <em key="accent" />,
               ]}
             />
           </p>

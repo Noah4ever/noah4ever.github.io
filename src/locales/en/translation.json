@@ -65,7 +65,7 @@
         }
       },
       "personalTitle": "Personal",
-      "personalText": "I have been developing my skills since 2021, after completing my initial training. Currently I'm studying computer science at the <0>University of Bremen</0> and working part-time at Rheinmetall as a Software Developer. I specialize in web development using TypeScript, React, and Angular.",
+      "personalText": "I have been developing my skills since 2021, after completing my initial training. Currently I'm studying computer science at the <0>University of Bremen</0> and working part-time at <1>Rheinmetall</1> as a Software Developer. I specialize in web development using <1>TypeScript</1>, <1>React</1>, and <1>Angular</1>.",
       "skillsTitle": "Skills",
       "skillsSubtitle": "Click on a skill to learn more",
       "projectsTitle": "Projects"
@@ -137,6 +137,7 @@
       "title": "Giftboard",
       "tagline": "A gift wishlist I built so <0>my girlfriend</0> doesn't have to coordinate everyone's presents anymore."
     },
+    "tldr": "Shared wishlist app. Add gifts, share the link, others reserve items secretly. React frontend, Node.js backend.",
     "sections": {
       "whyTitle": "Why I built this",
       "whyP1": "Every year around my birthday, my girlfriend had to coordinate all the gifts. Friends and family would ask her what I wanted, and she'd end up juggling a mental list of who's getting what - making sure nobody buys the same thing, while keeping everything a surprise from me.",
@@ -228,6 +229,7 @@
       "title": "ESP32 Retro Desk Notifier",
       "tagline": "A wireless desk gadget I built so two people in the same office can still get each other's attention while both wearing headphones."
     },
+    "tldr": "Two ESP32. Press the button, the other device buzzes and lights up. Retro enclosure designed in Blender and resin-printed. Using ESP-NOW to get attention across the desks without Wi-Fi or delay.",
     "problem": {
       "title": "Problem",
       "p1": "My girlfriend and I share one office room, and most days we both wear headphones. Calling each other didn't work, waving didn't work, flashing random lights didn't work - the only reliable option was standing up and walking around the desk.",

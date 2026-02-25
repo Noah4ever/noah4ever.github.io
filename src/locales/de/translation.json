@@ -65,7 +65,7 @@
         }
       },
       "personalTitle": "Persönlich",
-      "personalText": "Seit 2021 baue ich meine Fähigkeiten weiter aus, nachdem ich meine erste Ausbildung abgeschlossen habe. Aktuell studiere ich Informatik an der <0>Universität Bremen</0>. Ich spezialisiere mich auf Webentwicklung mit TypeScript, React und Angular. Ich entwickle leidenschaftlich gern innovative Lösungen für jedes Projekt! 💻🔧",
+      "personalText": "Seit 2021 baue ich meine Fähigkeiten weiter aus, nachdem ich meine erste Ausbildung abgeschlossen habe. Aktuell studiere ich Informatik an der <0>Universität Bremen</0> und arbeite in Teilzeit bei <1>Rheinmetall</1> als Software Developer. Ich spezialisiere mich auf Webentwicklung mit <1>TypeScript</1>, <1>React</1> und <1>Angular</1>.",
       "skillsTitle": "Fähigkeiten",
       "skillsSubtitle": "Klicke auf eine Fähigkeit, um mehr zu erfahren",
       "projectsTitle": "Projekte"
@@ -137,6 +137,7 @@
       "title": "Giftboard",
       "tagline": "Eine Geschenk-Wunschliste, die ich gebaut habe, damit <0>meine Freundin</0> nicht mehr alle Geschenke koordinieren muss."
     },
+    "tldr": "Geteilte Wunschliste. Geschenke hinzufügen, Link teilen, andere reservieren heimlich. React-Frontend, Node.js-Backend.",
     "sections": {
       "whyTitle": "Warum ich das gebaut habe",
       "whyP1": "Rund um meinen Geburtstag musste meine Freundin jedes Jahr alle Geschenke koordinieren. Freunde und Familie fragten sie, was ich mir wünsche, und sie jonglierte am Ende mit einer mentalen Liste, wer was besorgt - damit niemand doppelt kauft und alles trotzdem eine Überraschung bleibt.",
@@ -228,6 +229,7 @@
       "title": "ESP32 Retro Desk Notifier",
       "tagline": "Ein kabelloses Desk-Gadget, das ich gebaut habe, damit man sich im selben Raum trotz Kopfhörer easy gegenseitig erreichen kann."
     },
+    "tldr": "Zwei ESP23. Knopf drücken, das andere Gerät piept und leuchtet. Retro-Gehäuse in Blender designt und aus Resin gedruckt. ESP-NOW für direkte Kommunikation ohne Wi-Fi oder Verzögerung.",
     "problem": {
       "title": "Problem",
       "p1": "Meine Freundin und ich teilen uns ein Büro, und meistens tragen wir beide Kopfhörer. Rufen hat nicht funktioniert, Winken nicht, wildes Lichtblinken auch nicht. Zuverlässig war nur aufstehen und um den mittleren Tisch laufen.",

@@ -63,11 +63,18 @@
 
   .experience-dates {
     font-size: 0.85rem;
-    color: var(--color-text-muted);
     font-family: monospace;
     background-color: var(--color-background-browser-1);
     padding: 0.2rem 0.5rem;
     border-radius: 4px;
     width: fit-content;
+    font-weight: 600;
+  }
+
+  .experience-company {
+    em {
+      font-style: normal;
+      color: var(--color-accent);
+    }
   }
 }

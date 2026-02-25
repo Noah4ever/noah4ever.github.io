@@ -1,4 +1,5 @@
 import ImageBorder from "@/components/ImageBorder";
+import ImageStack from "@/components/ImageStack";
 import "@styles/pages/nolicom.scss";
 import {
   IoRadioOutline as SignalIcon,
@@ -63,6 +64,29 @@ export default function Nolicom() {
           </a>
         </div>
         <p className="nolicom-tagline">{t("nolicom.hero.tagline")}</p>
+      </section>
+
+      <section className="project-tldr" aria-labelledby="nolicom-tldr-heading">
+        <h2 id="nolicom-tldr-heading">TL;DR</h2>
+        <p className="project-tldr-text">{t("nolicom.tldr")}</p>
+        <ImageStack
+          images={[
+            {
+              src: media("finished-case-colored-front.webp"),
+              alt: "Finished painted case front view",
+            },
+            {
+              src: media("finished-resin-print-assembled-front.webp"),
+              alt: "Assembled resin print front",
+            },
+            { src: media("3d-model-blender.webp"), alt: "3D model in Blender" },
+            {
+              src: media("prototype-breadboard-testing-all-parts.webp"),
+              alt: "Prototype on breadboard",
+            },
+            { src: media("workspace.webp"), alt: "Workspace during build" },
+          ]}
+        />
       </section>
 
       <section
