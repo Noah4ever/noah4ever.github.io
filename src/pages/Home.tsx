@@ -39,7 +39,7 @@ export default function Home() {
 
       const isDesktop = window.innerWidth >= 900;
       const parallaxDistance = isDesktop
-        ? Math.min(window.innerHeight * 0.32, 220)
+        ? Math.min(window.innerHeight * 0.32, 160)
         : Math.min(window.innerHeight * 0.12, 90);
       const parallaxProgress = Math.max(
         0,
@@ -136,9 +136,16 @@ export default function Home() {
   }
 
   // Close active skill with an animation back to its grid position.
-  const closeActiveSkill = () => {
+  const closeActiveSkill = (immediate = false) => {
     removeClickedClasses();
     if (!activeSkill) return;
+
+    if (immediate) {
+      setActiveSkill(null);
+      setActiveStyle({});
+      return;
+    }
+
     const liElement = document.getElementById(`skill-${activeSkill}`);
     if (liElement) {
       const rect = liElement.getBoundingClientRect();
@@ -165,6 +172,9 @@ export default function Home() {
         setActiveSkill(null);
         setActiveStyle({});
       }, transitionDuration);
+    } else {
+      setActiveSkill(null);
+      setActiveStyle({});
     }
   };
 
@@ -464,7 +474,10 @@ export default function Home() {
 
         {/* Overlay inside #about so it shares the same stacking context */}
         {activeSkill && (
-          <div className="popup-overlay" onClick={closeActiveSkill}></div>
+          <div
+            className="popup-overlay"
+            onClick={() => closeActiveSkill(true)}
+          ></div>
         )}
       </section>
 

@@ -6,8 +6,11 @@
   flex-direction: column;
 
   #home-content {
-    height: calc(100vh - 72px);
+    min-height: calc(100vh - 72px);
     margin-top: 10rem;
+    position: relative;
+    box-sizing: border-box;
+    padding-bottom: 6rem;
 
     @import "home/hero";
     @import "home/links";
