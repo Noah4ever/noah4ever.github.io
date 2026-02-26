@@ -84,9 +84,9 @@
           "name": "Angular",
           "description": "I was first introduced to AngularJS in 2023 during my apprenticeship. For a project, I built a small app with Angular to learn the basics. While I appreciated the experience, I prefer React for most of my projects, as it offers more freedom and flexibility. Angular is a great framework with many features, but React's simplicity and component-based approach appeal to me more. Nevertheless, I'm glad to have both technologies in my toolkit."
         },
-        "scss": {
-          "name": "SCSS",
-          "description": "Although I had heard about SCSS earlier, it wasn't until 2022 that I decided to give it a try. Once I did, I fell in love with its features. Since then, SCSS has been my go-to for styling in every project. Prior to that, I was using standard CSS, a skill I developed during my IT assistant training."
+        "sass": {
+          "name": "SASS",
+          "description": "Although I had heard about SASS earlier, it wasn't until 2022 that I decided to give it a try. Once I did, I fell in love with its features. Since then, SASS has been my go-to for styling in every project. Prior to that, I was using standard CSS, a skill I developed during my IT assistant training."
         },
         "nodejs": {
           "name": "Node.js",

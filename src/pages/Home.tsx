@@ -192,7 +192,7 @@ export default function Home() {
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
     },
     {
-      key: "scss",
+      key: "sass",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg",
     },
     {

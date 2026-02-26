@@ -84,9 +84,9 @@
           "name": "Angular",
           "description": "Mit AngularJS kam ich erst 2023 so richtig in Berührung in meiner Ausbildung. Für ein Projekt habe ich eine kleine App mit Angular gebaut, um die Grundlagen zu lernen. Obwohl ich die Erfahrung geschätzt habe, bevorzuge ich React für die meisten meiner Projekte, da es mir mehr Freiheit und Flexibilität bietet. Angular ist ein großartiges Framework mit vielen Funktionen, aber Reacts Einfachheit und Komponentenansatz sprechen mich mehr an. Trotzdem bin ich froh, beide Technologien in meinem Werkzeugkasten zu haben."
         },
-        "scss": {
-          "name": "SCSS",
-          "description": "Von SCSS hatte ich schon früher gehört, aber erst 2022 habe ich es wirklich ausprobiert. Danach war ich sofort überzeugt von den Möglichkeiten. Seitdem ist SCSS mein Standard für Styling in allen Projekten. Davor habe ich klassisches CSS genutzt, das ich in meiner IT-Assistenten-Ausbildung gelernt habe."
+        "sass": {
+          "name": "SASS",
+          "description": "Von SASS hatte ich schon früher gehört, aber erst 2022 habe ich es wirklich ausprobiert. Danach war ich sofort überzeugt von den Möglichkeiten. Seitdem ist SASS mein Standard für Styling in allen Projekten. Davor habe ich klassisches CSS genutzt, das ich in meiner IT-Assistenten-Ausbildung gelernt habe."
         },
         "nodejs": {
           "name": "Node.js",
