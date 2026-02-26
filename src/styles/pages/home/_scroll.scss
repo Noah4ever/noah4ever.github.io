@@ -2,10 +2,10 @@
 
 // Hide on small viewports
 @media (max-width: 299px) and (max-height: 769px),
-  (max-width: 339px) and (max-height: 679px),
-  (max-width: 439px) and (max-height: 739px),
-  (max-width: 814px) and (max-height: 799px),
-  (max-width: 959px) and (max-height: 799px) {
+(max-width: 339px) and (max-height: 679px),
+(max-width: 439px) and (max-height: 739px),
+(max-width: 814px) and (max-height: 799px),
+(max-width: 959px) and (max-height: 799px) {
   #scroll-down-container {
     display: none;
   }
@@ -13,7 +13,7 @@
 
 #scroll-down-container {
   position: absolute;
-  bottom: 10px;
+  bottom: 100px;
   left: 50%;
   translate: -50%;
 
