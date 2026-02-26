@@ -102,7 +102,7 @@
         },
         "git": {
           "name": "Git",
-          "description": "I've been using Git for a long time; it's my go-to version control system for any kind of project. Its reliability and efficiency make it an indispensable tool in my development workflow."
+          "description": "I've been using Git for a long time; it's my go-to version control system for any kind of project. Its reliability makes it an indispensable tool in my development workflow."
         },
         "blender": {
           "name": "Blender",
