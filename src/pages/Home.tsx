@@ -358,7 +358,6 @@ export default function Home() {
         style={{ transform: `translateY(${aboutParallaxY}px)` }}
       >
         <h2>{t("home.about.title")}</h2>
-        <Experience />
         <div className="about-container blur-container">
           <h3>{t("home.about.personalTitle")}</h3>
           <p>
@@ -380,6 +379,7 @@ export default function Home() {
             />
           </p>
         </div>
+        <Experience />
         <div className="about-container skills-container">
           <h3>{t("home.about.skillsTitle")}</h3>
           <div className="skill-subtitle-container">
