@@ -48,6 +48,12 @@
   --tag-3d-printing-text: #0b7480;
   --tag-3d-printing-border: #13a4b6;
   --tag-3d-printing-bg: rgba(19, 164, 182, 0.14);
+  --tag-chrome-extension-text: #1a6e2e;
+  --tag-chrome-extension-border: #34a853;
+  --tag-chrome-extension-bg: rgba(52, 168, 83, 0.14);
+  --tag-javascript-text: #8a6d00;
+  --tag-javascript-border: #f0db4f;
+  --tag-javascript-bg: rgba(240, 219, 79, 0.14);
 }
 
 [data-theme="dark"] {
@@ -100,4 +106,10 @@
   --tag-3d-printing-text: #a8f3ff;
   --tag-3d-printing-border: #62ddee;
   --tag-3d-printing-bg: rgba(98, 221, 238, 0.2);
+  --tag-chrome-extension-text: #9ddf8f;
+  --tag-chrome-extension-border: #66b35b;
+  --tag-chrome-extension-bg: rgba(102, 179, 91, 0.2);
+  --tag-javascript-text: #ffe082;
+  --tag-javascript-border: #ffd54f;
+  --tag-javascript-bg: rgba(255, 213, 79, 0.2);
 }

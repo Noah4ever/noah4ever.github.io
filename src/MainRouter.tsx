@@ -4,6 +4,7 @@ import ProjectLayout from "./components/ProjectLayout";
 import Giftboard from "./pages/projects/Giftboard";
 import CustomPartyApp from "./pages/projects/CustomPartyApp";
 import Nolicom from "./pages/projects/Nolicom";
+import ChatGPTBooster from "./pages/projects/ChatGPTBooster";
 
 export function MainRouter() {
   return (
@@ -14,6 +15,7 @@ export function MainRouter() {
           <Route path="giftboard" element={<Giftboard />} />
           <Route path="custom-party-app" element={<CustomPartyApp />} />
           <Route path="nolicom" element={<Nolicom />} />
+          <Route path="chatgpt-speed-booster" element={<ChatGPTBooster />} />
         </Route>
       </Routes>
     </BrowserRouter>

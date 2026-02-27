@@ -434,6 +434,18 @@ export default function Home() {
           <ul className="projects-list" role="list">
             <li>
               <ProjectCardLink
+                title={t("home.projects.chatgptBooster.title")}
+                description={t("home.projects.chatgptBooster.description")}
+                imageSrc="/Projects/chatgptbooster/screenshot-1.png"
+                href="/projects/chatgpt-speed-booster"
+                ariaLabel={t("home.projects.chatgptBooster.aria")}
+                imageAlt={t("home.projects.chatgptBooster.imageAlt")}
+                tags={["Chrome Extension", "JavaScript"]}
+                githubLink="https://github.com/Noah4ever/chatgpt-speed-booster"
+              />
+            </li>
+            <li>
+              <ProjectCardLink
                 title={t("home.projects.nolicom.title")}
                 description={t("home.projects.nolicom.description")}
                 imageSrc="/Projects/Nolicom/finished-case-colored-top.webp"

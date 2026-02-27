@@ -129,6 +129,12 @@
         "description": "A  wireless desk device built with ESP32 and ESP-NOW which sends data (on button press) to notify the other device with sound and light to get the attention of the other person.",
         "aria": "Open ESP32 Retro Desk Notifier project page",
         "imageAlt": "ESP32 Retro Desk Notifier assembled prototype"
+      },
+      "chatgptBooster": {
+        "title": "ChatGPT Speed Booster",
+        "description": "Chrome extension that speeds up long ChatGPT conversations by lazily rendering messages. Only the last N messages are shown; older ones load on demand.",
+        "aria": "Open ChatGPT Speed Booster project page",
+        "imageAlt": "ChatGPT Speed Booster popup screenshot"
       }
     }
   },
@@ -360,6 +366,52 @@
       "cracksCaption": "Cracking issue in finish",
       "brokenAlt": "Broken case",
       "brokenCaption": "Broken case"
+    }
+  },
+  "chatgptBooster": {
+    "hero": {
+      "title": "ChatGPT Speed Booster",
+      "tagline": "A Chrome extension that makes long ChatGPT conversations fast again by only rendering the messages you actually need."
+    },
+    "sections": {
+      "whatTitle": "What it does",
+      "whatText": "Long ChatGPT conversations slow your browser to a crawl. ChatGPT Speed Booster fixes this by only rendering the most recent messages and loading the rest on demand.",
+      "howTitle": "How it works",
+      "settingsTitle": "Settings",
+      "privacyTitle": "Privacy",
+      "techTitle": "Tech",
+      "screenshotTitle": "Screenshot"
+    },
+    "how": {
+      "lazyTitle": "Lazy rendering",
+      "lazyText": "Only the last 10 messages are shown when you open a conversation (configurable from 1 to 200).",
+      "hiddenTitle": "Zero layout cost",
+      "hiddenText": "Older messages are hidden before the browser renders them, so there's no layout or paint overhead.",
+      "loadMoreTitle": "Load More button",
+      "loadMoreText": "A \"Load More\" button appears at the top — click to reveal older messages in batches.",
+      "fifoTitle": "FIFO for new messages",
+      "fifoText": "When a new message arrives, the oldest visible one is hidden automatically to keep the count steady."
+    },
+    "settings": {
+      "visibleTitle": "Visible messages",
+      "visibleText": "How many messages to show at a time (default: 10).",
+      "batchTitle": "Batch size",
+      "batchText": "How many messages to reveal per \"Load More\" click (default: 5).",
+      "toggleTitle": "Enable / disable",
+      "toggleText": "Turn the extension on or off without uninstalling."
+    },
+    "privacy": {
+      "noRead": "No message content is ever read, stored, or transmitted.",
+      "noAnalytics": "No analytics, telemetry, or external network requests.",
+      "localStorage": "All settings stay in your browser's local storage.",
+      "openSource": "Fully open source."
+    },
+    "tech": {
+      "text": "Chrome Manifest V3 extension. Content script runs at document_idle on chatgpt.com. Settings are persisted via chrome.storage. Requires Chrome 110 or later."
+    },
+    "image": {
+      "alt": "ChatGPT Speed Booster extension popup",
+      "caption": "Extension popup"
     }
   }
 }

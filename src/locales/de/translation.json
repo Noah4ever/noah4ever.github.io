@@ -129,6 +129,12 @@
         "description": "Ein drahtloses Desk-Notifier-Duo mit ESP32 und ESP-NOW: Knopf drücken → auf dem anderen Gerät Ton + Licht, mit Akku-Betrieb, Retro-Gehäuse und vielen Hardware-Iterationen.",
         "aria": "Retro ESP-NOW Desk Notifier Projektseite öffnen",
         "imageAlt": "Retro ESP-NOW Desk Notifier als montierter Prototyp"
+      },
+      "chatgptBooster": {
+        "title": "ChatGPT Speed Booster",
+        "description": "Chrome-Erweiterung, die lange ChatGPT-Unterhaltungen beschleunigt, indem Nachrichten lazy gerendert werden. Nur die letzten N Nachrichten werden angezeigt; ältere laden bei Bedarf.",
+        "aria": "ChatGPT Speed Booster Projektseite öffnen",
+        "imageAlt": "ChatGPT Speed Booster Popup-Screenshot"
       }
     }
   },
@@ -360,6 +366,52 @@
       "cracksCaption": "Rissproblem im Finish",
       "brokenAlt": "Gebrochenes Gehäuse",
       "brokenCaption": "Gebrochenes Gehäuse"
+    }
+  },
+  "chatgptBooster": {
+    "hero": {
+      "title": "ChatGPT Speed Booster",
+      "tagline": "Eine Chrome-Erweiterung, die lange ChatGPT-Unterhaltungen wieder schnell macht, indem nur die Nachrichten gerendert werden, die du gerade brauchst."
+    },
+    "sections": {
+      "whatTitle": "Was es macht",
+      "whatText": "Lange ChatGPT-Unterhaltungen machen den Browser langsam. ChatGPT Speed Booster behebt das, indem nur die neuesten Nachrichten gerendert werden und der Rest bei Bedarf geladen wird.",
+      "howTitle": "So funktioniert es",
+      "settingsTitle": "Einstellungen",
+      "privacyTitle": "Datenschutz",
+      "techTitle": "Technik",
+      "screenshotTitle": "Screenshot"
+    },
+    "how": {
+      "lazyTitle": "Lazy Rendering",
+      "lazyText": "Beim Öffnen einer Unterhaltung werden nur die letzten 10 Nachrichten angezeigt (konfigurierbar von 1 bis 200).",
+      "hiddenTitle": "Keine Layout-Kosten",
+      "hiddenText": "Ältere Nachrichten werden versteckt, bevor der Browser sie rendert — kein Layout- oder Paint-Overhead.",
+      "loadMoreTitle": "Mehr laden-Button",
+      "loadMoreText": "Oben erscheint ein \"Mehr laden\"-Button — klicken, um ältere Nachrichten in Stapeln einzublenden.",
+      "fifoTitle": "FIFO für neue Nachrichten",
+      "fifoText": "Wenn eine neue Nachricht eintrifft, wird die älteste sichtbare automatisch ausgeblendet, um die Anzahl stabil zu halten."
+    },
+    "settings": {
+      "visibleTitle": "Sichtbare Nachrichten",
+      "visibleText": "Wie viele Nachrichten gleichzeitig angezeigt werden (Standard: 10).",
+      "batchTitle": "Stapelgröße",
+      "batchText": "Wie viele Nachrichten pro \"Mehr laden\"-Klick eingeblendet werden (Standard: 5).",
+      "toggleTitle": "Aktivieren / Deaktivieren",
+      "toggleText": "Die Erweiterung ein- oder ausschalten, ohne sie zu deinstallieren."
+    },
+    "privacy": {
+      "noRead": "Nachrichteninhalte werden nie gelesen, gespeichert oder übertragen.",
+      "noAnalytics": "Keine Analysen, Telemetrie oder externen Netzwerkanfragen.",
+      "localStorage": "Alle Einstellungen bleiben im lokalen Speicher deines Browsers.",
+      "openSource": "Vollständig Open Source."
+    },
+    "tech": {
+      "text": "Chrome Manifest V3 Erweiterung. Content-Script läuft bei document_idle auf chatgpt.com. Einstellungen werden über chrome.storage gespeichert. Erfordert Chrome 110 oder neuer."
+    },
+    "image": {
+      "alt": "ChatGPT Speed Booster Erweiterungs-Popup",
+      "caption": "Erweiterungs-Popup"
     }
   }
 }
