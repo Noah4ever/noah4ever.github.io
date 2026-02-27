@@ -113,6 +113,7 @@
         padding: 0;
         text-align: left;
         font-size: 1rem;
+        font-weight: 400;
         line-height: 1.8;
         color: var(--color-text);
       }
@@ -205,6 +206,18 @@
           --project-tag-text: var(--tag-3d-printing-text);
           --project-tag-border: var(--tag-3d-printing-border);
           --project-tag-bg: var(--tag-3d-printing-bg);
+        }
+
+        &.project-tag--chrome-extension {
+          --project-tag-text: var(--tag-chrome-extension-text);
+          --project-tag-border: var(--tag-chrome-extension-border);
+          --project-tag-bg: var(--tag-chrome-extension-bg);
+        }
+
+        &.project-tag--javascript {
+          --project-tag-text: var(--tag-javascript-text);
+          --project-tag-border: var(--tag-javascript-border);
+          --project-tag-bg: var(--tag-javascript-bg);
         }
       }
     }
