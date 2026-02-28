@@ -388,9 +388,9 @@
       "lazyTitle": "Lazy Rendering",
       "lazyText": "Beim Öffnen einer Unterhaltung werden nur die letzten 10 Nachrichten angezeigt (konfigurierbar von 1 bis 200).",
       "hiddenTitle": "Keine Layout-Kosten",
-      "hiddenText": "Ältere Nachrichten werden versteckt, bevor der Browser sie rendert — kein Layout- oder Paint-Overhead.",
+      "hiddenText": "Ältere Nachrichten werden versteckt, bevor der Browser sie rendert - kein Layout- oder Paint-Overhead.",
       "loadMoreTitle": "Mehr laden-Button",
-      "loadMoreText": "Oben erscheint ein \"Mehr laden\"-Button — klicken, um ältere Nachrichten in Stapeln einzublenden.",
+      "loadMoreText": "Oben erscheint ein \"Mehr laden\"-Button - klicken, um ältere Nachrichten in Stapeln einzublenden.",
       "fifoTitle": "FIFO für neue Nachrichten",
       "fifoText": "Wenn eine neue Nachricht eintrifft, wird die älteste sichtbare automatisch ausgeblendet, um die Anzahl stabil zu halten."
     },
@@ -416,9 +416,9 @@
       "caption": "Erweiterungs-Popup"
     },
     "build": {
-      "p1": "Ich habe mit einem groben Layout in Penpot angefangen, meinem selbstgehosteten Design-Tool, um die Popup-Proportionen und die Platzierung der Bedienelemente festzulegen, bevor ich Code geschrieben habe. Als das Design gepasst hat, habe ich es in reinem HTML, CSS und TypeScript umgesetzt — kein Framework, nur eine popup.html, die über Chromes Messaging-API mit dem Background-Service-Worker kommuniziert.",
+      "p1": "Ich habe mit einem groben Layout in Penpot angefangen, meinem selbstgehosteten Design-Tool, um die Popup-Proportionen und die Platzierung der Bedienelemente festzulegen, bevor ich Code geschrieben habe. Als das Design gepasst hat, habe ich es in reinem HTML, CSS und TypeScript umgesetzt - kein Framework, nur eine popup.html, die über Chromes Messaging-API mit dem Background-Service-Worker kommuniziert.",
       "p2": "Das Content-Script ist das Herzstück. Es beobachtet das DOM auf ChatGPTs Conversation-Turns über einen MutationObserver, trackt jedes Nachrichten-Element in einem flachen Array und blendet alles über dem konfigurierten Limit per display:none aus, bevor der Browser es jemals malt. Dadurch bleiben die Layout-Kosten bei null, egal wie lang die Unterhaltung ist.",
-      "p3": "Das Background-Script fungiert als Message-Bus: Es speichert Einstellungen in chrome.storage, leitet Konfigurationsänderungen an jeden offenen ChatGPT-Tab weiter und vermittelt Status-Anfragen vom Popup an das Content-Script des aktiven Tabs. Alles bleibt lokal — keine Netzwerkaufrufe, keine Daten, die den Browser verlassen."
+      "p3": "Das Background-Script fungiert als Message-Bus: Es speichert Einstellungen in chrome.storage, leitet Konfigurationsänderungen an jeden offenen ChatGPT-Tab weiter und vermittelt Status-Anfragen vom Popup an das Content-Script des aktiven Tabs. Alles bleibt lokal - keine Netzwerkaufrufe, keine Daten, die den Browser verlassen."
     },
     "code": {
       "intro": "Hier sind die wichtigsten Bausteine, die die Erweiterung antreiben. All das läuft lokal in deinem Browser.",

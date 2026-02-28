@@ -93,10 +93,48 @@ export default function ChatGPTBooster() {
                     <ImageBorder
                         src="/Projects/chatgptbooster/speed-booster-popup.png"
                         alt={t("chatgptBooster.image.alt")}
-                        frame="chrome"
                     />
                     <figcaption>{t("chatgptBooster.image.caption")}</figcaption>
                 </figure>
+            </section>
+
+
+            <section
+                className="project-section"
+                aria-labelledby="chatgpt-booster-settings-heading"
+            >
+                <h2 id="chatgpt-booster-settings-heading">
+                    {t("chatgptBooster.sections.settingsTitle")}
+                </h2>
+                <ul className="chatgpt-booster-feature-list" role="list">
+                    <li>
+                        <span aria-hidden="true">
+                            <VisibleIcon />
+                        </span>
+                        <div>
+                            <strong>{t("chatgptBooster.settings.visibleTitle")}</strong>
+                            <p>{t("chatgptBooster.settings.visibleText")}</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span aria-hidden="true">
+                            <BatchIcon />
+                        </span>
+                        <div>
+                            <strong>{t("chatgptBooster.settings.batchTitle")}</strong>
+                            <p>{t("chatgptBooster.settings.batchText")}</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span aria-hidden="true">
+                            <ToggleIcon />
+                        </span>
+                        <div>
+                            <strong>{t("chatgptBooster.settings.toggleTitle")}</strong>
+                            <p>{t("chatgptBooster.settings.toggleText")}</p>
+                        </div>
+                    </li>
+                </ul>
             </section>
 
             <section
@@ -146,43 +184,6 @@ export default function ChatGPTBooster() {
                 </ul>
             </section>
 
-            <section
-                className="project-section"
-                aria-labelledby="chatgpt-booster-settings-heading"
-            >
-                <h2 id="chatgpt-booster-settings-heading">
-                    {t("chatgptBooster.sections.settingsTitle")}
-                </h2>
-                <ul className="chatgpt-booster-feature-list" role="list">
-                    <li>
-                        <span aria-hidden="true">
-                            <VisibleIcon />
-                        </span>
-                        <div>
-                            <strong>{t("chatgptBooster.settings.visibleTitle")}</strong>
-                            <p>{t("chatgptBooster.settings.visibleText")}</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span aria-hidden="true">
-                            <BatchIcon />
-                        </span>
-                        <div>
-                            <strong>{t("chatgptBooster.settings.batchTitle")}</strong>
-                            <p>{t("chatgptBooster.settings.batchText")}</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span aria-hidden="true">
-                            <ToggleIcon />
-                        </span>
-                        <div>
-                            <strong>{t("chatgptBooster.settings.toggleTitle")}</strong>
-                            <p>{t("chatgptBooster.settings.toggleText")}</p>
-                        </div>
-                    </li>
-                </ul>
-            </section>
 
             <section
                 className="project-section"

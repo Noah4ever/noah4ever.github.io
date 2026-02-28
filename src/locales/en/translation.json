@@ -416,9 +416,9 @@
       "caption": "Extension popup"
     },
     "build": {
-      "p1": "I started with a rough layout in Penpot, my selfhosted design tool, to figure out the popup proportions and control placement before writing any code. Once the design felt right I moved to plain HTML, CSS, and TypeScript — no framework, just a popup.html that talks to the background service worker through Chrome's messaging API.",
+      "p1": "I started with a rough layout in Penpot, my selfhosted design tool, to figure out the popup proportions and control placement before writing any code. Once the design felt right I moved to plain HTML, CSS, and TypeScript. No framework, just a popup.html that talks to the background service worker through Chrome's messaging API.",
       "p2": "The content script is the core. It watches the DOM for ChatGPT's conversation turns via a MutationObserver, tracks every message element in a flat array, and hides everything beyond the configured limit by setting display:none before the browser ever paints them. That keeps layout cost at zero no matter how long the conversation is.",
-      "p3": "The background script acts as a message bus: it stores settings in chrome.storage, forwards config changes to every open ChatGPT tab, and relays status requests from the popup to the active tab's content script. Everything stays local — no network calls, no data leaving the browser."
+      "p3": "The background script acts as a message bus: it stores settings in chrome.storage, forwards config changes to every open ChatGPT tab, and relays status requests from the popup to the active tab's content script. Everything stays local. No network calls, no data leaving the browser."
     },
     "code": {
       "intro": "Here are the key pieces that make the extension work. All of this runs locally in your browser.",
