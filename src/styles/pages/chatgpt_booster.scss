@@ -151,3 +151,24 @@
         font-size: 0.9rem;
     }
 }
+
+.chatgpt-booster-section-icon {
+    display: inline-block;
+    vertical-align: -0.15em;
+    width: 1.1em;
+    height: 1.1em;
+    margin-right: 0.4rem;
+    color: var(--color-accent);
+}
+
+.chatgpt-booster-code-section {
+    h3 {
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+        font-size: 1.15rem;
+    }
+
+    p {
+        margin-bottom: 0.75rem;
+    }
+}

@@ -380,7 +380,9 @@
       "settingsTitle": "Einstellungen",
       "privacyTitle": "Datenschutz",
       "techTitle": "Technik",
-      "screenshotTitle": "Screenshot"
+      "screenshotTitle": "Screenshot",
+      "buildTitle": "Wie ich es gebaut habe",
+      "codeTitle": "Unter der Haube"
     },
     "how": {
       "lazyTitle": "Lazy Rendering",
@@ -412,6 +414,22 @@
     "image": {
       "alt": "ChatGPT Speed Booster Erweiterungs-Popup",
       "caption": "Erweiterungs-Popup"
+    },
+    "build": {
+      "p1": "Ich habe mit einem groben Layout in Penpot angefangen, meinem selbstgehosteten Design-Tool, um die Popup-Proportionen und die Platzierung der Bedienelemente festzulegen, bevor ich Code geschrieben habe. Als das Design gepasst hat, habe ich es in reinem HTML, CSS und TypeScript umgesetzt — kein Framework, nur eine popup.html, die über Chromes Messaging-API mit dem Background-Service-Worker kommuniziert.",
+      "p2": "Das Content-Script ist das Herzstück. Es beobachtet das DOM auf ChatGPTs Conversation-Turns über einen MutationObserver, trackt jedes Nachrichten-Element in einem flachen Array und blendet alles über dem konfigurierten Limit per display:none aus, bevor der Browser es jemals malt. Dadurch bleiben die Layout-Kosten bei null, egal wie lang die Unterhaltung ist.",
+      "p3": "Das Background-Script fungiert als Message-Bus: Es speichert Einstellungen in chrome.storage, leitet Konfigurationsänderungen an jeden offenen ChatGPT-Tab weiter und vermittelt Status-Anfragen vom Popup an das Content-Script des aktiven Tabs. Alles bleibt lokal — keine Netzwerkaufrufe, keine Daten, die den Browser verlassen."
+    },
+    "code": {
+      "intro": "Hier sind die wichtigsten Bausteine, die die Erweiterung antreiben. All das läuft lokal in deinem Browser.",
+      "messageManagerTitle": "Sichtbarkeitsberechnung",
+      "messageManagerText": "Wenn sich die Konfiguration ändert oder eine Unterhaltung geladen wird, geht recalculateVisibility das Array der getrackten Nachrichten durch und blendet alles außer den letzten N Einträgen aus. Einfache Index-Mathematik, keine DOM-Queries.",
+      "fifoTitle": "FIFO-Durchsetzung",
+      "fifoText": "Wenn eine neue Nachricht eintrifft und die sichtbare Anzahl das Limit überschreitet, blendet enforceLimit die ältesten sichtbaren Nachrichten einzeln aus, bis die Anzahl wieder im Rahmen ist.",
+      "domObserverTitle": "DOM-Beobachtung",
+      "domObserverText": "Ein MutationObserver überwacht document.body auf hinzugefügte und entfernte Knoten. Mutationen werden gedebounct, um unnötige Arbeit zu vermeiden, und dann nach Conversation-Turn-Elementen gefiltert.",
+      "backgroundTitle": "Konfigurations-Broadcast",
+      "backgroundText": "Wenn sich Einstellungen ändern, fragt das Background-Script alle Tabs ab, die chatgpt.com matchen, und sendet die aktualisierte Konfiguration an jedes Content-Script, damit jede offene Unterhaltung sofort reagiert."
     }
   }
 }

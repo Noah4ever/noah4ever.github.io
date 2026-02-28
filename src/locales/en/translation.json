@@ -380,7 +380,9 @@
       "settingsTitle": "Settings",
       "privacyTitle": "Privacy",
       "techTitle": "Tech",
-      "screenshotTitle": "Screenshot"
+      "screenshotTitle": "Screenshot",
+      "buildTitle": "How I built it",
+      "codeTitle": "Under the hood"
     },
     "how": {
       "lazyTitle": "Lazy rendering",
@@ -388,7 +390,7 @@
       "hiddenTitle": "Zero layout cost",
       "hiddenText": "Older messages are hidden before the browser renders them, so there's no layout or paint overhead.",
       "loadMoreTitle": "Load More button",
-      "loadMoreText": "A \"Load More\" button appears at the top — click to reveal older messages in batches.",
+      "loadMoreText": "A \"Load More\" button appears at the top. Clicking that reveals older messages in batches.",
       "fifoTitle": "FIFO for new messages",
       "fifoText": "When a new message arrives, the oldest visible one is hidden automatically to keep the count steady."
     },
@@ -412,6 +414,22 @@
     "image": {
       "alt": "ChatGPT Speed Booster extension popup",
       "caption": "Extension popup"
+    },
+    "build": {
+      "p1": "I started with a rough layout in Penpot, my selfhosted design tool, to figure out the popup proportions and control placement before writing any code. Once the design felt right I moved to plain HTML, CSS, and TypeScript — no framework, just a popup.html that talks to the background service worker through Chrome's messaging API.",
+      "p2": "The content script is the core. It watches the DOM for ChatGPT's conversation turns via a MutationObserver, tracks every message element in a flat array, and hides everything beyond the configured limit by setting display:none before the browser ever paints them. That keeps layout cost at zero no matter how long the conversation is.",
+      "p3": "The background script acts as a message bus: it stores settings in chrome.storage, forwards config changes to every open ChatGPT tab, and relays status requests from the popup to the active tab's content script. Everything stays local — no network calls, no data leaving the browser."
+    },
+    "code": {
+      "intro": "Here are the key pieces that make the extension work. All of this runs locally in your browser.",
+      "messageManagerTitle": "Visibility calculation",
+      "messageManagerText": "When the config changes or a conversation loads, recalculateVisibility walks the tracked messages array and hides everything except the last N entries. Simple index math, no DOM queries.",
+      "fifoTitle": "FIFO enforcement",
+      "fifoText": "When a new message arrives and the visible count exceeds the limit, enforceLimit hides the oldest visible messages one by one until the count is back within bounds.",
+      "domObserverTitle": "DOM observation",
+      "domObserverText": "A MutationObserver watches document.body for added and removed nodes. Mutations are debounced to avoid unnecessary work, then filtered for conversation turn elements.",
+      "backgroundTitle": "Config broadcasting",
+      "backgroundText": "When settings change, the background script queries all tabs matching chatgpt.com and sends the updated config to each content script so every open conversation reacts immediately."
     }
   }
 }

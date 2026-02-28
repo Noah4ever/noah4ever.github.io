@@ -448,7 +448,7 @@ export default function Home() {
               <ProjectCardLink
                 title={t("home.projects.chatgptBooster.title")}
                 description={t("home.projects.chatgptBooster.description")}
-                imageSrc="/Projects/chatgptbooster/screenshot-1.png"
+                imageSrc="/Projects/chatgptbooster/speed-booster-popup.png"
                 href="/projects/chatgpt-speed-booster"
                 ariaLabel={t("home.projects.chatgptBooster.aria")}
                 imageAlt={t("home.projects.chatgptBooster.imageAlt")}
