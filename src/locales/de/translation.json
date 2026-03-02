@@ -130,11 +130,11 @@
         "aria": "Retro ESP-NOW Desk Notifier Projektseite öffnen",
         "imageAlt": "Retro ESP-NOW Desk Notifier als montierter Prototyp"
       },
-      "chatgptBooster": {
-        "title": "ChatGPT Speed Booster",
+      "aiChatSpeedBoost": {
+        "title": "AI Chat Speed Boost",
         "description": "Chrome-Erweiterung, die lange ChatGPT-Unterhaltungen beschleunigt, indem Nachrichten lazy gerendert werden. Nur die letzten N Nachrichten werden angezeigt; ältere laden bei Bedarf.",
-        "aria": "ChatGPT Speed Booster Projektseite öffnen",
-        "imageAlt": "ChatGPT Speed Booster Popup-Screenshot"
+        "aria": "AI Chat Speed Boost Projektseite öffnen",
+        "imageAlt": "AI Chat Speed Boost Popup-Screenshot"
       }
     }
   },
@@ -368,14 +368,14 @@
       "brokenCaption": "Gebrochenes Gehäuse"
     }
   },
-  "chatgptBooster": {
+  "aiChatSpeedBoost": {
     "hero": {
-      "title": "ChatGPT Speed Booster",
+      "title": "AI Chat Speed Boost",
       "tagline": "Eine Chrome-Erweiterung, die lange ChatGPT-Unterhaltungen wieder schnell macht, indem nur die Nachrichten gerendert werden, die du gerade brauchst."
     },
     "sections": {
       "whatTitle": "Was es macht",
-      "whatText": "Lange ChatGPT-Unterhaltungen machen den Browser langsam. ChatGPT Speed Booster behebt das, indem nur die neuesten Nachrichten gerendert werden und der Rest bei Bedarf geladen wird.",
+      "whatText": "Lange ChatGPT-Unterhaltungen machen den Browser langsam. AI Chat Speed Boost behebt das, indem nur die neuesten Nachrichten gerendert werden und der Rest bei Bedarf geladen wird.",
       "howTitle": "So funktioniert es",
       "settingsTitle": "Einstellungen",
       "privacyTitle": "Datenschutz",
@@ -412,7 +412,7 @@
       "text": "Chrome Manifest V3 Erweiterung. Content-Script läuft bei document_idle auf chatgpt.com. Einstellungen werden über chrome.storage gespeichert. Erfordert Chrome 110 oder neuer."
     },
     "image": {
-      "alt": "ChatGPT Speed Booster Erweiterungs-Popup",
+      "alt": "AI Chat Speed Boost Erweiterungs-Popup",
       "caption": "Erweiterungs-Popup"
     },
     "build": {

@@ -1,5 +1,5 @@
 import ImageBorder from "@/components/ImageBorder";
-import "@styles/pages/chatgpt_booster.scss";
+import "@styles/pages/ai_chat_speed_boost.scss";
 import {
     IoRocketOutline as RocketIcon,
     IoSettingsOutline as SettingsIcon,
@@ -16,7 +16,7 @@ import {
 } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
 
-export default function ChatGPTBooster() {
+export default function AIChatSpeedBoost() {
     const { t } = useTranslation();
 
     const highlightTypeScript = (code: string) => {
@@ -52,68 +52,68 @@ export default function ChatGPTBooster() {
     return (
         <>
             <section
-                className="chatgpt-booster-hero"
-                aria-labelledby="chatgpt-booster-title"
+                className="ai-chat-speed-boost-hero"
+                aria-labelledby="ai-chat-speed-boost-title"
             >
-                <div className="chatgpt-booster-hero-icon" aria-hidden="true">
+                <div className="ai-chat-speed-boost-hero-icon" aria-hidden="true">
                     <RocketIcon />
                 </div>
-                <h1 id="chatgpt-booster-title">{t("chatgptBooster.hero.title")}</h1>
+                <h1 id="ai-chat-speed-boost-title">{t("aiChatSpeedBoost.hero.title")}</h1>
                 <div className="project-hero-badges">
                     <a
-                        href="https://github.com/Noah4ever/chatgpt-speed-booster"
+                        href="https://github.com/Noah4ever/ai-chat-speed-boost"
                         className="view-github-badge"
                     >
                         View on GitHub <GithubIcon />
                     </a>
                 </div>
-                <p className="chatgpt-booster-tagline">
-                    {t("chatgptBooster.hero.tagline")}
+                <p className="ai-chat-speed-boost-tagline">
+                    {t("aiChatSpeedBoost.hero.tagline")}
                 </p>
             </section>
 
             <section
                 className="project-section"
-                aria-labelledby="chatgpt-booster-what-heading"
+                aria-labelledby="ai-chat-speed-boost-what-heading"
             >
-                <h2 id="chatgpt-booster-what-heading">
-                    {t("chatgptBooster.sections.whatTitle")}
+                <h2 id="ai-chat-speed-boost-what-heading">
+                    {t("aiChatSpeedBoost.sections.whatTitle")}
                 </h2>
-                <p>{t("chatgptBooster.sections.whatText")}</p>
+                <p>{t("aiChatSpeedBoost.sections.whatText")}</p>
             </section>
 
             <section
-                className="chatgpt-booster-image"
-                aria-labelledby="chatgpt-booster-image-heading"
+                className="ai-chat-speed-boost-image"
+                aria-labelledby="ai-chat-speed-boost-image-heading"
             >
-                <h2 id="chatgpt-booster-image-heading" className="sr-only">
-                    {t("chatgptBooster.sections.screenshotTitle")}
+                <h2 id="ai-chat-speed-boost-image-heading" className="sr-only">
+                    {t("aiChatSpeedBoost.sections.screenshotTitle")}
                 </h2>
                 <figure>
                     <ImageBorder
-                        src="/Projects/chatgptbooster/speed-booster-popup.png"
-                        alt={t("chatgptBooster.image.alt")}
+                        src="/Projects/ai-chat-speed-boost/speed-booster-popup.png"
+                        alt={t("aiChatSpeedBoost.image.alt")}
                     />
-                    <figcaption>{t("chatgptBooster.image.caption")}</figcaption>
+                    <figcaption>{t("aiChatSpeedBoost.image.caption")}</figcaption>
                 </figure>
             </section>
 
 
             <section
                 className="project-section"
-                aria-labelledby="chatgpt-booster-settings-heading"
+                aria-labelledby="ai-chat-speed-boost-settings-heading"
             >
-                <h2 id="chatgpt-booster-settings-heading">
-                    {t("chatgptBooster.sections.settingsTitle")}
+                <h2 id="ai-chat-speed-boost-settings-heading">
+                    {t("aiChatSpeedBoost.sections.settingsTitle")}
                 </h2>
-                <ul className="chatgpt-booster-feature-list" role="list">
+                <ul className="ai-chat-speed-boost-feature-list" role="list">
                     <li>
                         <span aria-hidden="true">
                             <VisibleIcon />
                         </span>
                         <div>
-                            <strong>{t("chatgptBooster.settings.visibleTitle")}</strong>
-                            <p>{t("chatgptBooster.settings.visibleText")}</p>
+                            <strong>{t("aiChatSpeedBoost.settings.visibleTitle")}</strong>
+                            <p>{t("aiChatSpeedBoost.settings.visibleText")}</p>
                         </div>
                     </li>
                     <li>
@@ -121,8 +121,8 @@ export default function ChatGPTBooster() {
                             <BatchIcon />
                         </span>
                         <div>
-                            <strong>{t("chatgptBooster.settings.batchTitle")}</strong>
-                            <p>{t("chatgptBooster.settings.batchText")}</p>
+                            <strong>{t("aiChatSpeedBoost.settings.batchTitle")}</strong>
+                            <p>{t("aiChatSpeedBoost.settings.batchText")}</p>
                         </div>
                     </li>
                     <li>
@@ -130,8 +130,8 @@ export default function ChatGPTBooster() {
                             <ToggleIcon />
                         </span>
                         <div>
-                            <strong>{t("chatgptBooster.settings.toggleTitle")}</strong>
-                            <p>{t("chatgptBooster.settings.toggleText")}</p>
+                            <strong>{t("aiChatSpeedBoost.settings.toggleTitle")}</strong>
+                            <p>{t("aiChatSpeedBoost.settings.toggleText")}</p>
                         </div>
                     </li>
                 </ul>
@@ -139,19 +139,19 @@ export default function ChatGPTBooster() {
 
             <section
                 className="project-section"
-                aria-labelledby="chatgpt-booster-how-heading"
+                aria-labelledby="ai-chat-speed-boost-how-heading"
             >
-                <h2 id="chatgpt-booster-how-heading">
-                    {t("chatgptBooster.sections.howTitle")}
+                <h2 id="ai-chat-speed-boost-how-heading">
+                    {t("aiChatSpeedBoost.sections.howTitle")}
                 </h2>
-                <ul className="chatgpt-booster-feature-list" role="list">
+                <ul className="ai-chat-speed-boost-feature-list" role="list">
                     <li>
                         <span aria-hidden="true">
                             <FlashIcon />
                         </span>
                         <div>
-                            <strong>{t("chatgptBooster.how.lazyTitle")}</strong>
-                            <p>{t("chatgptBooster.how.lazyText")}</p>
+                            <strong>{t("aiChatSpeedBoost.how.lazyTitle")}</strong>
+                            <p>{t("aiChatSpeedBoost.how.lazyText")}</p>
                         </div>
                     </li>
                     <li>
@@ -159,8 +159,8 @@ export default function ChatGPTBooster() {
                             <VisibleIcon />
                         </span>
                         <div>
-                            <strong>{t("chatgptBooster.how.hiddenTitle")}</strong>
-                            <p>{t("chatgptBooster.how.hiddenText")}</p>
+                            <strong>{t("aiChatSpeedBoost.how.hiddenTitle")}</strong>
+                            <p>{t("aiChatSpeedBoost.how.hiddenText")}</p>
                         </div>
                     </li>
                     <li>
@@ -168,8 +168,8 @@ export default function ChatGPTBooster() {
                             <LoadMoreIcon />
                         </span>
                         <div>
-                            <strong>{t("chatgptBooster.how.loadMoreTitle")}</strong>
-                            <p>{t("chatgptBooster.how.loadMoreText")}</p>
+                            <strong>{t("aiChatSpeedBoost.how.loadMoreTitle")}</strong>
+                            <p>{t("aiChatSpeedBoost.how.loadMoreText")}</p>
                         </div>
                     </li>
                     <li>
@@ -177,8 +177,8 @@ export default function ChatGPTBooster() {
                             <FifoIcon />
                         </span>
                         <div>
-                            <strong>{t("chatgptBooster.how.fifoTitle")}</strong>
-                            <p>{t("chatgptBooster.how.fifoText")}</p>
+                            <strong>{t("aiChatSpeedBoost.how.fifoTitle")}</strong>
+                            <p>{t("aiChatSpeedBoost.how.fifoText")}</p>
                         </div>
                     </li>
                 </ul>
@@ -187,64 +187,64 @@ export default function ChatGPTBooster() {
 
             <section
                 className="project-section"
-                aria-labelledby="chatgpt-booster-privacy-heading"
+                aria-labelledby="ai-chat-speed-boost-privacy-heading"
             >
-                <h2 id="chatgpt-booster-privacy-heading">
-                    {t("chatgptBooster.sections.privacyTitle")}
+                <h2 id="ai-chat-speed-boost-privacy-heading">
+                    {t("aiChatSpeedBoost.sections.privacyTitle")}
                 </h2>
-                <div className="chatgpt-booster-privacy-card">
-                    <div className="chatgpt-booster-privacy-icon" aria-hidden="true">
+                <div className="ai-chat-speed-boost-privacy-card">
+                    <div className="ai-chat-speed-boost-privacy-icon" aria-hidden="true">
                         <PrivacyIcon />
                     </div>
                     <ul>
-                        <li>{t("chatgptBooster.privacy.noRead")}</li>
-                        <li>{t("chatgptBooster.privacy.noAnalytics")}</li>
-                        <li>{t("chatgptBooster.privacy.localStorage")}</li>
-                        <li>{t("chatgptBooster.privacy.openSource")}</li>
+                        <li>{t("aiChatSpeedBoost.privacy.noRead")}</li>
+                        <li>{t("aiChatSpeedBoost.privacy.noAnalytics")}</li>
+                        <li>{t("aiChatSpeedBoost.privacy.localStorage")}</li>
+                        <li>{t("aiChatSpeedBoost.privacy.openSource")}</li>
                     </ul>
                 </div>
             </section>
 
             <section
                 className="project-section"
-                aria-labelledby="chatgpt-booster-tech-heading"
+                aria-labelledby="ai-chat-speed-boost-tech-heading"
             >
-                <h2 id="chatgpt-booster-tech-heading">
-                    {t("chatgptBooster.sections.techTitle")}
+                <h2 id="ai-chat-speed-boost-tech-heading">
+                    {t("aiChatSpeedBoost.sections.techTitle")}
                 </h2>
-                <div className="chatgpt-booster-tech-card">
-                    <div className="chatgpt-booster-tech-icon" aria-hidden="true">
+                <div className="ai-chat-speed-boost-tech-card">
+                    <div className="ai-chat-speed-boost-tech-icon" aria-hidden="true">
                         <SettingsIcon />
                     </div>
-                    <p>{t("chatgptBooster.tech.text")}</p>
+                    <p>{t("aiChatSpeedBoost.tech.text")}</p>
                 </div>
             </section>
 
             <section
                 className="project-section"
-                aria-labelledby="chatgpt-booster-build-heading"
+                aria-labelledby="ai-chat-speed-boost-build-heading"
             >
-                <h2 id="chatgpt-booster-build-heading">
-                    <BuildIcon className="chatgpt-booster-section-icon" aria-hidden="true" />
-                    {t("chatgptBooster.sections.buildTitle")}
+                <h2 id="ai-chat-speed-boost-build-heading">
+                    <BuildIcon className="ai-chat-speed-boost-section-icon" aria-hidden="true" />
+                    {t("aiChatSpeedBoost.sections.buildTitle")}
                 </h2>
-                <p>{t("chatgptBooster.build.p1")}</p>
-                <p>{t("chatgptBooster.build.p2")}</p>
-                <p>{t("chatgptBooster.build.p3")}</p>
+                <p>{t("aiChatSpeedBoost.build.p1")}</p>
+                <p>{t("aiChatSpeedBoost.build.p2")}</p>
+                <p>{t("aiChatSpeedBoost.build.p3")}</p>
             </section>
 
             <section
-                className="project-section chatgpt-booster-code-section"
-                aria-labelledby="chatgpt-booster-code-heading"
+                className="project-section ai-chat-speed-boost-code-section"
+                aria-labelledby="ai-chat-speed-boost-code-heading"
             >
-                <h2 id="chatgpt-booster-code-heading">
-                    <CodeIcon className="chatgpt-booster-section-icon" aria-hidden="true" />
-                    {t("chatgptBooster.sections.codeTitle")}
+                <h2 id="ai-chat-speed-boost-code-heading">
+                    <CodeIcon className="ai-chat-speed-boost-section-icon" aria-hidden="true" />
+                    {t("aiChatSpeedBoost.sections.codeTitle")}
                 </h2>
-                <p>{t("chatgptBooster.code.intro")}</p>
+                <p>{t("aiChatSpeedBoost.code.intro")}</p>
 
-                <h3>{t("chatgptBooster.code.messageManagerTitle")}</h3>
-                <p>{t("chatgptBooster.code.messageManagerText")}</p>
+                <h3>{t("aiChatSpeedBoost.code.messageManagerTitle")}</h3>
+                <p>{t("aiChatSpeedBoost.code.messageManagerText")}</p>
                 <pre className="code-block">
                     <code
                         className="code-highlight"
@@ -271,8 +271,8 @@ export default function ChatGPTBooster() {
                     />
                 </pre>
 
-                <h3>{t("chatgptBooster.code.fifoTitle")}</h3>
-                <p>{t("chatgptBooster.code.fifoText")}</p>
+                <h3>{t("aiChatSpeedBoost.code.fifoTitle")}</h3>
+                <p>{t("aiChatSpeedBoost.code.fifoText")}</p>
                 <pre className="code-block">
                     <code
                         className="code-highlight"
@@ -292,8 +292,8 @@ export default function ChatGPTBooster() {
                     />
                 </pre>
 
-                <h3>{t("chatgptBooster.code.domObserverTitle")}</h3>
-                <p>{t("chatgptBooster.code.domObserverText")}</p>
+                <h3>{t("aiChatSpeedBoost.code.domObserverTitle")}</h3>
+                <p>{t("aiChatSpeedBoost.code.domObserverText")}</p>
                 <pre className="code-block">
                     <code
                         className="code-highlight"
@@ -328,8 +328,8 @@ private processMutations(mutations: MutationRecord[]): void {
                     />
                 </pre>
 
-                <h3>{t("chatgptBooster.code.backgroundTitle")}</h3>
-                <p>{t("chatgptBooster.code.backgroundText")}</p>
+                <h3>{t("aiChatSpeedBoost.code.backgroundTitle")}</h3>
+                <p>{t("aiChatSpeedBoost.code.backgroundText")}</p>
                 <pre className="code-block">
                     <code
                         className="code-highlight"

@@ -130,11 +130,11 @@
         "aria": "Open ESP32 Retro Desk Notifier project page",
         "imageAlt": "ESP32 Retro Desk Notifier assembled prototype"
       },
-      "chatgptBooster": {
-        "title": "ChatGPT Speed Booster",
+      "aiChatSpeedBoost": {
+        "title": "AI Chat Speed Boost",
         "description": "Chrome extension that speeds up long ChatGPT conversations by lazily rendering messages. Only the last N messages are shown; older ones load on demand.",
-        "aria": "Open ChatGPT Speed Booster project page",
-        "imageAlt": "ChatGPT Speed Booster popup screenshot"
+        "aria": "Open AI Chat Speed Boost project page",
+        "imageAlt": "AI Chat Speed Boost popup screenshot"
       }
     }
   },
@@ -368,14 +368,14 @@
       "brokenCaption": "Broken case"
     }
   },
-  "chatgptBooster": {
+  "aiChatSpeedBoost": {
     "hero": {
-      "title": "ChatGPT Speed Booster",
+      "title": "AI Chat Speed Boost",
       "tagline": "A Chrome extension that makes long ChatGPT conversations fast again by only rendering the messages you actually need."
     },
     "sections": {
       "whatTitle": "What it does",
-      "whatText": "Long ChatGPT conversations slow your browser to a crawl. ChatGPT Speed Booster fixes this by only rendering the most recent messages and loading the rest on demand.",
+      "whatText": "Long ChatGPT conversations slow your browser to a crawl. AI Chat Speed Boost fixes this by only rendering the most recent messages and loading the rest on demand.",
       "howTitle": "How it works",
       "settingsTitle": "Settings",
       "privacyTitle": "Privacy",
@@ -412,7 +412,7 @@
       "text": "Chrome Manifest V3 extension. Content script runs at document_idle on chatgpt.com. Settings are persisted via chrome.storage. Requires Chrome 110 or later."
     },
     "image": {
-      "alt": "ChatGPT Speed Booster extension popup",
+      "alt": "AI Chat Speed Boost extension popup",
       "caption": "Extension popup"
     },
     "build": {

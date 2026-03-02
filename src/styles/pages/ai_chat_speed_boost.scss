@@ -1,8 +1,8 @@
-.chatgpt-booster-hero {
+.ai-chat-speed-boost-hero {
     text-align: center;
     margin-bottom: 3rem;
 
-    .chatgpt-booster-hero-icon {
+    .ai-chat-speed-boost-hero-icon {
         display: flex;
         justify-content: center;
         margin-bottom: 0.9rem;
@@ -20,14 +20,14 @@
         letter-spacing: -0.02em;
     }
 
-    .chatgpt-booster-tagline {
+    .ai-chat-speed-boost-tagline {
         max-width: 620px;
         margin: 0 auto;
         color: var(--color-text-muted);
     }
 }
 
-.chatgpt-booster-feature-list {
+.ai-chat-speed-boost-feature-list {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -74,7 +74,7 @@
     }
 }
 
-.chatgpt-booster-privacy-card {
+.ai-chat-speed-boost-privacy-card {
     display: flex;
     gap: 0.8rem;
     align-items: flex-start;
@@ -82,7 +82,7 @@
     border-radius: 10px;
     background-color: var(--color-background-blur);
 
-    .chatgpt-booster-privacy-icon {
+    .ai-chat-speed-boost-privacy-icon {
         color: var(--color-accent);
         flex-shrink: 0;
 
@@ -105,7 +105,7 @@
     }
 }
 
-.chatgpt-booster-tech-card {
+.ai-chat-speed-boost-tech-card {
     display: flex;
     gap: 0.8rem;
     align-items: flex-start;
@@ -113,7 +113,7 @@
     border-radius: 10px;
     background-color: var(--color-background-blur);
 
-    .chatgpt-booster-tech-icon {
+    .ai-chat-speed-boost-tech-icon {
         color: var(--color-accent);
 
         svg {
@@ -127,7 +127,7 @@
     }
 }
 
-.chatgpt-booster-image {
+.ai-chat-speed-boost-image {
     margin-bottom: 3.5rem;
 
     figure {
@@ -152,7 +152,7 @@
     }
 }
 
-.chatgpt-booster-section-icon {
+.ai-chat-speed-boost-section-icon {
     display: inline-block;
     vertical-align: -0.15em;
     width: 1.1em;
@@ -161,7 +161,7 @@
     color: var(--color-accent);
 }
 
-.chatgpt-booster-code-section {
+.ai-chat-speed-boost-code-section {
     h3 {
         margin-top: 2rem;
         margin-bottom: 0.5rem;
