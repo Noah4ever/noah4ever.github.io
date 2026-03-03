@@ -1,12 +1,12 @@
 import ImageBorder from "@/components/ImageBorder";
-import "@styles/pages/ai_chat_speed_boost.scss";
+import "@styles/pages/ai_chat_speed_booster.scss";
 import {
     IoRocketOutline as RocketIcon,
     IoLogoGithub as GithubIcon,
 } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
 
-export default function AIChatSpeedBoost() {
+export default function AIChatSpeedBooster() {
     const { t } = useTranslation();
 
     const highlightTypeScript = (code: string) => {
@@ -42,77 +42,77 @@ export default function AIChatSpeedBoost() {
     return (
         <>
             <section
-                className="ai-chat-speed-boost-hero"
-                aria-labelledby="ai-chat-speed-boost-title"
+                className="ai-chat-speed-booster-hero"
+                aria-labelledby="ai-chat-speed-booster-title"
             >
-                <div className="ai-chat-speed-boost-hero-icon" aria-hidden="true">
+                <div className="ai-chat-speed-booster-hero-icon" aria-hidden="true">
                     <RocketIcon />
                 </div>
-                <h1 id="ai-chat-speed-boost-title">{t("aiChatSpeedBoost.hero.title")}</h1>
+                <h1 id="ai-chat-speed-booster-title">{t("aiChatSpeedBooster.hero.title")}</h1>
                 <div className="project-hero-badges">
                     <a
-                        href="https://github.com/Noah4ever/ai-chat-speed-boost"
+                        href="https://github.com/Noah4ever/ai-chat-speed-booster"
                         className="view-github-badge"
                     >
                         View on GitHub <GithubIcon />
                     </a>
                 </div>
-                <p className="ai-chat-speed-boost-tagline">
-                    {t("aiChatSpeedBoost.hero.tagline")}
+                <p className="ai-chat-speed-booster-tagline">
+                    {t("aiChatSpeedBooster.hero.tagline")}
                 </p>
             </section>
 
             <section
                 className="project-section"
-                aria-labelledby="ai-chat-speed-boost-what-heading"
+                aria-labelledby="ai-chat-speed-booster-what-heading"
             >
-                <h2 id="ai-chat-speed-boost-what-heading">
-                    {t("aiChatSpeedBoost.sections.whatTitle")}
+                <h2 id="ai-chat-speed-booster-what-heading">
+                    {t("aiChatSpeedBooster.sections.whatTitle")}
                 </h2>
-                <p>{t("aiChatSpeedBoost.sections.whatText")}</p>
+                <p>{t("aiChatSpeedBooster.sections.whatText")}</p>
             </section>
 
             <section
-                className="ai-chat-speed-boost-image"
-                aria-labelledby="ai-chat-speed-boost-image-heading"
+                className="ai-chat-speed-booster-image"
+                aria-labelledby="ai-chat-speed-booster-image-heading"
             >
-                <h2 id="ai-chat-speed-boost-image-heading" className="sr-only">
-                    {t("aiChatSpeedBoost.sections.screenshotTitle")}
+                <h2 id="ai-chat-speed-booster-image-heading" className="sr-only">
+                    {t("aiChatSpeedBooster.sections.screenshotTitle")}
                 </h2>
                 <figure>
                     <ImageBorder
-                        src="/Projects/ai-chat-speed-boost/speed-booster-popup.png"
-                        alt={t("aiChatSpeedBoost.image.alt")}
+                        src="/Projects/ai-chat-speed-booster/speed-booster-popup.png"
+                        alt={t("aiChatSpeedBooster.image.alt")}
                     />
-                    <figcaption>{t("aiChatSpeedBoost.image.caption")}</figcaption>
+                    <figcaption>{t("aiChatSpeedBooster.image.caption")}</figcaption>
                 </figure>
             </section>
 
 
             <section
                 className="project-section"
-                aria-labelledby="ai-chat-speed-boost-settings-heading"
+                aria-labelledby="ai-chat-speed-booster-settings-heading"
             >
-                <h2 id="ai-chat-speed-boost-settings-heading">
-                    {t("aiChatSpeedBoost.sections.settingsTitle")}
+                <h2 id="ai-chat-speed-booster-settings-heading">
+                    {t("aiChatSpeedBooster.sections.settingsTitle")}
                 </h2>
-                <ul className="ai-chat-speed-boost-feature-list" role="list">
+                <ul className="ai-chat-speed-booster-feature-list" role="list">
                     <li>
                         <div>
-                            <strong>{t("aiChatSpeedBoost.settings.visibleTitle")}</strong>
-                            <p>{t("aiChatSpeedBoost.settings.visibleText")}</p>
+                            <strong>{t("aiChatSpeedBooster.settings.visibleTitle")}</strong>
+                            <p>{t("aiChatSpeedBooster.settings.visibleText")}</p>
                         </div>
                     </li>
                     <li>
                         <div>
-                            <strong>{t("aiChatSpeedBoost.settings.batchTitle")}</strong>
-                            <p>{t("aiChatSpeedBoost.settings.batchText")}</p>
+                            <strong>{t("aiChatSpeedBooster.settings.batchTitle")}</strong>
+                            <p>{t("aiChatSpeedBooster.settings.batchText")}</p>
                         </div>
                     </li>
                     <li>
                         <div>
-                            <strong>{t("aiChatSpeedBoost.settings.toggleTitle")}</strong>
-                            <p>{t("aiChatSpeedBoost.settings.toggleText")}</p>
+                            <strong>{t("aiChatSpeedBooster.settings.toggleTitle")}</strong>
+                            <p>{t("aiChatSpeedBooster.settings.toggleText")}</p>
                         </div>
                     </li>
                 </ul>
@@ -120,34 +120,34 @@ export default function AIChatSpeedBoost() {
 
             <section
                 className="project-section"
-                aria-labelledby="ai-chat-speed-boost-how-heading"
+                aria-labelledby="ai-chat-speed-booster-how-heading"
             >
-                <h2 id="ai-chat-speed-boost-how-heading">
-                    {t("aiChatSpeedBoost.sections.howTitle")}
+                <h2 id="ai-chat-speed-booster-how-heading">
+                    {t("aiChatSpeedBooster.sections.howTitle")}
                 </h2>
-                <ul className="ai-chat-speed-boost-feature-list" role="list">
+                <ul className="ai-chat-speed-booster-feature-list" role="list">
                     <li>
                         <div>
-                            <strong>{t("aiChatSpeedBoost.how.lazyTitle")}</strong>
-                            <p>{t("aiChatSpeedBoost.how.lazyText")}</p>
+                            <strong>{t("aiChatSpeedBooster.how.lazyTitle")}</strong>
+                            <p>{t("aiChatSpeedBooster.how.lazyText")}</p>
                         </div>
                     </li>
                     <li>
                         <div>
-                            <strong>{t("aiChatSpeedBoost.how.hiddenTitle")}</strong>
-                            <p>{t("aiChatSpeedBoost.how.hiddenText")}</p>
+                            <strong>{t("aiChatSpeedBooster.how.hiddenTitle")}</strong>
+                            <p>{t("aiChatSpeedBooster.how.hiddenText")}</p>
                         </div>
                     </li>
                     <li>
                         <div>
-                            <strong>{t("aiChatSpeedBoost.how.loadMoreTitle")}</strong>
-                            <p>{t("aiChatSpeedBoost.how.loadMoreText")}</p>
+                            <strong>{t("aiChatSpeedBooster.how.loadMoreTitle")}</strong>
+                            <p>{t("aiChatSpeedBooster.how.loadMoreText")}</p>
                         </div>
                     </li>
                     <li>
                         <div>
-                            <strong>{t("aiChatSpeedBoost.how.fifoTitle")}</strong>
-                            <p>{t("aiChatSpeedBoost.how.fifoText")}</p>
+                            <strong>{t("aiChatSpeedBooster.how.fifoTitle")}</strong>
+                            <p>{t("aiChatSpeedBooster.how.fifoText")}</p>
                         </div>
                     </li>
                 </ul>
@@ -156,56 +156,56 @@ export default function AIChatSpeedBoost() {
 
             <section
                 className="project-section"
-                aria-labelledby="ai-chat-speed-boost-privacy-heading"
+                aria-labelledby="ai-chat-speed-booster-privacy-heading"
             >
-                <h2 id="ai-chat-speed-boost-privacy-heading">
-                    {t("aiChatSpeedBoost.sections.privacyTitle")}
+                <h2 id="ai-chat-speed-booster-privacy-heading">
+                    {t("aiChatSpeedBooster.sections.privacyTitle")}
                 </h2>
-                <div className="ai-chat-speed-boost-privacy-card">
+                <div className="ai-chat-speed-booster-privacy-card">
                     <ul>
-                        <li>{t("aiChatSpeedBoost.privacy.noRead")}</li>
-                        <li>{t("aiChatSpeedBoost.privacy.noAnalytics")}</li>
-                        <li>{t("aiChatSpeedBoost.privacy.localStorage")}</li>
-                        <li>{t("aiChatSpeedBoost.privacy.openSource")}</li>
+                        <li>{t("aiChatSpeedBooster.privacy.noRead")}</li>
+                        <li>{t("aiChatSpeedBooster.privacy.noAnalytics")}</li>
+                        <li>{t("aiChatSpeedBooster.privacy.localStorage")}</li>
+                        <li>{t("aiChatSpeedBooster.privacy.openSource")}</li>
                     </ul>
                 </div>
             </section>
 
             <section
                 className="project-section"
-                aria-labelledby="ai-chat-speed-boost-tech-heading"
+                aria-labelledby="ai-chat-speed-booster-tech-heading"
             >
-                <h2 id="ai-chat-speed-boost-tech-heading">
-                    {t("aiChatSpeedBoost.sections.techTitle")}
+                <h2 id="ai-chat-speed-booster-tech-heading">
+                    {t("aiChatSpeedBooster.sections.techTitle")}
                 </h2>
-                <div className="ai-chat-speed-boost-tech-card">
-                    <p>{t("aiChatSpeedBoost.tech.text")}</p>
+                <div className="ai-chat-speed-booster-tech-card">
+                    <p>{t("aiChatSpeedBooster.tech.text")}</p>
                 </div>
             </section>
 
             <section
                 className="project-section"
-                aria-labelledby="ai-chat-speed-boost-build-heading"
+                aria-labelledby="ai-chat-speed-booster-build-heading"
             >
-                <h2 id="ai-chat-speed-boost-build-heading">
-                    {t("aiChatSpeedBoost.sections.buildTitle")}
+                <h2 id="ai-chat-speed-booster-build-heading">
+                    {t("aiChatSpeedBooster.sections.buildTitle")}
                 </h2>
-                <p>{t("aiChatSpeedBoost.build.p1")}</p>
-                <p>{t("aiChatSpeedBoost.build.p2")}</p>
-                <p>{t("aiChatSpeedBoost.build.p3")}</p>
+                <p>{t("aiChatSpeedBooster.build.p1")}</p>
+                <p>{t("aiChatSpeedBooster.build.p2")}</p>
+                <p>{t("aiChatSpeedBooster.build.p3")}</p>
             </section>
 
             <section
-                className="project-section ai-chat-speed-boost-code-section"
-                aria-labelledby="ai-chat-speed-boost-code-heading"
+                className="project-section ai-chat-speed-booster-code-section"
+                aria-labelledby="ai-chat-speed-booster-code-heading"
             >
-                <h2 id="ai-chat-speed-boost-code-heading">
-                    {t("aiChatSpeedBoost.sections.codeTitle")}
+                <h2 id="ai-chat-speed-booster-code-heading">
+                    {t("aiChatSpeedBooster.sections.codeTitle")}
                 </h2>
-                <p>{t("aiChatSpeedBoost.code.intro")}</p>
+                <p>{t("aiChatSpeedBooster.code.intro")}</p>
 
-                <h3>{t("aiChatSpeedBoost.code.messageManagerTitle")}</h3>
-                <p>{t("aiChatSpeedBoost.code.messageManagerText")}</p>
+                <h3>{t("aiChatSpeedBooster.code.messageManagerTitle")}</h3>
+                <p>{t("aiChatSpeedBooster.code.messageManagerText")}</p>
                 <pre className="code-block">
                     <code
                         className="code-highlight"
@@ -232,8 +232,8 @@ export default function AIChatSpeedBoost() {
                     />
                 </pre>
 
-                <h3>{t("aiChatSpeedBoost.code.fifoTitle")}</h3>
-                <p>{t("aiChatSpeedBoost.code.fifoText")}</p>
+                <h3>{t("aiChatSpeedBooster.code.fifoTitle")}</h3>
+                <p>{t("aiChatSpeedBooster.code.fifoText")}</p>
                 <pre className="code-block">
                     <code
                         className="code-highlight"
@@ -253,8 +253,8 @@ export default function AIChatSpeedBoost() {
                     />
                 </pre>
 
-                <h3>{t("aiChatSpeedBoost.code.domObserverTitle")}</h3>
-                <p>{t("aiChatSpeedBoost.code.domObserverText")}</p>
+                <h3>{t("aiChatSpeedBooster.code.domObserverTitle")}</h3>
+                <p>{t("aiChatSpeedBooster.code.domObserverText")}</p>
                 <pre className="code-block">
                     <code
                         className="code-highlight"
@@ -289,8 +289,8 @@ private processMutations(mutations: MutationRecord[]): void {
                     />
                 </pre>
 
-                <h3>{t("aiChatSpeedBoost.code.backgroundTitle")}</h3>
-                <p>{t("aiChatSpeedBoost.code.backgroundText")}</p>
+                <h3>{t("aiChatSpeedBooster.code.backgroundTitle")}</h3>
+                <p>{t("aiChatSpeedBooster.code.backgroundText")}</p>
                 <pre className="code-block">
                     <code
                         className="code-highlight"

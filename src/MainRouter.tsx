@@ -4,7 +4,7 @@ import ProjectLayout from "./components/ProjectLayout";
 import Giftboard from "./pages/projects/Giftboard";
 import CustomPartyApp from "./pages/projects/CustomPartyApp";
 import Nolicom from "./pages/projects/Nolicom";
-import AIChatSpeedBoost from "./pages/projects/AIChatSpeedBoost";
+import AIChatSpeedBooster from "./pages/projects/AIChatSpeedBooster";
 
 export function MainRouter() {
   return (
@@ -15,7 +15,7 @@ export function MainRouter() {
           <Route path="giftboard" element={<Giftboard />} />
           <Route path="custom-party-app" element={<CustomPartyApp />} />
           <Route path="nolicom" element={<Nolicom />} />
-          <Route path="ai-chat-speed-boost" element={<AIChatSpeedBoost />} />
+          <Route path="ai-chat-speed-booster" element={<AIChatSpeedBooster />} />
         </Route>
       </Routes>
     </BrowserRouter>

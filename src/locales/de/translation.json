@@ -130,11 +130,11 @@
         "aria": "Retro ESP-NOW Desk Notifier Projektseite öffnen",
         "imageAlt": "Retro ESP-NOW Desk Notifier als montierter Prototyp"
       },
-      "aiChatSpeedBoost": {
-        "title": "AI Chat Speed Boost",
+      "aiChatSpeedBooster": {
+        "title": "AI Chat Speed Booster",
         "description": "Browser-Erweiterung, die lange KI-Chat-Unterhaltungen beschleunigt, indem Nachrichten lazy gerendert werden. Nur die letzten N Nachrichten werden angezeigt; ältere laden bei Bedarf.",
-        "aria": "AI Chat Speed Boost Projektseite öffnen",
-        "imageAlt": "AI Chat Speed Boost Popup-Screenshot"
+        "aria": "AI Chat Speed Booster Projektseite öffnen",
+        "imageAlt": "AI Chat Speed Booster Popup-Screenshot"
       }
     }
   },
@@ -368,14 +368,14 @@
       "brokenCaption": "Gebrochenes Gehäuse"
     }
   },
-  "aiChatSpeedBoost": {
+  "aiChatSpeedBooster": {
     "hero": {
-      "title": "AI Chat Speed Boost",
+      "title": "AI Chat Speed Booster",
       "tagline": "Eine Browser-Erweiterung, die lange KI-Chat-Unterhaltungen wieder schnell macht, indem nur die Nachrichten gerendert werden, die du gerade brauchst."
     },
     "sections": {
       "whatTitle": "Was es macht",
-      "whatText": "Lange KI-Chat-Unterhaltungen machen den Browser langsam. AI Chat Speed Boost behebt das, indem nur die neuesten Nachrichten gerendert werden und der Rest bei Bedarf geladen wird.",
+      "whatText": "Lange KI-Chat-Unterhaltungen machen den Browser langsam. AI Chat Speed Booster behebt das, indem nur die neuesten Nachrichten gerendert werden und der Rest bei Bedarf geladen wird.",
       "howTitle": "So funktioniert es",
       "settingsTitle": "Einstellungen",
       "privacyTitle": "Datenschutz",
@@ -412,7 +412,7 @@
       "text": "Browser-Extension-Architektur mit Content-Script und Background-Message-Bus. Einstellungen werden im lokalen Browser-Speicher gehalten. Erfolgreich getestet auf chatgpt.com und claude.ai in Chrome, Firefox und Safari."
     },
     "image": {
-      "alt": "AI Chat Speed Boost Erweiterungs-Popup",
+      "alt": "AI Chat Speed Booster Erweiterungs-Popup",
       "caption": "Erweiterungs-Popup"
     },
     "build": {

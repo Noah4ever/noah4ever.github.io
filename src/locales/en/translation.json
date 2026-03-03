@@ -130,11 +130,11 @@
         "aria": "Open ESP32 Retro Desk Notifier project page",
         "imageAlt": "ESP32 Retro Desk Notifier assembled prototype"
       },
-      "aiChatSpeedBoost": {
-        "title": "AI Chat Speed Boost",
+      "aiChatSpeedBooster": {
+        "title": "AI Chat Speed Booster",
         "description": "Browser extension that speeds up long AI chat conversations by lazily rendering messages. Only the last N messages are shown; older ones load on demand.",
-        "aria": "Open AI Chat Speed Boost project page",
-        "imageAlt": "AI Chat Speed Boost popup screenshot"
+        "aria": "Open AI Chat Speed Booster project page",
+        "imageAlt": "AI Chat Speed Booster popup screenshot"
       }
     }
   },
@@ -368,14 +368,14 @@
       "brokenCaption": "Broken case"
     }
   },
-  "aiChatSpeedBoost": {
+  "aiChatSpeedBooster": {
     "hero": {
-      "title": "AI Chat Speed Boost",
+      "title": "AI Chat Speed Booster",
       "tagline": "A browser extension that makes long AI chat conversations fast again by only rendering the messages you actually need."
     },
     "sections": {
       "whatTitle": "What it does",
-      "whatText": "Long AI chat conversations slow your browser to a crawl. AI Chat Speed Boost fixes this by only rendering the most recent messages and loading the rest on demand.",
+      "whatText": "Long AI chat conversations slow your browser to a crawl. AI Chat Speed Booster fixes this by only rendering the most recent messages and loading the rest on demand.",
       "howTitle": "How it works",
       "settingsTitle": "Settings",
       "privacyTitle": "Privacy",
@@ -412,7 +412,7 @@
       "text": "Browser extension architecture with a content script and background message bus. Settings are persisted via local browser storage. Tested successfully on chatgpt.com and claude.ai in Chrome, Firefox, and Safari."
     },
     "image": {
-      "alt": "AI Chat Speed Boost extension popup",
+      "alt": "AI Chat Speed Booster extension popup",
       "caption": "Extension popup"
     },
     "build": {

@@ -446,14 +446,14 @@ export default function Home() {
             </li>
             <li>
               <ProjectCardLink
-                title={t("home.projects.aiChatSpeedBoost.title")}
-                description={t("home.projects.aiChatSpeedBoost.description")}
-                imageSrc="/Projects/ai-chat-speed-boost/speed-booster-popup.png"
-                href="/projects/ai-chat-speed-boost"
-                ariaLabel={t("home.projects.aiChatSpeedBoost.aria")}
-                imageAlt={t("home.projects.aiChatSpeedBoost.imageAlt")}
+                title={t("home.projects.aiChatSpeedBooster.title")}
+                description={t("home.projects.aiChatSpeedBooster.description")}
+                imageSrc="/Projects/ai-chat-speed-booster/speed-booster-popup.png"
+                href="/projects/ai-chat-speed-booster"
+                ariaLabel={t("home.projects.aiChatSpeedBooster.aria")}
+                imageAlt={t("home.projects.aiChatSpeedBooster.imageAlt")}
                 tags={["Browser Extension", "TypeScript"]}
-                githubLink="https://github.com/Noah4ever/ai-chat-speed-boost"
+                githubLink="https://github.com/Noah4ever/ai-chat-speed-booster"
               />
             </li>
             <li>
