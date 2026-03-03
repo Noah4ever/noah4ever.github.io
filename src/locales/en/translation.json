@@ -409,7 +409,7 @@
       "openSource": "Fully open source."
     },
     "tech": {
-      "text": "Chrome Manifest V3 extension. Content script runs at document_idle on chatgpt.com. Settings are persisted via chrome.storage. Requires Chrome 110 or later."
+      "text": "Browser extension architecture with a content script and background message bus. Settings are persisted via local browser storage. Tested successfully on chatgpt.com and claude.ai in Chrome, Firefox, and Safari."
     },
     "image": {
       "alt": "AI Chat Speed Boost extension popup",

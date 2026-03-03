@@ -452,7 +452,7 @@ export default function Home() {
                 href="/projects/ai-chat-speed-boost"
                 ariaLabel={t("home.projects.aiChatSpeedBoost.aria")}
                 imageAlt={t("home.projects.aiChatSpeedBoost.imageAlt")}
-                tags={["Chrome Extension", "JavaScript"]}
+                tags={["Browser Extension", "TypeScript"]}
                 githubLink="https://github.com/Noah4ever/ai-chat-speed-boost"
               />
             </li>

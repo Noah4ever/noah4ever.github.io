@@ -208,10 +208,10 @@
           --project-tag-bg: var(--tag-3d-printing-bg);
         }
 
-        &.project-tag--chrome-extension {
-          --project-tag-text: var(--tag-chrome-extension-text);
-          --project-tag-border: var(--tag-chrome-extension-border);
-          --project-tag-bg: var(--tag-chrome-extension-bg);
+        &.project-tag--browser-extension {
+          --project-tag-text: var(--tag-browser-extension-text);
+          --project-tag-border: var(--tag-browser-extension-border);
+          --project-tag-bg: var(--tag-browser-extension-bg);
         }
 
         &.project-tag--javascript {
