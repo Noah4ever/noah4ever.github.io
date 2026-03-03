@@ -2,17 +2,7 @@ import ImageBorder from "@/components/ImageBorder";
 import "@styles/pages/ai_chat_speed_boost.scss";
 import {
     IoRocketOutline as RocketIcon,
-    IoSettingsOutline as SettingsIcon,
-    IoEyeOutline as VisibleIcon,
-    IoLayersOutline as BatchIcon,
-    IoToggleOutline as ToggleIcon,
-    IoShieldCheckmarkOutline as PrivacyIcon,
     IoLogoGithub as GithubIcon,
-    IoFlashOutline as FlashIcon,
-    IoArrowUpOutline as LoadMoreIcon,
-    IoSwapVerticalOutline as FifoIcon,
-    IoConstructOutline as BuildIcon,
-    IoCodeSlashOutline as CodeIcon,
 } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
 
@@ -108,27 +98,18 @@ export default function AIChatSpeedBoost() {
                 </h2>
                 <ul className="ai-chat-speed-boost-feature-list" role="list">
                     <li>
-                        <span aria-hidden="true">
-                            <VisibleIcon />
-                        </span>
                         <div>
                             <strong>{t("aiChatSpeedBoost.settings.visibleTitle")}</strong>
                             <p>{t("aiChatSpeedBoost.settings.visibleText")}</p>
                         </div>
                     </li>
                     <li>
-                        <span aria-hidden="true">
-                            <BatchIcon />
-                        </span>
                         <div>
                             <strong>{t("aiChatSpeedBoost.settings.batchTitle")}</strong>
                             <p>{t("aiChatSpeedBoost.settings.batchText")}</p>
                         </div>
                     </li>
                     <li>
-                        <span aria-hidden="true">
-                            <ToggleIcon />
-                        </span>
                         <div>
                             <strong>{t("aiChatSpeedBoost.settings.toggleTitle")}</strong>
                             <p>{t("aiChatSpeedBoost.settings.toggleText")}</p>
@@ -146,36 +127,24 @@ export default function AIChatSpeedBoost() {
                 </h2>
                 <ul className="ai-chat-speed-boost-feature-list" role="list">
                     <li>
-                        <span aria-hidden="true">
-                            <FlashIcon />
-                        </span>
                         <div>
                             <strong>{t("aiChatSpeedBoost.how.lazyTitle")}</strong>
                             <p>{t("aiChatSpeedBoost.how.lazyText")}</p>
                         </div>
                     </li>
                     <li>
-                        <span aria-hidden="true">
-                            <VisibleIcon />
-                        </span>
                         <div>
                             <strong>{t("aiChatSpeedBoost.how.hiddenTitle")}</strong>
                             <p>{t("aiChatSpeedBoost.how.hiddenText")}</p>
                         </div>
                     </li>
                     <li>
-                        <span aria-hidden="true">
-                            <LoadMoreIcon />
-                        </span>
                         <div>
                             <strong>{t("aiChatSpeedBoost.how.loadMoreTitle")}</strong>
                             <p>{t("aiChatSpeedBoost.how.loadMoreText")}</p>
                         </div>
                     </li>
                     <li>
-                        <span aria-hidden="true">
-                            <FifoIcon />
-                        </span>
                         <div>
                             <strong>{t("aiChatSpeedBoost.how.fifoTitle")}</strong>
                             <p>{t("aiChatSpeedBoost.how.fifoText")}</p>
@@ -193,9 +162,6 @@ export default function AIChatSpeedBoost() {
                     {t("aiChatSpeedBoost.sections.privacyTitle")}
                 </h2>
                 <div className="ai-chat-speed-boost-privacy-card">
-                    <div className="ai-chat-speed-boost-privacy-icon" aria-hidden="true">
-                        <PrivacyIcon />
-                    </div>
                     <ul>
                         <li>{t("aiChatSpeedBoost.privacy.noRead")}</li>
                         <li>{t("aiChatSpeedBoost.privacy.noAnalytics")}</li>
@@ -213,9 +179,6 @@ export default function AIChatSpeedBoost() {
                     {t("aiChatSpeedBoost.sections.techTitle")}
                 </h2>
                 <div className="ai-chat-speed-boost-tech-card">
-                    <div className="ai-chat-speed-boost-tech-icon" aria-hidden="true">
-                        <SettingsIcon />
-                    </div>
                     <p>{t("aiChatSpeedBoost.tech.text")}</p>
                 </div>
             </section>
@@ -225,7 +188,6 @@ export default function AIChatSpeedBoost() {
                 aria-labelledby="ai-chat-speed-boost-build-heading"
             >
                 <h2 id="ai-chat-speed-boost-build-heading">
-                    <BuildIcon className="ai-chat-speed-boost-section-icon" aria-hidden="true" />
                     {t("aiChatSpeedBoost.sections.buildTitle")}
                 </h2>
                 <p>{t("aiChatSpeedBoost.build.p1")}</p>
@@ -238,7 +200,6 @@ export default function AIChatSpeedBoost() {
                 aria-labelledby="ai-chat-speed-boost-code-heading"
             >
                 <h2 id="ai-chat-speed-boost-code-heading">
-                    <CodeIcon className="ai-chat-speed-boost-section-icon" aria-hidden="true" />
                     {t("aiChatSpeedBoost.sections.codeTitle")}
                 </h2>
                 <p>{t("aiChatSpeedBoost.code.intro")}</p>
