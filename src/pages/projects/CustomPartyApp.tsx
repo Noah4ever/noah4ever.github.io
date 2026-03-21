@@ -28,6 +28,11 @@ export default function CustomPartyApp() {
               <a href="..." className="view-github-badge">View on GitHub</a>
           */}
         </div>
+        <ul className="project-hero-tags">
+          <li className="project-tag--react-native">React Native</li>
+          <li className="project-tag--typescript">TypeScript</li>
+          <li className="project-tag--nodejs">Node.js</li>
+        </ul>
         <p className="custom-party-tagline">{t("customParty.hero.tagline")}</p>
       </section>
 

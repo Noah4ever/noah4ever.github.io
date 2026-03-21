@@ -132,9 +132,21 @@
       },
       "aiChatSpeedBooster": {
         "title": "AI Chat Speed Booster",
-        "description": "Browser extension that speeds up long AI chat conversations by lazily rendering messages. Only the last N messages are shown; older ones load on demand.",
+        "description": "Browser extension for ChatGPT, Claude, Gemini, and custom sites. New fetch interception + LRU chat cache keeps long conversations fast.",
         "aria": "Open AI Chat Speed Booster project page",
         "imageAlt": "AI Chat Speed Booster popup screenshot"
+      },
+      "sshconfigLint": {
+        "title": "sshconfig-lint",
+        "description": "Rust-based SSH config linter that catches common mistakes like duplicate hosts, weak algorithms, wildcard ordering issues, and Include cycles.",
+        "aria": "Open sshconfig-lint project page",
+        "imageAlt": "sshconfig-lint terminal output preview"
+      },
+      "nodeRunner": {
+        "title": "Node Runner",
+        "description": "Blender addon + web platform to share, browse, save, and rate shader node trees.",
+        "aria": "Open Node Runner project page",
+        "imageAlt": "Node Runner discover page preview"
       }
     }
   },
@@ -371,36 +383,40 @@
   "aiChatSpeedBooster": {
     "hero": {
       "title": "AI Chat Speed Booster",
-      "tagline": "A browser extension that makes long AI chat conversations fast again by only rendering the messages you actually need."
+      "tagline": "A browser extension that keeps long chats fast on ChatGPT, Claude, Gemini, and custom AI sites using fetch interception, lazy rendering, and an LRU chat cache."
     },
     "sections": {
       "whatTitle": "What it does",
-      "whatText": "Long AI chat conversations slow your browser to a crawl. AI Chat Speed Booster fixes this by only rendering the most recent messages and loading the rest on demand.",
+      "whatText": "AI Chat Speed Booster keeps large conversations responsive by rendering only recent messages first, then loading older ones on demand. The latest rewrite added fetch interception to trim heavy chat payloads before render, plus an LRU cache for faster chat switching. The project is fully open source on GitHub.",
       "howTitle": "How it works",
-      "settingsTitle": "Settings",
+      "settingsTitle": "Install and settings",
       "privacyTitle": "Privacy",
       "techTitle": "Tech",
       "screenshotTitle": "Screenshot",
-      "buildTitle": "How I built it",
+      "buildTitle": "Build and testing",
       "codeTitle": "Under the hood"
     },
     "how": {
-      "lazyTitle": "Lazy rendering",
-      "lazyText": "Only the last 10 messages are shown when you open a conversation (configurable from 1 to 200).",
-      "hiddenTitle": "Zero layout cost",
-      "hiddenText": "Older messages are hidden before the browser renders them, so there's no layout or paint overhead.",
-      "loadMoreTitle": "Load More button",
-      "loadMoreText": "A \"Load More\" button appears at the top. Clicking that reveals older messages in batches.",
-      "fifoTitle": "FIFO for new messages",
-      "fifoText": "When a new message arrives, the oldest visible one is hidden automatically to keep the count steady."
+      "lazyTitle": "Fetch interception",
+      "lazyText": "Fast Mode intercepts chat/API responses and trims older turns before the app renders them, reducing load time in very long conversations.",
+      "hiddenTitle": "LRU chat cache",
+      "hiddenText": "The extension keeps up to 5 recent chats in an LRU cache so switching between active chats feels instant.",
+      "loadMoreTitle": "Load more flow",
+      "loadMoreText": "Recent messages appear first. Older messages are hidden and can be revealed at the top in configurable batches.",
+      "fifoTitle": "Multi-site support",
+      "fifoText": "Site definitions live in one config file and currently include tested support for ChatGPT, Claude, and Gemini."
     },
     "settings": {
-      "visibleTitle": "Visible messages",
-      "visibleText": "How many messages to show at a time (default: 10).",
-      "batchTitle": "Batch size",
-      "batchText": "How many messages to reveal per \"Load More\" click (default: 5).",
-      "toggleTitle": "Enable / disable",
-      "toggleText": "Turn the extension on or off without uninstalling."
+      "visibleTitle": "Store installs",
+      "visibleText": "Available via the official browser stores with automatic updates. Manual zip install is also supported.",
+      "batchTitle": "Popup settings",
+      "batchText": "Visible messages (1-200), Load More batch (1-50), status indicator toggle, and badge position for 4 corners.",
+      "toggleTitle": "Configurable sites",
+      "toggleText": "Add any AI chat app by editing one sites.config.json entry (hostnames, URL patterns, selectors) and rebuilding.",
+      "chromeStore": "Chrome Web Store",
+      "firefoxStore": "Firefox Add-ons",
+      "reviewDelay": "When AI chat websites change their UI, extension fixes can take a few days to appear in the Chrome Web Store because updates go through review checks.",
+      "githubRelease": "The latest GitHub release is usually available first and should work immediately while store review is pending."
     },
     "privacy": {
       "noRead": "No message content is ever read, stored, or transmitted.",
@@ -409,27 +425,131 @@
       "openSource": "Fully open source."
     },
     "tech": {
-      "text": "Browser extension architecture with a content script and background message bus. Settings are persisted via local browser storage. Tested successfully on chatgpt.com and claude.ai in Chrome, Firefox, and Safari."
+      "text": "TypeScript + esbuild browser extension. Content scripts manage DOM visibility and fetch interception, background scripts broadcast config updates, and build scripts inject URL patterns into all browser manifests from one site config source."
     },
     "image": {
       "alt": "AI Chat Speed Booster extension popup",
       "caption": "Extension popup"
     },
     "build": {
-      "p1": "I started with a rough layout in Penpot, my selfhosted design tool, to figure out the popup proportions and control placement before writing any code. Once the design felt right I moved to plain HTML, CSS, and TypeScript. No framework, just a popup.html that talks to the background service worker through the browser extension messaging API.",
-      "p2": "The content script is the core. It watches the DOM for conversation turns via a MutationObserver, tracks every message element in a flat array, and hides everything beyond the configured limit by setting display:none before the browser ever paints them. That keeps layout cost at zero no matter how long the conversation is.",
-      "p3": "The background script acts as a message bus: it stores settings in browser storage, forwards config changes to every open AI chat tab, and relays status requests from the popup to the active tab's content script. Everything stays local. No network calls, no data leaving the browser."
+      "p1": "Build targets: Chrome, Firefox, Safari, and Edge. Node.js 18+ is required. You can run npm run build:all or build one target (for example npm run build:chrome).",
+      "p2": "Automated tests use Playwright and cover dist validation, extension behavior on mock pages, and optional live integration tests with account auth profile reuse.",
+      "p3": "The latest major upgrade focused on fetch interception, LRU chat caching, and stable support for Gemini + Claude while keeping the extension fully local and privacy-first."
     },
     "code": {
-      "intro": "Here are the key pieces that make the extension work. All of this runs locally in your browser.",
-      "messageManagerTitle": "Visibility calculation",
-      "messageManagerText": "When the config changes or a conversation loads, recalculateVisibility walks the tracked messages array and hides everything except the last N entries. Simple index math, no DOM queries.",
-      "fifoTitle": "FIFO enforcement",
-      "fifoText": "When a new message arrives and the visible count exceeds the limit, enforceLimit hides the oldest visible messages one by one until the count is back within bounds.",
-      "domObserverTitle": "DOM observation",
-      "domObserverText": "A MutationObserver watches document.body for added and removed nodes. Mutations are debounced to avoid unnecessary work, then filtered for conversation turn elements.",
-      "backgroundTitle": "Config broadcasting",
-      "backgroundText": "When settings change, the background script queries all matching tabs and sends the updated config to each content script so every open conversation reacts immediately."
+      "intro": "Core pieces from the rewritten architecture. Everything runs locally in the browser extension runtime.",
+      "messageManagerTitle": "Fetch interception + payload trim",
+      "messageManagerText": "Fast Mode intercepts JSON responses, trims old turns, and returns a lighter response body so chats stay responsive.",
+      "fifoTitle": "LRU chat cache",
+      "fifoText": "A small LRU cache keeps the 5 most recent chat DOM/message snapshots for fast chat switching.",
+      "domObserverTitle": "Site config resolver",
+      "domObserverText": "Hostnames and selectors are resolved from a shared sites config so ChatGPT, Claude, Gemini, and new sites can reuse the same pipeline.",
+      "backgroundTitle": "Cross-site config broadcast",
+      "backgroundText": "Background messaging broadcasts config updates to all tabs that match injected URL patterns across supported AI chat sites."
+    }
+  },
+  "sshconfigLint": {
+    "hero": {
+      "title": "sshconfig-lint",
+      "tagline": "A Rust SSH config linter that checks ~/.ssh/config for common errors before they break your SSH workflow."
+    },
+    "sections": {
+      "whatTitle": "What it does",
+      "whatText": "sshconfig-lint scans your SSH config and included files for practical issues: duplicate Host blocks, missing IdentityFile paths, wildcard ordering, weak algorithms, duplicate directives, insecure options, unsafe ControlPath patterns, and Include cycles. Output is deterministic and sorted by file and line for clean CI diffs.",
+      "installTitle": "Install",
+      "usageTitle": "Usage",
+      "rulesTitle": "Rules",
+      "devTitle": "Project layout",
+      "screenshotTitle": "Terminal preview"
+    },
+    "image": {
+      "alt": "sshconfig-lint output screenshot",
+      "caption": "Real-world lint output"
+    },
+    "install": {
+      "scriptTitle": "Install script (Linux/macOS)",
+      "scriptText": "Quick installer from the repository. You can override VERSION or INSTALL_DIR.",
+      "brewTitle": "Homebrew (macOS)",
+      "brewText": "Install via tap, then optionally untap to keep your tap list clean.",
+      "cargoTitle": "Cargo",
+      "cargoText": "Install directly from crates.io using cargo.",
+      "aurTitle": "AUR",
+      "aurText": "Pre-built Arch package: sshconfig-lint-bin."
+    },
+    "usage": {
+      "intro": "CLI supports normal linting, explicit config file paths, JSON output, strict CI mode, and optional Include skipping."
+    },
+    "rules": {
+      "intro": "Each finding has a stable code so you can grep or match in scripts. Example rules include:"
+    },
+    "dev": {
+      "intro": "The codebase is organized for parser/linter maintainability and easy rule expansion."
+    }
+  },
+  "nodeRunner": {
+    "hero": {
+      "title": "Node Runner",
+      "tagline": "A Blender addon and companion website to export/import shader node trees and share them with the community.",
+      "website": "Website",
+      "blenderAddon": "Blender Extensions"
+    },
+    "sections": {
+      "whatTitle": "What it is",
+      "whatText": "Node Runner is a Blender addon that lets you export selected nodes as text instead of sending a .blend file. It works across different node tree types and pairs with node-runner.thiering.org where you can upload and discover node trees for free.",
+      "galleryTitle": "Web platform",
+      "sharingTitle": "Sharing model",
+      "videoTitle": "Addon workflow",
+      "featuresTitle": "Features",
+      "exportTitle": "Export",
+      "importTitle": "Import",
+      "formatsTitle": "Formats",
+      "howTitle": "How it works",
+      "aiPromptTitle": "AI prompt format"
+    },
+    "media": {
+      "discoverAlt": "Node Runner discover page",
+      "discoverCaption": "Browse and discover node trees",
+      "uploadAlt": "Node Runner uploaded node tree view",
+      "uploadCaption": "View and manage an uploaded node tree",
+      "exportVideoCaption": "Export shader nodes in Blender",
+      "importVideoCaption": "Import shader nodes in Blender"
+    },
+    "sharing": {
+      "p1": "You can upload node trees for free without creating an account.",
+      "p2": "If you want to save and edit your uploads later, you can sign in for free with GitHub or Google."
+    },
+    "features": {
+      "exportFormats": "Export selected nodes as Hash, JSON, AI JSON (stripped JSON for AI), or XML.",
+      "import": "Import shared node data back into Blender.",
+      "treeTypes": "Supports all kinds of Blender node trees.",
+      "clipboard": "Paste node data directly from the clipboard.",
+      "versionChecks": "Checks for version mismatches.",
+      "imagePaths": "Exports linked image paths as absolute paths."
+    },
+    "export": {
+      "step1": "Node Editor > Select Nodes > Right Click > Node Runner > Export",
+      "step2": "The exported result is copied directly to your clipboard."
+    },
+    "import": {
+      "step1": "Node Editor > Right Click > Node Runner > Import",
+      "step2": "If exported text is already in your clipboard: Node Editor > Right Click > Node Runner > Paste from Clipboard",
+      "step3": "Paste from clipboard is the fastest route for most shared snippets."
+    },
+    "formats": {
+      "hash": "Hash for compact sharing.",
+      "json": "JSON for readable structured data.",
+      "xml": "XML for alternative structured workflows."
+    },
+    "how": {
+      "export": "Export selected shader nodes from Blender into a compact shareable string.",
+      "import": "Import node trees back into Blender using Node Runner Import.",
+      "share": "Share strings directly or publish trees on node-runner.thiering.org.",
+      "account": "Guest uploads are free; login with GitHub/Google to edit and keep your uploads.",
+      "social": "Community users can view, save, and rate uploaded node trees."
+    },
+    "aiPrompt": {
+      "intro": "To generate valid Node Runner AI JSON with an LLM, prepend your request with the addon prompt and require strict JSON output.",
+      "rules": "Output only JSON (no explanation, no code fences). Use valid Blender bl_idname values, keep links/socket names exact, and include only non-default inputs/settings when possible."
     }
   }
 }

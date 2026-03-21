@@ -132,9 +132,21 @@
       },
       "aiChatSpeedBooster": {
         "title": "AI Chat Speed Booster",
-        "description": "Browser-Erweiterung, die lange KI-Chat-Unterhaltungen beschleunigt, indem Nachrichten lazy gerendert werden. Nur die letzten N Nachrichten werden angezeigt; ältere laden bei Bedarf.",
+        "description": "Browser-Erweiterung für ChatGPT, Claude, Gemini und eigene Sites. Neues Fetch-Interception + LRU-Chat-Cache halten lange Chats schnell.",
         "aria": "AI Chat Speed Booster Projektseite öffnen",
         "imageAlt": "AI Chat Speed Booster Popup-Screenshot"
+      },
+      "sshconfigLint": {
+        "title": "sshconfig-lint",
+        "description": "Rust-basierter SSH-Config-Linter, der haeufige Fehler wie doppelte Host-Blocks, schwache Algorithmen, Wildcard-Reihenfolge und Include-Zyklen findet.",
+        "aria": "sshconfig-lint Projektseite öffnen",
+        "imageAlt": "sshconfig-lint Terminal-Output Vorschau"
+      },
+      "nodeRunner": {
+        "title": "Node Runner",
+        "description": "Blender-Addon plus Webplattform zum Teilen, Durchsuchen, Speichern und Bewerten von Shader-Node-Trees.",
+        "aria": "Node Runner Projektseite öffnen",
+        "imageAlt": "Node Runner Discover-Page Vorschau"
       }
     }
   },
@@ -371,36 +383,40 @@
   "aiChatSpeedBooster": {
     "hero": {
       "title": "AI Chat Speed Booster",
-      "tagline": "Eine Browser-Erweiterung, die lange KI-Chat-Unterhaltungen wieder schnell macht, indem nur die Nachrichten gerendert werden, die du gerade brauchst."
+      "tagline": "Eine Browser-Erweiterung, die lange Chats auf ChatGPT, Claude, Gemini und eigenen AI-Sites mit Fetch-Interception, Lazy Rendering und LRU-Chat-Cache schnell haelt."
     },
     "sections": {
       "whatTitle": "Was es macht",
-      "whatText": "Lange KI-Chat-Unterhaltungen machen den Browser langsam. AI Chat Speed Booster behebt das, indem nur die neuesten Nachrichten gerendert werden und der Rest bei Bedarf geladen wird.",
+      "whatText": "AI Chat Speed Booster haelt grosse Unterhaltungen reaktionsschnell, indem zuerst nur aktuelle Nachrichten gerendert werden und aeltere bei Bedarf geladen werden. Das grosse Rewrite bringt zusaetzlich Fetch-Interception zum Trimmen schwerer Chat-Payloads vor dem Rendern sowie einen LRU-Cache fuer schnelleren Chat-Wechsel. Das Projekt ist vollstaendig Open Source auf GitHub.",
       "howTitle": "So funktioniert es",
-      "settingsTitle": "Einstellungen",
+      "settingsTitle": "Installation und Einstellungen",
       "privacyTitle": "Datenschutz",
       "techTitle": "Technik",
       "screenshotTitle": "Screenshot",
-      "buildTitle": "Wie ich es gebaut habe",
+      "buildTitle": "Build und Tests",
       "codeTitle": "Unter der Haube"
     },
     "how": {
-      "lazyTitle": "Lazy Rendering",
-      "lazyText": "Beim Öffnen einer Unterhaltung werden nur die letzten 10 Nachrichten angezeigt (konfigurierbar von 1 bis 200).",
-      "hiddenTitle": "Keine Layout-Kosten",
-      "hiddenText": "Ältere Nachrichten werden versteckt, bevor der Browser sie rendert - kein Layout- oder Paint-Overhead.",
-      "loadMoreTitle": "Mehr laden-Button",
-      "loadMoreText": "Oben erscheint ein \"Mehr laden\"-Button - klicken, um ältere Nachrichten in Stapeln einzublenden.",
-      "fifoTitle": "FIFO für neue Nachrichten",
-      "fifoText": "Wenn eine neue Nachricht eintrifft, wird die älteste sichtbare automatisch ausgeblendet, um die Anzahl stabil zu halten."
+      "lazyTitle": "Fetch-Interception",
+      "lazyText": "Fast Mode faengt Chat/API-Antworten ab und trimmt aeltere Turns vor dem Rendern, was Ladezeit bei sehr langen Unterhaltungen spart.",
+      "hiddenTitle": "LRU-Chat-Cache",
+      "hiddenText": "Die Erweiterung haelt bis zu 5 aktuelle Chats in einem LRU-Cache, damit das Wechseln zwischen aktiven Chats direkt reagiert.",
+      "loadMoreTitle": "Mehr laden Flow",
+      "loadMoreText": "Aktuelle Nachrichten erscheinen zuerst. Aeltere Nachrichten werden ausgeblendet und oben in konfigurierbaren Stapeln nachgeladen.",
+      "fifoTitle": "Multi-Site Support",
+      "fifoText": "Site-Definitionen liegen in einer zentralen Config-Datei und enthalten aktuell getesteten Support fuer ChatGPT, Claude und Gemini."
     },
     "settings": {
-      "visibleTitle": "Sichtbare Nachrichten",
-      "visibleText": "Wie viele Nachrichten gleichzeitig angezeigt werden (Standard: 10).",
-      "batchTitle": "Stapelgröße",
-      "batchText": "Wie viele Nachrichten pro \"Mehr laden\"-Klick eingeblendet werden (Standard: 5).",
-      "toggleTitle": "Aktivieren / Deaktivieren",
-      "toggleText": "Die Erweiterung ein- oder ausschalten, ohne sie zu deinstallieren."
+      "visibleTitle": "Store-Installation",
+      "visibleText": "Verfuegbar ueber offizielle Browser-Stores mit automatischen Updates. Manueller Zip-Import ist ebenfalls moeglich.",
+      "batchTitle": "Popup-Einstellungen",
+      "batchText": "Sichtbare Nachrichten (1-200), Mehr-laden-Stapel (1-50), Status-Indikator an/aus und Badge-Position in 4 Ecken.",
+      "toggleTitle": "Konfigurierbare Sites",
+      "toggleText": "Neue AI-Chat-App per einem Eintrag in sites.config.json hinzufuegen (Hostnames, URL-Patterns, Selektoren) und neu builden.",
+      "chromeStore": "Chrome Web Store",
+      "firefoxStore": "Firefox Add-ons",
+      "reviewDelay": "Wenn AI-Chat-Websites ihr UI aendern, koennen Fixes fuer die Extension im Chrome Web Store ein paar Tage dauern, weil Updates durch den Store-Review laufen.",
+      "githubRelease": "Das neueste GitHub-Release ist in der Regel zuerst verfuegbar und sollte sofort funktionieren, waehrend das Store-Review noch laeuft."
     },
     "privacy": {
       "noRead": "Nachrichteninhalte werden nie gelesen, gespeichert oder übertragen.",
@@ -409,27 +425,131 @@
       "openSource": "Vollständig Open Source."
     },
     "tech": {
-      "text": "Browser-Extension-Architektur mit Content-Script und Background-Message-Bus. Einstellungen werden im lokalen Browser-Speicher gehalten. Erfolgreich getestet auf chatgpt.com und claude.ai in Chrome, Firefox und Safari."
+      "text": "TypeScript + esbuild Browser-Extension. Content-Scripts verwalten DOM-Sichtbarkeit und Fetch-Interception, Background-Scripts verteilen Config-Updates, und Build-Skripte injizieren URL-Patterns aus einer zentralen Site-Config in alle Browser-Manifeste."
     },
     "image": {
       "alt": "AI Chat Speed Booster Erweiterungs-Popup",
       "caption": "Erweiterungs-Popup"
     },
     "build": {
-      "p1": "Ich habe mit einem groben Layout in Penpot angefangen, meinem selbstgehosteten Design-Tool, um die Popup-Proportionen und die Platzierung der Bedienelemente festzulegen, bevor ich Code geschrieben habe. Als das Design gepasst hat, habe ich es in reinem HTML, CSS und TypeScript umgesetzt - kein Framework, nur eine popup.html, die über die Browser-Extension-Messaging-API mit dem Background-Service-Worker kommuniziert.",
-      "p2": "Das Content-Script ist das Herzstück. Es beobachtet das DOM auf Conversation-Turns über einen MutationObserver, trackt jedes Nachrichten-Element in einem flachen Array und blendet alles über dem konfigurierten Limit per display:none aus, bevor der Browser es jemals malt. Dadurch bleiben die Layout-Kosten bei null, egal wie lang die Unterhaltung ist.",
-      "p3": "Das Background-Script fungiert als Message-Bus: Es speichert Einstellungen im Browser-Speicher, leitet Konfigurationsänderungen an jeden offenen KI-Chat-Tab weiter und vermittelt Status-Anfragen vom Popup an das Content-Script des aktiven Tabs. Alles bleibt lokal - keine Netzwerkaufrufe, keine Daten, die den Browser verlassen."
+      "p1": "Build-Targets: Chrome, Firefox, Safari und Edge. Node.js 18+ ist erforderlich. Du kannst npm run build:all ausfuehren oder ein einzelnes Target bauen (zum Beispiel npm run build:chrome).",
+      "p2": "Automatisierte Tests basieren auf Playwright und decken dist-Validierung, Extension-Verhalten auf Mock-Seiten und optionale Live-Integrationstests mit wiederverwendbarem Auth-Profil ab.",
+      "p3": "Das letzte grosse Upgrade fokussierte sich auf Fetch-Interception, LRU-Chat-Caching und stabilen Support fuer Gemini + Claude bei weiterhin komplett lokaler und datenschutzfreundlicher Ausfuehrung."
     },
     "code": {
-      "intro": "Hier sind die wichtigsten Bausteine, die die Erweiterung antreiben. All das läuft lokal in deinem Browser.",
-      "messageManagerTitle": "Sichtbarkeitsberechnung",
-      "messageManagerText": "Wenn sich die Konfiguration ändert oder eine Unterhaltung geladen wird, geht recalculateVisibility das Array der getrackten Nachrichten durch und blendet alles außer den letzten N Einträgen aus. Einfache Index-Mathematik, keine DOM-Queries.",
-      "fifoTitle": "FIFO-Durchsetzung",
-      "fifoText": "Wenn eine neue Nachricht eintrifft und die sichtbare Anzahl das Limit überschreitet, blendet enforceLimit die ältesten sichtbaren Nachrichten einzeln aus, bis die Anzahl wieder im Rahmen ist.",
-      "domObserverTitle": "DOM-Beobachtung",
-      "domObserverText": "Ein MutationObserver überwacht document.body auf hinzugefügte und entfernte Knoten. Mutationen werden gedebounct, um unnötige Arbeit zu vermeiden, und dann nach Conversation-Turn-Elementen gefiltert.",
-      "backgroundTitle": "Konfigurations-Broadcast",
-      "backgroundText": "Wenn sich Einstellungen ändern, fragt das Background-Script alle passenden Tabs ab und sendet die aktualisierte Konfiguration an jedes Content-Script, damit jede offene Unterhaltung sofort reagiert."
+      "intro": "Kernbausteine aus der neu geschriebenen Architektur. Alles laeuft lokal in der Browser-Extension-Runtime.",
+      "messageManagerTitle": "Fetch-Interception + Payload-Trim",
+      "messageManagerText": "Fast Mode faengt JSON-Antworten ab, trimmt alte Turns und gibt einen leichteren Response-Body zurueck, damit Chats flussig bleiben.",
+      "fifoTitle": "LRU-Chat-Cache",
+      "fifoText": "Ein kleiner LRU-Cache haelt die 5 zuletzt genutzten Chat-DOM/Message-Snapshots fuer schnellen Chat-Wechsel.",
+      "domObserverTitle": "Site-Config Resolver",
+      "domObserverText": "Hostnames und Selektoren werden aus einer gemeinsamen Site-Config aufgeloest, sodass ChatGPT, Claude, Gemini und neue Sites dieselbe Pipeline nutzen.",
+      "backgroundTitle": "Cross-Site Config Broadcast",
+      "backgroundText": "Background-Messaging verteilt Config-Updates an alle Tabs, die zu den injizierten URL-Patterns der unterstuetzten AI-Chat-Sites passen."
+    }
+  },
+  "sshconfigLint": {
+    "hero": {
+      "title": "sshconfig-lint",
+      "tagline": "Ein in Rust geschriebener SSH-Config-Linter, der ~/.ssh/config auf typische Fehler prueft, bevor sie deinen SSH-Workflow brechen."
+    },
+    "sections": {
+      "whatTitle": "Was es macht",
+      "whatText": "sshconfig-lint prueft deine SSH-Config inklusive Include-Dateien auf praxisnahe Probleme: doppelte Host-Blocks, fehlende IdentityFile-Pfade, Wildcard-Reihenfolge, schwache Algorithmen, doppelte Direktiven, unsichere Optionen, unsichere ControlPath-Muster und Include-Zyklen. Die Ausgabe ist deterministisch und nach Datei/Zeile sortiert, ideal fuer CI-Diffs.",
+      "installTitle": "Installation",
+      "usageTitle": "Verwendung",
+      "rulesTitle": "Regeln",
+      "devTitle": "Projektstruktur",
+      "screenshotTitle": "Terminal-Vorschau"
+    },
+    "image": {
+      "alt": "sshconfig-lint Output Screenshot",
+      "caption": "Output aus einem realen Lint-Durchlauf"
+    },
+    "install": {
+      "scriptTitle": "Install-Skript (Linux/macOS)",
+      "scriptText": "Schneller Installer direkt aus dem Repository. VERSION oder INSTALL_DIR lassen sich ueberschreiben.",
+      "brewTitle": "Homebrew (macOS)",
+      "brewText": "Installation ueber Tap, danach optional untap fuer eine saubere Tap-Liste.",
+      "cargoTitle": "Cargo",
+      "cargoText": "Direkte Installation von crates.io mit cargo.",
+      "aurTitle": "AUR",
+      "aurText": "Vorgebaute Arch-Pakete: sshconfig-lint-bin."
+    },
+    "usage": {
+      "intro": "Die CLI unterstuetzt normales Linting, explizite Config-Dateien, JSON-Output, strikten CI-Modus und optionales Ueberspringen der Include-Aufloesung."
+    },
+    "rules": {
+      "intro": "Jeder Fund hat einen stabilen Code, damit du in Skripten darauf matchen kannst. Beispiel-Regeln sind:"
+    },
+    "dev": {
+      "intro": "Die Codebasis ist fuer Parser/Linter-Wartbarkeit und einfaches Erweitern von Regeln aufgeteilt."
+    }
+  },
+  "nodeRunner": {
+    "hero": {
+      "title": "Node Runner",
+      "tagline": "Ein Blender-Addon mit begleitender Website, um Shader-Node-Trees zu exportieren/importieren und mit der Community zu teilen.",
+      "website": "Website",
+      "blenderAddon": "Blender Extensions"
+    },
+    "sections": {
+      "whatTitle": "Was es ist",
+      "whatText": "Node Runner ist ein Blender-Addon, mit dem du ausgewaehlte Nodes als Text statt als .blend-Datei teilen kannst. Es funktioniert mit verschiedenen Node-Tree-Typen und wird durch node-runner.thiering.org ergaenzt, wo du Node-Trees kostenlos hochladen und entdecken kannst.",
+      "galleryTitle": "Webplattform",
+      "sharingTitle": "Sharing-Modell",
+      "videoTitle": "Addon-Workflow",
+      "featuresTitle": "Features",
+      "exportTitle": "Export",
+      "importTitle": "Import",
+      "formatsTitle": "Formate",
+      "howTitle": "So funktioniert es",
+      "aiPromptTitle": "AI-Prompt-Format"
+    },
+    "media": {
+      "discoverAlt": "Node Runner Discover-Seite",
+      "discoverCaption": "Node-Trees durchsuchen und entdecken",
+      "uploadAlt": "Node Runner Upload-Ansicht eines Node-Trees",
+      "uploadCaption": "Hochgeladenen Node-Tree ansehen und verwalten",
+      "exportVideoCaption": "Shader-Nodes in Blender exportieren",
+      "importVideoCaption": "Shader-Nodes in Blender importieren"
+    },
+    "sharing": {
+      "p1": "Du kannst Node-Trees kostenlos ohne Account hochladen.",
+      "p2": "Wenn du Uploads spaeter speichern und bearbeiten willst, kannst du dich kostenlos mit GitHub oder Google anmelden."
+    },
+    "features": {
+      "exportFormats": "Exportiert ausgewaehlte Nodes als Hash, JSON, AI JSON (reduziertes JSON fuer AI) oder XML.",
+      "import": "Importiert geteilte Node-Daten wieder in Blender.",
+      "treeTypes": "Unterstuetzt verschiedene Blender-Node-Tree-Typen.",
+      "clipboard": "Node-Daten direkt aus der Zwischenablage einfuegen.",
+      "versionChecks": "Prueft auf Versionsabweichungen.",
+      "imagePaths": "Exportiert verknuepfte Bildpfade als absolute Pfade."
+    },
+    "export": {
+      "step1": "Node Editor > Select Nodes > Right Click > Node Runner > Export",
+      "step2": "Das Export-Ergebnis wird direkt in deine Zwischenablage kopiert."
+    },
+    "import": {
+      "step1": "Node Editor > Right Click > Node Runner > Import",
+      "step2": "Wenn der exportierte Text bereits in der Zwischenablage liegt: Node Editor > Right Click > Node Runner > Paste from Clipboard",
+      "step3": "Paste from Clipboard ist fuer die meisten geteilten Snippets der schnellste Weg."
+    },
+    "formats": {
+      "hash": "Hash fuer kompaktes Teilen.",
+      "json": "JSON fuer gut lesbare strukturierte Daten.",
+      "xml": "XML fuer alternative strukturierte Workflows."
+    },
+    "how": {
+      "export": "Ausgewählte Shader-Nodes in Blender als kompakten, teilbaren String exportieren.",
+      "import": "Node-Trees per Node Runner Import wieder in Blender einfügen.",
+      "share": "Strings direkt teilen oder Trees auf node-runner.thiering.org veröffentlichen.",
+      "account": "Gast-Uploads sind kostenlos; mit GitHub/Google-Login kannst du Uploads behalten und bearbeiten.",
+      "social": "Community-Nutzer koennen hochgeladene Node-Trees ansehen, speichern und bewerten."
+    },
+    "aiPrompt": {
+      "intro": "Um mit einem LLM gueltiges Node Runner AI JSON zu erzeugen, fuegst du den Addon-Prompt vor deine Anfrage und verlangst strikt JSON-Output.",
+      "rules": "Nur JSON ausgeben (keine Erklaerung, keine Code-Fences). Gueltige Blender bl_idname-Werte nutzen, Link-/Socket-Namen exakt halten und moeglichst nur von Defaults abweichende Inputs/Settings setzen."
     }
   }
 }

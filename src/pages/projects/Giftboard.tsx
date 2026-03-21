@@ -97,6 +97,11 @@ export default function Giftboard() {
             View on GitHub <GithubIcon />
           </a>
         </div>
+        <ul className="project-hero-tags">
+          <li className="project-tag--react">React</li>
+          <li className="project-tag--typescript">TypeScript</li>
+          <li className="project-tag--nodejs">Node.js</li>
+        </ul>
         <p className="giftboard-tagline">
           <Trans
             i18nKey="giftboard.hero.tagline"

@@ -446,6 +446,30 @@ export default function Home() {
             </li>
             <li>
               <ProjectCardLink
+                title={t("home.projects.sshconfigLint.title")}
+                description={t("home.projects.sshconfigLint.description")}
+                imageSrc="https://github.com/user-attachments/assets/4d995679-baed-4f20-9ba8-8f3ec94c64fd"
+                href="/projects/sshconfig-lint"
+                ariaLabel={t("home.projects.sshconfigLint.aria")}
+                imageAlt={t("home.projects.sshconfigLint.imageAlt")}
+                tags={["Rust", "CLI", "Open Source"]}
+                githubLink="https://github.com/Noah4ever/sshconfig-lint"
+              />
+            </li>
+            <li>
+              <ProjectCardLink
+                title={t("home.projects.nodeRunner.title")}
+                description={t("home.projects.nodeRunner.description")}
+                imageSrc="/Projects/node-runner/node-runner-logo.png"
+                href="/projects/node-runner"
+                ariaLabel={t("home.projects.nodeRunner.aria")}
+                imageAlt={t("home.projects.nodeRunner.imageAlt")}
+                tags={["Blender", "Python", "Web Platform"]}
+                githubLink="https://github.com/Noah4ever/node_runner"
+              />
+            </li>
+            <li>
+              <ProjectCardLink
                 title={t("home.projects.aiChatSpeedBooster.title")}
                 description={t("home.projects.aiChatSpeedBooster.description")}
                 imageSrc="/Projects/ai-chat-speed-booster/speed-booster-popup.png"
@@ -454,6 +478,7 @@ export default function Home() {
                 imageAlt={t("home.projects.aiChatSpeedBooster.imageAlt")}
                 tags={["Browser Extension", "TypeScript"]}
                 githubLink="https://github.com/Noah4ever/ai-chat-speed-booster"
+                githubStarsFallback={31}
               />
             </li>
             <li>

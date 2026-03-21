@@ -54,6 +54,21 @@
   --tag-javascript-text: #8a6d00;
   --tag-javascript-border: #f0db4f;
   --tag-javascript-bg: rgba(240, 219, 79, 0.14);
+  --tag-rust-text: #8b2f03;
+  --tag-rust-border: #ce412b;
+  --tag-rust-bg: rgba(206, 65, 43, 0.14);
+  --tag-python-text: #1e5586;
+  --tag-python-border: #3776ab;
+  --tag-python-bg: rgba(55, 118, 171, 0.14);
+  --tag-cli-text: #2d6b15;
+  --tag-cli-border: #4eaa25;
+  --tag-cli-bg: rgba(78, 170, 37, 0.14);
+  --tag-open-source-text: #236b1e;
+  --tag-open-source-border: #3da639;
+  --tag-open-source-bg: rgba(61, 166, 57, 0.14);
+  --tag-web-platform-text: #2256b2;
+  --tag-web-platform-border: #4285f4;
+  --tag-web-platform-bg: rgba(66, 133, 244, 0.14);
 }
 
 [data-theme="dark"] {
@@ -112,4 +127,19 @@
   --tag-javascript-text: #ffe082;
   --tag-javascript-border: #ffd54f;
   --tag-javascript-bg: rgba(255, 213, 79, 0.2);
+  --tag-rust-text: #ffb8a3;
+  --tag-rust-border: #e86b52;
+  --tag-rust-bg: rgba(232, 107, 82, 0.2);
+  --tag-python-text: #8ec5f0;
+  --tag-python-border: #5a9bd5;
+  --tag-python-bg: rgba(90, 155, 213, 0.2);
+  --tag-cli-text: #a3e88a;
+  --tag-cli-border: #6fcc48;
+  --tag-cli-bg: rgba(111, 204, 72, 0.2);
+  --tag-open-source-text: #9de899;
+  --tag-open-source-border: #62cc5d;
+  --tag-open-source-bg: rgba(98, 204, 93, 0.2);
+  --tag-web-platform-text: #9fc5ff;
+  --tag-web-platform-border: #6fa8ff;
+  --tag-web-platform-bg: rgba(111, 168, 255, 0.2);
 }

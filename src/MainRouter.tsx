@@ -5,6 +5,8 @@ import Giftboard from "./pages/projects/Giftboard";
 import CustomPartyApp from "./pages/projects/CustomPartyApp";
 import Nolicom from "./pages/projects/Nolicom";
 import AIChatSpeedBooster from "./pages/projects/AIChatSpeedBooster";
+import SSHConfigLint from "./pages/projects/SSHConfigLint";
+import NodeRunner from "./pages/projects/NodeRunner";
 
 export function MainRouter() {
   return (
@@ -15,7 +17,12 @@ export function MainRouter() {
           <Route path="giftboard" element={<Giftboard />} />
           <Route path="custom-party-app" element={<CustomPartyApp />} />
           <Route path="nolicom" element={<Nolicom />} />
-          <Route path="ai-chat-speed-booster" element={<AIChatSpeedBooster />} />
+          <Route
+            path="ai-chat-speed-booster"
+            element={<AIChatSpeedBooster />}
+          />
+          <Route path="sshconfig-lint" element={<SSHConfigLint />} />
+          <Route path="node-runner" element={<NodeRunner />} />
         </Route>
       </Routes>
     </BrowserRouter>

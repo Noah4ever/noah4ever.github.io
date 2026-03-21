@@ -63,6 +63,12 @@ export default function Nolicom() {
             View on GitHub <GithubIcon />
           </a>
         </div>
+        <ul className="project-hero-tags">
+          <li className="project-tag--esp32">ESP32</li>
+          <li className="project-tag--c-plus-plus">C++</li>
+          <li className="project-tag--blender">Blender</li>
+          <li className="project-tag--3d-printing">3D Printing</li>
+        </ul>
         <p className="nolicom-tagline">{t("nolicom.hero.tagline")}</p>
       </section>
 

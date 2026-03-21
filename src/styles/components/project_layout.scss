@@ -81,6 +81,131 @@
   margin-bottom: 0.75rem;
 }
 
+/* ─── Hero tag pills (technology tags) ─── */
+.project-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+
+  li {
+    --project-tag-text: var(--color-text);
+    --project-tag-border: var(--color-text-muted);
+    --project-tag-bg: var(--color-background-blur);
+    background-color: var(--project-tag-bg);
+    color: var(--project-tag-text);
+    backdrop-filter: blur(100px);
+    padding: 0.2rem 0.85rem;
+    border-radius: 999px;
+    border: 1px solid var(--project-tag-border);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.4;
+
+    &.project-tag--react {
+      --project-tag-text: var(--tag-react-text);
+      --project-tag-border: var(--tag-react-border);
+      --project-tag-bg: var(--tag-react-bg);
+    }
+
+    &.project-tag--typescript {
+      --project-tag-text: var(--tag-typescript-text);
+      --project-tag-border: var(--tag-typescript-border);
+      --project-tag-bg: var(--tag-typescript-bg);
+    }
+
+    &.project-tag--node-js,
+    &.project-tag--nodejs {
+      --project-tag-text: var(--tag-nodejs-text);
+      --project-tag-border: var(--tag-nodejs-border);
+      --project-tag-bg: var(--tag-nodejs-bg);
+    }
+
+    &.project-tag--express {
+      --project-tag-text: var(--tag-express-text);
+      --project-tag-border: var(--tag-express-border);
+      --project-tag-bg: var(--tag-express-bg);
+    }
+
+    &.project-tag--react-native {
+      --project-tag-text: var(--tag-react-native-text);
+      --project-tag-border: var(--tag-react-native-border);
+      --project-tag-bg: var(--tag-react-native-bg);
+    }
+
+    &.project-tag--esp32 {
+      --project-tag-text: var(--tag-esp32-text);
+      --project-tag-border: var(--tag-esp32-border);
+      --project-tag-bg: var(--tag-esp32-bg);
+    }
+
+    &.project-tag--c-,
+    &.project-tag--cpp,
+    &.project-tag--c-plus-plus {
+      --project-tag-text: var(--tag-cpp-text);
+      --project-tag-border: var(--tag-cpp-border);
+      --project-tag-bg: var(--tag-cpp-bg);
+    }
+
+    &.project-tag--blender {
+      --project-tag-text: var(--tag-blender-text);
+      --project-tag-border: var(--tag-blender-border);
+      --project-tag-bg: var(--tag-blender-bg);
+    }
+
+    &.project-tag--3d-printing {
+      --project-tag-text: var(--tag-3d-printing-text);
+      --project-tag-border: var(--tag-3d-printing-border);
+      --project-tag-bg: var(--tag-3d-printing-bg);
+    }
+
+    &.project-tag--browser-extension {
+      --project-tag-text: var(--tag-browser-extension-text);
+      --project-tag-border: var(--tag-browser-extension-border);
+      --project-tag-bg: var(--tag-browser-extension-bg);
+    }
+
+    &.project-tag--javascript {
+      --project-tag-text: var(--tag-javascript-text);
+      --project-tag-border: var(--tag-javascript-border);
+      --project-tag-bg: var(--tag-javascript-bg);
+    }
+
+    &.project-tag--rust {
+      --project-tag-text: var(--tag-rust-text);
+      --project-tag-border: var(--tag-rust-border);
+      --project-tag-bg: var(--tag-rust-bg);
+    }
+
+    &.project-tag--python {
+      --project-tag-text: var(--tag-python-text);
+      --project-tag-border: var(--tag-python-border);
+      --project-tag-bg: var(--tag-python-bg);
+    }
+
+    &.project-tag--cli {
+      --project-tag-text: var(--tag-cli-text);
+      --project-tag-border: var(--tag-cli-border);
+      --project-tag-bg: var(--tag-cli-bg);
+    }
+
+    &.project-tag--open-source {
+      --project-tag-text: var(--tag-open-source-text);
+      --project-tag-border: var(--tag-open-source-border);
+      --project-tag-bg: var(--tag-open-source-bg);
+    }
+
+    &.project-tag--web-platform {
+      --project-tag-text: var(--tag-web-platform-text);
+      --project-tag-border: var(--tag-web-platform-border);
+      --project-tag-bg: var(--tag-web-platform-bg);
+    }
+  }
+}
+
 .project-tldr {
   display: flex;
   flex-direction: column;

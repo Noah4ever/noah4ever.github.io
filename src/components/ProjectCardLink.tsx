@@ -2,7 +2,9 @@ import {
   IoArrowForwardOutline as ProjectCardArrow,
   IoLogoGithub as GithubLogo,
   IoOpenOutline as LiveIcon,
+  IoStarOutline as StarIcon,
 } from "react-icons/io5";
+import { useEffect, useMemo, useState } from "react";
 
 type ProjectCardLinkProps = {
   title: string;
@@ -13,6 +15,7 @@ type ProjectCardLinkProps = {
   imageAlt?: string;
   tags?: string[];
   githubLink?: string;
+  githubStarsFallback?: number;
   liveLink?: string;
 };
 
@@ -25,11 +28,65 @@ export default function ProjectCardLink({
   imageAlt,
   tags,
   githubLink,
+  githubStarsFallback,
   liveLink,
 }: ProjectCardLinkProps) {
+  const [githubStars, setGithubStars] = useState<number | null>(
+    githubStarsFallback ?? null,
+  );
+
   const cardId = `project-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-title`;
   const getTagClassName = (tag: string) =>
     `project-tag--${tag.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+
+  const repoPath = useMemo(() => {
+    if (!githubLink) return null;
+    try {
+      const { pathname } = new URL(githubLink);
+      const parts = pathname.split("/").filter(Boolean);
+      if (parts.length < 2) return null;
+      return `${parts[0]}/${parts[1]}`;
+    } catch {
+      return null;
+    }
+  }, [githubLink]);
+
+  useEffect(() => {
+    if (!repoPath) return;
+
+    const controller = new AbortController();
+    const fetchStars = async () => {
+      try {
+        const response = await fetch(
+          `https://api.github.com/repos/${repoPath}`,
+          {
+            signal: controller.signal,
+          },
+        );
+        if (!response.ok) return;
+        const data = (await response.json()) as { stargazers_count?: number };
+        if (typeof data.stargazers_count === "number") {
+          setGithubStars(data.stargazers_count);
+        }
+      } catch {
+        // Keep badge visible even if GitHub API is unavailable.
+      }
+    };
+
+    void fetchStars();
+
+    return () => {
+      controller.abort();
+    };
+  }, [repoPath]);
+
+  const formattedStars = useMemo(() => {
+    if (githubStars == null || githubStars <= 2) return null;
+    return new Intl.NumberFormat(undefined, {
+      notation: "compact",
+      maximumFractionDigits: 1,
+    }).format(githubStars);
+  }, [githubStars]);
 
   const handleBadgeClick = (url: string) => (e: React.MouseEvent) => {
     e.preventDefault();
@@ -67,6 +124,12 @@ export default function ProjectCardLink({
                   aria-label={`View ${title} on GitHub`}
                 >
                   <GithubLogo />
+                  {formattedStars && (
+                    <>
+                      <StarIcon />
+                      <span>{formattedStars}</span>
+                    </>
+                  )}
                 </span>
               )}
             </div>

@@ -219,6 +219,36 @@
           --project-tag-border: var(--tag-javascript-border);
           --project-tag-bg: var(--tag-javascript-bg);
         }
+
+        &.project-tag--rust {
+          --project-tag-text: var(--tag-rust-text);
+          --project-tag-border: var(--tag-rust-border);
+          --project-tag-bg: var(--tag-rust-bg);
+        }
+
+        &.project-tag--python {
+          --project-tag-text: var(--tag-python-text);
+          --project-tag-border: var(--tag-python-border);
+          --project-tag-bg: var(--tag-python-bg);
+        }
+
+        &.project-tag--cli {
+          --project-tag-text: var(--tag-cli-text);
+          --project-tag-border: var(--tag-cli-border);
+          --project-tag-bg: var(--tag-cli-bg);
+        }
+
+        &.project-tag--open-source {
+          --project-tag-text: var(--tag-open-source-text);
+          --project-tag-border: var(--tag-open-source-border);
+          --project-tag-bg: var(--tag-open-source-bg);
+        }
+
+        &.project-tag--web-platform {
+          --project-tag-text: var(--tag-web-platform-text);
+          --project-tag-border: var(--tag-web-platform-border);
+          --project-tag-bg: var(--tag-web-platform-bg);
+        }
       }
     }
   }
