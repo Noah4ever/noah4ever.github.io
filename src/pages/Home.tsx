@@ -434,6 +434,19 @@ export default function Home() {
           <ul className="projects-list" role="list">
             <li>
               <ProjectCardLink
+                title={t("home.projects.aiChatSpeedBooster.title")}
+                description={t("home.projects.aiChatSpeedBooster.description")}
+                imageSrc="/Projects/ai-chat-speed-booster/speed-booster-popup.png"
+                href="/projects/ai-chat-speed-booster"
+                ariaLabel={t("home.projects.aiChatSpeedBooster.aria")}
+                imageAlt={t("home.projects.aiChatSpeedBooster.imageAlt")}
+                tags={["Browser Extension", "TypeScript"]}
+                githubLink="https://github.com/Noah4ever/ai-chat-speed-booster"
+                githubStarsFallback={31}
+              />
+            </li>
+            <li>
+              <ProjectCardLink
                 title={t("home.projects.nolicom.title")}
                 description={t("home.projects.nolicom.description")}
                 imageSrc="/Projects/Nolicom/finished-case-colored-top.webp"
@@ -466,19 +479,6 @@ export default function Home() {
                 imageAlt={t("home.projects.nodeRunner.imageAlt")}
                 tags={["Blender", "Python", "Web Platform"]}
                 githubLink="https://github.com/Noah4ever/node_runner"
-              />
-            </li>
-            <li>
-              <ProjectCardLink
-                title={t("home.projects.aiChatSpeedBooster.title")}
-                description={t("home.projects.aiChatSpeedBooster.description")}
-                imageSrc="/Projects/ai-chat-speed-booster/speed-booster-popup.png"
-                href="/projects/ai-chat-speed-booster"
-                ariaLabel={t("home.projects.aiChatSpeedBooster.aria")}
-                imageAlt={t("home.projects.aiChatSpeedBooster.imageAlt")}
-                tags={["Browser Extension", "TypeScript"]}
-                githubLink="https://github.com/Noah4ever/ai-chat-speed-booster"
-                githubStarsFallback={31}
               />
             </li>
             <li>
