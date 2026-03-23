@@ -10,7 +10,8 @@
   -webkit-backdrop-filter: blur(20px);
   overflow: hidden;
 
-  img {
+  img,
+  video {
     display: block;
     width: 100%;
     height: auto;
@@ -50,7 +51,8 @@
   &.default {
     border-radius: 12px;
 
-    img {
+    img,
+    video {
       border-radius: 12px;
     }
   }
@@ -140,7 +142,7 @@
     border: 1px solid var(--color-background-blur);
   }
 
-  img {
+  .viewport-media {
     border-radius: 0 0 12px 12px;
   }
 }

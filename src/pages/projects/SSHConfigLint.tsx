@@ -7,7 +7,7 @@ import {
 import { useTranslation } from "react-i18next";
 
 const previewImage =
-  "https://github.com/user-attachments/assets/4d995679-baed-4f20-9ba8-8f3ec94c64fd";
+  "/Projects/sshconfig-lint/sshconfig-lint-video-demo.mp4";
 
 export default function SSHConfigLint() {
   const { t } = useTranslation();
@@ -58,7 +58,11 @@ export default function SSHConfigLint() {
           {t("sshconfigLint.sections.screenshotTitle")}
         </h2>
         <figure>
-          <ImageBorder src={previewImage} alt={t("sshconfigLint.image.alt")} />
+          <ImageBorder
+            src={previewImage}
+            alt={t("sshconfigLint.image.alt")}
+            objectPosition="left center"
+          />
           <figcaption>{t("sshconfigLint.image.caption")}</figcaption>
         </figure>
       </section>

@@ -31,6 +31,11 @@ export default function ProjectCardLink({
   githubStarsFallback,
   liveLink,
 }: ProjectCardLinkProps) {
+  const isVideo = useMemo(() => {
+    const cleanPath = imageSrc.split("?")[0].split("#")[0].toLowerCase();
+    return /\.(mp4|webm|ogg|mov)$/.test(cleanPath);
+  }, [imageSrc]);
+
   const [githubStars, setGithubStars] = useState<number | null>(
     githubStarsFallback ?? null,
   );
@@ -94,6 +99,18 @@ export default function ProjectCardLink({
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
+  const handleVideoClick = (event: React.MouseEvent<HTMLVideoElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const video = event.currentTarget;
+    if (video.paused) {
+      void video.play();
+      return;
+    }
+    video.pause();
+  };
+
   return (
     <a className="project-card-link" href={href} aria-label={ariaLabel}>
       <span className="project-card-indicator" aria-hidden="true">
@@ -147,11 +164,24 @@ export default function ProjectCardLink({
         )}
       </article>
       <div className="project-card-media">
-        <img
-          src={imageSrc}
-          alt={imageAlt ?? `${title} preview`}
-          loading="lazy"
-        />
+        {isVideo ? (
+          <video
+            src={imageSrc}
+            aria-label={imageAlt ?? `${title} preview`}
+            preload="metadata"
+            autoPlay
+            loop
+            muted
+            playsInline
+            onClick={handleVideoClick}
+          />
+        ) : (
+          <img
+            src={imageSrc}
+            alt={imageAlt ?? `${title} preview`}
+            loading="lazy"
+          />
+        )}
       </div>
     </a>
   );

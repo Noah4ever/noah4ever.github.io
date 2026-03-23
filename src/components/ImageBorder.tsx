@@ -11,11 +11,13 @@ type ImageBorderProps = {
   frame?: ImageFrame;
   className?: string;
   lookAtCursor?: boolean;
+  objectPosition?: string;
 };
 
 type FrameImageProps = {
   src: string;
   alt: string;
+  objectPosition?: string;
 };
 
 type AnimationState = "minimizing" | "closing" | "expanding" | null;
@@ -27,10 +29,33 @@ type BrowserFrameProps = FrameImageProps & {
   onExpand: () => void;
 };
 
-function FrameImage({ src, alt }: FrameImageProps) {
+function FrameImage({ src, alt, objectPosition }: FrameImageProps) {
+  const cleanPath = src.split("?")[0].split("#")[0].toLowerCase();
+  const isVideo = /\.(mp4|webm|ogg|mov)$/.test(cleanPath);
+
   return (
     <div className="viewport">
-      <img src={src} alt={alt} loading="lazy" />
+      {isVideo ? (
+        <video
+          className="viewport-media"
+          src={src}
+          aria-label={alt}
+          preload="metadata"
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={objectPosition ? { objectPosition } : undefined}
+        />
+      ) : (
+        <img
+          className="viewport-media"
+          src={src}
+          alt={alt}
+          loading="lazy"
+          style={objectPosition ? { objectPosition } : undefined}
+        />
+      )}
     </div>
   );
 }
@@ -38,6 +63,7 @@ function FrameImage({ src, alt }: FrameImageProps) {
 function SafariFrame({
   src,
   alt,
+  objectPosition,
   onToggleBrowser,
   onClose,
   onMinimize,
@@ -82,7 +108,7 @@ function SafariFrame({
           <FaChrome aria-hidden="true" />
         </button>
       </div>
-      <FrameImage src={src} alt={alt} />
+      <FrameImage src={src} alt={alt} objectPosition={objectPosition} />
     </>
   );
 }
@@ -90,6 +116,7 @@ function SafariFrame({
 function ChromeFrame({
   src,
   alt,
+  objectPosition,
   onToggleBrowser,
   onClose,
   onMinimize,
@@ -144,12 +171,12 @@ function ChromeFrame({
           </button>
         </div>
       </div>
-      <FrameImage src={src} alt={alt} />
+      <FrameImage src={src} alt={alt} objectPosition={objectPosition} />
     </>
   );
 }
 
-function MobileFrame({ src, alt }: FrameImageProps) {
+function MobileFrame({ src, alt, objectPosition }: FrameImageProps) {
   return (
     <>
       <div className="top" aria-hidden="true">
@@ -163,7 +190,7 @@ function MobileFrame({ src, alt }: FrameImageProps) {
           </span>
         </div>
       </div>
-      <FrameImage src={src} alt={alt} />
+      <FrameImage src={src} alt={alt} objectPosition={objectPosition} />
       <div className="bottom" aria-hidden="true" />
     </>
   );
@@ -175,6 +202,7 @@ export default function ImageBorder({
   frame = "default",
   className,
   lookAtCursor = false,
+  objectPosition,
 }: ImageBorderProps) {
   const [activeFrame, setActiveFrame] = useState<ImageFrame>(frame);
   const [animationState, setAnimationState] = useState<AnimationState>(null);
@@ -208,19 +236,21 @@ export default function ImageBorder({
       <ChromeFrame
         src={src}
         alt={alt}
+        objectPosition={objectPosition}
         onToggleBrowser={toggleBrowserFrame}
         onClose={() => triggerAnimation("closing")}
         onMinimize={() => triggerAnimation("minimizing")}
         onExpand={() => triggerAnimation("expanding")}
       />
     ) : activeFrame === "mobile" ? (
-      <MobileFrame src={src} alt={alt} />
+      <MobileFrame src={src} alt={alt} objectPosition={objectPosition} />
     ) : activeFrame === "default" ? (
-      <FrameImage src={src} alt={alt} />
+      <FrameImage src={src} alt={alt} objectPosition={objectPosition} />
     ) : (
       <SafariFrame
         src={src}
         alt={alt}
+        objectPosition={objectPosition}
         onToggleBrowser={toggleBrowserFrame}
         onClose={() => triggerAnimation("closing")}
         onMinimize={() => triggerAnimation("minimizing")}

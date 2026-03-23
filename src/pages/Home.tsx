@@ -461,7 +461,7 @@ export default function Home() {
               <ProjectCardLink
                 title={t("home.projects.sshconfigLint.title")}
                 description={t("home.projects.sshconfigLint.description")}
-                imageSrc="https://github.com/user-attachments/assets/4d995679-baed-4f20-9ba8-8f3ec94c64fd"
+                imageSrc="/Projects/sshconfig-lint/sshconfig-lint-video-demo.mp4"
                 href="/projects/sshconfig-lint"
                 ariaLabel={t("home.projects.sshconfigLint.aria")}
                 imageAlt={t("home.projects.sshconfigLint.imageAlt")}
