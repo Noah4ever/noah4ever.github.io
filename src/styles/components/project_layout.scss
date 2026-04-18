@@ -45,9 +45,13 @@
     color: var(--color-text);
     text-decoration: none;
     font-size: 0.95rem;
+    font-family: inherit;
     transition: color 150ms ease;
     border-radius: 6px;
     padding: 0.3rem 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
 
     &:hover,
     &:focus-visible {

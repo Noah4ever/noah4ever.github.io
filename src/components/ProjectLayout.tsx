@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { IoArrowBackOutline as BackArrow, IoArrowUpOutline as UpArrow } from "react-icons/io5";
 import "@styles/components/project_layout.scss";
 import { useTranslation } from "react-i18next";
@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 
 export default function ProjectLayout() {
     const { t } = useTranslation();
+    const navigate = useNavigate();
     const [showTop, setShowTop] = useState(false);
 
     useEffect(() => {
@@ -32,10 +33,15 @@ export default function ProjectLayout() {
                     role="navigation"
                     aria-label={t("projectLayout.backAria")}
                 >
-                    <a href="/" className="project-back-link">
+                    <button
+                        type="button"
+                        onClick={() => navigate(-1)}
+                        className="project-back-link"
+                        aria-label={t("projectLayout.backAria")}
+                    >
                         <BackArrow aria-hidden="true" />
                         <span>{t("projectLayout.backLabel")}</span>
-                    </a>
+                    </button>
                 </nav>
 
                 <Outlet />
