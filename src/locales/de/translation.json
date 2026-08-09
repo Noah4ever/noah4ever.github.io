@@ -136,6 +136,12 @@
         "aria": "AI Chat Speed Booster Projektseite öffnen",
         "imageAlt": "AI Chat Speed Booster Popup-Screenshot"
       },
+      "collectionForge": {
+        "title": "Collection Forge",
+        "description": "Mein Warhammer-40K-Armeemanager zum Importieren von Listen, Bauen druckbarer Datasheet-Karten und Spielen mit beiden Armeen auf einem interaktiven Tisch.",
+        "aria": "Collection Forge Projektseite öffnen",
+        "imageAlt": "Collection Forge Armeeübersicht mit Karten"
+      },
       "sshconfigLint": {
         "title": "sshconfig-lint",
         "description": "Rust-basierter SSH-Config-Linter, der haeufige Fehler wie doppelte Host-Blocks, schwache Algorithmen, Wildcard-Reihenfolge und Include-Zyklen findet.",
@@ -446,6 +452,45 @@
       "domObserverText": "Hostnames und Selektoren werden aus einer gemeinsamen Site-Config aufgeloest, sodass ChatGPT, Claude, Gemini und neue Sites dieselbe Pipeline nutzen.",
       "backgroundTitle": "Cross-Site Config Broadcast",
       "backgroundText": "Background-Messaging verteilt Config-Updates an alle Tabs, die zu den injizierten URL-Patterns der unterstuetzten AI-Chat-Sites passen."
+    }
+  },
+  "collectionForge": {
+    "hero": {
+      "title": "Collection Forge",
+      "tagline": "Ein Warhammer-40K-Armeemanager, den ich gebaut habe, weil ich meine bemalten Modelle, druckbare Karten und das eigentliche Spiel an einem praktischen Ort haben wollte.",
+      "live": "Live-App öffnen",
+      "github": "Auf GitHub ansehen"
+    },
+    "sections": {
+      "whyTitle": "Warum ich das gebaut habe",
+      "whyText": "Ich wollte Datasheet-Karten, die wirklich zu meiner eigenen Sammlung passen und nicht nur die nächste generische Liste. Sie sollten während eines Spiels schnell auf dem Handy funktionieren, auf dem Desktop gut aussehen und in einer exakten Größe druckbar sein. Angefangen hat es mit einer Ultramarines-Armee. Daraus wurden dann Imports, Profile, Armeevergleiche, Exports und ein gemeinsamer Battle Table.",
+      "overviewTitle": "Armeeübersicht",
+      "featuresTitle": "Was schon funktioniert",
+      "cardTitle": "Eine Karte für Bildschirm und Papier",
+      "cardText": "Die Karte besteht aus semantischem HTML und SCSS und ist kein flaches Hintergrundbild. Stats, Waffen und Fähigkeiten bleiben bearbeitbar, während das Layout ein festes Seitenverhältnis für den Druck behält. Freigestellte Modellbilder können über dem Kartenmotiv liegen und jede Armee kann eigene Farben verwenden.",
+      "battleTitle": "Ein Tisch für das eigentliche Spiel",
+      "battleText": "Im Battle Mode liegen beide Armeen auf einer dunklen zweidimensionalen Fläche. Ich kann mich frei bewegen, zoomen, Karten ansehen, Angreifer und Ziel wählen und sichtbare Würfel werfen, ohne ständig zwischen Seiten zu wechseln. Ein Battle Room lässt sich auch mit einem zweiten Browser teilen.",
+      "techTitle": "Wie es gebaut ist",
+      "techText": "Das Frontend nutzt Angular und SCSS. Spring Boot stellt die API bereit, PostgreSQL speichert Accounts und Sammlungen, und ein eigener Playwright-Renderer erzeugt reproduzierbare PDFs und PNGs mit 300 DPI. Nginx und Docker Compose halten die Dienste auf meinem kleinen Server überschaubar.",
+      "disclaimer": "Collection Forge ist ein inoffizielles, nicht kommerzielles Fanprojekt und steht in keiner Verbindung zu Games Workshop."
+    },
+    "features": {
+      "importTitle": "Armeeliste importieren",
+      "importText": "New-Recruit- und BattleScribe-Dateien als .ros oder .rosz laufen erst durch ein neutrales Importmodell und eine bearbeitbare Vorschau, bevor etwas gespeichert wird.",
+      "cardsTitle": "Karten für die eigene Sammlung",
+      "cardsText": "Suche, Filter, kompakte Listen und Kartenansichten mit einer bis fünf Spalten machen eine komplette Armee auf Handy und Desktop brauchbar.",
+      "printTitle": "Reproduzierbare Exports",
+      "printText": "Kartengröße, Ränder und Abstände werden in Millimetern eingestellt. Der Export enthält gleich große Karten und nur die Regelerklärungen, die diese Armee wirklich braucht.",
+      "battleTitle": "Spielen und vergleichen",
+      "battleText": "Öffentliche Profile, Armeevergleiche, Kampfplanung, ein geteilter Tisch und ein Dice Tray decken die Sachen ab, die ich rund um ein Spiel meistens brauche."
+    },
+    "images": {
+      "overviewAlt": "Collection Forge Armeeübersicht mit Filtern und Warhammer-Einheitenkarten",
+      "overviewCaption": "Meine Ultramarines-Sammlung in der Kartenansicht",
+      "cardAlt": "Ballistus-Dreadnought-Datasheet mit Stats, Waffen und Fähigkeiten",
+      "cardCaption": "Die Ballistus-Dreadnought-Karte wird aus bearbeitbaren Daten gerendert",
+      "battleAlt": "Collection Forge Battle Table mit zwei Armeen und sichtbaren Würfeln",
+      "battleCaption": "Zwei Armeen und zehn echte Würfelergebnisse auf dem Battle Table"
     }
   },
   "sshconfigLint": {

@@ -136,6 +136,12 @@
         "aria": "Open AI Chat Speed Booster project page",
         "imageAlt": "AI Chat Speed Booster popup screenshot"
       },
+      "collectionForge": {
+        "title": "Collection Forge",
+        "description": "My Warhammer 40K army manager for importing rosters, building printable datasheet cards and using both armies on an interactive battle table.",
+        "aria": "Open Collection Forge project page",
+        "imageAlt": "Collection Forge army card overview"
+      },
       "sshconfigLint": {
         "title": "sshconfig-lint",
         "description": "Rust-based SSH config linter that catches common mistakes like duplicate hosts, weak algorithms, wildcard ordering issues, and Include cycles.",
@@ -446,6 +452,45 @@
       "domObserverText": "Hostnames and selectors are resolved from a shared sites config so ChatGPT, Claude, Gemini, and new sites can reuse the same pipeline.",
       "backgroundTitle": "Cross-site config broadcast",
       "backgroundText": "Background messaging broadcasts config updates to all tabs that match injected URL patterns across supported AI chat sites."
+    }
+  },
+  "collectionForge": {
+    "hero": {
+      "title": "Collection Forge",
+      "tagline": "A Warhammer 40K army manager I built because I wanted my painted models, printable cards and the actual game in one practical place.",
+      "live": "Open live app",
+      "github": "View on GitHub"
+    },
+    "sections": {
+      "whyTitle": "Why I built it",
+      "whyText": "I wanted datasheet cards that match my own collection instead of another generic list. They should work quickly on my phone during a game, look good on a desktop and print at an exact physical size. The project started with one Ultramarines army and grew into imports, profiles, army comparisons, exports and a shared battle table.",
+      "overviewTitle": "Army overview",
+      "featuresTitle": "What already works",
+      "cardTitle": "One card for screen and paper",
+      "cardText": "The card is semantic HTML and SCSS, not a flattened background image. Stats, weapons and abilities stay editable while the layout keeps a fixed ratio for print. Model cut-outs can sit above the card artwork and each army can use its own colours.",
+      "battleTitle": "A table for the actual game",
+      "battleText": "Battle Mode puts both armies on a dark two-dimensional table. I can pan, zoom, inspect cards, choose an attacker and target, then roll visible dice without constantly switching pages. A battle room can also be shared with a second browser.",
+      "techTitle": "How it is built",
+      "techText": "The frontend uses Angular and SCSS. Spring Boot provides the API, PostgreSQL stores accounts and collections, and a dedicated Playwright renderer creates reproducible PDF and 300 DPI PNG exports. Nginx and Docker Compose keep the services manageable on my small server.",
+      "disclaimer": "Collection Forge is an unofficial, non-commercial fan project and is not affiliated with or endorsed by Games Workshop."
+    },
+    "features": {
+      "importTitle": "Import the roster",
+      "importText": "New Recruit and BattleScribe .ros or .rosz files go through a neutral import model and an editable preview before anything is saved.",
+      "cardsTitle": "Collection-specific cards",
+      "cardsText": "Search, filters, compact lists and one-to-five-column card views make a full army useful on phone and desktop.",
+      "printTitle": "Predictable exports",
+      "printText": "Card size, margins and spacing are set in millimetres. The export contains equal cards plus only the rule explanations that army needs.",
+      "battleTitle": "Play and compare",
+      "battleText": "Public profiles, army comparisons, battle planning, a shared table and a dice tray cover the parts I usually need around a game."
+    },
+    "images": {
+      "overviewAlt": "Collection Forge army overview with filters and Warhammer unit cards",
+      "overviewCaption": "My Ultramarines collection in the card overview",
+      "cardAlt": "Ballistus Dreadnought datasheet card with stats, weapons and abilities",
+      "cardCaption": "The Ballistus Dreadnought card rendered from editable data",
+      "battleAlt": "Collection Forge battle table with two armies and a tray of rolled dice",
+      "battleCaption": "Two armies and ten real dice results on the Battle Table"
     }
   },
   "sshconfigLint": {

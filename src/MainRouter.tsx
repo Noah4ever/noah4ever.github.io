@@ -7,6 +7,7 @@ import Nolicom from "./pages/projects/Nolicom";
 import AIChatSpeedBooster from "./pages/projects/AIChatSpeedBooster";
 import SSHConfigLint from "./pages/projects/SSHConfigLint";
 import NodeRunner from "./pages/projects/NodeRunner";
+import CollectionForge from "./pages/projects/CollectionForge";
 
 export function MainRouter() {
   return (
@@ -21,6 +22,7 @@ export function MainRouter() {
             path="ai-chat-speed-booster"
             element={<AIChatSpeedBooster />}
           />
+          <Route path="collection-forge" element={<CollectionForge />} />
           <Route path="sshconfig-lint" element={<SSHConfigLint />} />
           <Route path="node-runner" element={<NodeRunner />} />
         </Route>

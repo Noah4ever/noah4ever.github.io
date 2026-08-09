@@ -447,6 +447,19 @@ export default function Home() {
             </li>
             <li>
               <ProjectCardLink
+                title={t("home.projects.collectionForge.title")}
+                description={t("home.projects.collectionForge.description")}
+                imageSrc="/Projects/collection-forge/army-cards.jpg"
+                href="/projects/collection-forge"
+                ariaLabel={t("home.projects.collectionForge.aria")}
+                imageAlt={t("home.projects.collectionForge.imageAlt")}
+                tags={["Angular", "Spring Boot", "PostgreSQL"]}
+                githubLink="https://github.com/Noah4ever/collection-forge"
+                liveLink="https://projects.thiering.org/collection-forge/"
+              />
+            </li>
+            <li>
+              <ProjectCardLink
                 title={t("home.projects.nolicom.title")}
                 description={t("home.projects.nolicom.description")}
                 imageSrc="/Projects/Nolicom/finished-case-colored-top.webp"
