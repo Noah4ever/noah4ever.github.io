@@ -144,7 +144,7 @@
       },
       "sshconfigLint": {
         "title": "sshconfig-lint",
-        "description": "Rust-basierter SSH-Config-Linter, der haeufige Fehler wie doppelte Host-Blocks, schwache Algorithmen, Wildcard-Reihenfolge und Include-Zyklen findet.",
+        "description": "Rust-basierter SSH-Config-Linter mit privatem Browser-Checker, Regelbeschreibungen und einer Einführung in OpenSSH-Konfigurationen.",
         "aria": "sshconfig-lint Projektseite öffnen",
         "imageAlt": "sshconfig-lint Terminal-Output Vorschau"
       },
@@ -496,11 +496,12 @@
   "sshconfigLint": {
     "hero": {
       "title": "sshconfig-lint",
-      "tagline": "Ein in Rust geschriebener SSH-Config-Linter, der ~/.ssh/config auf typische Fehler prueft, bevor sie deinen SSH-Workflow brechen."
+      "webCta": "Web-Checker öffnen",
+      "tagline": "Ein SSH-Config-Linter in Rust mit schnellem, privatem Web-Checker zum Ausprobieren ohne Installation."
     },
     "sections": {
       "whatTitle": "Was es macht",
-      "whatText": "sshconfig-lint prueft deine SSH-Config inklusive Include-Dateien auf praxisnahe Probleme: doppelte Host-Blocks, fehlende IdentityFile-Pfade, Wildcard-Reihenfolge, schwache Algorithmen, doppelte Direktiven, unsichere Optionen, unsichere ControlPath-Muster und Include-Zyklen. Die Ausgabe ist deterministisch und nach Datei/Zeile sortiert, ideal fuer CI-Diffs.",
+      "whatText": "sshconfig-lint prüft deine SSH-Config inklusive Include-Dateien auf praxisnahe Probleme: doppelte Host-Blöcke, fehlende IdentityFile-Pfade, Wildcard-Reihenfolge, schwache Algorithmen, doppelte Direktiven, unsichere Optionen, unsichere ControlPath-Muster und Include-Zyklen. Der Web-Checker verarbeitet textbasierte Regeln lokal im Browser und bietet Regelbeschreibungen sowie eine kurze Lernaufgabe. Die CLI ergänzt vollständige Include- und Dateisystemprüfungen mit deterministischer Ausgabe für saubere CI-Diffs.",
       "installTitle": "Installation",
       "usageTitle": "Verwendung",
       "rulesTitle": "Regeln",

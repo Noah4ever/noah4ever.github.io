@@ -144,7 +144,7 @@
       },
       "sshconfigLint": {
         "title": "sshconfig-lint",
-        "description": "Rust-based SSH config linter that catches common mistakes like duplicate hosts, weak algorithms, wildcard ordering issues, and Include cycles.",
+        "description": "Rust-based SSH config linter with a private browser checker, rule guides, and lessons for learning OpenSSH configuration.",
         "aria": "Open sshconfig-lint project page",
         "imageAlt": "sshconfig-lint terminal output preview"
       },
@@ -496,11 +496,12 @@
   "sshconfigLint": {
     "hero": {
       "title": "sshconfig-lint",
-      "tagline": "A Rust SSH config linter that checks ~/.ssh/config for common errors before they break your SSH workflow."
+      "webCta": "Open web checker",
+      "tagline": "A Rust SSH config linter with a fast, private web checker for trying it without an installation."
     },
     "sections": {
       "whatTitle": "What it does",
-      "whatText": "sshconfig-lint scans your SSH config and included files for practical issues: duplicate Host blocks, missing IdentityFile paths, wildcard ordering, weak algorithms, duplicate directives, insecure options, unsafe ControlPath patterns, and Include cycles. Output is deterministic and sorted by file and line for clean CI diffs.",
+      "whatText": "sshconfig-lint scans your SSH config and included files for practical issues: duplicate Host blocks, missing IdentityFile paths, wildcard ordering, weak algorithms, duplicate directives, insecure options, unsafe ControlPath patterns, and Include cycles. The web checker handles text-based rules locally in the browser and includes focused rule guides plus a short learning exercise. The CLI adds full Include and filesystem checks with deterministic output for clean CI diffs.",
       "installTitle": "Install",
       "usageTitle": "Usage",
       "rulesTitle": "Rules",

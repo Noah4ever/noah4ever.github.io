@@ -3,6 +3,7 @@ import "@styles/pages/sshconfig_lint.scss";
 import {
   IoTerminalOutline as TerminalIcon,
   IoLogoGithub as GithubIcon,
+  IoOpenOutline as LiveIcon,
 } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
 
@@ -24,8 +25,18 @@ export default function SSHConfigLint() {
         <h1 id="sshconfig-lint-title">{t("sshconfigLint.hero.title")}</h1>
         <div className="project-hero-badges">
           <a
+            href="https://sshconfig-lint.apps.thiering.org"
+            className="view-live-badge"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t("sshconfigLint.hero.webCta")} <LiveIcon />
+          </a>
+          <a
             href="https://github.com/Noah4ever/sshconfig-lint"
             className="view-github-badge"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             View on GitHub <GithubIcon />
           </a>

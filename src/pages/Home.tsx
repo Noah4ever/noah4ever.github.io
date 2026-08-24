@@ -480,6 +480,7 @@ export default function Home() {
                 imageAlt={t("home.projects.sshconfigLint.imageAlt")}
                 tags={["Rust", "CLI", "Open Source"]}
                 githubLink="https://github.com/Noah4ever/sshconfig-lint"
+                liveLink="https://sshconfig-lint.apps.thiering.org"
               />
             </li>
             <li>
