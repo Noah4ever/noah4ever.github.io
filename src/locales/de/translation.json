@@ -503,16 +503,30 @@
     },
     "sections": {
       "whatTitle": "Was es macht",
-      "whatText": "sshconfig-lint prüft deine SSH-Config inklusive Include-Dateien auf praxisnahe Probleme: doppelte Host-Blöcke, fehlende IdentityFile-Pfade, Wildcard-Reihenfolge, schwache Algorithmen, doppelte Direktiven, unsichere Optionen, unsichere ControlPath-Muster und Include-Zyklen. Der Web-Checker verarbeitet textbasierte Regeln lokal im Browser und bietet Regelbeschreibungen sowie eine kurze Lernaufgabe. Die CLI ergänzt vollständige Include- und Dateisystemprüfungen mit deterministischer Ausgabe für saubere CI-Diffs.",
+      "whatText": "sshconfig-lint prüft deine SSH-Config inklusive Include-Dateien auf praxisnahe Probleme: doppelte Host-Blöcke, fehlende IdentityFile-Pfade, Wildcard-Reihenfolge, schwache Algorithmen, doppelte Direktiven, unsichere Optionen, unsichere ControlPath-Muster und Include-Zyklen. ssh -G ist hilfreich, um die finalen Werte für einen Host zu prüfen, erklärt diese strukturellen Fehler aber nicht. Der Web-Checker verarbeitet textbasierte Regeln lokal im Browser und bietet Regelbeschreibungen sowie eine kurze Lernaufgabe. Die CLI ergänzt vollständige Include- und Dateisystemprüfungen mit deterministischer Ausgabe für saubere CI-Diffs.",
+      "everywhereTitle": "Eine Engine für jeden Workflow",
       "installTitle": "Installation",
       "usageTitle": "Verwendung",
       "rulesTitle": "Regeln",
+      "privacyTitle": "Privat by Design",
+      "resultsTitle": "Ein messbares Open-Source-Projekt",
       "devTitle": "Projektstruktur",
       "screenshotTitle": "Terminal-Vorschau"
     },
     "image": {
       "alt": "sshconfig-lint Output Screenshot",
       "caption": "Output aus einem realen Lint-Durchlauf"
+    },
+    "everywhere": {
+      "intro": "Parser und Rule-Engine bleiben in Rust. Schlanke Integrationen bringen dieselben stabilen Diagnosen an jeden Ort, an dem sich eine SSH-Config ändert.",
+      "browserTitle": "Browser-Playground",
+      "browserText": "Ein Checker ohne Installation für ein schnelles erstes Ergebnis. Textbasierte Prüfungen laufen lokal im Browser und die Config wird nie hochgeladen.",
+      "editorTitle": "Editor über LSP",
+      "editorText": "Der Language Server liest ungespeicherten Dokumentinhalt über stdio und liefert Diagnosen für die ganze Zeile, stabile Rule-Codes, Erklärungen und Dokumentationslinks.",
+      "workflowTitle": "Pre-Commit und GitHub Actions",
+      "workflowText": "CLI-Eingaben mit mehreren Dateien, direkte GitHub-Annotations und SARIF machen Wrapper-Skripte in Team-Repositories und CI-Pipelines überflüssig.",
+      "contractTitle": "Stabile Diagnosen",
+      "contractText": "Datei, Zeile, Severity, Rule-Code, Nachricht, Hinweis und Dokumentations-URL bilden in CLI, Editor und Automatisierung denselben öffentlichen Vertrag."
     },
     "install": {
       "scriptTitle": "Install-Skript (Linux/macOS)",
@@ -529,6 +543,14 @@
     },
     "rules": {
       "intro": "Jeder Fund hat einen stabilen Code, damit du in Skripten darauf matchen kannst. Beispiel-Regeln sind:"
+    },
+    "privacy": {
+      "text": "Es gibt keine Besucher-Telemetrie im Playground, in der CLI oder in der Editor-Extension. Browser-Prüfungen bleiben auf dem Gerät und die CLI liest nur die Dateien, die der Nutzer prüfen lässt.",
+      "lspFlow": "Im Editor startet die Extension die gepinnte Rust-Binary lokal. VS Code sendet Dokumentinhalt über die Standardeingabe des Prozesses; Diagnosen kommen über die Standardausgabe zurück. Nichts wird an einen externen Dienst gesendet."
+    },
+    "results": {
+      "baseline": "Die Arbeit an v0.5 begann am 24. August 2026 mit 16 GitHub Stars, 96 crates.io Downloads, 16 einzigartigen Clones in 14 Tagen und 35 Downloads der aktuellen Release-Binaries.",
+      "goal": "Gemessen wird nur mit öffentlichen Plattformdaten: GitHub Insights, Release-Downloads, crates.io, VS Code Marketplace und Search Console. Das erste 30-Tage-Ziel sind 50 Stars, 100 Extension-Installationen und 10 externe Workflow-Nutzer."
     },
     "dev": {
       "intro": "Die Codebasis ist fuer Parser/Linter-Wartbarkeit und einfaches Erweitern von Regeln aufgeteilt."

@@ -503,16 +503,30 @@
     },
     "sections": {
       "whatTitle": "What it does",
-      "whatText": "sshconfig-lint scans your SSH config and included files for practical issues: duplicate Host blocks, missing IdentityFile paths, wildcard ordering, weak algorithms, duplicate directives, insecure options, unsafe ControlPath patterns, and Include cycles. The web checker handles text-based rules locally in the browser and includes focused rule guides plus a short learning exercise. The CLI adds full Include and filesystem checks with deterministic output for clean CI diffs.",
+      "whatText": "sshconfig-lint scans your SSH config and included files for practical issues: duplicate Host blocks, missing IdentityFile paths, wildcard ordering, weak algorithms, duplicate directives, insecure options, unsafe ControlPath patterns, and Include cycles. ssh -G is useful for inspecting the final values for one host, but it does not explain these structural mistakes. The web checker handles text-based rules locally in the browser and includes focused rule guides plus a short learning exercise. The CLI adds full Include and filesystem checks with deterministic output for clean CI diffs.",
+      "everywhereTitle": "One engine, every workflow",
       "installTitle": "Install",
       "usageTitle": "Usage",
       "rulesTitle": "Rules",
+      "privacyTitle": "Private by design",
+      "resultsTitle": "A measurable open-source project",
       "devTitle": "Project layout",
       "screenshotTitle": "Terminal preview"
     },
     "image": {
       "alt": "sshconfig-lint output screenshot",
       "caption": "Real-world lint output"
+    },
+    "everywhere": {
+      "intro": "The parser and rule engine stay in Rust, while thin integrations bring the same stable diagnostics to every place an SSH config changes.",
+      "browserTitle": "Browser playground",
+      "browserText": "A zero-install checker for a quick first result. Text-based checks run locally in the browser and the config is never uploaded.",
+      "editorTitle": "Editor through LSP",
+      "editorText": "The language server reads unsaved document text over stdio and returns full-line diagnostics, stable rule codes, explanations, and documentation links.",
+      "workflowTitle": "Pre-Commit and GitHub Actions",
+      "workflowText": "Multi-file CLI input, direct GitHub annotations, and SARIF remove wrapper scripts from team repositories and CI pipelines.",
+      "contractTitle": "Stable diagnostics",
+      "contractText": "File, line, severity, rule code, message, hint, and documentation URL form the same public contract in the CLI, editor, and automation."
     },
     "install": {
       "scriptTitle": "Install script (Linux/macOS)",
@@ -529,6 +543,14 @@
     },
     "rules": {
       "intro": "Each finding has a stable code so you can grep or match in scripts. Example rules include:"
+    },
+    "privacy": {
+      "text": "There is no visitor telemetry in the playground, CLI, or editor extension. Browser checks stay on the device, and the CLI only reads the files the user asks it to inspect.",
+      "lspFlow": "In the editor, the extension starts the pinned Rust binary locally. VS Code sends document text through the process standard input; diagnostics return through standard output. Nothing is sent to an external service."
+    },
+    "results": {
+      "baseline": "The v0.5 work started from 16 GitHub stars, 96 crates.io downloads, 16 unique clones in 14 days, and 35 downloads of the current release binaries on 24 August 2026.",
+      "goal": "The release is measured through public platform data only: GitHub Insights, release downloads, crates.io, the VS Code Marketplace, and Search Console. The first 30-day target is 50 stars, 100 extension installs, and 10 external workflow users."
     },
     "dev": {
       "intro": "The codebase is organized for parser/linter maintainability and easy rule expansion."

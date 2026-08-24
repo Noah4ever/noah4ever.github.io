@@ -6,10 +6,20 @@ import {
 } from "react-icons/io5";
 import { useEffect, useMemo, useState } from "react";
 
+const getVideoType = (path: string) => {
+  const cleanPath = path.split("?")[0].split("#")[0].toLowerCase();
+  if (cleanPath.endsWith(".webm")) return "video/webm";
+  if (cleanPath.endsWith(".ogg")) return "video/ogg";
+  if (cleanPath.endsWith(".mov")) return "video/quicktime";
+  return "video/mp4";
+};
+
 type ProjectCardLinkProps = {
   title: string;
   description: string;
   imageSrc: string;
+  videoFallbackSrc?: string;
+  videoPoster?: string;
   href: string;
   ariaLabel?: string;
   imageAlt?: string;
@@ -23,6 +33,8 @@ export default function ProjectCardLink({
   title,
   description,
   imageSrc,
+  videoFallbackSrc,
+  videoPoster,
   href,
   ariaLabel,
   imageAlt,
@@ -166,8 +178,8 @@ export default function ProjectCardLink({
       <div className="project-card-media">
         {isVideo ? (
           <video
-            src={imageSrc}
             aria-label={imageAlt ?? `${title} preview`}
+            poster={videoPoster}
             preload="metadata"
             autoPlay
             loop
@@ -179,7 +191,15 @@ export default function ProjectCardLink({
               if (video.paused) void video.play().catch(() => undefined);
             }}
             onClick={handleVideoClick}
-          />
+          >
+            <source src={imageSrc} type={getVideoType(imageSrc)} />
+            {videoFallbackSrc && (
+              <source
+                src={videoFallbackSrc}
+                type={getVideoType(videoFallbackSrc)}
+              />
+            )}
+          </video>
         ) : (
           <img
             src={imageSrc}

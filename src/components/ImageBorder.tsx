@@ -13,6 +13,8 @@ type ImageBorderProps = {
   lookAtCursor?: boolean;
   objectPosition?: string;
   videoControls?: boolean;
+  videoFallbackSrc?: string;
+  videoPoster?: string;
 };
 
 type FrameImageProps = {
@@ -20,9 +22,19 @@ type FrameImageProps = {
   alt: string;
   objectPosition?: string;
   videoControls?: boolean;
+  videoFallbackSrc?: string;
+  videoPoster?: string;
 };
 
 type AnimationState = "minimizing" | "closing" | "expanding" | null;
+
+const getVideoType = (path: string) => {
+  const cleanPath = path.split("?")[0].split("#")[0].toLowerCase();
+  if (cleanPath.endsWith(".webm")) return "video/webm";
+  if (cleanPath.endsWith(".ogg")) return "video/ogg";
+  if (cleanPath.endsWith(".mov")) return "video/quicktime";
+  return "video/mp4";
+};
 
 type BrowserFrameProps = FrameImageProps & {
   onToggleBrowser: () => void;
@@ -36,6 +48,8 @@ function FrameImage({
   alt,
   objectPosition,
   videoControls,
+  videoFallbackSrc,
+  videoPoster,
 }: FrameImageProps) {
   const cleanPath = src.split("?")[0].split("#")[0].toLowerCase();
   const isVideo = /\.(mp4|webm|ogg|mov)$/.test(cleanPath);
@@ -45,8 +59,8 @@ function FrameImage({
       {isVideo ? (
         <video
           className="viewport-media"
-          src={src}
           aria-label={alt}
+          poster={videoPoster}
           preload="metadata"
           autoPlay
           controls={videoControls}
@@ -63,7 +77,15 @@ function FrameImage({
               : undefined
           }
           style={objectPosition ? { objectPosition } : undefined}
-        />
+        >
+          <source src={src} type={getVideoType(src)} />
+          {videoFallbackSrc && (
+            <source
+              src={videoFallbackSrc}
+              type={getVideoType(videoFallbackSrc)}
+            />
+          )}
+        </video>
       ) : (
         <img
           className="viewport-media"
@@ -82,6 +104,8 @@ function SafariFrame({
   alt,
   objectPosition,
   videoControls,
+  videoFallbackSrc,
+  videoPoster,
   onToggleBrowser,
   onClose,
   onMinimize,
@@ -131,6 +155,8 @@ function SafariFrame({
         alt={alt}
         objectPosition={objectPosition}
         videoControls={videoControls}
+        videoFallbackSrc={videoFallbackSrc}
+        videoPoster={videoPoster}
       />
     </>
   );
@@ -141,6 +167,8 @@ function ChromeFrame({
   alt,
   objectPosition,
   videoControls,
+  videoFallbackSrc,
+  videoPoster,
   onToggleBrowser,
   onClose,
   onMinimize,
@@ -200,6 +228,8 @@ function ChromeFrame({
         alt={alt}
         objectPosition={objectPosition}
         videoControls={videoControls}
+        videoFallbackSrc={videoFallbackSrc}
+        videoPoster={videoPoster}
       />
     </>
   );
@@ -210,6 +240,8 @@ function MobileFrame({
   alt,
   objectPosition,
   videoControls,
+  videoFallbackSrc,
+  videoPoster,
 }: FrameImageProps) {
   return (
     <>
@@ -229,6 +261,8 @@ function MobileFrame({
         alt={alt}
         objectPosition={objectPosition}
         videoControls={videoControls}
+        videoFallbackSrc={videoFallbackSrc}
+        videoPoster={videoPoster}
       />
       <div className="bottom" aria-hidden="true" />
     </>
@@ -243,6 +277,8 @@ export default function ImageBorder({
   lookAtCursor = false,
   objectPosition,
   videoControls = false,
+  videoFallbackSrc,
+  videoPoster,
 }: ImageBorderProps) {
   const [activeFrame, setActiveFrame] = useState<ImageFrame>(frame);
   const [animationState, setAnimationState] = useState<AnimationState>(null);
@@ -278,6 +314,8 @@ export default function ImageBorder({
         alt={alt}
         objectPosition={objectPosition}
         videoControls={videoControls}
+        videoFallbackSrc={videoFallbackSrc}
+        videoPoster={videoPoster}
         onToggleBrowser={toggleBrowserFrame}
         onClose={() => triggerAnimation("closing")}
         onMinimize={() => triggerAnimation("minimizing")}
@@ -289,6 +327,8 @@ export default function ImageBorder({
         alt={alt}
         objectPosition={objectPosition}
         videoControls={videoControls}
+        videoFallbackSrc={videoFallbackSrc}
+        videoPoster={videoPoster}
       />
     ) : activeFrame === "default" ? (
       <FrameImage
@@ -296,6 +336,8 @@ export default function ImageBorder({
         alt={alt}
         objectPosition={objectPosition}
         videoControls={videoControls}
+        videoFallbackSrc={videoFallbackSrc}
+        videoPoster={videoPoster}
       />
     ) : (
       <SafariFrame
@@ -303,6 +345,8 @@ export default function ImageBorder({
         alt={alt}
         objectPosition={objectPosition}
         videoControls={videoControls}
+        videoFallbackSrc={videoFallbackSrc}
+        videoPoster={videoPoster}
         onToggleBrowser={toggleBrowserFrame}
         onClose={() => triggerAnimation("closing")}
         onMinimize={() => triggerAnimation("minimizing")}

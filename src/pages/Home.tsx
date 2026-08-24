@@ -476,11 +476,13 @@ export default function Home() {
               <ProjectCardLink
                 title={t("home.projects.sshconfigLint.title")}
                 description={t("home.projects.sshconfigLint.description")}
-                imageSrc="/Projects/sshconfig-lint/sshconfig-lint-video-demo.mp4"
+                imageSrc="/Projects/sshconfig-lint/sshconfig-lint-video-demo.webm"
+                videoFallbackSrc="/Projects/sshconfig-lint/sshconfig-lint-video-demo.mp4"
+                videoPoster="/Projects/sshconfig-lint/sshconfig-lint-video-poster.jpg"
                 href="/projects/sshconfig-lint"
                 ariaLabel={t("home.projects.sshconfigLint.aria")}
                 imageAlt={t("home.projects.sshconfigLint.imageAlt")}
-                tags={["Rust", "CLI", "Open Source"]}
+                tags={["Rust", "CLI", "LSP", "CI"]}
                 githubLink="https://github.com/Noah4ever/sshconfig-lint"
                 liveLink="https://sshconfig-lint.apps.thiering.org"
               />
