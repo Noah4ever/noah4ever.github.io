@@ -11,6 +11,8 @@ import { IoMailOutline as EMail } from "react-icons/io5";
 import { IoArrowDownOutline as Arrow } from "react-icons/io5";
 import { IoArrowDownCircleOutline as ScrollDownArrow } from "react-icons/io5";
 import { IoLocationOutline as LocationIcon } from "react-icons/io5";
+import { IoGridOutline as ProjectsIcon } from "react-icons/io5";
+import { IoArrowForwardOutline as ForwardArrow } from "react-icons/io5";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -521,6 +523,15 @@ export default function Home() {
               />
             </li>
           </ul>
+          <a
+            className="projects-overview-link"
+            href="https://apps.thiering.org"
+            aria-label={t("home.about.allProjectsAria")}
+          >
+            <ProjectsIcon aria-hidden="true" />
+            <span>{t("home.about.allProjects")}</span>
+            <ForwardArrow className="projects-overview-arrow" aria-hidden="true" />
+          </a>
         </section>
 
         {/* Overlay inside #about so it shares the same stacking context */}
