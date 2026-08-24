@@ -7,8 +7,7 @@ import {
 } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
 
-const previewImage =
-  "/Projects/sshconfig-lint/sshconfig-lint-video-demo.mp4";
+const previewImage = "/Projects/sshconfig-lint/sshconfig-lint-video-demo.mp4";
 
 export default function SSHConfigLint() {
   const { t } = useTranslation();
@@ -73,6 +72,7 @@ export default function SSHConfigLint() {
             src={previewImage}
             alt={t("sshconfigLint.image.alt")}
             objectPosition="left center"
+            videoControls
           />
           <figcaption>{t("sshconfigLint.image.caption")}</figcaption>
         </figure>

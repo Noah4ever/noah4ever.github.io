@@ -12,12 +12,14 @@ type ImageBorderProps = {
   className?: string;
   lookAtCursor?: boolean;
   objectPosition?: string;
+  videoControls?: boolean;
 };
 
 type FrameImageProps = {
   src: string;
   alt: string;
   objectPosition?: string;
+  videoControls?: boolean;
 };
 
 type AnimationState = "minimizing" | "closing" | "expanding" | null;
@@ -29,7 +31,12 @@ type BrowserFrameProps = FrameImageProps & {
   onExpand: () => void;
 };
 
-function FrameImage({ src, alt, objectPosition }: FrameImageProps) {
+function FrameImage({
+  src,
+  alt,
+  objectPosition,
+  videoControls,
+}: FrameImageProps) {
   const cleanPath = src.split("?")[0].split("#")[0].toLowerCase();
   const isVideo = /\.(mp4|webm|ogg|mov)$/.test(cleanPath);
 
@@ -42,9 +49,19 @@ function FrameImage({ src, alt, objectPosition }: FrameImageProps) {
           aria-label={alt}
           preload="metadata"
           autoPlay
+          controls={videoControls}
           loop
           muted
           playsInline
+          onLoadedData={
+            videoControls
+              ? (event) => {
+                  const video = event.currentTarget;
+                  video.muted = true;
+                  if (video.paused) void video.play().catch(() => undefined);
+                }
+              : undefined
+          }
           style={objectPosition ? { objectPosition } : undefined}
         />
       ) : (
@@ -64,6 +81,7 @@ function SafariFrame({
   src,
   alt,
   objectPosition,
+  videoControls,
   onToggleBrowser,
   onClose,
   onMinimize,
@@ -108,7 +126,12 @@ function SafariFrame({
           <FaChrome aria-hidden="true" />
         </button>
       </div>
-      <FrameImage src={src} alt={alt} objectPosition={objectPosition} />
+      <FrameImage
+        src={src}
+        alt={alt}
+        objectPosition={objectPosition}
+        videoControls={videoControls}
+      />
     </>
   );
 }
@@ -117,6 +140,7 @@ function ChromeFrame({
   src,
   alt,
   objectPosition,
+  videoControls,
   onToggleBrowser,
   onClose,
   onMinimize,
@@ -171,12 +195,22 @@ function ChromeFrame({
           </button>
         </div>
       </div>
-      <FrameImage src={src} alt={alt} objectPosition={objectPosition} />
+      <FrameImage
+        src={src}
+        alt={alt}
+        objectPosition={objectPosition}
+        videoControls={videoControls}
+      />
     </>
   );
 }
 
-function MobileFrame({ src, alt, objectPosition }: FrameImageProps) {
+function MobileFrame({
+  src,
+  alt,
+  objectPosition,
+  videoControls,
+}: FrameImageProps) {
   return (
     <>
       <div className="top" aria-hidden="true">
@@ -190,7 +224,12 @@ function MobileFrame({ src, alt, objectPosition }: FrameImageProps) {
           </span>
         </div>
       </div>
-      <FrameImage src={src} alt={alt} objectPosition={objectPosition} />
+      <FrameImage
+        src={src}
+        alt={alt}
+        objectPosition={objectPosition}
+        videoControls={videoControls}
+      />
       <div className="bottom" aria-hidden="true" />
     </>
   );
@@ -203,6 +242,7 @@ export default function ImageBorder({
   className,
   lookAtCursor = false,
   objectPosition,
+  videoControls = false,
 }: ImageBorderProps) {
   const [activeFrame, setActiveFrame] = useState<ImageFrame>(frame);
   const [animationState, setAnimationState] = useState<AnimationState>(null);
@@ -237,20 +277,32 @@ export default function ImageBorder({
         src={src}
         alt={alt}
         objectPosition={objectPosition}
+        videoControls={videoControls}
         onToggleBrowser={toggleBrowserFrame}
         onClose={() => triggerAnimation("closing")}
         onMinimize={() => triggerAnimation("minimizing")}
         onExpand={() => triggerAnimation("expanding")}
       />
     ) : activeFrame === "mobile" ? (
-      <MobileFrame src={src} alt={alt} objectPosition={objectPosition} />
+      <MobileFrame
+        src={src}
+        alt={alt}
+        objectPosition={objectPosition}
+        videoControls={videoControls}
+      />
     ) : activeFrame === "default" ? (
-      <FrameImage src={src} alt={alt} objectPosition={objectPosition} />
+      <FrameImage
+        src={src}
+        alt={alt}
+        objectPosition={objectPosition}
+        videoControls={videoControls}
+      />
     ) : (
       <SafariFrame
         src={src}
         alt={alt}
         objectPosition={objectPosition}
+        videoControls={videoControls}
         onToggleBrowser={toggleBrowserFrame}
         onClose={() => triggerAnimation("closing")}
         onMinimize={() => triggerAnimation("minimizing")}
@@ -264,34 +316,40 @@ export default function ImageBorder({
       onMouseMove={
         lookAtCursor
           ? (event) => {
-            const el = event.currentTarget;
-            const target = event.target as HTMLElement | null;
+              const el = event.currentTarget;
+              const target = event.target as HTMLElement | null;
 
-            if (
-              (activeFrame === "safari" || activeFrame === "chrome") &&
-              target?.closest(".toolbar")
-            ) {
-              el.style.setProperty("--mouse-rx", "0deg");
-              el.style.setProperty("--mouse-ry", "0deg");
-              return;
+              if (
+                (activeFrame === "safari" || activeFrame === "chrome") &&
+                target?.closest(".toolbar")
+              ) {
+                el.style.setProperty("--mouse-rx", "0deg");
+                el.style.setProperty("--mouse-ry", "0deg");
+                return;
+              }
+
+              const rect = el.getBoundingClientRect();
+              const x = (event.clientX - rect.left) / rect.width - 0.5;
+              const y = (event.clientY - rect.top) / rect.height - 0.5;
+              const maxTilt =
+                activeFrame === "safari" || activeFrame === "chrome" ? 9 : 13;
+              el.style.setProperty(
+                "--mouse-rx",
+                `${(-y * maxTilt).toFixed(2)}deg`,
+              );
+              el.style.setProperty(
+                "--mouse-ry",
+                `${(x * maxTilt).toFixed(2)}deg`,
+              );
             }
-
-            const rect = el.getBoundingClientRect();
-            const x = (event.clientX - rect.left) / rect.width - 0.5;
-            const y = (event.clientY - rect.top) / rect.height - 0.5;
-            const maxTilt =
-              activeFrame === "safari" || activeFrame === "chrome" ? 9 : 13;
-            el.style.setProperty("--mouse-rx", `${(-y * maxTilt).toFixed(2)}deg`);
-            el.style.setProperty("--mouse-ry", `${(x * maxTilt).toFixed(2)}deg`);
-          }
           : undefined
       }
       onMouseLeave={
         lookAtCursor
           ? (event) => {
-            event.currentTarget.style.setProperty("--mouse-rx", "0deg");
-            event.currentTarget.style.setProperty("--mouse-ry", "0deg");
-          }
+              event.currentTarget.style.setProperty("--mouse-rx", "0deg");
+              event.currentTarget.style.setProperty("--mouse-ry", "0deg");
+            }
           : undefined
       }
       onAnimationEnd={(event) => {

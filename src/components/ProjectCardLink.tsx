@@ -173,6 +173,11 @@ export default function ProjectCardLink({
             loop
             muted
             playsInline
+            onLoadedData={(event) => {
+              const video = event.currentTarget;
+              video.muted = true;
+              if (video.paused) void video.play().catch(() => undefined);
+            }}
             onClick={handleVideoClick}
           />
         ) : (
